@@ -3,7 +3,7 @@ Google APIs Client Library for PHP
 
 This is version 0.6.2 of the Google Api.
 
-I do have interest in maintaining this repository.
+**I do have interest in maintaining this repository.**
 
 If you want a symfony2 bundle for this lib, check out my other repo: https://github.com/HappyR/GoogleApiBundle
 
