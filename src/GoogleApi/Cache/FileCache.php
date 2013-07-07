@@ -16,6 +16,8 @@
  */
 namespace GoogleApi\Cache;
 
+use GoogleApi\Config;
+
 /*
  * This class implements a basic on disk storage. While that does
  * work quite well it's not the most elegant and scalable solution.
@@ -31,8 +33,7 @@ class FileCache extends Cache {
   private $path;
 
   public function __construct() {
-    global $apiConfig;
-    $this->path = $apiConfig['ioFileCache_directory'];
+    $this->path = Config::get('ioFileCache_directory');
   }
 
   private function isLocked($storageFile) {

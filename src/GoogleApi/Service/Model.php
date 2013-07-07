@@ -16,6 +16,7 @@
  */
 namespace GoogleApi\Service;
 use GoogleApi\Exception;
+use GoogleApi\Config;
 
 /**
  * This class defines attributes, valid values, and usage which is generated from
@@ -97,8 +98,7 @@ class Model {
   }
 
   protected function useObjects() {
-    global $apiConfig;
-    return (isset($apiConfig['use_objects']) && $apiConfig['use_objects']);
+      return Config::get('use_objects', false);
   }
 
   /**

@@ -16,7 +16,7 @@
  */
 namespace GoogleApi\Auth;
 use GoogleApi\Io\HttpRequest;
-
+use GoogleApi\Config;
 
 /**
  * Do-nothing authentication implementation, use this if you want to make un-authenticated calls
@@ -27,9 +27,8 @@ class AuthNone extends Auth {
   public $key = null;
 
   public function __construct() {
-    global $apiConfig;
-    if (!empty($apiConfig['developer_key'])) {
-      $this->setDeveloperKey($apiConfig['developer_key']);
+    if (Config::has('developer_key')) {
+      $this->setDeveloperKey(Config::get('developer_key'));
     }
   }
 

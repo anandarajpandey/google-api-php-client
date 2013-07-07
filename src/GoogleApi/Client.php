@@ -79,7 +79,7 @@ class Client {
    * Add a service
    */
   public function addService($service, $version = false) {
-    global $apiConfig;
+    $apiConfig=Config::getAll();
     if ($this->authenticated) {
       throw new Exception('Cant add services after having authenticated');
     }
@@ -216,8 +216,7 @@ class Client {
    * @param string $applicationName
    */
   public function setApplicationName($applicationName) {
-    global $apiConfig;
-    $apiConfig['application_name'] = $applicationName;
+    Config::set('application_name',$applicationName);
   }
 
   /**
@@ -225,8 +224,7 @@ class Client {
    * @param string $clientId
    */
   public function setClientId($clientId) {
-    global $apiConfig;
-    $apiConfig['oauth2_client_id'] = $clientId;
+    Config::set('oauth2_client_id',$clientId);
     self::$auth->clientId = $clientId;
   }
 
@@ -242,8 +240,7 @@ class Client {
    * @param string $clientSecret
    */
   public function setClientSecret($clientSecret) {
-    global $apiConfig;
-    $apiConfig['oauth2_client_secret'] = $clientSecret;
+    Config::set('oauth2_client_secret',$clientSecret);
     self::$auth->clientSecret = $clientSecret;
   }
 
@@ -259,8 +256,7 @@ class Client {
    * @param string $redirectUri
    */
   public function setRedirectUri($redirectUri) {
-    global $apiConfig;
-    $apiConfig['oauth2_redirect_uri'] = $redirectUri;
+    Config::set('oauth2_redirect_uri',$redirectUri);
     self::$auth->redirectUri = $redirectUri;
   }
 
@@ -351,8 +347,7 @@ class Client {
    * @experimental
    */
   public function setUseObjects($useObjects) {
-    global $apiConfig;
-    $apiConfig['use_objects'] = $useObjects;
+      Config::set('use_objects',$useObjects);
   }
 
   /**

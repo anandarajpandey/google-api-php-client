@@ -19,6 +19,7 @@ use GoogleApi\AuthException;
 use GoogleApi\Client;
 use GoogleApi\Io\HttpRequest;
 use GoogleApi\Service\Utils;
+use GoogleApi\Config;
 
 /**
  * Authentication class that deals with the OAuth 2 web-server authentication flow
@@ -54,30 +55,30 @@ class OAuth2 extends Auth {
    * to the discretion of the caller (which is done by calling authenticate()).
    */
   public function __construct() {
-    global $apiConfig;
 
-    if (! empty($apiConfig['developer_key'])) {
-      $this->developerKey = $apiConfig['developer_key'];
+
+    if (Config::has('developer_key')) {
+      $this->developerKey = Config::get('developer_key');
     }
 
-    if (! empty($apiConfig['oauth2_client_id'])) {
-      $this->clientId = $apiConfig['oauth2_client_id'];
+    if (Config::has('oauth2_client_id')) {
+      $this->clientId = Config::get('oauth2_client_id');
     }
 
-    if (! empty($apiConfig['oauth2_client_secret'])) {
-      $this->clientSecret = $apiConfig['oauth2_client_secret'];
+    if (Config::has('oauth2_client_secret')) {
+      $this->clientSecret = Config::get('oauth2_client_secret');
     }
 
-    if (! empty($apiConfig['oauth2_redirect_uri'])) {
-      $this->redirectUri = $apiConfig['oauth2_redirect_uri'];
+    if (Config::has('oauth2_redirect_uri')) {
+      $this->redirectUri = Config::get('oauth2_redirect_uri');
     }
 
-    if (! empty($apiConfig['oauth2_access_type'])) {
-      $this->accessType = $apiConfig['oauth2_access_type'];
+    if (Config::has('oauth2_access_type')) {
+      $this->accessType = Config::get('oauth2_access_type');
     }
 
-    if (! empty($apiConfig['oauth2_approval_prompt'])) {
-      $this->approvalPrompt = $apiConfig['oauth2_approval_prompt'];
+    if (Config::has('oauth2_approval_prompt')) {
+      $this->approvalPrompt = Config::get('oauth2_approval_prompt');
     }
 
   }

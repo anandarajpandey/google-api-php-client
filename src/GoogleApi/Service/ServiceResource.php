@@ -19,6 +19,7 @@ use GoogleApi\Client;
 use GoogleApi\Exception;
 use GoogleApi\Io\HttpRequest;
 use GoogleApi\Io\REST;
+use GoogleApi\Config;
 
 /**
  * Implements the actual methods/resources of the discovered Google API using magic function
@@ -192,8 +193,7 @@ class ServiceResource {
   }
 
   public  function useObjects() {
-    global $apiConfig;
-    return (isset($apiConfig['use_objects']) && $apiConfig['use_objects']);
+    return Config::get('use_objects', false);
   }
 
   protected function stripNull(&$o) {

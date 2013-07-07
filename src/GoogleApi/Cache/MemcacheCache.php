@@ -16,6 +16,8 @@
  */
 namespace GoogleApi\Cache;
 use GoogleApi\CacheException;
+use GoogleApi\Config;
+
 
 /**
  * A persistent storage class based on the memcache, which is not
@@ -29,12 +31,11 @@ class MemcacheCache extends Cache {
   private $connection = false;
 
   public function __construct() {
-    global $apiConfig;
     if (! function_exists('memcache_connect')) {
       throw new CacheException("Memcache functions not available");
     }
-    $this->host = $apiConfig['ioMemCacheCache_host'];
-    $this->port = $apiConfig['ioMemCacheCache_port'];
+    $this->host = Config::get('ioMemCacheCache_host');
+    $this->port = Config::get('ioMemCacheCache_port');
     if (empty($this->host) || empty($this->port)) {
       throw new CacheException("You need to supply a valid memcache host and port");
     }

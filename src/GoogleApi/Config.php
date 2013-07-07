@@ -70,6 +70,8 @@ class Config {
         sys_get_temp_dir() . '/apiClient' :
         '/tmp/apiClient'),
 
+        'ioMemCacheStorage_host' => '127.0.0.1',
+        'ioMemcacheStorage_port' => '11211',
 
       // Definition of service specific values like scopes, oauth token URLs, etc
       'services' => array(
