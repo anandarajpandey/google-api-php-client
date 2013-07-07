@@ -68,7 +68,7 @@ class Client {
   private $authenticated = false;
 
   public function __construct($config = array()) {
-    global $apiConfig;
+    $apiConfig = Config::getAll();
     $apiConfig = array_merge($apiConfig, $config);
     self::$cache = new $apiConfig['cacheClass']();
     self::$auth = new $apiConfig['authClass']();
