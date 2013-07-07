@@ -147,5 +147,9 @@ class Config {
     self::$apiConfig[$variable] = $value;
   }
 
+  public static function setAll(array $values)
+  {
+      self::$apiConfig=$values;
+  }
 }
 Config::init(); // Workaround to initialize the static data-member

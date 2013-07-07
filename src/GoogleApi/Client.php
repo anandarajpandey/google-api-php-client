@@ -70,6 +70,10 @@ class Client {
   public function __construct($config = array()) {
     $apiConfig = Config::getAll();
     $apiConfig = array_merge($apiConfig, $config);
+
+    //save
+    Config::setAll($apiConfig);
+
     self::$cache = new $apiConfig['cacheClass']();
     self::$auth = new $apiConfig['authClass']();
     self::$io = new $apiConfig['ioClass']();
