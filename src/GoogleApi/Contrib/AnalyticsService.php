@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "data" collection of methods.
@@ -551,7 +551,7 @@ class AnalyticsService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'analytics/v3/';
     $this->version = 'v3';
     $this->serviceName = 'analytics';

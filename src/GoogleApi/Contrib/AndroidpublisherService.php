@@ -15,7 +15,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "purchases" collection of methods.
@@ -86,7 +86,7 @@ class AndroidpublisherService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'androidpublisher/v1/applications/';
     $this->version = 'v1';
     $this->serviceName = 'androidpublisher';

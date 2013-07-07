@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "reports" collection of methods.
@@ -77,7 +77,7 @@ class YouTubeAnalyticsService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'youtube/analytics/v1/';
     $this->version = 'v1';
     $this->serviceName = 'youtubeAnalytics';

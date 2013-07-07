@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "tables" collection of methods.
@@ -481,7 +481,7 @@ class BigqueryService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'bigquery/v2/';
     $this->version = 'v2';
     $this->serviceName = 'bigquery';

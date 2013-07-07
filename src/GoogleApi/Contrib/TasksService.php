@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "tasks" collection of methods.
@@ -320,7 +320,7 @@ class TasksService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'tasks/v1/';
     $this->version = 'v1';
     $this->serviceName = 'tasks';

@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "languages" collection of methods.
@@ -134,7 +134,7 @@ class TranslateService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'language/translate/';
     $this->version = 'v2';
     $this->serviceName = 'translate';

@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "about" collection of methods.
@@ -1165,7 +1165,7 @@ class DriveService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'drive/v2/';
     $this->version = 'v2';
     $this->serviceName = 'drive';

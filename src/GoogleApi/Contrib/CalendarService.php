@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "acl" collection of methods.
@@ -731,7 +731,7 @@ class CalendarService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'calendar/v3/';
     $this->version = 'v3';
     $this->serviceName = 'calendar';

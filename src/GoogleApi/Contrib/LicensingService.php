@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "licenseAssignments" collection of methods.
@@ -185,7 +185,7 @@ class LicensingService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'apps/licensing/v1/product/';
     $this->version = 'v1';
     $this->serviceName = 'licensing';

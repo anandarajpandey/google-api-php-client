@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "dimensionValues" collection of methods.
@@ -352,7 +352,7 @@ class DfareportingService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'dfareporting/v1.1/';
     $this->version = 'v1.1';
     $this->serviceName = 'dfareporting';

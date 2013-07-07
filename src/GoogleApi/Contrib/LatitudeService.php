@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "currentLocation" collection of methods.
@@ -178,7 +178,7 @@ class LatitudeService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'latitude/v1/';
     $this->version = 'v1';
     $this->serviceName = 'latitude';

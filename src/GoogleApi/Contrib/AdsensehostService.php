@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "accounts" collection of methods.
@@ -674,7 +674,7 @@ class AdSenseHostService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'adsensehost/v4.1/';
     $this->version = 'v4.1';
     $this->serviceName = 'adsensehost';

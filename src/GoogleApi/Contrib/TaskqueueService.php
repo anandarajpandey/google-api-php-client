@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "taskqueues" collection of methods.
@@ -219,7 +219,7 @@ class TaskqueueService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'taskqueue/v1beta2/projects/';
     $this->version = 'v1beta2';
     $this->serviceName = 'taskqueue';

@@ -14,6 +14,8 @@
  */
 namespace GoogleApi\Contrib;
 
+use GoogleApi\Client;
+
 
   /**
    * The "adclients" collection of methods.
@@ -376,7 +378,7 @@ class AdExchangeSellerService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'adexchangeseller/v1/';
     $this->version = 'v1';
     $this->serviceName = 'adexchangeseller';

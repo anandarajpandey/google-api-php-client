@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "layers" collection of methods.
@@ -830,7 +830,7 @@ class BooksService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'books/v1/';
     $this->version = 'v1';
     $this->serviceName = 'books';

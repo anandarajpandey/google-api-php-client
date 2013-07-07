@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "cse" collection of methods.
@@ -99,7 +99,7 @@ class CustomsearchService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'customsearch/';
     $this->version = 'v1';
     $this->serviceName = 'customsearch';

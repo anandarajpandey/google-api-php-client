@@ -15,7 +15,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "customers" collection of methods.
@@ -286,7 +286,7 @@ class ResellerService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'apps/reseller/v1/';
     $this->version = 'v1';
     $this->serviceName = 'reseller';

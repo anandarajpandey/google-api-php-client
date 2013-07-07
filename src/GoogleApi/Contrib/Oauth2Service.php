@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "userinfo" collection of methods.
@@ -108,7 +108,7 @@ class Oauth2Service extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = '';
     $this->version = 'v2';
     $this->serviceName = 'oauth2';

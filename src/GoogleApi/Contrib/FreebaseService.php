@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "text" collection of methods.
@@ -69,7 +69,7 @@ class FreebaseService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'freebase/v1/';
     $this->version = 'v1';
     $this->serviceName = 'freebase';

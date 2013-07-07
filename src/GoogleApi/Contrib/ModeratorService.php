@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "votes" collection of methods.
@@ -901,7 +901,7 @@ class ModeratorService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'moderator/v1/';
     $this->version = 'v1';
     $this->serviceName = 'moderator';

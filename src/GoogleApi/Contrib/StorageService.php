@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "objectAccessControls" collection of methods.
@@ -541,7 +541,7 @@ class StorageService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'storage/v1beta1/';
     $this->version = 'v1beta1';
     $this->serviceName = 'storage';

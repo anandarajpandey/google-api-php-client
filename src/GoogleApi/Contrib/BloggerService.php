@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "blogs" collection of methods.
@@ -408,7 +408,7 @@ class BloggerService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'blogger/v3/';
     $this->version = 'v3';
     $this->serviceName = 'blogger';

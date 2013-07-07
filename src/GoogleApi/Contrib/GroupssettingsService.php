@@ -15,7 +15,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "groups" collection of methods.
@@ -104,7 +104,7 @@ class GroupssettingsService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'groups/v1/groups/';
     $this->version = 'v1';
     $this->serviceName = 'groupssettings';

@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "activities" collection of methods.
@@ -883,7 +883,7 @@ class YouTubeService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'youtube/v3/';
     $this->version = 'v3';
     $this->serviceName = 'youtube';

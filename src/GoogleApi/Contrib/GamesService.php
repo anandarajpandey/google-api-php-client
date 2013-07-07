@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "achievementDefinitions" collection of methods.
@@ -602,7 +602,7 @@ class GamesService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'games/v1/';
     $this->version = 'v1';
     $this->serviceName = 'games';

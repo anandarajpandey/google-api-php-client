@@ -15,7 +15,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "contacts" collection of methods.
@@ -472,7 +472,7 @@ class MirrorService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'mirror/v1/';
     $this->version = 'v1';
     $this->serviceName = 'mirror';

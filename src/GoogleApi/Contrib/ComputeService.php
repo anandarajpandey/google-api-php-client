@@ -13,7 +13,7 @@
  * the License.
  */
 namespace GoogleApi\Contrib;
-
+use GoogleApi\Client;
 
   /**
    * The "disks" collection of methods.
@@ -1094,7 +1094,7 @@ class ComputeService extends Service {
    *
    * @param Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Client $client) {
     $this->servicePath = 'compute/v1beta14/projects/';
     $this->version = 'v1beta14';
     $this->serviceName = 'compute';

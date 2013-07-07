@@ -30,26 +30,27 @@ like `apiHttpRequest`, you must now use `\GoogleApi\Io\HttpRequest`.
 
 
 == Requirements:
-  PHP 5.2.x or higher [http://www.php.net/]
-  PHP Curl extension [http://www.php.net/manual/en/intro.curl.php]
-  PHP JSON extension [http://php.net/manual/en/book.json.php]
+* PHP 5.2.x or higher [http://www.php.net/]
+* PHP Curl extension [http://www.php.net/manual/en/intro.curl.php]
+* PHP JSON extension [http://php.net/manual/en/book.json.php]
 
 Project page:
   http://code.google.com/p/google-api-php-client
 
 OAuth 2 instructions:
-  http://code.google.com/p/google-api-php-client/wiki/OAuth2
+* http://code.google.com/p/google-api-php-client/wiki/OAuth2
 
 Report a defect or feature request here:
-  http://code.google.com/p/google-api-php-client/issues/entry
+* http://code.google.com/p/google-api-php-client/issues/entry
 
 Subscribe to project updates in your feed reader:
-  http://code.google.com/feeds/p/google-api-php-client/updates/basic
+* http://code.google.com/feeds/p/google-api-php-client/updates/basic
 
 Supported sample applications:
-  http://code.google.com/p/google-api-php-client/wiki/Samples
+* http://code.google.com/p/google-api-php-client/wiki/Samples
 
 == Basic Example
+```php
   <?php
   require_once 'path/to/src/Google_Client.php';
   require_once 'path/to/src/contrib/apiBooksService.php';
@@ -63,3 +64,4 @@ Supported sample applications:
   foreach ($results['items'] as $item) {
     print($item['volumeInfo']['title'] . '<br>');
   }
+```
