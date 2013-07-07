@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "pagespeedapi" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $pagespeedonlineService = new Google_PagespeedonlineService(...);
+   *   $pagespeedonlineService = new PagespeedonlineService(...);
    *   $pagespeedapi = $pagespeedonlineService->pagespeedapi;
    *  </code>
    */
@@ -43,7 +46,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('runpagespeed', array($params));
       if ($this->useObjects()) {
-        return new Google_Result($data);
+        return new Result($data);
       } else {
         return $data;
       }
@@ -51,7 +54,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Pagespeedonline (v1).
+ * Service definition for Pagespeedonline (v1).
  *
  * <p>
  * Lets you analyze the performance of a web page and get tailored suggestions to make that page faster.
@@ -77,24 +80,24 @@ class PagespeedonlineService extends Service {
     $this->serviceName = 'pagespeedonline';
 
     $client->addService($this->serviceName, $this->version);
-    $this->pagespeedapi = new Google_PagespeedapiServiceResource($this, $this->serviceName, 'pagespeedapi', json_decode('{"methods": {"runpagespeed": {"httpMethod": "GET", "response": {"$ref": "Result"}, "id": "pagespeedonline.pagespeedapi.runpagespeed", "parameters": {"locale": {"type": "string", "location": "query"}, "url": {"required": true, "type": "string", "location": "query"}, "rule": {"repeated": true, "type": "string", "location": "query"}, "strategy": {"enum": ["desktop", "mobile"], "type": "string", "location": "query"}}, "path": "runPagespeed"}}}', true));
+    $this->pagespeedapi = new PagespeedapiServiceResource($this, $this->serviceName, 'pagespeedapi', json_decode('{"methods": {"runpagespeed": {"httpMethod": "GET", "response": {"$ref": "Result"}, "id": "pagespeedonline.pagespeedapi.runpagespeed", "parameters": {"locale": {"type": "string", "location": "query"}, "url": {"required": true, "type": "string", "location": "query"}, "rule": {"repeated": true, "type": "string", "location": "query"}, "strategy": {"enum": ["desktop", "mobile"], "type": "string", "location": "query"}}, "path": "runPagespeed"}}}', true));
 
   }
 }
 
 class Result extends Model {
   public $kind;
-  protected $__formattedResultsType = 'Google_ResultFormattedResults';
+  protected $__formattedResultsType = 'ResultFormattedResults';
   protected $__formattedResultsDataType = '';
   public $formattedResults;
   public $title;
-  protected $__versionType = 'Google_ResultVersion';
+  protected $__versionType = 'ResultVersion';
   protected $__versionDataType = '';
   public $version;
   public $score;
   public $responseCode;
   public $invalidRules;
-  protected $__pageStatsType = 'Google_ResultPageStats';
+  protected $__pageStatsType = 'ResultPageStats';
   protected $__pageStatsDataType = '';
   public $pageStats;
   public $id;
@@ -104,7 +107,7 @@ class Result extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setFormattedResults(Google_ResultFormattedResults $formattedResults) {
+  public function setFormattedResults(ResultFormattedResults $formattedResults) {
     $this->formattedResults = $formattedResults;
   }
   public function getFormattedResults() {
@@ -116,7 +119,7 @@ class Result extends Model {
   public function getTitle() {
     return $this->title;
   }
-  public function setVersion(Google_ResultVersion $version) {
+  public function setVersion(ResultVersion $version) {
     $this->version = $version;
   }
   public function getVersion() {
@@ -134,14 +137,14 @@ class Result extends Model {
   public function getResponseCode() {
     return $this->responseCode;
   }
-  public function setInvalidRules(/* array(Google_string) */ $invalidRules) {
-    $this->assertIsArray($invalidRules, 'Google_string', __METHOD__);
+  public function setInvalidRules(/* array(string) */ $invalidRules) {
+    $this->assertIsArray($invalidRules, 'string', __METHOD__);
     $this->invalidRules = $invalidRules;
   }
   public function getInvalidRules() {
     return $this->invalidRules;
   }
-  public function setPageStats(Google_ResultPageStats $pageStats) {
+  public function setPageStats(ResultPageStats $pageStats) {
     $this->pageStats = $pageStats;
   }
   public function getPageStats() {
@@ -157,7 +160,7 @@ class Result extends Model {
 
 class ResultFormattedResults extends Model {
   public $locale;
-  protected $__ruleResultsType = 'Google_ResultFormattedResultsRuleResults';
+  protected $__ruleResultsType = 'ResultFormattedResultsRuleResults';
   protected $__ruleResultsDataType = 'map';
   public $ruleResults;
   public function setLocale($locale) {
@@ -166,7 +169,7 @@ class ResultFormattedResults extends Model {
   public function getLocale() {
     return $this->locale;
   }
-  public function setRuleResults(Google_ResultFormattedResultsRuleResults $ruleResults) {
+  public function setRuleResults(ResultFormattedResultsRuleResults $ruleResults) {
     $this->ruleResults = $ruleResults;
   }
   public function getRuleResults() {
@@ -176,7 +179,7 @@ class ResultFormattedResults extends Model {
 
 class ResultFormattedResultsRuleResults extends Model {
   public $localizedRuleName;
-  protected $__urlBlocksType = 'Google_ResultFormattedResultsRuleResultsUrlBlocks';
+  protected $__urlBlocksType = 'ResultFormattedResultsRuleResultsUrlBlocks';
   protected $__urlBlocksDataType = 'array';
   public $urlBlocks;
   public $ruleScore;
@@ -187,8 +190,8 @@ class ResultFormattedResultsRuleResults extends Model {
   public function getLocalizedRuleName() {
     return $this->localizedRuleName;
   }
-  public function setUrlBlocks(/* array(Google_ResultFormattedResultsRuleResultsUrlBlocks) */ $urlBlocks) {
-    $this->assertIsArray($urlBlocks, 'Google_ResultFormattedResultsRuleResultsUrlBlocks', __METHOD__);
+  public function setUrlBlocks(/* array(ResultFormattedResultsRuleResultsUrlBlocks) */ $urlBlocks) {
+    $this->assertIsArray($urlBlocks, 'ResultFormattedResultsRuleResultsUrlBlocks', __METHOD__);
     $this->urlBlocks = $urlBlocks;
   }
   public function getUrlBlocks() {
@@ -209,20 +212,20 @@ class ResultFormattedResultsRuleResults extends Model {
 }
 
 class ResultFormattedResultsRuleResultsUrlBlocks extends Model {
-  protected $__headerType = 'Google_ResultFormattedResultsRuleResultsUrlBlocksHeader';
+  protected $__headerType = 'ResultFormattedResultsRuleResultsUrlBlocksHeader';
   protected $__headerDataType = '';
   public $header;
-  protected $__urlsType = 'Google_ResultFormattedResultsRuleResultsUrlBlocksUrls';
+  protected $__urlsType = 'ResultFormattedResultsRuleResultsUrlBlocksUrls';
   protected $__urlsDataType = 'array';
   public $urls;
-  public function setHeader(Google_ResultFormattedResultsRuleResultsUrlBlocksHeader $header) {
+  public function setHeader(ResultFormattedResultsRuleResultsUrlBlocksHeader $header) {
     $this->header = $header;
   }
   public function getHeader() {
     return $this->header;
   }
-  public function setUrls(/* array(Google_ResultFormattedResultsRuleResultsUrlBlocksUrls) */ $urls) {
-    $this->assertIsArray($urls, 'Google_ResultFormattedResultsRuleResultsUrlBlocksUrls', __METHOD__);
+  public function setUrls(/* array(ResultFormattedResultsRuleResultsUrlBlocksUrls) */ $urls) {
+    $this->assertIsArray($urls, 'ResultFormattedResultsRuleResultsUrlBlocksUrls', __METHOD__);
     $this->urls = $urls;
   }
   public function getUrls() {
@@ -231,12 +234,12 @@ class ResultFormattedResultsRuleResultsUrlBlocks extends Model {
 }
 
 class ResultFormattedResultsRuleResultsUrlBlocksHeader extends Model {
-  protected $__argsType = 'Google_ResultFormattedResultsRuleResultsUrlBlocksHeaderArgs';
+  protected $__argsType = 'ResultFormattedResultsRuleResultsUrlBlocksHeaderArgs';
   protected $__argsDataType = 'array';
   public $args;
   public $format;
-  public function setArgs(/* array(Google_ResultFormattedResultsRuleResultsUrlBlocksHeaderArgs) */ $args) {
-    $this->assertIsArray($args, 'Google_ResultFormattedResultsRuleResultsUrlBlocksHeaderArgs', __METHOD__);
+  public function setArgs(/* array(ResultFormattedResultsRuleResultsUrlBlocksHeaderArgs) */ $args) {
+    $this->assertIsArray($args, 'ResultFormattedResultsRuleResultsUrlBlocksHeaderArgs', __METHOD__);
     $this->args = $args;
   }
   public function getArgs() {
@@ -268,20 +271,20 @@ class ResultFormattedResultsRuleResultsUrlBlocksHeaderArgs extends Model {
 }
 
 class ResultFormattedResultsRuleResultsUrlBlocksUrls extends Model {
-  protected $__detailsType = 'Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsDetails';
+  protected $__detailsType = 'ResultFormattedResultsRuleResultsUrlBlocksUrlsDetails';
   protected $__detailsDataType = 'array';
   public $details;
-  protected $__resultType = 'Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsResult';
+  protected $__resultType = 'ResultFormattedResultsRuleResultsUrlBlocksUrlsResult';
   protected $__resultDataType = '';
   public $result;
-  public function setDetails(/* array(Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsDetails) */ $details) {
-    $this->assertIsArray($details, 'Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsDetails', __METHOD__);
+  public function setDetails(/* array(ResultFormattedResultsRuleResultsUrlBlocksUrlsDetails) */ $details) {
+    $this->assertIsArray($details, 'ResultFormattedResultsRuleResultsUrlBlocksUrlsDetails', __METHOD__);
     $this->details = $details;
   }
   public function getDetails() {
     return $this->details;
   }
-  public function setResult(Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsResult $result) {
+  public function setResult(ResultFormattedResultsRuleResultsUrlBlocksUrlsResult $result) {
     $this->result = $result;
   }
   public function getResult() {
@@ -290,12 +293,12 @@ class ResultFormattedResultsRuleResultsUrlBlocksUrls extends Model {
 }
 
 class ResultFormattedResultsRuleResultsUrlBlocksUrlsDetails extends Model {
-  protected $__argsType = 'Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsDetailsArgs';
+  protected $__argsType = 'ResultFormattedResultsRuleResultsUrlBlocksUrlsDetailsArgs';
   protected $__argsDataType = 'array';
   public $args;
   public $format;
-  public function setArgs(/* array(Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsDetailsArgs) */ $args) {
-    $this->assertIsArray($args, 'Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsDetailsArgs', __METHOD__);
+  public function setArgs(/* array(ResultFormattedResultsRuleResultsUrlBlocksUrlsDetailsArgs) */ $args) {
+    $this->assertIsArray($args, 'ResultFormattedResultsRuleResultsUrlBlocksUrlsDetailsArgs', __METHOD__);
     $this->args = $args;
   }
   public function getArgs() {
@@ -327,12 +330,12 @@ class ResultFormattedResultsRuleResultsUrlBlocksUrlsDetailsArgs extends Model {
 }
 
 class ResultFormattedResultsRuleResultsUrlBlocksUrlsResult extends Model {
-  protected $__argsType = 'Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsResultArgs';
+  protected $__argsType = 'ResultFormattedResultsRuleResultsUrlBlocksUrlsResultArgs';
   protected $__argsDataType = 'array';
   public $args;
   public $format;
-  public function setArgs(/* array(Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsResultArgs) */ $args) {
-    $this->assertIsArray($args, 'Google_ResultFormattedResultsRuleResultsUrlBlocksUrlsResultArgs', __METHOD__);
+  public function setArgs(/* array(ResultFormattedResultsRuleResultsUrlBlocksUrlsResultArgs) */ $args) {
+    $this->assertIsArray($args, 'ResultFormattedResultsRuleResultsUrlBlocksUrlsResultArgs', __METHOD__);
     $this->args = $args;
   }
   public function getArgs() {

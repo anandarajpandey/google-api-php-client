@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "votes" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $votes = $moderatorService->votes;
    *  </code>
    */
@@ -38,12 +41,12 @@ use GoogleApi\Client;
      * @opt_param string unauthToken User identifier for unauthenticated usage mode
      * @return Vote
      */
-    public function insert($seriesId, $submissionId, Google_Vote $postBody, $optParams = array()) {
+    public function insert($seriesId, $submissionId, Vote $postBody, $optParams = array()) {
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Vote($data);
+        return new Vote($data);
       } else {
         return $data;
       }
@@ -61,12 +64,12 @@ use GoogleApi\Client;
      * @opt_param string unauthToken User identifier for unauthenticated usage mode
      * @return Vote
      */
-    public function patch($seriesId, $submissionId, Google_Vote $postBody, $optParams = array()) {
+    public function patch($seriesId, $submissionId, Vote $postBody, $optParams = array()) {
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Vote($data);
+        return new Vote($data);
       } else {
         return $data;
       }
@@ -86,7 +89,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_VoteList($data);
+        return new VoteList($data);
       } else {
         return $data;
       }
@@ -104,12 +107,12 @@ use GoogleApi\Client;
      * @opt_param string unauthToken User identifier for unauthenticated usage mode
      * @return Vote
      */
-    public function update($seriesId, $submissionId, Google_Vote $postBody, $optParams = array()) {
+    public function update($seriesId, $submissionId, Vote $postBody, $optParams = array()) {
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Vote($data);
+        return new Vote($data);
       } else {
         return $data;
       }
@@ -131,7 +134,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Vote($data);
+        return new Vote($data);
       } else {
         return $data;
       }
@@ -142,7 +145,7 @@ use GoogleApi\Client;
    * The "responses" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $responses = $moderatorService->responses;
    *  </code>
    */
@@ -163,12 +166,12 @@ use GoogleApi\Client;
      * @opt_param bool anonymous Set to true to mark the new submission as anonymous.
      * @return Submission
      */
-    public function insert($seriesId, $topicId, $parentSubmissionId, Google_Submission $postBody, $optParams = array()) {
+    public function insert($seriesId, $topicId, $parentSubmissionId, Submission $postBody, $optParams = array()) {
       $params = array('seriesId' => $seriesId, 'topicId' => $topicId, 'parentSubmissionId' => $parentSubmissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Submission($data);
+        return new Submission($data);
       } else {
         return $data;
       }
@@ -194,7 +197,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SubmissionList($data);
+        return new SubmissionList($data);
       } else {
         return $data;
       }
@@ -205,7 +208,7 @@ use GoogleApi\Client;
    * The "tags" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $tags = $moderatorService->tags;
    *  </code>
    */
@@ -221,12 +224,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Tag
      */
-    public function insert($seriesId, $submissionId, Google_Tag $postBody, $optParams = array()) {
+    public function insert($seriesId, $submissionId, Tag $postBody, $optParams = array()) {
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Tag($data);
+        return new Tag($data);
       } else {
         return $data;
       }
@@ -244,7 +247,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_TagList($data);
+        return new TagList($data);
       } else {
         return $data;
       }
@@ -270,7 +273,7 @@ use GoogleApi\Client;
    * The "series" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $series = $moderatorService->series;
    *  </code>
    */
@@ -284,12 +287,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Series
      */
-    public function insert(Google_Series $postBody, $optParams = array()) {
+    public function insert(Series $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Series($data);
+        return new Series($data);
       } else {
         return $data;
       }
@@ -302,12 +305,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Series
      */
-    public function patch($seriesId, Google_Series $postBody, $optParams = array()) {
+    public function patch($seriesId, Series $postBody, $optParams = array()) {
       $params = array('seriesId' => $seriesId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Series($data);
+        return new Series($data);
       } else {
         return $data;
       }
@@ -327,7 +330,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SeriesList($data);
+        return new SeriesList($data);
       } else {
         return $data;
       }
@@ -340,12 +343,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Series
      */
-    public function update($seriesId, Google_Series $postBody, $optParams = array()) {
+    public function update($seriesId, Series $postBody, $optParams = array()) {
       $params = array('seriesId' => $seriesId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Series($data);
+        return new Series($data);
       } else {
         return $data;
       }
@@ -362,7 +365,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Series($data);
+        return new Series($data);
       } else {
         return $data;
       }
@@ -373,7 +376,7 @@ use GoogleApi\Client;
    * The "submissions" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $submissions = $moderatorService->submissions;
    *  </code>
    */
@@ -402,7 +405,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SubmissionList($data);
+        return new SubmissionList($data);
       } else {
         return $data;
       }
@@ -412,7 +415,7 @@ use GoogleApi\Client;
    * The "responses" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $responses = $moderatorService->responses;
    *  </code>
    */
@@ -438,7 +441,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SeriesList($data);
+        return new SeriesList($data);
       } else {
         return $data;
       }
@@ -449,7 +452,7 @@ use GoogleApi\Client;
    * The "topics" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $topics = $moderatorService->topics;
    *  </code>
    */
@@ -464,12 +467,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Topic
      */
-    public function insert($seriesId, Google_Topic $postBody, $optParams = array()) {
+    public function insert($seriesId, Topic $postBody, $optParams = array()) {
       $params = array('seriesId' => $seriesId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Topic($data);
+        return new Topic($data);
       } else {
         return $data;
       }
@@ -491,7 +494,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_TopicList($data);
+        return new TopicList($data);
       } else {
         return $data;
       }
@@ -505,12 +508,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Topic
      */
-    public function update($seriesId, $topicId, Google_Topic $postBody, $optParams = array()) {
+    public function update($seriesId, $topicId, Topic $postBody, $optParams = array()) {
       $params = array('seriesId' => $seriesId, 'topicId' => $topicId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Topic($data);
+        return new Topic($data);
       } else {
         return $data;
       }
@@ -528,7 +531,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Topic($data);
+        return new Topic($data);
       } else {
         return $data;
       }
@@ -539,7 +542,7 @@ use GoogleApi\Client;
    * The "submissions" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $submissions = $moderatorService->submissions;
    *  </code>
    */
@@ -568,7 +571,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SubmissionList($data);
+        return new SubmissionList($data);
       } else {
         return $data;
       }
@@ -579,7 +582,7 @@ use GoogleApi\Client;
    * The "global" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $global = $moderatorService->global;
    *  </code>
    */
@@ -592,7 +595,7 @@ use GoogleApi\Client;
    * The "series" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $series = $moderatorService->series;
    *  </code>
    */
@@ -614,7 +617,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SeriesList($data);
+        return new SeriesList($data);
       } else {
         return $data;
       }
@@ -625,7 +628,7 @@ use GoogleApi\Client;
    * The "profiles" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $profiles = $moderatorService->profiles;
    *  </code>
    */
@@ -640,12 +643,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Profile
      */
-    public function patch(Google_Profile $postBody, $optParams = array()) {
+    public function patch(Profile $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Profile($data);
+        return new Profile($data);
       } else {
         return $data;
       }
@@ -657,12 +660,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Profile
      */
-    public function update(Google_Profile $postBody, $optParams = array()) {
+    public function update(Profile $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Profile($data);
+        return new Profile($data);
       } else {
         return $data;
       }
@@ -678,7 +681,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Profile($data);
+        return new Profile($data);
       } else {
         return $data;
       }
@@ -689,7 +692,7 @@ use GoogleApi\Client;
    * The "featured" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $featured = $moderatorService->featured;
    *  </code>
    */
@@ -702,7 +705,7 @@ use GoogleApi\Client;
    * The "series" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $series = $moderatorService->series;
    *  </code>
    */
@@ -720,7 +723,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SeriesList($data);
+        return new SeriesList($data);
       } else {
         return $data;
       }
@@ -731,7 +734,7 @@ use GoogleApi\Client;
    * The "myrecent" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $myrecent = $moderatorService->myrecent;
    *  </code>
    */
@@ -744,7 +747,7 @@ use GoogleApi\Client;
    * The "series" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $series = $moderatorService->series;
    *  </code>
    */
@@ -762,7 +765,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SeriesList($data);
+        return new SeriesList($data);
       } else {
         return $data;
       }
@@ -773,7 +776,7 @@ use GoogleApi\Client;
    * The "my" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $my = $moderatorService->my;
    *  </code>
    */
@@ -786,7 +789,7 @@ use GoogleApi\Client;
    * The "series" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $series = $moderatorService->series;
    *  </code>
    */
@@ -804,7 +807,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SeriesList($data);
+        return new SeriesList($data);
       } else {
         return $data;
       }
@@ -815,7 +818,7 @@ use GoogleApi\Client;
    * The "submissions" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $moderatorService = new Google_ModeratorService(...);
+   *   $moderatorService = new ModeratorService(...);
    *   $submissions = $moderatorService->submissions;
    *  </code>
    */
@@ -834,12 +837,12 @@ use GoogleApi\Client;
      * @opt_param bool anonymous Set to true to mark the new submission as anonymous.
      * @return Submission
      */
-    public function insert($seriesId, $topicId, Google_Submission $postBody, $optParams = array()) {
+    public function insert($seriesId, $topicId, Submission $postBody, $optParams = array()) {
       $params = array('seriesId' => $seriesId, 'topicId' => $topicId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Submission($data);
+        return new Submission($data);
       } else {
         return $data;
       }
@@ -860,7 +863,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Submission($data);
+        return new Submission($data);
       } else {
         return $data;
       }
@@ -868,7 +871,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Moderator (v1).
+ * Service definition for Moderator (v1).
  *
  * <p>
  * Moderator API
@@ -907,29 +910,29 @@ class ModeratorService extends Service {
     $this->serviceName = 'moderator';
 
     $client->addService($this->serviceName, $this->version);
-    $this->votes = new Google_VotesServiceResource($this, $this->serviceName, 'votes', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "unauthToken": {"type": "string", "location": "query"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Vote"}, "response": {"$ref": "Vote"}, "httpMethod": "POST", "path": "series/{seriesId}/submissions/{submissionId}/votes/@me", "id": "moderator.votes.insert"}, "patch": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "userId": {"type": "string", "location": "query"}, "unauthToken": {"type": "string", "location": "query"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Vote"}, "response": {"$ref": "Vote"}, "httpMethod": "PATCH", "path": "series/{seriesId}/submissions/{submissionId}/votes/@me", "id": "moderator.votes.patch"}, "list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}}, "id": "moderator.votes.list", "httpMethod": "GET", "path": "series/{seriesId}/votes/@me", "response": {"$ref": "VoteList"}}, "update": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "userId": {"type": "string", "location": "query"}, "unauthToken": {"type": "string", "location": "query"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Vote"}, "response": {"$ref": "Vote"}, "httpMethod": "PUT", "path": "series/{seriesId}/submissions/{submissionId}/votes/@me", "id": "moderator.votes.update"}, "get": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "userId": {"type": "string", "location": "query"}, "unauthToken": {"type": "string", "location": "query"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "id": "moderator.votes.get", "httpMethod": "GET", "path": "series/{seriesId}/submissions/{submissionId}/votes/@me", "response": {"$ref": "Vote"}}}}', true));
-    $this->responses = new Google_ResponsesServiceResource($this, $this->serviceName, 'responses', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "parentSubmissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "unauthToken": {"type": "string", "location": "query"}, "anonymous": {"type": "boolean", "location": "query"}, "topicId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Submission"}, "response": {"$ref": "Submission"}, "httpMethod": "POST", "path": "series/{seriesId}/topics/{topicId}/submissions/{parentSubmissionId}/responses", "id": "moderator.responses.insert"}, "list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "sort": {"type": "string", "location": "query"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "author": {"type": "string", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "q": {"type": "string", "location": "query"}, "hasAttachedVideo": {"type": "boolean", "location": "query"}}, "id": "moderator.responses.list", "httpMethod": "GET", "path": "series/{seriesId}/submissions/{submissionId}/responses", "response": {"$ref": "SubmissionList"}}}}', true));
-    $this->tags = new Google_TagsServiceResource($this, $this->serviceName, 'tags', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Tag"}, "response": {"$ref": "Tag"}, "httpMethod": "POST", "path": "series/{seriesId}/submissions/{submissionId}/tags", "id": "moderator.tags.insert"}, "list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "id": "moderator.tags.list", "httpMethod": "GET", "path": "series/{seriesId}/submissions/{submissionId}/tags", "response": {"$ref": "TagList"}}, "delete": {"scopes": ["https://www.googleapis.com/auth/moderator"], "path": "series/{seriesId}/submissions/{submissionId}/tags/{tagId}", "id": "moderator.tags.delete", "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "tagId": {"required": true, "type": "string", "location": "path"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "httpMethod": "DELETE"}}}', true));
-    $this->series = new Google_SeriesServiceResource($this, $this->serviceName, 'series', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "request": {"$ref": "Series"}, "response": {"$ref": "Series"}, "httpMethod": "POST", "path": "series", "id": "moderator.series.insert"}, "patch": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Series"}, "response": {"$ref": "Series"}, "httpMethod": "PATCH", "path": "series/{seriesId}", "id": "moderator.series.patch"}, "list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "q": {"type": "string", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}}, "response": {"$ref": "SeriesList"}, "httpMethod": "GET", "path": "series", "id": "moderator.series.list"}, "update": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Series"}, "response": {"$ref": "Series"}, "httpMethod": "PUT", "path": "series/{seriesId}", "id": "moderator.series.update"}, "get": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "id": "moderator.series.get", "httpMethod": "GET", "path": "series/{seriesId}", "response": {"$ref": "Series"}}}}', true));
-    $this->series_submissions = new Google_SeriesSubmissionsServiceResource($this, $this->serviceName, 'submissions', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"lang": {"type": "string", "location": "query"}, "max-results": {"type": "integer", "location": "query", "format": "uint32"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "includeVotes": {"type": "boolean", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}, "author": {"type": "string", "location": "query"}, "sort": {"type": "string", "location": "query"}, "q": {"type": "string", "location": "query"}, "hasAttachedVideo": {"type": "boolean", "location": "query"}}, "id": "moderator.series.submissions.list", "httpMethod": "GET", "path": "series/{seriesId}/submissions", "response": {"$ref": "SubmissionList"}}}}', true));
-    $this->series_responses = new Google_SeriesResponsesServiceResource($this, $this->serviceName, 'responses', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "sort": {"type": "string", "location": "query"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "author": {"type": "string", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}, "q": {"type": "string", "location": "query"}, "hasAttachedVideo": {"type": "boolean", "location": "query"}}, "id": "moderator.series.responses.list", "httpMethod": "GET", "path": "series/{seriesId}/responses", "response": {"$ref": "SeriesList"}}}}', true));
-    $this->topics = new Google_TopicsServiceResource($this, $this->serviceName, 'topics', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Topic"}, "response": {"$ref": "Topic"}, "httpMethod": "POST", "path": "series/{seriesId}/topics", "id": "moderator.topics.insert"}, "list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "q": {"type": "string", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}, "mode": {"type": "string", "location": "query"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "id": "moderator.topics.list", "httpMethod": "GET", "path": "series/{seriesId}/topics", "response": {"$ref": "TopicList"}}, "update": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "topicId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Topic"}, "response": {"$ref": "Topic"}, "httpMethod": "PUT", "path": "series/{seriesId}/topics/{topicId}", "id": "moderator.topics.update"}, "get": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "topicId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "id": "moderator.topics.get", "httpMethod": "GET", "path": "series/{seriesId}/topics/{topicId}", "response": {"$ref": "Topic"}}}}', true));
-    $this->topics_submissions = new Google_TopicsSubmissionsServiceResource($this, $this->serviceName, 'submissions', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "includeVotes": {"type": "boolean", "location": "query"}, "topicId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}, "author": {"type": "string", "location": "query"}, "sort": {"type": "string", "location": "query"}, "q": {"type": "string", "location": "query"}, "hasAttachedVideo": {"type": "boolean", "location": "query"}}, "id": "moderator.topics.submissions.list", "httpMethod": "GET", "path": "series/{seriesId}/topics/{topicId}/submissions", "response": {"$ref": "SubmissionList"}}}}', true));
-    $this->global_series = new Google_ModeratorGlobalSeriesServiceResource($this, $this->serviceName, 'series', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "q": {"type": "string", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}}, "response": {"$ref": "SeriesList"}, "httpMethod": "GET", "path": "search", "id": "moderator.global.series.list"}}}', true));
-    $this->profiles = new Google_ProfilesServiceResource($this, $this->serviceName, 'profiles', json_decode('{"methods": {"patch": {"scopes": ["https://www.googleapis.com/auth/moderator"], "request": {"$ref": "Profile"}, "response": {"$ref": "Profile"}, "httpMethod": "PATCH", "path": "profiles/@me", "id": "moderator.profiles.patch"}, "update": {"scopes": ["https://www.googleapis.com/auth/moderator"], "request": {"$ref": "Profile"}, "response": {"$ref": "Profile"}, "httpMethod": "PUT", "path": "profiles/@me", "id": "moderator.profiles.update"}, "get": {"scopes": ["https://www.googleapis.com/auth/moderator"], "path": "profiles/@me", "response": {"$ref": "Profile"}, "id": "moderator.profiles.get", "httpMethod": "GET"}}}', true));
-    $this->featured_series = new Google_FeaturedSeriesServiceResource($this, $this->serviceName, 'series', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "path": "series/featured", "response": {"$ref": "SeriesList"}, "id": "moderator.featured.series.list", "httpMethod": "GET"}}}', true));
-    $this->myrecent_series = new Google_MyrecentSeriesServiceResource($this, $this->serviceName, 'series', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "path": "series/@me/recent", "response": {"$ref": "SeriesList"}, "id": "moderator.myrecent.series.list", "httpMethod": "GET"}}}', true));
-    $this->my_series = new Google_MySeriesServiceResource($this, $this->serviceName, 'series', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "path": "series/@me/mine", "response": {"$ref": "SeriesList"}, "id": "moderator.my.series.list", "httpMethod": "GET"}}}', true));
-    $this->submissions = new Google_SubmissionsServiceResource($this, $this->serviceName, 'submissions', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "topicId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "unauthToken": {"type": "string", "location": "query"}, "anonymous": {"type": "boolean", "location": "query"}}, "request": {"$ref": "Submission"}, "response": {"$ref": "Submission"}, "httpMethod": "POST", "path": "series/{seriesId}/topics/{topicId}/submissions", "id": "moderator.submissions.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"lang": {"type": "string", "location": "query"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "includeVotes": {"type": "boolean", "location": "query"}}, "id": "moderator.submissions.get", "httpMethod": "GET", "path": "series/{seriesId}/submissions/{submissionId}", "response": {"$ref": "Submission"}}}}', true));
+    $this->votes = new VotesServiceResource($this, $this->serviceName, 'votes', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "unauthToken": {"type": "string", "location": "query"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Vote"}, "response": {"$ref": "Vote"}, "httpMethod": "POST", "path": "series/{seriesId}/submissions/{submissionId}/votes/@me", "id": "moderator.votes.insert"}, "patch": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "userId": {"type": "string", "location": "query"}, "unauthToken": {"type": "string", "location": "query"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Vote"}, "response": {"$ref": "Vote"}, "httpMethod": "PATCH", "path": "series/{seriesId}/submissions/{submissionId}/votes/@me", "id": "moderator.votes.patch"}, "list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}}, "id": "moderator.votes.list", "httpMethod": "GET", "path": "series/{seriesId}/votes/@me", "response": {"$ref": "VoteList"}}, "update": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "userId": {"type": "string", "location": "query"}, "unauthToken": {"type": "string", "location": "query"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Vote"}, "response": {"$ref": "Vote"}, "httpMethod": "PUT", "path": "series/{seriesId}/submissions/{submissionId}/votes/@me", "id": "moderator.votes.update"}, "get": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "userId": {"type": "string", "location": "query"}, "unauthToken": {"type": "string", "location": "query"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "id": "moderator.votes.get", "httpMethod": "GET", "path": "series/{seriesId}/submissions/{submissionId}/votes/@me", "response": {"$ref": "Vote"}}}}', true));
+    $this->responses = new ResponsesServiceResource($this, $this->serviceName, 'responses', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "parentSubmissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "unauthToken": {"type": "string", "location": "query"}, "anonymous": {"type": "boolean", "location": "query"}, "topicId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Submission"}, "response": {"$ref": "Submission"}, "httpMethod": "POST", "path": "series/{seriesId}/topics/{topicId}/submissions/{parentSubmissionId}/responses", "id": "moderator.responses.insert"}, "list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "sort": {"type": "string", "location": "query"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "author": {"type": "string", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "q": {"type": "string", "location": "query"}, "hasAttachedVideo": {"type": "boolean", "location": "query"}}, "id": "moderator.responses.list", "httpMethod": "GET", "path": "series/{seriesId}/submissions/{submissionId}/responses", "response": {"$ref": "SubmissionList"}}}}', true));
+    $this->tags = new TagsServiceResource($this, $this->serviceName, 'tags', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Tag"}, "response": {"$ref": "Tag"}, "httpMethod": "POST", "path": "series/{seriesId}/submissions/{submissionId}/tags", "id": "moderator.tags.insert"}, "list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "id": "moderator.tags.list", "httpMethod": "GET", "path": "series/{seriesId}/submissions/{submissionId}/tags", "response": {"$ref": "TagList"}}, "delete": {"scopes": ["https://www.googleapis.com/auth/moderator"], "path": "series/{seriesId}/submissions/{submissionId}/tags/{tagId}", "id": "moderator.tags.delete", "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "tagId": {"required": true, "type": "string", "location": "path"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "httpMethod": "DELETE"}}}', true));
+    $this->series = new SeriesServiceResource($this, $this->serviceName, 'series', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "request": {"$ref": "Series"}, "response": {"$ref": "Series"}, "httpMethod": "POST", "path": "series", "id": "moderator.series.insert"}, "patch": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Series"}, "response": {"$ref": "Series"}, "httpMethod": "PATCH", "path": "series/{seriesId}", "id": "moderator.series.patch"}, "list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "q": {"type": "string", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}}, "response": {"$ref": "SeriesList"}, "httpMethod": "GET", "path": "series", "id": "moderator.series.list"}, "update": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Series"}, "response": {"$ref": "Series"}, "httpMethod": "PUT", "path": "series/{seriesId}", "id": "moderator.series.update"}, "get": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "id": "moderator.series.get", "httpMethod": "GET", "path": "series/{seriesId}", "response": {"$ref": "Series"}}}}', true));
+    $this->series_submissions = new SeriesSubmissionsServiceResource($this, $this->serviceName, 'submissions', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"lang": {"type": "string", "location": "query"}, "max-results": {"type": "integer", "location": "query", "format": "uint32"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "includeVotes": {"type": "boolean", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}, "author": {"type": "string", "location": "query"}, "sort": {"type": "string", "location": "query"}, "q": {"type": "string", "location": "query"}, "hasAttachedVideo": {"type": "boolean", "location": "query"}}, "id": "moderator.series.submissions.list", "httpMethod": "GET", "path": "series/{seriesId}/submissions", "response": {"$ref": "SubmissionList"}}}}', true));
+    $this->series_responses = new SeriesResponsesServiceResource($this, $this->serviceName, 'responses', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "sort": {"type": "string", "location": "query"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "author": {"type": "string", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}, "q": {"type": "string", "location": "query"}, "hasAttachedVideo": {"type": "boolean", "location": "query"}}, "id": "moderator.series.responses.list", "httpMethod": "GET", "path": "series/{seriesId}/responses", "response": {"$ref": "SeriesList"}}}}', true));
+    $this->topics = new TopicsServiceResource($this, $this->serviceName, 'topics', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Topic"}, "response": {"$ref": "Topic"}, "httpMethod": "POST", "path": "series/{seriesId}/topics", "id": "moderator.topics.insert"}, "list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "q": {"type": "string", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}, "mode": {"type": "string", "location": "query"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "id": "moderator.topics.list", "httpMethod": "GET", "path": "series/{seriesId}/topics", "response": {"$ref": "TopicList"}}, "update": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "topicId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "request": {"$ref": "Topic"}, "response": {"$ref": "Topic"}, "httpMethod": "PUT", "path": "series/{seriesId}/topics/{topicId}", "id": "moderator.topics.update"}, "get": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "topicId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}}, "id": "moderator.topics.get", "httpMethod": "GET", "path": "series/{seriesId}/topics/{topicId}", "response": {"$ref": "Topic"}}}}', true));
+    $this->topics_submissions = new TopicsSubmissionsServiceResource($this, $this->serviceName, 'submissions', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "includeVotes": {"type": "boolean", "location": "query"}, "topicId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}, "author": {"type": "string", "location": "query"}, "sort": {"type": "string", "location": "query"}, "q": {"type": "string", "location": "query"}, "hasAttachedVideo": {"type": "boolean", "location": "query"}}, "id": "moderator.topics.submissions.list", "httpMethod": "GET", "path": "series/{seriesId}/topics/{topicId}/submissions", "response": {"$ref": "SubmissionList"}}}}', true));
+    $this->global_series = new ModeratorGlobalSeriesServiceResource($this, $this->serviceName, 'series', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"max-results": {"type": "integer", "location": "query", "format": "uint32"}, "q": {"type": "string", "location": "query"}, "start-index": {"type": "integer", "location": "query", "format": "uint32"}}, "response": {"$ref": "SeriesList"}, "httpMethod": "GET", "path": "search", "id": "moderator.global.series.list"}}}', true));
+    $this->profiles = new ProfilesServiceResource($this, $this->serviceName, 'profiles', json_decode('{"methods": {"patch": {"scopes": ["https://www.googleapis.com/auth/moderator"], "request": {"$ref": "Profile"}, "response": {"$ref": "Profile"}, "httpMethod": "PATCH", "path": "profiles/@me", "id": "moderator.profiles.patch"}, "update": {"scopes": ["https://www.googleapis.com/auth/moderator"], "request": {"$ref": "Profile"}, "response": {"$ref": "Profile"}, "httpMethod": "PUT", "path": "profiles/@me", "id": "moderator.profiles.update"}, "get": {"scopes": ["https://www.googleapis.com/auth/moderator"], "path": "profiles/@me", "response": {"$ref": "Profile"}, "id": "moderator.profiles.get", "httpMethod": "GET"}}}', true));
+    $this->featured_series = new FeaturedSeriesServiceResource($this, $this->serviceName, 'series', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "path": "series/featured", "response": {"$ref": "SeriesList"}, "id": "moderator.featured.series.list", "httpMethod": "GET"}}}', true));
+    $this->myrecent_series = new MyrecentSeriesServiceResource($this, $this->serviceName, 'series', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "path": "series/@me/recent", "response": {"$ref": "SeriesList"}, "id": "moderator.myrecent.series.list", "httpMethod": "GET"}}}', true));
+    $this->my_series = new MySeriesServiceResource($this, $this->serviceName, 'series', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/moderator"], "path": "series/@me/mine", "response": {"$ref": "SeriesList"}, "id": "moderator.my.series.list", "httpMethod": "GET"}}}', true));
+    $this->submissions = new SubmissionsServiceResource($this, $this->serviceName, 'submissions', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "topicId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "unauthToken": {"type": "string", "location": "query"}, "anonymous": {"type": "boolean", "location": "query"}}, "request": {"$ref": "Submission"}, "response": {"$ref": "Submission"}, "httpMethod": "POST", "path": "series/{seriesId}/topics/{topicId}/submissions", "id": "moderator.submissions.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/moderator"], "parameters": {"lang": {"type": "string", "location": "query"}, "seriesId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "submissionId": {"required": true, "type": "integer", "location": "path", "format": "uint32"}, "includeVotes": {"type": "boolean", "location": "query"}}, "id": "moderator.submissions.get", "httpMethod": "GET", "path": "series/{seriesId}/submissions/{submissionId}", "response": {"$ref": "Submission"}}}}', true));
 
   }
 }
 
 class ModeratorTopicsResourcePartial extends Model {
-  protected $__idType = 'Google_ModeratorTopicsResourcePartialId';
+  protected $__idType = 'ModeratorTopicsResourcePartialId';
   protected $__idDataType = '';
   public $id;
-  public function setId(Google_ModeratorTopicsResourcePartialId $id) {
+  public function setId(ModeratorTopicsResourcePartialId $id) {
     $this->id = $id;
   }
   public function getId() {
@@ -973,10 +976,10 @@ class ModeratorVotesResourcePartial extends Model {
 
 class Profile extends Model {
   public $kind;
-  protected $__attributionType = 'Google_ProfileAttribution';
+  protected $__attributionType = 'ProfileAttribution';
   protected $__attributionDataType = '';
   public $attribution;
-  protected $__idType = 'Google_ProfileId';
+  protected $__idType = 'ProfileId';
   protected $__idDataType = '';
   public $id;
   public function setKind($kind) {
@@ -985,13 +988,13 @@ class Profile extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setAttribution(Google_ProfileAttribution $attribution) {
+  public function setAttribution(ProfileAttribution $attribution) {
     $this->attribution = $attribution;
   }
   public function getAttribution() {
     return $this->attribution;
   }
-  public function setId(Google_ProfileId $id) {
+  public function setId(ProfileId $id) {
     $this->id = $id;
   }
   public function getId() {
@@ -1000,13 +1003,13 @@ class Profile extends Model {
 }
 
 class ProfileAttribution extends Model {
-  protected $__geoType = 'Google_ProfileAttributionGeo';
+  protected $__geoType = 'ProfileAttributionGeo';
   protected $__geoDataType = '';
   public $geo;
   public $displayName;
   public $location;
   public $avatarUrl;
-  public function setGeo(Google_ProfileAttributionGeo $geo) {
+  public function setGeo(ProfileAttributionGeo $geo) {
     $this->geo = $geo;
   }
   public function getGeo() {
@@ -1069,7 +1072,7 @@ class ProfileId extends Model {
 class Series extends Model {
   public $kind;
   public $description;
-  protected $__rulesType = 'Google_SeriesRules';
+  protected $__rulesType = 'SeriesRules';
   protected $__rulesDataType = '';
   public $rules;
   public $unauthVotingAllowed;
@@ -1078,10 +1081,10 @@ class Series extends Model {
   public $numTopics;
   public $anonymousSubmissionAllowed;
   public $unauthSubmissionAllowed;
-  protected $__idType = 'Google_SeriesId';
+  protected $__idType = 'SeriesId';
   protected $__idDataType = '';
   public $id;
-  protected $__countersType = 'Google_SeriesCounters';
+  protected $__countersType = 'SeriesCounters';
   protected $__countersDataType = '';
   public $counters;
   public function setKind($kind) {
@@ -1096,7 +1099,7 @@ class Series extends Model {
   public function getDescription() {
     return $this->description;
   }
-  public function setRules(Google_SeriesRules $rules) {
+  public function setRules(SeriesRules $rules) {
     $this->rules = $rules;
   }
   public function getRules() {
@@ -1138,13 +1141,13 @@ class Series extends Model {
   public function getUnauthSubmissionAllowed() {
     return $this->unauthSubmissionAllowed;
   }
-  public function setId(Google_SeriesId $id) {
+  public function setId(SeriesId $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setCounters(Google_SeriesCounters $counters) {
+  public function setCounters(SeriesCounters $counters) {
     $this->counters = $counters;
   }
   public function getCounters() {
@@ -1215,12 +1218,12 @@ class SeriesId extends Model {
 }
 
 class SeriesList extends Model {
-  protected $__itemsType = 'Google_Series';
+  protected $__itemsType = 'Series';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Series) */ $items) {
-    $this->assertIsArray($items, 'Google_Series', __METHOD__);
+  public function setItems(/* array(Series) */ $items) {
+    $this->assertIsArray($items, 'Series', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1235,19 +1238,19 @@ class SeriesList extends Model {
 }
 
 class SeriesRules extends Model {
-  protected $__votesType = 'Google_SeriesRulesVotes';
+  protected $__votesType = 'SeriesRulesVotes';
   protected $__votesDataType = '';
   public $votes;
-  protected $__submissionsType = 'Google_SeriesRulesSubmissions';
+  protected $__submissionsType = 'SeriesRulesSubmissions';
   protected $__submissionsDataType = '';
   public $submissions;
-  public function setVotes(Google_SeriesRulesVotes $votes) {
+  public function setVotes(SeriesRulesVotes $votes) {
     $this->votes = $votes;
   }
   public function getVotes() {
     return $this->votes;
   }
-  public function setSubmissions(Google_SeriesRulesSubmissions $submissions) {
+  public function setSubmissions(SeriesRulesSubmissions $submissions) {
     $this->submissions = $submissions;
   }
   public function getSubmissions() {
@@ -1291,32 +1294,32 @@ class SeriesRulesVotes extends Model {
 
 class Submission extends Model {
   public $kind;
-  protected $__attributionType = 'Google_SubmissionAttribution';
+  protected $__attributionType = 'SubmissionAttribution';
   protected $__attributionDataType = '';
   public $attribution;
   public $created;
   public $text;
-  protected $__topicsType = 'Google_ModeratorTopicsResourcePartial';
+  protected $__topicsType = 'ModeratorTopicsResourcePartial';
   protected $__topicsDataType = 'array';
   public $topics;
   public $author;
-  protected $__translationsType = 'Google_SubmissionTranslations';
+  protected $__translationsType = 'SubmissionTranslations';
   protected $__translationsDataType = 'array';
   public $translations;
-  protected $__parentSubmissionIdType = 'Google_SubmissionParentSubmissionId';
+  protected $__parentSubmissionIdType = 'SubmissionParentSubmissionId';
   protected $__parentSubmissionIdDataType = '';
   public $parentSubmissionId;
-  protected $__voteType = 'Google_ModeratorVotesResourcePartial';
+  protected $__voteType = 'ModeratorVotesResourcePartial';
   protected $__voteDataType = '';
   public $vote;
   public $attachmentUrl;
-  protected $__geoType = 'Google_SubmissionGeo';
+  protected $__geoType = 'SubmissionGeo';
   protected $__geoDataType = '';
   public $geo;
-  protected $__idType = 'Google_SubmissionId';
+  protected $__idType = 'SubmissionId';
   protected $__idDataType = '';
   public $id;
-  protected $__countersType = 'Google_SubmissionCounters';
+  protected $__countersType = 'SubmissionCounters';
   protected $__countersDataType = '';
   public $counters;
   public function setKind($kind) {
@@ -1325,7 +1328,7 @@ class Submission extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setAttribution(Google_SubmissionAttribution $attribution) {
+  public function setAttribution(SubmissionAttribution $attribution) {
     $this->attribution = $attribution;
   }
   public function getAttribution() {
@@ -1343,8 +1346,8 @@ class Submission extends Model {
   public function getText() {
     return $this->text;
   }
-  public function setTopics(/* array(Google_ModeratorTopicsResourcePartial) */ $topics) {
-    $this->assertIsArray($topics, 'Google_ModeratorTopicsResourcePartial', __METHOD__);
+  public function setTopics(/* array(ModeratorTopicsResourcePartial) */ $topics) {
+    $this->assertIsArray($topics, 'ModeratorTopicsResourcePartial', __METHOD__);
     $this->topics = $topics;
   }
   public function getTopics() {
@@ -1356,20 +1359,20 @@ class Submission extends Model {
   public function getAuthor() {
     return $this->author;
   }
-  public function setTranslations(/* array(Google_SubmissionTranslations) */ $translations) {
-    $this->assertIsArray($translations, 'Google_SubmissionTranslations', __METHOD__);
+  public function setTranslations(/* array(SubmissionTranslations) */ $translations) {
+    $this->assertIsArray($translations, 'SubmissionTranslations', __METHOD__);
     $this->translations = $translations;
   }
   public function getTranslations() {
     return $this->translations;
   }
-  public function setParentSubmissionId(Google_SubmissionParentSubmissionId $parentSubmissionId) {
+  public function setParentSubmissionId(SubmissionParentSubmissionId $parentSubmissionId) {
     $this->parentSubmissionId = $parentSubmissionId;
   }
   public function getParentSubmissionId() {
     return $this->parentSubmissionId;
   }
-  public function setVote(Google_ModeratorVotesResourcePartial $vote) {
+  public function setVote(ModeratorVotesResourcePartial $vote) {
     $this->vote = $vote;
   }
   public function getVote() {
@@ -1381,19 +1384,19 @@ class Submission extends Model {
   public function getAttachmentUrl() {
     return $this->attachmentUrl;
   }
-  public function setGeo(Google_SubmissionGeo $geo) {
+  public function setGeo(SubmissionGeo $geo) {
     $this->geo = $geo;
   }
   public function getGeo() {
     return $this->geo;
   }
-  public function setId(Google_SubmissionId $id) {
+  public function setId(SubmissionId $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setCounters(Google_SubmissionCounters $counters) {
+  public function setCounters(SubmissionCounters $counters) {
     $this->counters = $counters;
   }
   public function getCounters() {
@@ -1491,12 +1494,12 @@ class SubmissionId extends Model {
 }
 
 class SubmissionList extends Model {
-  protected $__itemsType = 'Google_Submission';
+  protected $__itemsType = 'Submission';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Submission) */ $items) {
-    $this->assertIsArray($items, 'Google_Submission', __METHOD__);
+  public function setItems(/* array(Submission) */ $items) {
+    $this->assertIsArray($items, 'Submission', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1547,7 +1550,7 @@ class SubmissionTranslations extends Model {
 class Tag extends Model {
   public $text;
   public $kind;
-  protected $__idType = 'Google_TagId';
+  protected $__idType = 'TagId';
   protected $__idDataType = '';
   public $id;
   public function setText($text) {
@@ -1562,7 +1565,7 @@ class Tag extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setId(Google_TagId $id) {
+  public function setId(TagId $id) {
     $this->id = $id;
   }
   public function getId() {
@@ -1595,12 +1598,12 @@ class TagId extends Model {
 }
 
 class TagList extends Model {
-  protected $__itemsType = 'Google_Tag';
+  protected $__itemsType = 'Tag';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Tag) */ $items) {
-    $this->assertIsArray($items, 'Google_Tag', __METHOD__);
+  public function setItems(/* array(Tag) */ $items) {
+    $this->assertIsArray($items, 'Tag', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1617,17 +1620,17 @@ class TagList extends Model {
 class Topic extends Model {
   public $kind;
   public $description;
-  protected $__rulesType = 'Google_TopicRules';
+  protected $__rulesType = 'TopicRules';
   protected $__rulesDataType = '';
   public $rules;
-  protected $__featuredSubmissionType = 'Google_Submission';
+  protected $__featuredSubmissionType = 'Submission';
   protected $__featuredSubmissionDataType = '';
   public $featuredSubmission;
   public $presenter;
-  protected $__countersType = 'Google_TopicCounters';
+  protected $__countersType = 'TopicCounters';
   protected $__countersDataType = '';
   public $counters;
-  protected $__idType = 'Google_TopicId';
+  protected $__idType = 'TopicId';
   protected $__idDataType = '';
   public $id;
   public $name;
@@ -1643,13 +1646,13 @@ class Topic extends Model {
   public function getDescription() {
     return $this->description;
   }
-  public function setRules(Google_TopicRules $rules) {
+  public function setRules(TopicRules $rules) {
     $this->rules = $rules;
   }
   public function getRules() {
     return $this->rules;
   }
-  public function setFeaturedSubmission(Google_Submission $featuredSubmission) {
+  public function setFeaturedSubmission(Submission $featuredSubmission) {
     $this->featuredSubmission = $featuredSubmission;
   }
   public function getFeaturedSubmission() {
@@ -1661,13 +1664,13 @@ class Topic extends Model {
   public function getPresenter() {
     return $this->presenter;
   }
-  public function setCounters(Google_TopicCounters $counters) {
+  public function setCounters(TopicCounters $counters) {
     $this->counters = $counters;
   }
   public function getCounters() {
     return $this->counters;
   }
-  public function setId(Google_TopicId $id) {
+  public function setId(TopicId $id) {
     $this->id = $id;
   }
   public function getId() {
@@ -1744,12 +1747,12 @@ class TopicId extends Model {
 }
 
 class TopicList extends Model {
-  protected $__itemsType = 'Google_Topic';
+  protected $__itemsType = 'Topic';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Topic) */ $items) {
-    $this->assertIsArray($items, 'Google_Topic', __METHOD__);
+  public function setItems(/* array(Topic) */ $items) {
+    $this->assertIsArray($items, 'Topic', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1764,19 +1767,19 @@ class TopicList extends Model {
 }
 
 class TopicRules extends Model {
-  protected $__votesType = 'Google_TopicRulesVotes';
+  protected $__votesType = 'TopicRulesVotes';
   protected $__votesDataType = '';
   public $votes;
-  protected $__submissionsType = 'Google_TopicRulesSubmissions';
+  protected $__submissionsType = 'TopicRulesSubmissions';
   protected $__submissionsDataType = '';
   public $submissions;
-  public function setVotes(Google_TopicRulesVotes $votes) {
+  public function setVotes(TopicRulesVotes $votes) {
     $this->votes = $votes;
   }
   public function getVotes() {
     return $this->votes;
   }
-  public function setSubmissions(Google_TopicRulesSubmissions $submissions) {
+  public function setSubmissions(TopicRulesSubmissions $submissions) {
     $this->submissions = $submissions;
   }
   public function getSubmissions() {
@@ -1821,7 +1824,7 @@ class TopicRulesVotes extends Model {
 class Vote extends Model {
   public $vote;
   public $flag;
-  protected $__idType = 'Google_VoteId';
+  protected $__idType = 'VoteId';
   protected $__idDataType = '';
   public $id;
   public $kind;
@@ -1837,7 +1840,7 @@ class Vote extends Model {
   public function getFlag() {
     return $this->flag;
   }
-  public function setId(Google_VoteId $id) {
+  public function setId(VoteId $id) {
     $this->id = $id;
   }
   public function getId() {
@@ -1869,12 +1872,12 @@ class VoteId extends Model {
 }
 
 class VoteList extends Model {
-  protected $__itemsType = 'Google_Vote';
+  protected $__itemsType = 'Vote';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Vote) */ $items) {
-    $this->assertIsArray($items, 'Google_Vote', __METHOD__);
+  public function setItems(/* array(Vote) */ $items) {
+    $this->assertIsArray($items, 'Vote', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {

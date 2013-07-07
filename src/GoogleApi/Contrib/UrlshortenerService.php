@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "url" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $urlshortenerService = new Google_UrlshortenerService(...);
+   *   $urlshortenerService = new UrlshortenerService(...);
    *   $url = $urlshortenerService->url;
    *  </code>
    */
@@ -33,12 +36,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Url
      */
-    public function insert(Google_Url $postBody, $optParams = array()) {
+    public function insert(Url $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Url($data);
+        return new Url($data);
       } else {
         return $data;
       }
@@ -57,7 +60,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_UrlHistory($data);
+        return new UrlHistory($data);
       } else {
         return $data;
       }
@@ -76,7 +79,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Url($data);
+        return new Url($data);
       } else {
         return $data;
       }
@@ -84,7 +87,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Urlshortener (v1).
+ * Service definition for Urlshortener (v1).
  *
  * <p>
  * Lets you create, inspect, and manage goo.gl short URLs
@@ -110,23 +113,23 @@ class UrlshortenerService extends Service {
     $this->serviceName = 'urlshortener';
 
     $client->addService($this->serviceName, $this->version);
-    $this->url = new Google_UrlServiceResource($this, $this->serviceName, 'url', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/urlshortener"], "request": {"$ref": "Url"}, "response": {"$ref": "Url"}, "httpMethod": "POST", "path": "url", "id": "urlshortener.url.insert"}, "list": {"scopes": ["https://www.googleapis.com/auth/urlshortener"], "parameters": {"start-token": {"type": "string", "location": "query"}, "projection": {"enum": ["ANALYTICS_CLICKS", "FULL"], "type": "string", "location": "query"}}, "response": {"$ref": "UrlHistory"}, "httpMethod": "GET", "path": "url/history", "id": "urlshortener.url.list"}, "get": {"httpMethod": "GET", "response": {"$ref": "Url"}, "id": "urlshortener.url.get", "parameters": {"shortUrl": {"required": true, "type": "string", "location": "query"}, "projection": {"enum": ["ANALYTICS_CLICKS", "ANALYTICS_TOP_STRINGS", "FULL"], "type": "string", "location": "query"}}, "path": "url"}}}', true));
+    $this->url = new UrlServiceResource($this, $this->serviceName, 'url', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/urlshortener"], "request": {"$ref": "Url"}, "response": {"$ref": "Url"}, "httpMethod": "POST", "path": "url", "id": "urlshortener.url.insert"}, "list": {"scopes": ["https://www.googleapis.com/auth/urlshortener"], "parameters": {"start-token": {"type": "string", "location": "query"}, "projection": {"enum": ["ANALYTICS_CLICKS", "FULL"], "type": "string", "location": "query"}}, "response": {"$ref": "UrlHistory"}, "httpMethod": "GET", "path": "url/history", "id": "urlshortener.url.list"}, "get": {"httpMethod": "GET", "response": {"$ref": "Url"}, "id": "urlshortener.url.get", "parameters": {"shortUrl": {"required": true, "type": "string", "location": "query"}, "projection": {"enum": ["ANALYTICS_CLICKS", "ANALYTICS_TOP_STRINGS", "FULL"], "type": "string", "location": "query"}}, "path": "url"}}}', true));
 
   }
 }
 
 class AnalyticsSnapshot extends Model {
   public $shortUrlClicks;
-  protected $__countriesType = 'Google_StringCount';
+  protected $__countriesType = 'StringCount';
   protected $__countriesDataType = 'array';
   public $countries;
-  protected $__platformsType = 'Google_StringCount';
+  protected $__platformsType = 'StringCount';
   protected $__platformsDataType = 'array';
   public $platforms;
-  protected $__browsersType = 'Google_StringCount';
+  protected $__browsersType = 'StringCount';
   protected $__browsersDataType = 'array';
   public $browsers;
-  protected $__referrersType = 'Google_StringCount';
+  protected $__referrersType = 'StringCount';
   protected $__referrersDataType = 'array';
   public $referrers;
   public $longUrlClicks;
@@ -136,29 +139,29 @@ class AnalyticsSnapshot extends Model {
   public function getShortUrlClicks() {
     return $this->shortUrlClicks;
   }
-  public function setCountries(/* array(Google_StringCount) */ $countries) {
-    $this->assertIsArray($countries, 'Google_StringCount', __METHOD__);
+  public function setCountries(/* array(StringCount) */ $countries) {
+    $this->assertIsArray($countries, 'StringCount', __METHOD__);
     $this->countries = $countries;
   }
   public function getCountries() {
     return $this->countries;
   }
-  public function setPlatforms(/* array(Google_StringCount) */ $platforms) {
-    $this->assertIsArray($platforms, 'Google_StringCount', __METHOD__);
+  public function setPlatforms(/* array(StringCount) */ $platforms) {
+    $this->assertIsArray($platforms, 'StringCount', __METHOD__);
     $this->platforms = $platforms;
   }
   public function getPlatforms() {
     return $this->platforms;
   }
-  public function setBrowsers(/* array(Google_StringCount) */ $browsers) {
-    $this->assertIsArray($browsers, 'Google_StringCount', __METHOD__);
+  public function setBrowsers(/* array(StringCount) */ $browsers) {
+    $this->assertIsArray($browsers, 'StringCount', __METHOD__);
     $this->browsers = $browsers;
   }
   public function getBrowsers() {
     return $this->browsers;
   }
-  public function setReferrers(/* array(Google_StringCount) */ $referrers) {
-    $this->assertIsArray($referrers, 'Google_StringCount', __METHOD__);
+  public function setReferrers(/* array(StringCount) */ $referrers) {
+    $this->assertIsArray($referrers, 'StringCount', __METHOD__);
     $this->referrers = $referrers;
   }
   public function getReferrers() {
@@ -173,46 +176,46 @@ class AnalyticsSnapshot extends Model {
 }
 
 class AnalyticsSummary extends Model {
-  protected $__weekType = 'Google_AnalyticsSnapshot';
+  protected $__weekType = 'AnalyticsSnapshot';
   protected $__weekDataType = '';
   public $week;
-  protected $__allTimeType = 'Google_AnalyticsSnapshot';
+  protected $__allTimeType = 'AnalyticsSnapshot';
   protected $__allTimeDataType = '';
   public $allTime;
-  protected $__twoHoursType = 'Google_AnalyticsSnapshot';
+  protected $__twoHoursType = 'AnalyticsSnapshot';
   protected $__twoHoursDataType = '';
   public $twoHours;
-  protected $__dayType = 'Google_AnalyticsSnapshot';
+  protected $__dayType = 'AnalyticsSnapshot';
   protected $__dayDataType = '';
   public $day;
-  protected $__monthType = 'Google_AnalyticsSnapshot';
+  protected $__monthType = 'AnalyticsSnapshot';
   protected $__monthDataType = '';
   public $month;
-  public function setWeek(Google_AnalyticsSnapshot $week) {
+  public function setWeek(AnalyticsSnapshot $week) {
     $this->week = $week;
   }
   public function getWeek() {
     return $this->week;
   }
-  public function setAllTime(Google_AnalyticsSnapshot $allTime) {
+  public function setAllTime(AnalyticsSnapshot $allTime) {
     $this->allTime = $allTime;
   }
   public function getAllTime() {
     return $this->allTime;
   }
-  public function setTwoHours(Google_AnalyticsSnapshot $twoHours) {
+  public function setTwoHours(AnalyticsSnapshot $twoHours) {
     $this->twoHours = $twoHours;
   }
   public function getTwoHours() {
     return $this->twoHours;
   }
-  public function setDay(Google_AnalyticsSnapshot $day) {
+  public function setDay(AnalyticsSnapshot $day) {
     $this->day = $day;
   }
   public function getDay() {
     return $this->day;
   }
-  public function setMonth(Google_AnalyticsSnapshot $month) {
+  public function setMonth(AnalyticsSnapshot $month) {
     $this->month = $month;
   }
   public function getMonth() {
@@ -241,7 +244,7 @@ class Url extends Model {
   public $status;
   public $kind;
   public $created;
-  protected $__analyticsType = 'Google_AnalyticsSummary';
+  protected $__analyticsType = 'AnalyticsSummary';
   protected $__analyticsDataType = '';
   public $analytics;
   public $longUrl;
@@ -264,7 +267,7 @@ class Url extends Model {
   public function getCreated() {
     return $this->created;
   }
-  public function setAnalytics(Google_AnalyticsSummary $analytics) {
+  public function setAnalytics(AnalyticsSummary $analytics) {
     $this->analytics = $analytics;
   }
   public function getAnalytics() {
@@ -286,7 +289,7 @@ class Url extends Model {
 
 class UrlHistory extends Model {
   public $nextPageToken;
-  protected $__itemsType = 'Google_Url';
+  protected $__itemsType = 'Url';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -298,8 +301,8 @@ class UrlHistory extends Model {
   public function getNextPageToken() {
     return $this->nextPageToken;
   }
-  public function setItems(/* array(Google_Url) */ $items) {
-    $this->assertIsArray($items, 'Google_Url', __METHOD__);
+  public function setItems(/* array(Url) */ $items) {
+    $this->assertIsArray($items, 'Url', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {

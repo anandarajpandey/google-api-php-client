@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "data" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $data = $analyticsService->data;
    *  </code>
    */
@@ -32,7 +35,7 @@ use GoogleApi\Client;
    * The "ga" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $ga = $analyticsService->ga;
    *  </code>
    */
@@ -61,7 +64,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_GaData($data);
+        return new GaData($data);
       } else {
         return $data;
       }
@@ -71,7 +74,7 @@ use GoogleApi\Client;
    * The "mcf" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $mcf = $analyticsService->mcf;
    *  </code>
    */
@@ -99,7 +102,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_McfData($data);
+        return new McfData($data);
       } else {
         return $data;
       }
@@ -110,7 +113,7 @@ use GoogleApi\Client;
    * The "management" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $management = $analyticsService->management;
    *  </code>
    */
@@ -123,7 +126,7 @@ use GoogleApi\Client;
    * The "accounts" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $accounts = $analyticsService->accounts;
    *  </code>
    */
@@ -144,7 +147,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Accounts($data);
+        return new Accounts($data);
       } else {
         return $data;
       }
@@ -154,7 +157,7 @@ use GoogleApi\Client;
    * The "customDataSources" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $customDataSources = $analyticsService->customDataSources;
    *  </code>
    */
@@ -177,7 +180,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_CustomDataSources($data);
+        return new CustomDataSources($data);
       } else {
         return $data;
       }
@@ -187,7 +190,7 @@ use GoogleApi\Client;
    * The "dailyUploads" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $dailyUploads = $analyticsService->dailyUploads;
    *  </code>
    */
@@ -229,7 +232,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_DailyUploads($data);
+        return new DailyUploads($data);
       } else {
         return $data;
       }
@@ -253,7 +256,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('upload', array($params));
       if ($this->useObjects()) {
-        return new Google_DailyUploadAppend($data);
+        return new DailyUploadAppend($data);
       } else {
         return $data;
       }
@@ -263,7 +266,7 @@ use GoogleApi\Client;
    * The "experiments" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $experiments = $analyticsService->experiments;
    *  </code>
    */
@@ -300,7 +303,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Experiment($data);
+        return new Experiment($data);
       } else {
         return $data;
       }
@@ -315,12 +318,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Experiment
      */
-    public function insert($accountId, $webPropertyId, $profileId, Google_Experiment $postBody, $optParams = array()) {
+    public function insert($accountId, $webPropertyId, $profileId, Experiment $postBody, $optParams = array()) {
       $params = array('accountId' => $accountId, 'webPropertyId' => $webPropertyId, 'profileId' => $profileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Experiment($data);
+        return new Experiment($data);
       } else {
         return $data;
       }
@@ -342,7 +345,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Experiments($data);
+        return new Experiments($data);
       } else {
         return $data;
       }
@@ -358,12 +361,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Experiment
      */
-    public function patch($accountId, $webPropertyId, $profileId, $experimentId, Google_Experiment $postBody, $optParams = array()) {
+    public function patch($accountId, $webPropertyId, $profileId, $experimentId, Experiment $postBody, $optParams = array()) {
       $params = array('accountId' => $accountId, 'webPropertyId' => $webPropertyId, 'profileId' => $profileId, 'experimentId' => $experimentId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Experiment($data);
+        return new Experiment($data);
       } else {
         return $data;
       }
@@ -379,12 +382,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Experiment
      */
-    public function update($accountId, $webPropertyId, $profileId, $experimentId, Google_Experiment $postBody, $optParams = array()) {
+    public function update($accountId, $webPropertyId, $profileId, $experimentId, Experiment $postBody, $optParams = array()) {
       $params = array('accountId' => $accountId, 'webPropertyId' => $webPropertyId, 'profileId' => $profileId, 'experimentId' => $experimentId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Experiment($data);
+        return new Experiment($data);
       } else {
         return $data;
       }
@@ -394,7 +397,7 @@ use GoogleApi\Client;
    * The "goals" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $goals = $analyticsService->goals;
    *  </code>
    */
@@ -418,7 +421,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Goals($data);
+        return new Goals($data);
       } else {
         return $data;
       }
@@ -428,7 +431,7 @@ use GoogleApi\Client;
    * The "profiles" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $profiles = $analyticsService->profiles;
    *  </code>
    */
@@ -451,7 +454,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Profiles($data);
+        return new Profiles($data);
       } else {
         return $data;
       }
@@ -461,7 +464,7 @@ use GoogleApi\Client;
    * The "segments" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $segments = $analyticsService->segments;
    *  </code>
    */
@@ -482,7 +485,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Segments($data);
+        return new Segments($data);
       } else {
         return $data;
       }
@@ -492,7 +495,7 @@ use GoogleApi\Client;
    * The "webproperties" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $analyticsService = new Google_AnalyticsService(...);
+   *   $analyticsService = new AnalyticsService(...);
    *   $webproperties = $analyticsService->webproperties;
    *  </code>
    */
@@ -514,7 +517,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Webproperties($data);
+        return new Webproperties($data);
       } else {
         return $data;
       }
@@ -522,7 +525,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Analytics (v3).
+ * Service definition for Analytics (v3).
  *
  * <p>
  * View and manage your Google Analytics data
@@ -557,16 +560,16 @@ class AnalyticsService extends Service {
     $this->serviceName = 'analytics';
 
     $client->addService($this->serviceName, $this->version);
-    $this->data_ga = new Google_DataGaServiceResource($this, $this->serviceName, 'ga', json_decode('{"methods": {"get": {"id": "analytics.data.ga.get", "path": "data/ga", "httpMethod": "GET", "parameters": {"dimensions": {"type": "string", "location": "query"}, "end-date": {"type": "string", "required": true, "location": "query"}, "filters": {"type": "string", "location": "query"}, "ids": {"type": "string", "required": true, "location": "query"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "metrics": {"type": "string", "required": true, "location": "query"}, "segment": {"type": "string", "location": "query"}, "sort": {"type": "string", "location": "query"}, "start-date": {"type": "string", "required": true, "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "GaData"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
-    $this->data_mcf = new Google_DataMcfServiceResource($this, $this->serviceName, 'mcf', json_decode('{"methods": {"get": {"id": "analytics.data.mcf.get", "path": "data/mcf", "httpMethod": "GET", "parameters": {"dimensions": {"type": "string", "location": "query"}, "end-date": {"type": "string", "required": true, "location": "query"}, "filters": {"type": "string", "location": "query"}, "ids": {"type": "string", "required": true, "location": "query"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "metrics": {"type": "string", "required": true, "location": "query"}, "sort": {"type": "string", "location": "query"}, "start-date": {"type": "string", "required": true, "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "McfData"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
-    $this->management_accounts = new Google_ManagementAccountsServiceResource($this, $this->serviceName, 'accounts', json_decode('{"methods": {"list": {"id": "analytics.management.accounts.list", "path": "management/accounts", "httpMethod": "GET", "parameters": {"max-results": {"type": "integer", "format": "int32", "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "Accounts"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
-    $this->management_customDataSources = new Google_ManagementCustomDataSourcesServiceResource($this, $this->serviceName, 'customDataSources', json_decode('{"methods": {"list": {"id": "analytics.management.customDataSources.list", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "max-results": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CustomDataSources"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
-    $this->management_dailyUploads = new Google_ManagementDailyUploadsServiceResource($this, $this->serviceName, 'dailyUploads', json_decode('{"methods": {"delete": {"id": "analytics.management.dailyUploads.delete", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/dailyUploads/{date}", "httpMethod": "DELETE", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "customDataSourceId": {"type": "string", "required": true, "location": "path"}, "date": {"type": "string", "required": true, "location": "path"}, "type": {"type": "string", "required": true, "enum": ["cost"], "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/analytics"]}, "list": {"id": "analytics.management.dailyUploads.list", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/dailyUploads", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "customDataSourceId": {"type": "string", "required": true, "location": "path"}, "end-date": {"type": "string", "required": true, "location": "query"}, "max-results": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "start-date": {"type": "string", "required": true, "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "DailyUploads"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}, "upload": {"id": "analytics.management.dailyUploads.upload", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads", "httpMethod": "POST", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "appendNumber": {"type": "integer", "required": true, "format": "int32", "minimum": "1", "maximum": "20", "location": "query"}, "customDataSourceId": {"type": "string", "required": true, "location": "path"}, "date": {"type": "string", "required": true, "location": "path"}, "reset": {"type": "boolean", "default": "false", "location": "query"}, "type": {"type": "string", "required": true, "enum": ["cost"], "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "DailyUploadAppend"}, "scopes": ["https://www.googleapis.com/auth/analytics"], "supportsMediaUpload": true, "mediaUpload": {"accept": ["application/octet-stream"], "maxSize": "5MB", "protocols": {"simple": {"multipart": true, "path": "/upload/analytics/v3/management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads"}, "resumable": {"multipart": true, "path": "/resumable/upload/analytics/v3/management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads"}}}}}}', true));
-    $this->management_experiments = new Google_ManagementExperimentsServiceResource($this, $this->serviceName, 'experiments', json_decode('{"methods": {"delete": {"id": "analytics.management.experiments.delete", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments/{experimentId}", "httpMethod": "DELETE", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "experimentId": {"type": "string", "required": true, "location": "path"}, "profileId": {"type": "string", "required": true, "location": "path"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/analytics"]}, "get": {"id": "analytics.management.experiments.get", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments/{experimentId}", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "experimentId": {"type": "string", "required": true, "location": "path"}, "profileId": {"type": "string", "required": true, "location": "path"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Experiment"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}, "insert": {"id": "analytics.management.experiments.insert", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments", "httpMethod": "POST", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "profileId": {"type": "string", "required": true, "location": "path"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Experiment"}, "response": {"$ref": "Experiment"}, "scopes": ["https://www.googleapis.com/auth/analytics"]}, "list": {"id": "analytics.management.experiments.list", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "profileId": {"type": "string", "required": true, "location": "path"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Experiments"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}, "patch": {"id": "analytics.management.experiments.patch", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments/{experimentId}", "httpMethod": "PATCH", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "experimentId": {"type": "string", "required": true, "location": "path"}, "profileId": {"type": "string", "required": true, "location": "path"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Experiment"}, "response": {"$ref": "Experiment"}, "scopes": ["https://www.googleapis.com/auth/analytics"]}, "update": {"id": "analytics.management.experiments.update", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments/{experimentId}", "httpMethod": "PUT", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "experimentId": {"type": "string", "required": true, "location": "path"}, "profileId": {"type": "string", "required": true, "location": "path"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Experiment"}, "response": {"$ref": "Experiment"}, "scopes": ["https://www.googleapis.com/auth/analytics"]}}}', true));
-    $this->management_goals = new Google_ManagementGoalsServiceResource($this, $this->serviceName, 'goals', json_decode('{"methods": {"list": {"id": "analytics.management.goals.list", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/goals", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "profileId": {"type": "string", "required": true, "location": "path"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Goals"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
-    $this->management_profiles = new Google_ManagementProfilesServiceResource($this, $this->serviceName, 'profiles', json_decode('{"methods": {"list": {"id": "analytics.management.profiles.list", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Profiles"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
-    $this->management_segments = new Google_ManagementSegmentsServiceResource($this, $this->serviceName, 'segments', json_decode('{"methods": {"list": {"id": "analytics.management.segments.list", "path": "management/segments", "httpMethod": "GET", "parameters": {"max-results": {"type": "integer", "format": "int32", "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "Segments"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
-    $this->management_webproperties = new Google_ManagementWebpropertiesServiceResource($this, $this->serviceName, 'webproperties', json_decode('{"methods": {"list": {"id": "analytics.management.webproperties.list", "path": "management/accounts/{accountId}/webproperties", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "Webproperties"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
+    $this->data_ga = new DataGaServiceResource($this, $this->serviceName, 'ga', json_decode('{"methods": {"get": {"id": "analytics.data.ga.get", "path": "data/ga", "httpMethod": "GET", "parameters": {"dimensions": {"type": "string", "location": "query"}, "end-date": {"type": "string", "required": true, "location": "query"}, "filters": {"type": "string", "location": "query"}, "ids": {"type": "string", "required": true, "location": "query"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "metrics": {"type": "string", "required": true, "location": "query"}, "segment": {"type": "string", "location": "query"}, "sort": {"type": "string", "location": "query"}, "start-date": {"type": "string", "required": true, "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "GaData"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
+    $this->data_mcf = new DataMcfServiceResource($this, $this->serviceName, 'mcf', json_decode('{"methods": {"get": {"id": "analytics.data.mcf.get", "path": "data/mcf", "httpMethod": "GET", "parameters": {"dimensions": {"type": "string", "location": "query"}, "end-date": {"type": "string", "required": true, "location": "query"}, "filters": {"type": "string", "location": "query"}, "ids": {"type": "string", "required": true, "location": "query"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "metrics": {"type": "string", "required": true, "location": "query"}, "sort": {"type": "string", "location": "query"}, "start-date": {"type": "string", "required": true, "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "McfData"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
+    $this->management_accounts = new ManagementAccountsServiceResource($this, $this->serviceName, 'accounts', json_decode('{"methods": {"list": {"id": "analytics.management.accounts.list", "path": "management/accounts", "httpMethod": "GET", "parameters": {"max-results": {"type": "integer", "format": "int32", "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "Accounts"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
+    $this->management_customDataSources = new ManagementCustomDataSourcesServiceResource($this, $this->serviceName, 'customDataSources', json_decode('{"methods": {"list": {"id": "analytics.management.customDataSources.list", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "max-results": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CustomDataSources"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
+    $this->management_dailyUploads = new ManagementDailyUploadsServiceResource($this, $this->serviceName, 'dailyUploads', json_decode('{"methods": {"delete": {"id": "analytics.management.dailyUploads.delete", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/dailyUploads/{date}", "httpMethod": "DELETE", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "customDataSourceId": {"type": "string", "required": true, "location": "path"}, "date": {"type": "string", "required": true, "location": "path"}, "type": {"type": "string", "required": true, "enum": ["cost"], "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/analytics"]}, "list": {"id": "analytics.management.dailyUploads.list", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/dailyUploads", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "customDataSourceId": {"type": "string", "required": true, "location": "path"}, "end-date": {"type": "string", "required": true, "location": "query"}, "max-results": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "start-date": {"type": "string", "required": true, "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "DailyUploads"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}, "upload": {"id": "analytics.management.dailyUploads.upload", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads", "httpMethod": "POST", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "appendNumber": {"type": "integer", "required": true, "format": "int32", "minimum": "1", "maximum": "20", "location": "query"}, "customDataSourceId": {"type": "string", "required": true, "location": "path"}, "date": {"type": "string", "required": true, "location": "path"}, "reset": {"type": "boolean", "default": "false", "location": "query"}, "type": {"type": "string", "required": true, "enum": ["cost"], "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "DailyUploadAppend"}, "scopes": ["https://www.googleapis.com/auth/analytics"], "supportsMediaUpload": true, "mediaUpload": {"accept": ["application/octet-stream"], "maxSize": "5MB", "protocols": {"simple": {"multipart": true, "path": "/upload/analytics/v3/management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads"}, "resumable": {"multipart": true, "path": "/resumable/upload/analytics/v3/management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads"}}}}}}', true));
+    $this->management_experiments = new ManagementExperimentsServiceResource($this, $this->serviceName, 'experiments', json_decode('{"methods": {"delete": {"id": "analytics.management.experiments.delete", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments/{experimentId}", "httpMethod": "DELETE", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "experimentId": {"type": "string", "required": true, "location": "path"}, "profileId": {"type": "string", "required": true, "location": "path"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/analytics"]}, "get": {"id": "analytics.management.experiments.get", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments/{experimentId}", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "experimentId": {"type": "string", "required": true, "location": "path"}, "profileId": {"type": "string", "required": true, "location": "path"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Experiment"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}, "insert": {"id": "analytics.management.experiments.insert", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments", "httpMethod": "POST", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "profileId": {"type": "string", "required": true, "location": "path"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Experiment"}, "response": {"$ref": "Experiment"}, "scopes": ["https://www.googleapis.com/auth/analytics"]}, "list": {"id": "analytics.management.experiments.list", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "profileId": {"type": "string", "required": true, "location": "path"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Experiments"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}, "patch": {"id": "analytics.management.experiments.patch", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments/{experimentId}", "httpMethod": "PATCH", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "experimentId": {"type": "string", "required": true, "location": "path"}, "profileId": {"type": "string", "required": true, "location": "path"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Experiment"}, "response": {"$ref": "Experiment"}, "scopes": ["https://www.googleapis.com/auth/analytics"]}, "update": {"id": "analytics.management.experiments.update", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/experiments/{experimentId}", "httpMethod": "PUT", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "experimentId": {"type": "string", "required": true, "location": "path"}, "profileId": {"type": "string", "required": true, "location": "path"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Experiment"}, "response": {"$ref": "Experiment"}, "scopes": ["https://www.googleapis.com/auth/analytics"]}}}', true));
+    $this->management_goals = new ManagementGoalsServiceResource($this, $this->serviceName, 'goals', json_decode('{"methods": {"list": {"id": "analytics.management.goals.list", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/goals", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "profileId": {"type": "string", "required": true, "location": "path"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Goals"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
+    $this->management_profiles = new ManagementProfilesServiceResource($this, $this->serviceName, 'profiles', json_decode('{"methods": {"list": {"id": "analytics.management.profiles.list", "path": "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "webPropertyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Profiles"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
+    $this->management_segments = new ManagementSegmentsServiceResource($this, $this->serviceName, 'segments', json_decode('{"methods": {"list": {"id": "analytics.management.segments.list", "path": "management/segments", "httpMethod": "GET", "parameters": {"max-results": {"type": "integer", "format": "int32", "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "Segments"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
+    $this->management_webproperties = new ManagementWebpropertiesServiceResource($this, $this->serviceName, 'webproperties', json_decode('{"methods": {"list": {"id": "analytics.management.webproperties.list", "path": "management/accounts/{accountId}/webproperties", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "max-results": {"type": "integer", "format": "int32", "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "Webproperties"}, "scopes": ["https://www.googleapis.com/auth/analytics", "https://www.googleapis.com/auth/analytics.readonly"]}}}', true));
 
   }
 }
@@ -574,7 +577,7 @@ class AnalyticsService extends Service {
 
 
 class Account extends Model {
-  protected $__childLinkType = 'Google_AccountChildLink';
+  protected $__childLinkType = 'AccountChildLink';
   protected $__childLinkDataType = '';
   public $childLink;
   public $created;
@@ -583,7 +586,7 @@ class Account extends Model {
   public $name;
   public $selfLink;
   public $updated;
-  public function setChildLink(Google_AccountChildLink $childLink) {
+  public function setChildLink(AccountChildLink $childLink) {
     $this->childLink = $childLink;
   }
   public function getChildLink() {
@@ -645,7 +648,7 @@ class AccountChildLink extends Model {
 }
 
 class Accounts extends Model {
-  protected $__itemsType = 'Google_Account';
+  protected $__itemsType = 'Account';
   protected $__itemsDataType = 'array';
   public $items;
   public $itemsPerPage;
@@ -655,8 +658,8 @@ class Accounts extends Model {
   public $startIndex;
   public $totalResults;
   public $username;
-  public function setItems(/* array(Google_Account) */ $items) {
-    $this->assertIsArray($items, 'Google_Account', __METHOD__);
+  public function setItems(/* array(Account) */ $items) {
+    $this->assertIsArray($items, 'Account', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -708,7 +711,7 @@ class Accounts extends Model {
 
 class CustomDataSource extends Model {
   public $accountId;
-  protected $__childLinkType = 'Google_CustomDataSourceChildLink';
+  protected $__childLinkType = 'CustomDataSourceChildLink';
   protected $__childLinkDataType = '';
   public $childLink;
   public $created;
@@ -716,7 +719,7 @@ class CustomDataSource extends Model {
   public $id;
   public $kind;
   public $name;
-  protected $__parentLinkType = 'Google_CustomDataSourceParentLink';
+  protected $__parentLinkType = 'CustomDataSourceParentLink';
   protected $__parentLinkDataType = '';
   public $parentLink;
   public $profilesLinked;
@@ -729,7 +732,7 @@ class CustomDataSource extends Model {
   public function getAccountId() {
     return $this->accountId;
   }
-  public function setChildLink(Google_CustomDataSourceChildLink $childLink) {
+  public function setChildLink(CustomDataSourceChildLink $childLink) {
     $this->childLink = $childLink;
   }
   public function getChildLink() {
@@ -765,14 +768,14 @@ class CustomDataSource extends Model {
   public function getName() {
     return $this->name;
   }
-  public function setParentLink(Google_CustomDataSourceParentLink $parentLink) {
+  public function setParentLink(CustomDataSourceParentLink $parentLink) {
     $this->parentLink = $parentLink;
   }
   public function getParentLink() {
     return $this->parentLink;
   }
-  public function setProfilesLinked(/* array(Google_string) */ $profilesLinked) {
-    $this->assertIsArray($profilesLinked, 'Google_string', __METHOD__);
+  public function setProfilesLinked(/* array(string) */ $profilesLinked) {
+    $this->assertIsArray($profilesLinked, 'string', __METHOD__);
     $this->profilesLinked = $profilesLinked;
   }
   public function getProfilesLinked() {
@@ -833,7 +836,7 @@ class CustomDataSourceParentLink extends Model {
 }
 
 class CustomDataSources extends Model {
-  protected $__itemsType = 'Google_CustomDataSource';
+  protected $__itemsType = 'CustomDataSource';
   protected $__itemsDataType = 'array';
   public $items;
   public $itemsPerPage;
@@ -843,8 +846,8 @@ class CustomDataSources extends Model {
   public $startIndex;
   public $totalResults;
   public $username;
-  public function setItems(/* array(Google_CustomDataSource) */ $items) {
-    $this->assertIsArray($items, 'Google_CustomDataSource', __METHOD__);
+  public function setItems(/* array(CustomDataSource) */ $items) {
+    $this->assertIsArray($items, 'CustomDataSource', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -902,10 +905,10 @@ class DailyUpload extends Model {
   public $date;
   public $kind;
   public $modifiedTime;
-  protected $__parentLinkType = 'Google_DailyUploadParentLink';
+  protected $__parentLinkType = 'DailyUploadParentLink';
   protected $__parentLinkDataType = '';
   public $parentLink;
-  protected $__recentChangesType = 'Google_DailyUploadRecentChanges';
+  protected $__recentChangesType = 'DailyUploadRecentChanges';
   protected $__recentChangesDataType = 'array';
   public $recentChanges;
   public $selfLink;
@@ -952,14 +955,14 @@ class DailyUpload extends Model {
   public function getModifiedTime() {
     return $this->modifiedTime;
   }
-  public function setParentLink(Google_DailyUploadParentLink $parentLink) {
+  public function setParentLink(DailyUploadParentLink $parentLink) {
     $this->parentLink = $parentLink;
   }
   public function getParentLink() {
     return $this->parentLink;
   }
-  public function setRecentChanges(/* array(Google_DailyUploadRecentChanges) */ $recentChanges) {
-    $this->assertIsArray($recentChanges, 'Google_DailyUploadRecentChanges', __METHOD__);
+  public function setRecentChanges(/* array(DailyUploadRecentChanges) */ $recentChanges) {
+    $this->assertIsArray($recentChanges, 'DailyUploadRecentChanges', __METHOD__);
     $this->recentChanges = $recentChanges;
   }
   public function getRecentChanges() {
@@ -1066,7 +1069,7 @@ class DailyUploadRecentChanges extends Model {
 }
 
 class DailyUploads extends Model {
-  protected $__itemsType = 'Google_DailyUpload';
+  protected $__itemsType = 'DailyUpload';
   protected $__itemsDataType = 'array';
   public $items;
   public $itemsPerPage;
@@ -1076,8 +1079,8 @@ class DailyUploads extends Model {
   public $startIndex;
   public $totalResults;
   public $username;
-  public function setItems(/* array(Google_DailyUpload) */ $items) {
-    $this->assertIsArray($items, 'Google_DailyUpload', __METHOD__);
+  public function setItems(/* array(DailyUpload) */ $items) {
+    $this->assertIsArray($items, 'DailyUpload', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1140,7 +1143,7 @@ class Experiment extends Model {
   public $name;
   public $objectiveMetric;
   public $optimizationType;
-  protected $__parentLinkType = 'Google_ExperimentParentLink';
+  protected $__parentLinkType = 'ExperimentParentLink';
   protected $__parentLinkDataType = '';
   public $parentLink;
   public $profileId;
@@ -1153,7 +1156,7 @@ class Experiment extends Model {
   public $status;
   public $trafficCoverage;
   public $updated;
-  protected $__variationsType = 'Google_ExperimentVariations';
+  protected $__variationsType = 'ExperimentVariations';
   protected $__variationsDataType = 'array';
   public $variations;
   public $webPropertyId;
@@ -1231,7 +1234,7 @@ class Experiment extends Model {
   public function getOptimizationType() {
     return $this->optimizationType;
   }
-  public function setParentLink(Google_ExperimentParentLink $parentLink) {
+  public function setParentLink(ExperimentParentLink $parentLink) {
     $this->parentLink = $parentLink;
   }
   public function getParentLink() {
@@ -1297,8 +1300,8 @@ class Experiment extends Model {
   public function getUpdated() {
     return $this->updated;
   }
-  public function setVariations(/* array(Google_ExperimentVariations) */ $variations) {
-    $this->assertIsArray($variations, 'Google_ExperimentVariations', __METHOD__);
+  public function setVariations(/* array(ExperimentVariations) */ $variations) {
+    $this->assertIsArray($variations, 'ExperimentVariations', __METHOD__);
     $this->variations = $variations;
   }
   public function getVariations() {
@@ -1380,7 +1383,7 @@ class ExperimentVariations extends Model {
 }
 
 class Experiments extends Model {
-  protected $__itemsType = 'Google_Experiment';
+  protected $__itemsType = 'Experiment';
   protected $__itemsDataType = 'array';
   public $items;
   public $itemsPerPage;
@@ -1390,8 +1393,8 @@ class Experiments extends Model {
   public $startIndex;
   public $totalResults;
   public $username;
-  public function setItems(/* array(Google_Experiment) */ $items) {
-    $this->assertIsArray($items, 'Google_Experiment', __METHOD__);
+  public function setItems(/* array(Experiment) */ $items) {
+    $this->assertIsArray($items, 'Experiment', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1442,7 +1445,7 @@ class Experiments extends Model {
 }
 
 class GaData extends Model {
-  protected $__columnHeadersType = 'Google_GaDataColumnHeaders';
+  protected $__columnHeadersType = 'GaDataColumnHeaders';
   protected $__columnHeadersDataType = 'array';
   public $columnHeaders;
   public $containsSampledData;
@@ -1451,18 +1454,18 @@ class GaData extends Model {
   public $kind;
   public $nextLink;
   public $previousLink;
-  protected $__profileInfoType = 'Google_GaDataProfileInfo';
+  protected $__profileInfoType = 'GaDataProfileInfo';
   protected $__profileInfoDataType = '';
   public $profileInfo;
-  protected $__queryType = 'Google_GaDataQuery';
+  protected $__queryType = 'GaDataQuery';
   protected $__queryDataType = '';
   public $query;
   public $rows;
   public $selfLink;
   public $totalResults;
   public $totalsForAllResults;
-  public function setColumnHeaders(/* array(Google_GaDataColumnHeaders) */ $columnHeaders) {
-    $this->assertIsArray($columnHeaders, 'Google_GaDataColumnHeaders', __METHOD__);
+  public function setColumnHeaders(/* array(GaDataColumnHeaders) */ $columnHeaders) {
+    $this->assertIsArray($columnHeaders, 'GaDataColumnHeaders', __METHOD__);
     $this->columnHeaders = $columnHeaders;
   }
   public function getColumnHeaders() {
@@ -1504,20 +1507,20 @@ class GaData extends Model {
   public function getPreviousLink() {
     return $this->previousLink;
   }
-  public function setProfileInfo(Google_GaDataProfileInfo $profileInfo) {
+  public function setProfileInfo(GaDataProfileInfo $profileInfo) {
     $this->profileInfo = $profileInfo;
   }
   public function getProfileInfo() {
     return $this->profileInfo;
   }
-  public function setQuery(Google_GaDataQuery $query) {
+  public function setQuery(GaDataQuery $query) {
     $this->query = $query;
   }
   public function getQuery() {
     return $this->query;
   }
-  public function setRows(/* array(Google_string) */ $rows) {
-    $this->assertIsArray($rows, 'Google_string', __METHOD__);
+  public function setRows(/* array(string) */ $rows) {
+    $this->assertIsArray($rows, 'string', __METHOD__);
     $this->rows = $rows;
   }
   public function getRows() {
@@ -1653,8 +1656,8 @@ class GaDataQuery extends Model {
   public function getMax_results() {
     return $this->max_results;
   }
-  public function setMetrics(/* array(Google_string) */ $metrics) {
-    $this->assertIsArray($metrics, 'Google_string', __METHOD__);
+  public function setMetrics(/* array(string) */ $metrics) {
+    $this->assertIsArray($metrics, 'string', __METHOD__);
     $this->metrics = $metrics;
   }
   public function getMetrics() {
@@ -1666,8 +1669,8 @@ class GaDataQuery extends Model {
   public function getSegment() {
     return $this->segment;
   }
-  public function setSort(/* array(Google_string) */ $sort) {
-    $this->assertIsArray($sort, 'Google_string', __METHOD__);
+  public function setSort(/* array(string) */ $sort) {
+    $this->assertIsArray($sort, 'string', __METHOD__);
     $this->sort = $sort;
   }
   public function getSort() {
@@ -1691,28 +1694,28 @@ class Goal extends Model {
   public $accountId;
   public $active;
   public $created;
-  protected $__eventDetailsType = 'Google_GoalEventDetails';
+  protected $__eventDetailsType = 'GoalEventDetails';
   protected $__eventDetailsDataType = '';
   public $eventDetails;
   public $id;
   public $internalWebPropertyId;
   public $kind;
   public $name;
-  protected $__parentLinkType = 'Google_GoalParentLink';
+  protected $__parentLinkType = 'GoalParentLink';
   protected $__parentLinkDataType = '';
   public $parentLink;
   public $profileId;
   public $selfLink;
   public $type;
   public $updated;
-  protected $__urlDestinationDetailsType = 'Google_GoalUrlDestinationDetails';
+  protected $__urlDestinationDetailsType = 'GoalUrlDestinationDetails';
   protected $__urlDestinationDetailsDataType = '';
   public $urlDestinationDetails;
   public $value;
-  protected $__visitNumPagesDetailsType = 'Google_GoalVisitNumPagesDetails';
+  protected $__visitNumPagesDetailsType = 'GoalVisitNumPagesDetails';
   protected $__visitNumPagesDetailsDataType = '';
   public $visitNumPagesDetails;
-  protected $__visitTimeOnSiteDetailsType = 'Google_GoalVisitTimeOnSiteDetails';
+  protected $__visitTimeOnSiteDetailsType = 'GoalVisitTimeOnSiteDetails';
   protected $__visitTimeOnSiteDetailsDataType = '';
   public $visitTimeOnSiteDetails;
   public $webPropertyId;
@@ -1734,7 +1737,7 @@ class Goal extends Model {
   public function getCreated() {
     return $this->created;
   }
-  public function setEventDetails(Google_GoalEventDetails $eventDetails) {
+  public function setEventDetails(GoalEventDetails $eventDetails) {
     $this->eventDetails = $eventDetails;
   }
   public function getEventDetails() {
@@ -1764,7 +1767,7 @@ class Goal extends Model {
   public function getName() {
     return $this->name;
   }
-  public function setParentLink(Google_GoalParentLink $parentLink) {
+  public function setParentLink(GoalParentLink $parentLink) {
     $this->parentLink = $parentLink;
   }
   public function getParentLink() {
@@ -1794,7 +1797,7 @@ class Goal extends Model {
   public function getUpdated() {
     return $this->updated;
   }
-  public function setUrlDestinationDetails(Google_GoalUrlDestinationDetails $urlDestinationDetails) {
+  public function setUrlDestinationDetails(GoalUrlDestinationDetails $urlDestinationDetails) {
     $this->urlDestinationDetails = $urlDestinationDetails;
   }
   public function getUrlDestinationDetails() {
@@ -1806,13 +1809,13 @@ class Goal extends Model {
   public function getValue() {
     return $this->value;
   }
-  public function setVisitNumPagesDetails(Google_GoalVisitNumPagesDetails $visitNumPagesDetails) {
+  public function setVisitNumPagesDetails(GoalVisitNumPagesDetails $visitNumPagesDetails) {
     $this->visitNumPagesDetails = $visitNumPagesDetails;
   }
   public function getVisitNumPagesDetails() {
     return $this->visitNumPagesDetails;
   }
-  public function setVisitTimeOnSiteDetails(Google_GoalVisitTimeOnSiteDetails $visitTimeOnSiteDetails) {
+  public function setVisitTimeOnSiteDetails(GoalVisitTimeOnSiteDetails $visitTimeOnSiteDetails) {
     $this->visitTimeOnSiteDetails = $visitTimeOnSiteDetails;
   }
   public function getVisitTimeOnSiteDetails() {
@@ -1827,12 +1830,12 @@ class Goal extends Model {
 }
 
 class GoalEventDetails extends Model {
-  protected $__eventConditionsType = 'Google_GoalEventDetailsEventConditions';
+  protected $__eventConditionsType = 'GoalEventDetailsEventConditions';
   protected $__eventConditionsDataType = 'array';
   public $eventConditions;
   public $useEventValue;
-  public function setEventConditions(/* array(Google_GoalEventDetailsEventConditions) */ $eventConditions) {
-    $this->assertIsArray($eventConditions, 'Google_GoalEventDetailsEventConditions', __METHOD__);
+  public function setEventConditions(/* array(GoalEventDetailsEventConditions) */ $eventConditions) {
+    $this->assertIsArray($eventConditions, 'GoalEventDetailsEventConditions', __METHOD__);
     $this->eventConditions = $eventConditions;
   }
   public function getEventConditions() {
@@ -1905,7 +1908,7 @@ class GoalUrlDestinationDetails extends Model {
   public $caseSensitive;
   public $firstStepRequired;
   public $matchType;
-  protected $__stepsType = 'Google_GoalUrlDestinationDetailsSteps';
+  protected $__stepsType = 'GoalUrlDestinationDetailsSteps';
   protected $__stepsDataType = 'array';
   public $steps;
   public $url;
@@ -1927,8 +1930,8 @@ class GoalUrlDestinationDetails extends Model {
   public function getMatchType() {
     return $this->matchType;
   }
-  public function setSteps(/* array(Google_GoalUrlDestinationDetailsSteps) */ $steps) {
-    $this->assertIsArray($steps, 'Google_GoalUrlDestinationDetailsSteps', __METHOD__);
+  public function setSteps(/* array(GoalUrlDestinationDetailsSteps) */ $steps) {
+    $this->assertIsArray($steps, 'GoalUrlDestinationDetailsSteps', __METHOD__);
     $this->steps = $steps;
   }
   public function getSteps() {
@@ -2001,7 +2004,7 @@ class GoalVisitTimeOnSiteDetails extends Model {
 }
 
 class Goals extends Model {
-  protected $__itemsType = 'Google_Goal';
+  protected $__itemsType = 'Goal';
   protected $__itemsDataType = 'array';
   public $items;
   public $itemsPerPage;
@@ -2011,8 +2014,8 @@ class Goals extends Model {
   public $startIndex;
   public $totalResults;
   public $username;
-  public function setItems(/* array(Google_Goal) */ $items) {
-    $this->assertIsArray($items, 'Google_Goal', __METHOD__);
+  public function setItems(/* array(Goal) */ $items) {
+    $this->assertIsArray($items, 'Goal', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -2063,7 +2066,7 @@ class Goals extends Model {
 }
 
 class McfData extends Model {
-  protected $__columnHeadersType = 'Google_McfDataColumnHeaders';
+  protected $__columnHeadersType = 'McfDataColumnHeaders';
   protected $__columnHeadersDataType = 'array';
   public $columnHeaders;
   public $containsSampledData;
@@ -2072,20 +2075,20 @@ class McfData extends Model {
   public $kind;
   public $nextLink;
   public $previousLink;
-  protected $__profileInfoType = 'Google_McfDataProfileInfo';
+  protected $__profileInfoType = 'McfDataProfileInfo';
   protected $__profileInfoDataType = '';
   public $profileInfo;
-  protected $__queryType = 'Google_McfDataQuery';
+  protected $__queryType = 'McfDataQuery';
   protected $__queryDataType = '';
   public $query;
-  protected $__rowsType = 'Google_McfDataRows';
+  protected $__rowsType = 'McfDataRows';
   protected $__rowsDataType = 'array';
   public $rows;
   public $selfLink;
   public $totalResults;
   public $totalsForAllResults;
-  public function setColumnHeaders(/* array(Google_McfDataColumnHeaders) */ $columnHeaders) {
-    $this->assertIsArray($columnHeaders, 'Google_McfDataColumnHeaders', __METHOD__);
+  public function setColumnHeaders(/* array(McfDataColumnHeaders) */ $columnHeaders) {
+    $this->assertIsArray($columnHeaders, 'McfDataColumnHeaders', __METHOD__);
     $this->columnHeaders = $columnHeaders;
   }
   public function getColumnHeaders() {
@@ -2127,20 +2130,20 @@ class McfData extends Model {
   public function getPreviousLink() {
     return $this->previousLink;
   }
-  public function setProfileInfo(Google_McfDataProfileInfo $profileInfo) {
+  public function setProfileInfo(McfDataProfileInfo $profileInfo) {
     $this->profileInfo = $profileInfo;
   }
   public function getProfileInfo() {
     return $this->profileInfo;
   }
-  public function setQuery(Google_McfDataQuery $query) {
+  public function setQuery(McfDataQuery $query) {
     $this->query = $query;
   }
   public function getQuery() {
     return $this->query;
   }
-  public function setRows(/* array(Google_McfDataRows) */ $rows) {
-    $this->assertIsArray($rows, 'Google_McfDataRows', __METHOD__);
+  public function setRows(/* array(McfDataRows) */ $rows) {
+    $this->assertIsArray($rows, 'McfDataRows', __METHOD__);
     $this->rows = $rows;
   }
   public function getRows() {
@@ -2276,8 +2279,8 @@ class McfDataQuery extends Model {
   public function getMax_results() {
     return $this->max_results;
   }
-  public function setMetrics(/* array(Google_string) */ $metrics) {
-    $this->assertIsArray($metrics, 'Google_string', __METHOD__);
+  public function setMetrics(/* array(string) */ $metrics) {
+    $this->assertIsArray($metrics, 'string', __METHOD__);
     $this->metrics = $metrics;
   }
   public function getMetrics() {
@@ -2289,8 +2292,8 @@ class McfDataQuery extends Model {
   public function getSegment() {
     return $this->segment;
   }
-  public function setSort(/* array(Google_string) */ $sort) {
-    $this->assertIsArray($sort, 'Google_string', __METHOD__);
+  public function setSort(/* array(string) */ $sort) {
+    $this->assertIsArray($sort, 'string', __METHOD__);
     $this->sort = $sort;
   }
   public function getSort() {
@@ -2311,12 +2314,12 @@ class McfDataQuery extends Model {
 }
 
 class McfDataRows extends Model {
-  protected $__conversionPathValueType = 'Google_McfDataRowsConversionPathValue';
+  protected $__conversionPathValueType = 'McfDataRowsConversionPathValue';
   protected $__conversionPathValueDataType = 'array';
   public $conversionPathValue;
   public $primitiveValue;
-  public function setConversionPathValue(/* array(Google_McfDataRowsConversionPathValue) */ $conversionPathValue) {
-    $this->assertIsArray($conversionPathValue, 'Google_McfDataRowsConversionPathValue', __METHOD__);
+  public function setConversionPathValue(/* array(McfDataRowsConversionPathValue) */ $conversionPathValue) {
+    $this->assertIsArray($conversionPathValue, 'McfDataRowsConversionPathValue', __METHOD__);
     $this->conversionPathValue = $conversionPathValue;
   }
   public function getConversionPathValue() {
@@ -2349,7 +2352,7 @@ class McfDataRowsConversionPathValue extends Model {
 
 class Profile extends Model {
   public $accountId;
-  protected $__childLinkType = 'Google_ProfileChildLink';
+  protected $__childLinkType = 'ProfileChildLink';
   protected $__childLinkDataType = '';
   public $childLink;
   public $created;
@@ -2361,7 +2364,7 @@ class Profile extends Model {
   public $internalWebPropertyId;
   public $kind;
   public $name;
-  protected $__parentLinkType = 'Google_ProfileParentLink';
+  protected $__parentLinkType = 'ProfileParentLink';
   protected $__parentLinkDataType = '';
   public $parentLink;
   public $selfLink;
@@ -2378,7 +2381,7 @@ class Profile extends Model {
   public function getAccountId() {
     return $this->accountId;
   }
-  public function setChildLink(Google_ProfileChildLink $childLink) {
+  public function setChildLink(ProfileChildLink $childLink) {
     $this->childLink = $childLink;
   }
   public function getChildLink() {
@@ -2438,7 +2441,7 @@ class Profile extends Model {
   public function getName() {
     return $this->name;
   }
-  public function setParentLink(Google_ProfileParentLink $parentLink) {
+  public function setParentLink(ProfileParentLink $parentLink) {
     $this->parentLink = $parentLink;
   }
   public function getParentLink() {
@@ -2529,7 +2532,7 @@ class ProfileParentLink extends Model {
 }
 
 class Profiles extends Model {
-  protected $__itemsType = 'Google_Profile';
+  protected $__itemsType = 'Profile';
   protected $__itemsDataType = 'array';
   public $items;
   public $itemsPerPage;
@@ -2539,8 +2542,8 @@ class Profiles extends Model {
   public $startIndex;
   public $totalResults;
   public $username;
-  public function setItems(/* array(Google_Profile) */ $items) {
-    $this->assertIsArray($items, 'Google_Profile', __METHOD__);
+  public function setItems(/* array(Profile) */ $items) {
+    $this->assertIsArray($items, 'Profile', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -2650,7 +2653,7 @@ class Segment extends Model {
 }
 
 class Segments extends Model {
-  protected $__itemsType = 'Google_Segment';
+  protected $__itemsType = 'Segment';
   protected $__itemsDataType = 'array';
   public $items;
   public $itemsPerPage;
@@ -2660,8 +2663,8 @@ class Segments extends Model {
   public $startIndex;
   public $totalResults;
   public $username;
-  public function setItems(/* array(Google_Segment) */ $items) {
-    $this->assertIsArray($items, 'Google_Segment', __METHOD__);
+  public function setItems(/* array(Segment) */ $items) {
+    $this->assertIsArray($items, 'Segment', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -2712,7 +2715,7 @@ class Segments extends Model {
 }
 
 class Webproperties extends Model {
-  protected $__itemsType = 'Google_Webproperty';
+  protected $__itemsType = 'Webproperty';
   protected $__itemsDataType = 'array';
   public $items;
   public $itemsPerPage;
@@ -2722,8 +2725,8 @@ class Webproperties extends Model {
   public $startIndex;
   public $totalResults;
   public $username;
-  public function setItems(/* array(Google_Webproperty) */ $items) {
-    $this->assertIsArray($items, 'Google_Webproperty', __METHOD__);
+  public function setItems(/* array(Webproperty) */ $items) {
+    $this->assertIsArray($items, 'Webproperty', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -2775,7 +2778,7 @@ class Webproperties extends Model {
 
 class Webproperty extends Model {
   public $accountId;
-  protected $__childLinkType = 'Google_WebpropertyChildLink';
+  protected $__childLinkType = 'WebpropertyChildLink';
   protected $__childLinkDataType = '';
   public $childLink;
   public $created;
@@ -2785,7 +2788,7 @@ class Webproperty extends Model {
   public $kind;
   public $level;
   public $name;
-  protected $__parentLinkType = 'Google_WebpropertyParentLink';
+  protected $__parentLinkType = 'WebpropertyParentLink';
   protected $__parentLinkDataType = '';
   public $parentLink;
   public $profileCount;
@@ -2798,7 +2801,7 @@ class Webproperty extends Model {
   public function getAccountId() {
     return $this->accountId;
   }
-  public function setChildLink(Google_WebpropertyChildLink $childLink) {
+  public function setChildLink(WebpropertyChildLink $childLink) {
     $this->childLink = $childLink;
   }
   public function getChildLink() {
@@ -2846,7 +2849,7 @@ class Webproperty extends Model {
   public function getName() {
     return $this->name;
   }
-  public function setParentLink(Google_WebpropertyParentLink $parentLink) {
+  public function setParentLink(WebpropertyParentLink $parentLink) {
     $this->parentLink = $parentLink;
   }
   public function getParentLink() {

@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "blogs" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $bloggerService = new Google_BloggerService(...);
+   *   $bloggerService = new BloggerService(...);
    *   $blogs = $bloggerService->blogs;
    *  </code>
    */
@@ -38,7 +41,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('listByUser', array($params));
       if ($this->useObjects()) {
-        return new Google_BlogList($data);
+        return new BlogList($data);
       } else {
         return $data;
       }
@@ -56,7 +59,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('getByUrl', array($params));
       if ($this->useObjects()) {
-        return new Google_Blog($data);
+        return new Blog($data);
       } else {
         return $data;
       }
@@ -75,7 +78,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Blog($data);
+        return new Blog($data);
       } else {
         return $data;
       }
@@ -86,7 +89,7 @@ use GoogleApi\Client;
    * The "posts" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $bloggerService = new Google_BloggerService(...);
+   *   $bloggerService = new BloggerService(...);
    *   $posts = $bloggerService->posts;
    *  </code>
    */
@@ -101,12 +104,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Post
      */
-    public function insert($blogId, Google_Post $postBody, $optParams = array()) {
+    public function insert($blogId, Post $postBody, $optParams = array()) {
       $params = array('blogId' => $blogId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Post($data);
+        return new Post($data);
       } else {
         return $data;
       }
@@ -125,7 +128,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('search', array($params));
       if ($this->useObjects()) {
-        return new Google_PostList($data);
+        return new PostList($data);
       } else {
         return $data;
       }
@@ -145,7 +148,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Post($data);
+        return new Post($data);
       } else {
         return $data;
       }
@@ -169,7 +172,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_PostList($data);
+        return new PostList($data);
       } else {
         return $data;
       }
@@ -183,12 +186,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Post
      */
-    public function update($blogId, $postId, Google_Post $postBody, $optParams = array()) {
+    public function update($blogId, $postId, Post $postBody, $optParams = array()) {
       $params = array('blogId' => $blogId, 'postId' => $postId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Post($data);
+        return new Post($data);
       } else {
         return $data;
       }
@@ -208,7 +211,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('getByPath', array($params));
       if ($this->useObjects()) {
-        return new Google_Post($data);
+        return new Post($data);
       } else {
         return $data;
       }
@@ -222,12 +225,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Post
      */
-    public function patch($blogId, $postId, Google_Post $postBody, $optParams = array()) {
+    public function patch($blogId, $postId, Post $postBody, $optParams = array()) {
       $params = array('blogId' => $blogId, 'postId' => $postId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Post($data);
+        return new Post($data);
       } else {
         return $data;
       }
@@ -251,7 +254,7 @@ use GoogleApi\Client;
    * The "pages" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $bloggerService = new Google_BloggerService(...);
+   *   $bloggerService = new BloggerService(...);
    *   $pages = $bloggerService->pages;
    *  </code>
    */
@@ -272,7 +275,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_PageList($data);
+        return new PageList($data);
       } else {
         return $data;
       }
@@ -290,7 +293,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Page($data);
+        return new Page($data);
       } else {
         return $data;
       }
@@ -301,7 +304,7 @@ use GoogleApi\Client;
    * The "comments" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $bloggerService = new Google_BloggerService(...);
+   *   $bloggerService = new BloggerService(...);
    *   $comments = $bloggerService->comments;
    *  </code>
    */
@@ -327,7 +330,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_CommentList($data);
+        return new CommentList($data);
       } else {
         return $data;
       }
@@ -346,7 +349,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Comment($data);
+        return new Comment($data);
       } else {
         return $data;
       }
@@ -357,7 +360,7 @@ use GoogleApi\Client;
    * The "users" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $bloggerService = new Google_BloggerService(...);
+   *   $bloggerService = new BloggerService(...);
    *   $users = $bloggerService->users;
    *  </code>
    */
@@ -376,7 +379,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_User($data);
+        return new User($data);
       } else {
         return $data;
       }
@@ -384,7 +387,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Blogger (v3).
+ * Service definition for Blogger (v3).
  *
  * <p>
  * API for access to the data within Blogger.
@@ -414,11 +417,11 @@ class BloggerService extends Service {
     $this->serviceName = 'blogger';
 
     $client->addService($this->serviceName, $this->version);
-    $this->blogs = new Google_BlogsServiceResource($this, $this->serviceName, 'blogs', json_decode('{"methods": {"listByUser": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"userId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.blogs.listByUser", "httpMethod": "GET", "path": "users/{userId}/blogs", "response": {"$ref": "BlogList"}}, "getByUrl": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"url": {"type": "string", "location": "query"}}, "response": {"$ref": "Blog"}, "httpMethod": "GET", "path": "blogs/byurl", "id": "blogger.blogs.getByUrl"}, "get": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"maxPosts": {"type": "integer", "location": "query", "format": "uint32"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.blogs.get", "httpMethod": "GET", "path": "blogs/{blogId}", "response": {"$ref": "Blog"}}}}', true));
-    $this->posts = new Google_PostsServiceResource($this, $this->serviceName, 'posts', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/blogger"], "parameters": {"blogId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Post"}, "response": {"$ref": "Post"}, "httpMethod": "POST", "path": "blogs/{blogId}/posts", "id": "blogger.posts.insert"}, "search": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"q": {"type": "string", "location": "query"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.posts.search", "httpMethod": "GET", "path": "blogs/{blogId}/posts/search", "response": {"$ref": "PostList"}}, "get": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"maxComments": {"type": "integer", "location": "query", "format": "uint32"}, "blogId": {"required": true, "type": "string", "location": "path"}, "postId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.posts.get", "httpMethod": "GET", "path": "blogs/{blogId}/posts/{postId}", "response": {"$ref": "Post"}}, "list": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"startDate": {"type": "string", "location": "query", "format": "date-time"}, "endDate": {"type": "string", "location": "query", "format": "date-time"}, "labels": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "pageToken": {"type": "string", "location": "query"}, "fetchBodies": {"type": "boolean", "location": "query"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.posts.list", "httpMethod": "GET", "path": "blogs/{blogId}/posts", "response": {"$ref": "PostList"}}, "update": {"scopes": ["https://www.googleapis.com/auth/blogger"], "parameters": {"postId": {"required": true, "type": "string", "location": "path"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Post"}, "response": {"$ref": "Post"}, "httpMethod": "PUT", "path": "blogs/{blogId}/posts/{postId}", "id": "blogger.posts.update"}, "getByPath": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"path": {"type": "string", "location": "query"}, "maxComments": {"type": "integer", "location": "query", "format": "uint32"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.posts.getByPath", "httpMethod": "GET", "path": "blogs/{blogId}/posts/bypath", "response": {"$ref": "Post"}}, "patch": {"scopes": ["https://www.googleapis.com/auth/blogger"], "parameters": {"postId": {"required": true, "type": "string", "location": "path"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Post"}, "response": {"$ref": "Post"}, "httpMethod": "PATCH", "path": "blogs/{blogId}/posts/{postId}", "id": "blogger.posts.patch"}, "delete": {"scopes": ["https://www.googleapis.com/auth/blogger"], "path": "blogs/{blogId}/posts/{postId}", "id": "blogger.posts.delete", "parameters": {"postId": {"required": true, "type": "string", "location": "path"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
-    $this->pages = new Google_PagesServiceResource($this, $this->serviceName, 'pages', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"fetchBodies": {"type": "boolean", "location": "query"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.pages.list", "httpMethod": "GET", "path": "blogs/{blogId}/pages", "response": {"$ref": "PageList"}}, "get": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"pageId": {"required": true, "type": "string", "location": "path"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.pages.get", "httpMethod": "GET", "path": "blogs/{blogId}/pages/{pageId}", "response": {"$ref": "Page"}}}}', true));
-    $this->comments = new Google_CommentsServiceResource($this, $this->serviceName, 'comments', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"startDate": {"type": "string", "location": "query", "format": "date-time"}, "postId": {"required": true, "type": "string", "location": "path"}, "endDate": {"type": "string", "location": "query", "format": "date-time"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "pageToken": {"type": "string", "location": "query"}, "fetchBodies": {"type": "boolean", "location": "query"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.comments.list", "httpMethod": "GET", "path": "blogs/{blogId}/posts/{postId}/comments", "response": {"$ref": "CommentList"}}, "get": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"commentId": {"required": true, "type": "string", "location": "path"}, "postId": {"required": true, "type": "string", "location": "path"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.comments.get", "httpMethod": "GET", "path": "blogs/{blogId}/posts/{postId}/comments/{commentId}", "response": {"$ref": "Comment"}}}}', true));
-    $this->users = new Google_UsersServiceResource($this, $this->serviceName, 'users', json_decode('{"methods": {"get": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"userId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.users.get", "httpMethod": "GET", "path": "users/{userId}", "response": {"$ref": "User"}}}}', true));
+    $this->blogs = new BlogsServiceResource($this, $this->serviceName, 'blogs', json_decode('{"methods": {"listByUser": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"userId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.blogs.listByUser", "httpMethod": "GET", "path": "users/{userId}/blogs", "response": {"$ref": "BlogList"}}, "getByUrl": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"url": {"type": "string", "location": "query"}}, "response": {"$ref": "Blog"}, "httpMethod": "GET", "path": "blogs/byurl", "id": "blogger.blogs.getByUrl"}, "get": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"maxPosts": {"type": "integer", "location": "query", "format": "uint32"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.blogs.get", "httpMethod": "GET", "path": "blogs/{blogId}", "response": {"$ref": "Blog"}}}}', true));
+    $this->posts = new PostsServiceResource($this, $this->serviceName, 'posts', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/blogger"], "parameters": {"blogId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Post"}, "response": {"$ref": "Post"}, "httpMethod": "POST", "path": "blogs/{blogId}/posts", "id": "blogger.posts.insert"}, "search": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"q": {"type": "string", "location": "query"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.posts.search", "httpMethod": "GET", "path": "blogs/{blogId}/posts/search", "response": {"$ref": "PostList"}}, "get": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"maxComments": {"type": "integer", "location": "query", "format": "uint32"}, "blogId": {"required": true, "type": "string", "location": "path"}, "postId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.posts.get", "httpMethod": "GET", "path": "blogs/{blogId}/posts/{postId}", "response": {"$ref": "Post"}}, "list": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"startDate": {"type": "string", "location": "query", "format": "date-time"}, "endDate": {"type": "string", "location": "query", "format": "date-time"}, "labels": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "pageToken": {"type": "string", "location": "query"}, "fetchBodies": {"type": "boolean", "location": "query"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.posts.list", "httpMethod": "GET", "path": "blogs/{blogId}/posts", "response": {"$ref": "PostList"}}, "update": {"scopes": ["https://www.googleapis.com/auth/blogger"], "parameters": {"postId": {"required": true, "type": "string", "location": "path"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Post"}, "response": {"$ref": "Post"}, "httpMethod": "PUT", "path": "blogs/{blogId}/posts/{postId}", "id": "blogger.posts.update"}, "getByPath": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"path": {"type": "string", "location": "query"}, "maxComments": {"type": "integer", "location": "query", "format": "uint32"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.posts.getByPath", "httpMethod": "GET", "path": "blogs/{blogId}/posts/bypath", "response": {"$ref": "Post"}}, "patch": {"scopes": ["https://www.googleapis.com/auth/blogger"], "parameters": {"postId": {"required": true, "type": "string", "location": "path"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Post"}, "response": {"$ref": "Post"}, "httpMethod": "PATCH", "path": "blogs/{blogId}/posts/{postId}", "id": "blogger.posts.patch"}, "delete": {"scopes": ["https://www.googleapis.com/auth/blogger"], "path": "blogs/{blogId}/posts/{postId}", "id": "blogger.posts.delete", "parameters": {"postId": {"required": true, "type": "string", "location": "path"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
+    $this->pages = new PagesServiceResource($this, $this->serviceName, 'pages', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"fetchBodies": {"type": "boolean", "location": "query"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.pages.list", "httpMethod": "GET", "path": "blogs/{blogId}/pages", "response": {"$ref": "PageList"}}, "get": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"pageId": {"required": true, "type": "string", "location": "path"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.pages.get", "httpMethod": "GET", "path": "blogs/{blogId}/pages/{pageId}", "response": {"$ref": "Page"}}}}', true));
+    $this->comments = new CommentsServiceResource($this, $this->serviceName, 'comments', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"startDate": {"type": "string", "location": "query", "format": "date-time"}, "postId": {"required": true, "type": "string", "location": "path"}, "endDate": {"type": "string", "location": "query", "format": "date-time"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "pageToken": {"type": "string", "location": "query"}, "fetchBodies": {"type": "boolean", "location": "query"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.comments.list", "httpMethod": "GET", "path": "blogs/{blogId}/posts/{postId}/comments", "response": {"$ref": "CommentList"}}, "get": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"commentId": {"required": true, "type": "string", "location": "path"}, "postId": {"required": true, "type": "string", "location": "path"}, "blogId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.comments.get", "httpMethod": "GET", "path": "blogs/{blogId}/posts/{postId}/comments/{commentId}", "response": {"$ref": "Comment"}}}}', true));
+    $this->users = new UsersServiceResource($this, $this->serviceName, 'users', json_decode('{"methods": {"get": {"scopes": ["https://www.googleapis.com/auth/blogger", "https://www.googleapis.com/auth/blogger.readonly"], "parameters": {"userId": {"required": true, "type": "string", "location": "path"}}, "id": "blogger.users.get", "httpMethod": "GET", "path": "users/{userId}", "response": {"$ref": "User"}}}}', true));
 
   }
 }
@@ -426,15 +429,15 @@ class BloggerService extends Service {
 class Blog extends Model {
   public $kind;
   public $description;
-  protected $__localeType = 'Google_BlogLocale';
+  protected $__localeType = 'BlogLocale';
   protected $__localeDataType = '';
   public $locale;
-  protected $__postsType = 'Google_BlogPosts';
+  protected $__postsType = 'BlogPosts';
   protected $__postsDataType = '';
   public $posts;
   public $customMetaData;
   public $updated;
-  protected $__pagesType = 'Google_BlogPages';
+  protected $__pagesType = 'BlogPages';
   protected $__pagesDataType = '';
   public $pages;
   public $url;
@@ -454,13 +457,13 @@ class Blog extends Model {
   public function getDescription() {
     return $this->description;
   }
-  public function setLocale(Google_BlogLocale $locale) {
+  public function setLocale(BlogLocale $locale) {
     $this->locale = $locale;
   }
   public function getLocale() {
     return $this->locale;
   }
-  public function setPosts(Google_BlogPosts $posts) {
+  public function setPosts(BlogPosts $posts) {
     $this->posts = $posts;
   }
   public function getPosts() {
@@ -478,7 +481,7 @@ class Blog extends Model {
   public function getUpdated() {
     return $this->updated;
   }
-  public function setPages(Google_BlogPages $pages) {
+  public function setPages(BlogPages $pages) {
     $this->pages = $pages;
   }
   public function getPages() {
@@ -517,12 +520,12 @@ class Blog extends Model {
 }
 
 class BlogList extends Model {
-  protected $__itemsType = 'Google_Blog';
+  protected $__itemsType = 'Blog';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Blog) */ $items) {
-    $this->assertIsArray($items, 'Google_Blog', __METHOD__);
+  public function setItems(/* array(Blog) */ $items) {
+    $this->assertIsArray($items, 'Blog', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -579,7 +582,7 @@ class BlogPages extends Model {
 
 class BlogPosts extends Model {
   public $totalItems;
-  protected $__itemsType = 'Google_Post';
+  protected $__itemsType = 'Post';
   protected $__itemsDataType = 'array';
   public $items;
   public $selfLink;
@@ -589,8 +592,8 @@ class BlogPosts extends Model {
   public function getTotalItems() {
     return $this->totalItems;
   }
-  public function setItems(/* array(Google_Post) */ $items) {
-    $this->assertIsArray($items, 'Google_Post', __METHOD__);
+  public function setItems(/* array(Post) */ $items) {
+    $this->assertIsArray($items, 'Post', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -607,18 +610,18 @@ class BlogPosts extends Model {
 class Comment extends Model {
   public $content;
   public $kind;
-  protected $__inReplyToType = 'Google_CommentInReplyTo';
+  protected $__inReplyToType = 'CommentInReplyTo';
   protected $__inReplyToDataType = '';
   public $inReplyTo;
-  protected $__authorType = 'Google_CommentAuthor';
+  protected $__authorType = 'CommentAuthor';
   protected $__authorDataType = '';
   public $author;
   public $updated;
-  protected $__blogType = 'Google_CommentBlog';
+  protected $__blogType = 'CommentBlog';
   protected $__blogDataType = '';
   public $blog;
   public $published;
-  protected $__postType = 'Google_CommentPost';
+  protected $__postType = 'CommentPost';
   protected $__postDataType = '';
   public $post;
   public $id;
@@ -635,13 +638,13 @@ class Comment extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setInReplyTo(Google_CommentInReplyTo $inReplyTo) {
+  public function setInReplyTo(CommentInReplyTo $inReplyTo) {
     $this->inReplyTo = $inReplyTo;
   }
   public function getInReplyTo() {
     return $this->inReplyTo;
   }
-  public function setAuthor(Google_CommentAuthor $author) {
+  public function setAuthor(CommentAuthor $author) {
     $this->author = $author;
   }
   public function getAuthor() {
@@ -653,7 +656,7 @@ class Comment extends Model {
   public function getUpdated() {
     return $this->updated;
   }
-  public function setBlog(Google_CommentBlog $blog) {
+  public function setBlog(CommentBlog $blog) {
     $this->blog = $blog;
   }
   public function getBlog() {
@@ -665,7 +668,7 @@ class Comment extends Model {
   public function getPublished() {
     return $this->published;
   }
-  public function setPost(Google_CommentPost $post) {
+  public function setPost(CommentPost $post) {
     $this->post = $post;
   }
   public function getPost() {
@@ -687,7 +690,7 @@ class Comment extends Model {
 
 class CommentAuthor extends Model {
   public $url;
-  protected $__imageType = 'Google_CommentAuthorImage';
+  protected $__imageType = 'CommentAuthorImage';
   protected $__imageDataType = '';
   public $image;
   public $displayName;
@@ -698,7 +701,7 @@ class CommentAuthor extends Model {
   public function getUrl() {
     return $this->url;
   }
-  public function setImage(Google_CommentAuthorImage $image) {
+  public function setImage(CommentAuthorImage $image) {
     $this->image = $image;
   }
   public function getImage() {
@@ -750,7 +753,7 @@ class CommentInReplyTo extends Model {
 
 class CommentList extends Model {
   public $nextPageToken;
-  protected $__itemsType = 'Google_Comment';
+  protected $__itemsType = 'Comment';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -761,8 +764,8 @@ class CommentList extends Model {
   public function getNextPageToken() {
     return $this->nextPageToken;
   }
-  public function setItems(/* array(Google_Comment) */ $items) {
-    $this->assertIsArray($items, 'Google_Comment', __METHOD__);
+  public function setItems(/* array(Comment) */ $items) {
+    $this->assertIsArray($items, 'Comment', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -795,13 +798,13 @@ class CommentPost extends Model {
 class Page extends Model {
   public $content;
   public $kind;
-  protected $__authorType = 'Google_PageAuthor';
+  protected $__authorType = 'PageAuthor';
   protected $__authorDataType = '';
   public $author;
   public $url;
   public $title;
   public $updated;
-  protected $__blogType = 'Google_PageBlog';
+  protected $__blogType = 'PageBlog';
   protected $__blogDataType = '';
   public $blog;
   public $published;
@@ -819,7 +822,7 @@ class Page extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setAuthor(Google_PageAuthor $author) {
+  public function setAuthor(PageAuthor $author) {
     $this->author = $author;
   }
   public function getAuthor() {
@@ -843,7 +846,7 @@ class Page extends Model {
   public function getUpdated() {
     return $this->updated;
   }
-  public function setBlog(Google_PageBlog $blog) {
+  public function setBlog(PageBlog $blog) {
     $this->blog = $blog;
   }
   public function getBlog() {
@@ -871,7 +874,7 @@ class Page extends Model {
 
 class PageAuthor extends Model {
   public $url;
-  protected $__imageType = 'Google_PageAuthorImage';
+  protected $__imageType = 'PageAuthorImage';
   protected $__imageDataType = '';
   public $image;
   public $displayName;
@@ -882,7 +885,7 @@ class PageAuthor extends Model {
   public function getUrl() {
     return $this->url;
   }
-  public function setImage(Google_PageAuthorImage $image) {
+  public function setImage(PageAuthorImage $image) {
     $this->image = $image;
   }
   public function getImage() {
@@ -923,12 +926,12 @@ class PageBlog extends Model {
 }
 
 class PageList extends Model {
-  protected $__itemsType = 'Google_Page';
+  protected $__itemsType = 'Page';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Page) */ $items) {
-    $this->assertIsArray($items, 'Google_Page', __METHOD__);
+  public function setItems(/* array(Page) */ $items) {
+    $this->assertIsArray($items, 'Page', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -945,20 +948,20 @@ class PageList extends Model {
 class Post extends Model {
   public $content;
   public $kind;
-  protected $__authorType = 'Google_PostAuthor';
+  protected $__authorType = 'PostAuthor';
   protected $__authorDataType = '';
   public $author;
-  protected $__repliesType = 'Google_PostReplies';
+  protected $__repliesType = 'PostReplies';
   protected $__repliesDataType = '';
   public $replies;
   public $labels;
   public $customMetaData;
   public $updated;
-  protected $__blogType = 'Google_PostBlog';
+  protected $__blogType = 'PostBlog';
   protected $__blogDataType = '';
   public $blog;
   public $url;
-  protected $__locationType = 'Google_PostLocation';
+  protected $__locationType = 'PostLocation';
   protected $__locationDataType = '';
   public $location;
   public $published;
@@ -977,20 +980,20 @@ class Post extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setAuthor(Google_PostAuthor $author) {
+  public function setAuthor(PostAuthor $author) {
     $this->author = $author;
   }
   public function getAuthor() {
     return $this->author;
   }
-  public function setReplies(Google_PostReplies $replies) {
+  public function setReplies(PostReplies $replies) {
     $this->replies = $replies;
   }
   public function getReplies() {
     return $this->replies;
   }
-  public function setLabels(/* array(Google_string) */ $labels) {
-    $this->assertIsArray($labels, 'Google_string', __METHOD__);
+  public function setLabels(/* array(string) */ $labels) {
+    $this->assertIsArray($labels, 'string', __METHOD__);
     $this->labels = $labels;
   }
   public function getLabels() {
@@ -1008,7 +1011,7 @@ class Post extends Model {
   public function getUpdated() {
     return $this->updated;
   }
-  public function setBlog(Google_PostBlog $blog) {
+  public function setBlog(PostBlog $blog) {
     $this->blog = $blog;
   }
   public function getBlog() {
@@ -1020,7 +1023,7 @@ class Post extends Model {
   public function getUrl() {
     return $this->url;
   }
-  public function setLocation(Google_PostLocation $location) {
+  public function setLocation(PostLocation $location) {
     $this->location = $location;
   }
   public function getLocation() {
@@ -1054,7 +1057,7 @@ class Post extends Model {
 
 class PostAuthor extends Model {
   public $url;
-  protected $__imageType = 'Google_PostAuthorImage';
+  protected $__imageType = 'PostAuthorImage';
   protected $__imageDataType = '';
   public $image;
   public $displayName;
@@ -1065,7 +1068,7 @@ class PostAuthor extends Model {
   public function getUrl() {
     return $this->url;
   }
-  public function setImage(Google_PostAuthorImage $image) {
+  public function setImage(PostAuthorImage $image) {
     $this->image = $image;
   }
   public function getImage() {
@@ -1107,7 +1110,7 @@ class PostBlog extends Model {
 
 class PostList extends Model {
   public $nextPageToken;
-  protected $__itemsType = 'Google_Post';
+  protected $__itemsType = 'Post';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -1118,8 +1121,8 @@ class PostList extends Model {
   public function getNextPageToken() {
     return $this->nextPageToken;
   }
-  public function setItems(/* array(Google_Post) */ $items) {
-    $this->assertIsArray($items, 'Google_Post', __METHOD__);
+  public function setItems(/* array(Post) */ $items) {
+    $this->assertIsArray($items, 'Post', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1172,7 +1175,7 @@ class PostLocation extends Model {
 
 class PostReplies extends Model {
   public $totalItems;
-  protected $__itemsType = 'Google_Comment';
+  protected $__itemsType = 'Comment';
   protected $__itemsDataType = 'array';
   public $items;
   public $selfLink;
@@ -1182,8 +1185,8 @@ class PostReplies extends Model {
   public function getTotalItems() {
     return $this->totalItems;
   }
-  public function setItems(/* array(Google_Comment) */ $items) {
-    $this->assertIsArray($items, 'Google_Comment', __METHOD__);
+  public function setItems(/* array(Comment) */ $items) {
+    $this->assertIsArray($items, 'Comment', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1201,10 +1204,10 @@ class User extends Model {
   public $about;
   public $displayName;
   public $created;
-  protected $__localeType = 'Google_UserLocale';
+  protected $__localeType = 'UserLocale';
   protected $__localeDataType = '';
   public $locale;
-  protected $__blogsType = 'Google_UserBlogs';
+  protected $__blogsType = 'UserBlogs';
   protected $__blogsDataType = '';
   public $blogs;
   public $kind;
@@ -1229,13 +1232,13 @@ class User extends Model {
   public function getCreated() {
     return $this->created;
   }
-  public function setLocale(Google_UserLocale $locale) {
+  public function setLocale(UserLocale $locale) {
     $this->locale = $locale;
   }
   public function getLocale() {
     return $this->locale;
   }
-  public function setBlogs(Google_UserBlogs $blogs) {
+  public function setBlogs(UserBlogs $blogs) {
     $this->blogs = $blogs;
   }
   public function getBlogs() {

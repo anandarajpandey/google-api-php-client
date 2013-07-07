@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "tables" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $bigqueryService = new Google_BigqueryService(...);
+   *   $bigqueryService = new BigqueryService(...);
    *   $tables = $bigqueryService->tables;
    *  </code>
    */
@@ -35,12 +38,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Table
      */
-    public function insert($projectId, $datasetId, Google_Table $postBody, $optParams = array()) {
+    public function insert($projectId, $datasetId, Table $postBody, $optParams = array()) {
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Table($data);
+        return new Table($data);
       } else {
         return $data;
       }
@@ -60,7 +63,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Table($data);
+        return new Table($data);
       } else {
         return $data;
       }
@@ -81,7 +84,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_TableList($data);
+        return new TableList($data);
       } else {
         return $data;
       }
@@ -96,12 +99,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Table
      */
-    public function update($projectId, $datasetId, $tableId, Google_Table $postBody, $optParams = array()) {
+    public function update($projectId, $datasetId, $tableId, Table $postBody, $optParams = array()) {
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Table($data);
+        return new Table($data);
       } else {
         return $data;
       }
@@ -117,12 +120,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Table
      */
-    public function patch($projectId, $datasetId, $tableId, Google_Table $postBody, $optParams = array()) {
+    public function patch($projectId, $datasetId, $tableId, Table $postBody, $optParams = array()) {
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Table($data);
+        return new Table($data);
       } else {
         return $data;
       }
@@ -148,7 +151,7 @@ use GoogleApi\Client;
    * The "datasets" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $bigqueryService = new Google_BigqueryService(...);
+   *   $bigqueryService = new BigqueryService(...);
    *   $datasets = $bigqueryService->datasets;
    *  </code>
    */
@@ -163,12 +166,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Dataset
      */
-    public function insert($projectId, Google_Dataset $postBody, $optParams = array()) {
+    public function insert($projectId, Dataset $postBody, $optParams = array()) {
       $params = array('projectId' => $projectId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Dataset($data);
+        return new Dataset($data);
       } else {
         return $data;
       }
@@ -186,7 +189,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Dataset($data);
+        return new Dataset($data);
       } else {
         return $data;
       }
@@ -207,7 +210,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_DatasetList($data);
+        return new DatasetList($data);
       } else {
         return $data;
       }
@@ -224,12 +227,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Dataset
      */
-    public function update($projectId, $datasetId, Google_Dataset $postBody, $optParams = array()) {
+    public function update($projectId, $datasetId, Dataset $postBody, $optParams = array()) {
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Dataset($data);
+        return new Dataset($data);
       } else {
         return $data;
       }
@@ -246,12 +249,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Dataset
      */
-    public function patch($projectId, $datasetId, Google_Dataset $postBody, $optParams = array()) {
+    public function patch($projectId, $datasetId, Dataset $postBody, $optParams = array()) {
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Dataset($data);
+        return new Dataset($data);
       } else {
         return $data;
       }
@@ -279,7 +282,7 @@ use GoogleApi\Client;
    * The "jobs" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $bigqueryService = new Google_BigqueryService(...);
+   *   $bigqueryService = new BigqueryService(...);
    *   $jobs = $bigqueryService->jobs;
    *  </code>
    */
@@ -294,12 +297,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Job
      */
-    public function insert($projectId, Google_Job $postBody, $optParams = array()) {
+    public function insert($projectId, Job $postBody, $optParams = array()) {
       $params = array('projectId' => $projectId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Job($data);
+        return new Job($data);
       } else {
         return $data;
       }
@@ -313,12 +316,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return QueryResponse
      */
-    public function query($projectId, Google_QueryRequest $postBody, $optParams = array()) {
+    public function query($projectId, QueryRequest $postBody, $optParams = array()) {
       $params = array('projectId' => $projectId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('query', array($params));
       if ($this->useObjects()) {
-        return new Google_QueryResponse($data);
+        return new QueryResponse($data);
       } else {
         return $data;
       }
@@ -341,7 +344,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_JobList($data);
+        return new JobList($data);
       } else {
         return $data;
       }
@@ -363,7 +366,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('getQueryResults', array($params));
       if ($this->useObjects()) {
-        return new Google_GetQueryResultsResponse($data);
+        return new GetQueryResultsResponse($data);
       } else {
         return $data;
       }
@@ -381,7 +384,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Job($data);
+        return new Job($data);
       } else {
         return $data;
       }
@@ -392,7 +395,7 @@ use GoogleApi\Client;
    * The "tabledata" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $bigqueryService = new Google_BigqueryService(...);
+   *   $bigqueryService = new BigqueryService(...);
    *   $tabledata = $bigqueryService->tabledata;
    *  </code>
    */
@@ -417,7 +420,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_TableDataList($data);
+        return new TableDataList($data);
       } else {
         return $data;
       }
@@ -428,7 +431,7 @@ use GoogleApi\Client;
    * The "projects" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $bigqueryService = new Google_BigqueryService(...);
+   *   $bigqueryService = new BigqueryService(...);
    *   $projects = $bigqueryService->projects;
    *  </code>
    */
@@ -449,7 +452,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_ProjectList($data);
+        return new ProjectList($data);
       } else {
         return $data;
       }
@@ -457,7 +460,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Bigquery (v2).
+ * Service definition for Bigquery (v2).
  *
  * <p>
  * A data platform for customers to create, manage, share and query data.
@@ -487,11 +490,11 @@ class BigqueryService extends Service {
     $this->serviceName = 'bigquery';
 
     $client->addService($this->serviceName, $this->version);
-    $this->tables = new Google_TablesServiceResource($this, $this->serviceName, 'tables', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Table"}, "response": {"$ref": "Table"}, "httpMethod": "POST", "path": "projects/{projectId}/datasets/{datasetId}/tables", "id": "bigquery.tables.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "tableId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.tables.get", "httpMethod": "GET", "path": "projects/{projectId}/datasets/{datasetId}/tables/{tableId}", "response": {"$ref": "Table"}}, "list": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"pageToken": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "datasetId": {"required": true, "type": "string", "location": "path"}, "projectId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.tables.list", "httpMethod": "GET", "path": "projects/{projectId}/datasets/{datasetId}/tables", "response": {"$ref": "TableList"}}, "update": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "tableId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Table"}, "response": {"$ref": "Table"}, "httpMethod": "PUT", "path": "projects/{projectId}/datasets/{datasetId}/tables/{tableId}", "id": "bigquery.tables.update"}, "patch": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "tableId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Table"}, "response": {"$ref": "Table"}, "httpMethod": "PATCH", "path": "projects/{projectId}/datasets/{datasetId}/tables/{tableId}", "id": "bigquery.tables.patch"}, "delete": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "path": "projects/{projectId}/datasets/{datasetId}/tables/{tableId}", "id": "bigquery.tables.delete", "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "tableId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
-    $this->datasets = new Google_DatasetsServiceResource($this, $this->serviceName, 'datasets', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Dataset"}, "response": {"$ref": "Dataset"}, "httpMethod": "POST", "path": "projects/{projectId}/datasets", "id": "bigquery.datasets.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.datasets.get", "httpMethod": "GET", "path": "projects/{projectId}/datasets/{datasetId}", "response": {"$ref": "Dataset"}}, "list": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"pageToken": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "projectId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.datasets.list", "httpMethod": "GET", "path": "projects/{projectId}/datasets", "response": {"$ref": "DatasetList"}}, "update": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Dataset"}, "response": {"$ref": "Dataset"}, "httpMethod": "PUT", "path": "projects/{projectId}/datasets/{datasetId}", "id": "bigquery.datasets.update"}, "patch": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Dataset"}, "response": {"$ref": "Dataset"}, "httpMethod": "PATCH", "path": "projects/{projectId}/datasets/{datasetId}", "id": "bigquery.datasets.patch"}, "delete": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "path": "projects/{projectId}/datasets/{datasetId}", "id": "bigquery.datasets.delete", "parameters": {"deleteContents": {"type": "boolean", "location": "query"}, "datasetId": {"required": true, "type": "string", "location": "path"}, "projectId": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
-    $this->jobs = new Google_JobsServiceResource($this, $this->serviceName, 'jobs', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}}, "supportsMediaUpload": true, "request": {"$ref": "Job"}, "mediaUpload": {"protocols": {"simple": {"path": "/upload/bigquery/v2/projects/{projectId}/jobs", "multipart": true}, "resumable": {"path": "/resumable/upload/bigquery/v2/projects/{projectId}/jobs", "multipart": true}}, "accept": ["application/octet-stream"]}, "response": {"$ref": "Job"}, "httpMethod": "POST", "path": "projects/{projectId}/jobs", "id": "bigquery.jobs.insert"}, "query": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "QueryRequest"}, "response": {"$ref": "QueryResponse"}, "httpMethod": "POST", "path": "projects/{projectId}/queries", "id": "bigquery.jobs.query"}, "list": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projection": {"enum": ["full", "minimal"], "type": "string", "location": "query"}, "stateFilter": {"repeated": true, "enum": ["done", "pending", "running"], "type": "string", "location": "query"}, "projectId": {"required": true, "type": "string", "location": "path"}, "allUsers": {"type": "boolean", "location": "query"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "pageToken": {"type": "string", "location": "query"}}, "id": "bigquery.jobs.list", "httpMethod": "GET", "path": "projects/{projectId}/jobs", "response": {"$ref": "JobList"}}, "getQueryResults": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"timeoutMs": {"type": "integer", "location": "query", "format": "uint32"}, "projectId": {"required": true, "type": "string", "location": "path"}, "startIndex": {"type": "string", "location": "query", "format": "uint64"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "jobId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.jobs.getQueryResults", "httpMethod": "GET", "path": "projects/{projectId}/queries/{jobId}", "response": {"$ref": "GetQueryResultsResponse"}}, "get": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "jobId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.jobs.get", "httpMethod": "GET", "path": "projects/{projectId}/jobs/{jobId}", "response": {"$ref": "Job"}}}}', true));
-    $this->tabledata = new Google_TabledataServiceResource($this, $this->serviceName, 'tabledata', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "pageToken": {"type": "string", "location": "query"}, "startIndex": {"type": "string", "location": "query", "format": "uint64"}, "tableId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.tabledata.list", "httpMethod": "GET", "path": "projects/{projectId}/datasets/{datasetId}/tables/{tableId}/data", "response": {"$ref": "TableDataList"}}}}', true));
-    $this->projects = new Google_ProjectsServiceResource($this, $this->serviceName, 'projects', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"pageToken": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}}, "response": {"$ref": "ProjectList"}, "httpMethod": "GET", "path": "projects", "id": "bigquery.projects.list"}}}', true));
+    $this->tables = new TablesServiceResource($this, $this->serviceName, 'tables', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Table"}, "response": {"$ref": "Table"}, "httpMethod": "POST", "path": "projects/{projectId}/datasets/{datasetId}/tables", "id": "bigquery.tables.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "tableId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.tables.get", "httpMethod": "GET", "path": "projects/{projectId}/datasets/{datasetId}/tables/{tableId}", "response": {"$ref": "Table"}}, "list": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"pageToken": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "datasetId": {"required": true, "type": "string", "location": "path"}, "projectId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.tables.list", "httpMethod": "GET", "path": "projects/{projectId}/datasets/{datasetId}/tables", "response": {"$ref": "TableList"}}, "update": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "tableId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Table"}, "response": {"$ref": "Table"}, "httpMethod": "PUT", "path": "projects/{projectId}/datasets/{datasetId}/tables/{tableId}", "id": "bigquery.tables.update"}, "patch": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "tableId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Table"}, "response": {"$ref": "Table"}, "httpMethod": "PATCH", "path": "projects/{projectId}/datasets/{datasetId}/tables/{tableId}", "id": "bigquery.tables.patch"}, "delete": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "path": "projects/{projectId}/datasets/{datasetId}/tables/{tableId}", "id": "bigquery.tables.delete", "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "tableId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
+    $this->datasets = new DatasetsServiceResource($this, $this->serviceName, 'datasets', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Dataset"}, "response": {"$ref": "Dataset"}, "httpMethod": "POST", "path": "projects/{projectId}/datasets", "id": "bigquery.datasets.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.datasets.get", "httpMethod": "GET", "path": "projects/{projectId}/datasets/{datasetId}", "response": {"$ref": "Dataset"}}, "list": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"pageToken": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "projectId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.datasets.list", "httpMethod": "GET", "path": "projects/{projectId}/datasets", "response": {"$ref": "DatasetList"}}, "update": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Dataset"}, "response": {"$ref": "Dataset"}, "httpMethod": "PUT", "path": "projects/{projectId}/datasets/{datasetId}", "id": "bigquery.datasets.update"}, "patch": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Dataset"}, "response": {"$ref": "Dataset"}, "httpMethod": "PATCH", "path": "projects/{projectId}/datasets/{datasetId}", "id": "bigquery.datasets.patch"}, "delete": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "path": "projects/{projectId}/datasets/{datasetId}", "id": "bigquery.datasets.delete", "parameters": {"deleteContents": {"type": "boolean", "location": "query"}, "datasetId": {"required": true, "type": "string", "location": "path"}, "projectId": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
+    $this->jobs = new JobsServiceResource($this, $this->serviceName, 'jobs', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}}, "supportsMediaUpload": true, "request": {"$ref": "Job"}, "mediaUpload": {"protocols": {"simple": {"path": "/upload/bigquery/v2/projects/{projectId}/jobs", "multipart": true}, "resumable": {"path": "/resumable/upload/bigquery/v2/projects/{projectId}/jobs", "multipart": true}}, "accept": ["application/octet-stream"]}, "response": {"$ref": "Job"}, "httpMethod": "POST", "path": "projects/{projectId}/jobs", "id": "bigquery.jobs.insert"}, "query": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "QueryRequest"}, "response": {"$ref": "QueryResponse"}, "httpMethod": "POST", "path": "projects/{projectId}/queries", "id": "bigquery.jobs.query"}, "list": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projection": {"enum": ["full", "minimal"], "type": "string", "location": "query"}, "stateFilter": {"repeated": true, "enum": ["done", "pending", "running"], "type": "string", "location": "query"}, "projectId": {"required": true, "type": "string", "location": "path"}, "allUsers": {"type": "boolean", "location": "query"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "pageToken": {"type": "string", "location": "query"}}, "id": "bigquery.jobs.list", "httpMethod": "GET", "path": "projects/{projectId}/jobs", "response": {"$ref": "JobList"}}, "getQueryResults": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"timeoutMs": {"type": "integer", "location": "query", "format": "uint32"}, "projectId": {"required": true, "type": "string", "location": "path"}, "startIndex": {"type": "string", "location": "query", "format": "uint64"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "jobId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.jobs.getQueryResults", "httpMethod": "GET", "path": "projects/{projectId}/queries/{jobId}", "response": {"$ref": "GetQueryResultsResponse"}}, "get": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "jobId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.jobs.get", "httpMethod": "GET", "path": "projects/{projectId}/jobs/{jobId}", "response": {"$ref": "Job"}}}}', true));
+    $this->tabledata = new TabledataServiceResource($this, $this->serviceName, 'tabledata', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"projectId": {"required": true, "type": "string", "location": "path"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}, "pageToken": {"type": "string", "location": "query"}, "startIndex": {"type": "string", "location": "query", "format": "uint64"}, "tableId": {"required": true, "type": "string", "location": "path"}, "datasetId": {"required": true, "type": "string", "location": "path"}}, "id": "bigquery.tabledata.list", "httpMethod": "GET", "path": "projects/{projectId}/datasets/{datasetId}/tables/{tableId}/data", "response": {"$ref": "TableDataList"}}}}', true));
+    $this->projects = new ProjectsServiceResource($this, $this->serviceName, 'projects', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/bigquery"], "parameters": {"pageToken": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "location": "query", "format": "uint32"}}, "response": {"$ref": "ProjectList"}, "httpMethod": "GET", "path": "projects", "id": "bigquery.projects.list"}}}', true));
 
   }
 }
@@ -499,11 +502,11 @@ class BigqueryService extends Service {
 class Dataset extends Model {
   public $kind;
   public $description;
-  protected $__datasetReferenceType = 'Google_DatasetReference';
+  protected $__datasetReferenceType = 'DatasetReference';
   protected $__datasetReferenceDataType = '';
   public $datasetReference;
   public $creationTime;
-  protected $__accessType = 'Google_DatasetAccess';
+  protected $__accessType = 'DatasetAccess';
   protected $__accessDataType = 'array';
   public $access;
   public $etag;
@@ -523,7 +526,7 @@ class Dataset extends Model {
   public function getDescription() {
     return $this->description;
   }
-  public function setDatasetReference(Google_DatasetReference $datasetReference) {
+  public function setDatasetReference(DatasetReference $datasetReference) {
     $this->datasetReference = $datasetReference;
   }
   public function getDatasetReference() {
@@ -535,8 +538,8 @@ class Dataset extends Model {
   public function getCreationTime() {
     return $this->creationTime;
   }
-  public function setAccess(/* array(Google_DatasetAccess) */ $access) {
-    $this->assertIsArray($access, 'Google_DatasetAccess', __METHOD__);
+  public function setAccess(/* array(DatasetAccess) */ $access) {
+    $this->assertIsArray($access, 'DatasetAccess', __METHOD__);
     $this->access = $access;
   }
   public function getAccess() {
@@ -615,7 +618,7 @@ class DatasetAccess extends Model {
 class DatasetList extends Model {
   public $nextPageToken;
   public $kind;
-  protected $__datasetsType = 'Google_DatasetListDatasets';
+  protected $__datasetsType = 'DatasetListDatasets';
   protected $__datasetsDataType = 'array';
   public $datasets;
   public $etag;
@@ -631,8 +634,8 @@ class DatasetList extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setDatasets(/* array(Google_DatasetListDatasets) */ $datasets) {
-    $this->assertIsArray($datasets, 'Google_DatasetListDatasets', __METHOD__);
+  public function setDatasets(/* array(DatasetListDatasets) */ $datasets) {
+    $this->assertIsArray($datasets, 'DatasetListDatasets', __METHOD__);
     $this->datasets = $datasets;
   }
   public function getDatasets() {
@@ -650,7 +653,7 @@ class DatasetListDatasets extends Model {
   public $friendlyName;
   public $kind;
   public $id;
-  protected $__datasetReferenceType = 'Google_DatasetReference';
+  protected $__datasetReferenceType = 'DatasetReference';
   protected $__datasetReferenceDataType = '';
   public $datasetReference;
   public function setFriendlyName($friendlyName) {
@@ -671,7 +674,7 @@ class DatasetListDatasets extends Model {
   public function getId() {
     return $this->id;
   }
-  public function setDatasetReference(Google_DatasetReference $datasetReference) {
+  public function setDatasetReference(DatasetReference $datasetReference) {
     $this->datasetReference = $datasetReference;
   }
   public function getDatasetReference() {
@@ -729,16 +732,16 @@ class ErrorProto extends Model {
 
 class GetQueryResultsResponse extends Model {
   public $kind;
-  protected $__rowsType = 'Google_TableRow';
+  protected $__rowsType = 'TableRow';
   protected $__rowsDataType = 'array';
   public $rows;
-  protected $__jobReferenceType = 'Google_JobReference';
+  protected $__jobReferenceType = 'JobReference';
   protected $__jobReferenceDataType = '';
   public $jobReference;
   public $jobComplete;
   public $totalRows;
   public $etag;
-  protected $__schemaType = 'Google_TableSchema';
+  protected $__schemaType = 'TableSchema';
   protected $__schemaDataType = '';
   public $schema;
   public function setKind($kind) {
@@ -747,14 +750,14 @@ class GetQueryResultsResponse extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setRows(/* array(Google_TableRow) */ $rows) {
-    $this->assertIsArray($rows, 'Google_TableRow', __METHOD__);
+  public function setRows(/* array(TableRow) */ $rows) {
+    $this->assertIsArray($rows, 'TableRow', __METHOD__);
     $this->rows = $rows;
   }
   public function getRows() {
     return $this->rows;
   }
-  public function setJobReference(Google_JobReference $jobReference) {
+  public function setJobReference(JobReference $jobReference) {
     $this->jobReference = $jobReference;
   }
   public function getJobReference() {
@@ -778,7 +781,7 @@ class GetQueryResultsResponse extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setSchema(Google_TableSchema $schema) {
+  public function setSchema(TableSchema $schema) {
     $this->schema = $schema;
   }
   public function getSchema() {
@@ -787,23 +790,23 @@ class GetQueryResultsResponse extends Model {
 }
 
 class Job extends Model {
-  protected $__statusType = 'Google_JobStatus';
+  protected $__statusType = 'JobStatus';
   protected $__statusDataType = '';
   public $status;
   public $kind;
-  protected $__statisticsType = 'Google_JobStatistics';
+  protected $__statisticsType = 'JobStatistics';
   protected $__statisticsDataType = '';
   public $statistics;
-  protected $__jobReferenceType = 'Google_JobReference';
+  protected $__jobReferenceType = 'JobReference';
   protected $__jobReferenceDataType = '';
   public $jobReference;
   public $etag;
-  protected $__configurationType = 'Google_JobConfiguration';
+  protected $__configurationType = 'JobConfiguration';
   protected $__configurationDataType = '';
   public $configuration;
   public $id;
   public $selfLink;
-  public function setStatus(Google_JobStatus $status) {
+  public function setStatus(JobStatus $status) {
     $this->status = $status;
   }
   public function getStatus() {
@@ -815,13 +818,13 @@ class Job extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setStatistics(Google_JobStatistics $statistics) {
+  public function setStatistics(JobStatistics $statistics) {
     $this->statistics = $statistics;
   }
   public function getStatistics() {
     return $this->statistics;
   }
-  public function setJobReference(Google_JobReference $jobReference) {
+  public function setJobReference(JobReference $jobReference) {
     $this->jobReference = $jobReference;
   }
   public function getJobReference() {
@@ -833,7 +836,7 @@ class Job extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setConfiguration(Google_JobConfiguration $configuration) {
+  public function setConfiguration(JobConfiguration $configuration) {
     $this->configuration = $configuration;
   }
   public function getConfiguration() {
@@ -854,47 +857,47 @@ class Job extends Model {
 }
 
 class JobConfiguration extends Model {
-  protected $__loadType = 'Google_JobConfigurationLoad';
+  protected $__loadType = 'JobConfigurationLoad';
   protected $__loadDataType = '';
   public $load;
-  protected $__linkType = 'Google_JobConfigurationLink';
+  protected $__linkType = 'JobConfigurationLink';
   protected $__linkDataType = '';
   public $link;
-  protected $__queryType = 'Google_JobConfigurationQuery';
+  protected $__queryType = 'JobConfigurationQuery';
   protected $__queryDataType = '';
   public $query;
-  protected $__copyType = 'Google_JobConfigurationTableCopy';
+  protected $__copyType = 'JobConfigurationTableCopy';
   protected $__copyDataType = '';
   public $copy;
-  protected $__extractType = 'Google_JobConfigurationExtract';
+  protected $__extractType = 'JobConfigurationExtract';
   protected $__extractDataType = '';
   public $extract;
   public $properties;
-  public function setLoad(Google_JobConfigurationLoad $load) {
+  public function setLoad(JobConfigurationLoad $load) {
     $this->load = $load;
   }
   public function getLoad() {
     return $this->load;
   }
-  public function setLink(Google_JobConfigurationLink $link) {
+  public function setLink(JobConfigurationLink $link) {
     $this->link = $link;
   }
   public function getLink() {
     return $this->link;
   }
-  public function setQuery(Google_JobConfigurationQuery $query) {
+  public function setQuery(JobConfigurationQuery $query) {
     $this->query = $query;
   }
   public function getQuery() {
     return $this->query;
   }
-  public function setCopy(Google_JobConfigurationTableCopy $copy) {
+  public function setCopy(JobConfigurationTableCopy $copy) {
     $this->copy = $copy;
   }
   public function getCopy() {
     return $this->copy;
   }
-  public function setExtract(Google_JobConfigurationExtract $extract) {
+  public function setExtract(JobConfigurationExtract $extract) {
     $this->extract = $extract;
   }
   public function getExtract() {
@@ -911,7 +914,7 @@ class JobConfiguration extends Model {
 class JobConfigurationExtract extends Model {
   public $destinationUri;
   public $fieldDelimiter;
-  protected $__sourceTableType = 'Google_TableReference';
+  protected $__sourceTableType = 'TableReference';
   protected $__sourceTableDataType = '';
   public $sourceTable;
   public $printHeader;
@@ -927,7 +930,7 @@ class JobConfigurationExtract extends Model {
   public function getFieldDelimiter() {
     return $this->fieldDelimiter;
   }
-  public function setSourceTable(Google_TableReference $sourceTable) {
+  public function setSourceTable(TableReference $sourceTable) {
     $this->sourceTable = $sourceTable;
   }
   public function getSourceTable() {
@@ -944,7 +947,7 @@ class JobConfigurationExtract extends Model {
 class JobConfigurationLink extends Model {
   public $createDisposition;
   public $writeDisposition;
-  protected $__destinationTableType = 'Google_TableReference';
+  protected $__destinationTableType = 'TableReference';
   protected $__destinationTableDataType = '';
   public $destinationTable;
   public $sourceUri;
@@ -960,14 +963,14 @@ class JobConfigurationLink extends Model {
   public function getWriteDisposition() {
     return $this->writeDisposition;
   }
-  public function setDestinationTable(Google_TableReference $destinationTable) {
+  public function setDestinationTable(TableReference $destinationTable) {
     $this->destinationTable = $destinationTable;
   }
   public function getDestinationTable() {
     return $this->destinationTable;
   }
-  public function setSourceUri(/* array(Google_string) */ $sourceUri) {
-    $this->assertIsArray($sourceUri, 'Google_string', __METHOD__);
+  public function setSourceUri(/* array(string) */ $sourceUri) {
+    $this->assertIsArray($sourceUri, 'string', __METHOD__);
     $this->sourceUri = $sourceUri;
   }
   public function getSourceUri() {
@@ -978,7 +981,7 @@ class JobConfigurationLink extends Model {
 class JobConfigurationLoad extends Model {
   public $encoding;
   public $fieldDelimiter;
-  protected $__destinationTableType = 'Google_TableReference';
+  protected $__destinationTableType = 'TableReference';
   protected $__destinationTableDataType = '';
   public $destinationTable;
   public $writeDisposition;
@@ -989,7 +992,7 @@ class JobConfigurationLoad extends Model {
   public $createDisposition;
   public $schemaInlineFormat;
   public $schemaInline;
-  protected $__schemaType = 'Google_TableSchema';
+  protected $__schemaType = 'TableSchema';
   protected $__schemaDataType = '';
   public $schema;
   public function setEncoding($encoding) {
@@ -1004,7 +1007,7 @@ class JobConfigurationLoad extends Model {
   public function getFieldDelimiter() {
     return $this->fieldDelimiter;
   }
-  public function setDestinationTable(Google_TableReference $destinationTable) {
+  public function setDestinationTable(TableReference $destinationTable) {
     $this->destinationTable = $destinationTable;
   }
   public function getDestinationTable() {
@@ -1028,8 +1031,8 @@ class JobConfigurationLoad extends Model {
   public function getSkipLeadingRows() {
     return $this->skipLeadingRows;
   }
-  public function setSourceUris(/* array(Google_string) */ $sourceUris) {
-    $this->assertIsArray($sourceUris, 'Google_string', __METHOD__);
+  public function setSourceUris(/* array(string) */ $sourceUris) {
+    $this->assertIsArray($sourceUris, 'string', __METHOD__);
     $this->sourceUris = $sourceUris;
   }
   public function getSourceUris() {
@@ -1059,7 +1062,7 @@ class JobConfigurationLoad extends Model {
   public function getSchemaInline() {
     return $this->schemaInline;
   }
-  public function setSchema(Google_TableSchema $schema) {
+  public function setSchema(TableSchema $schema) {
     $this->schema = $schema;
   }
   public function getSchema() {
@@ -1068,23 +1071,23 @@ class JobConfigurationLoad extends Model {
 }
 
 class JobConfigurationQuery extends Model {
-  protected $__defaultDatasetType = 'Google_DatasetReference';
+  protected $__defaultDatasetType = 'DatasetReference';
   protected $__defaultDatasetDataType = '';
   public $defaultDataset;
-  protected $__destinationTableType = 'Google_TableReference';
+  protected $__destinationTableType = 'TableReference';
   protected $__destinationTableDataType = '';
   public $destinationTable;
   public $priority;
   public $writeDisposition;
   public $createDisposition;
   public $query;
-  public function setDefaultDataset(Google_DatasetReference $defaultDataset) {
+  public function setDefaultDataset(DatasetReference $defaultDataset) {
     $this->defaultDataset = $defaultDataset;
   }
   public function getDefaultDataset() {
     return $this->defaultDataset;
   }
-  public function setDestinationTable(Google_TableReference $destinationTable) {
+  public function setDestinationTable(TableReference $destinationTable) {
     $this->destinationTable = $destinationTable;
   }
   public function getDestinationTable() {
@@ -1119,10 +1122,10 @@ class JobConfigurationQuery extends Model {
 class JobConfigurationTableCopy extends Model {
   public $createDisposition;
   public $writeDisposition;
-  protected $__destinationTableType = 'Google_TableReference';
+  protected $__destinationTableType = 'TableReference';
   protected $__destinationTableDataType = '';
   public $destinationTable;
-  protected $__sourceTableType = 'Google_TableReference';
+  protected $__sourceTableType = 'TableReference';
   protected $__sourceTableDataType = '';
   public $sourceTable;
   public function setCreateDisposition($createDisposition) {
@@ -1137,13 +1140,13 @@ class JobConfigurationTableCopy extends Model {
   public function getWriteDisposition() {
     return $this->writeDisposition;
   }
-  public function setDestinationTable(Google_TableReference $destinationTable) {
+  public function setDestinationTable(TableReference $destinationTable) {
     $this->destinationTable = $destinationTable;
   }
   public function getDestinationTable() {
     return $this->destinationTable;
   }
-  public function setSourceTable(Google_TableReference $sourceTable) {
+  public function setSourceTable(TableReference $sourceTable) {
     $this->sourceTable = $sourceTable;
   }
   public function getSourceTable() {
@@ -1156,7 +1159,7 @@ class JobList extends Model {
   public $totalItems;
   public $kind;
   public $etag;
-  protected $__jobsType = 'Google_JobListJobs';
+  protected $__jobsType = 'JobListJobs';
   protected $__jobsDataType = 'array';
   public $jobs;
   public function setNextPageToken($nextPageToken) {
@@ -1183,8 +1186,8 @@ class JobList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setJobs(/* array(Google_JobListJobs) */ $jobs) {
-    $this->assertIsArray($jobs, 'Google_JobListJobs', __METHOD__);
+  public function setJobs(/* array(JobListJobs) */ $jobs) {
+    $this->assertIsArray($jobs, 'JobListJobs', __METHOD__);
     $this->jobs = $jobs;
   }
   public function getJobs() {
@@ -1193,25 +1196,25 @@ class JobList extends Model {
 }
 
 class JobListJobs extends Model {
-  protected $__statusType = 'Google_JobStatus';
+  protected $__statusType = 'JobStatus';
   protected $__statusDataType = '';
   public $status;
   public $kind;
-  protected $__statisticsType = 'Google_JobStatistics';
+  protected $__statisticsType = 'JobStatistics';
   protected $__statisticsDataType = '';
   public $statistics;
-  protected $__jobReferenceType = 'Google_JobReference';
+  protected $__jobReferenceType = 'JobReference';
   protected $__jobReferenceDataType = '';
   public $jobReference;
   public $state;
-  protected $__configurationType = 'Google_JobConfiguration';
+  protected $__configurationType = 'JobConfiguration';
   protected $__configurationDataType = '';
   public $configuration;
   public $id;
-  protected $__errorResultType = 'Google_ErrorProto';
+  protected $__errorResultType = 'ErrorProto';
   protected $__errorResultDataType = '';
   public $errorResult;
-  public function setStatus(Google_JobStatus $status) {
+  public function setStatus(JobStatus $status) {
     $this->status = $status;
   }
   public function getStatus() {
@@ -1223,13 +1226,13 @@ class JobListJobs extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setStatistics(Google_JobStatistics $statistics) {
+  public function setStatistics(JobStatistics $statistics) {
     $this->statistics = $statistics;
   }
   public function getStatistics() {
     return $this->statistics;
   }
-  public function setJobReference(Google_JobReference $jobReference) {
+  public function setJobReference(JobReference $jobReference) {
     $this->jobReference = $jobReference;
   }
   public function getJobReference() {
@@ -1241,7 +1244,7 @@ class JobListJobs extends Model {
   public function getState() {
     return $this->state;
   }
-  public function setConfiguration(Google_JobConfiguration $configuration) {
+  public function setConfiguration(JobConfiguration $configuration) {
     $this->configuration = $configuration;
   }
   public function getConfiguration() {
@@ -1253,7 +1256,7 @@ class JobListJobs extends Model {
   public function getId() {
     return $this->id;
   }
-  public function setErrorResult(Google_ErrorProto $errorResult) {
+  public function setErrorResult(ErrorProto $errorResult) {
     $this->errorResult = $errorResult;
   }
   public function getErrorResult() {
@@ -1304,10 +1307,10 @@ class JobStatistics extends Model {
 
 class JobStatus extends Model {
   public $state;
-  protected $__errorsType = 'Google_ErrorProto';
+  protected $__errorsType = 'ErrorProto';
   protected $__errorsDataType = 'array';
   public $errors;
-  protected $__errorResultType = 'Google_ErrorProto';
+  protected $__errorResultType = 'ErrorProto';
   protected $__errorResultDataType = '';
   public $errorResult;
   public function setState($state) {
@@ -1316,14 +1319,14 @@ class JobStatus extends Model {
   public function getState() {
     return $this->state;
   }
-  public function setErrors(/* array(Google_ErrorProto) */ $errors) {
-    $this->assertIsArray($errors, 'Google_ErrorProto', __METHOD__);
+  public function setErrors(/* array(ErrorProto) */ $errors) {
+    $this->assertIsArray($errors, 'ErrorProto', __METHOD__);
     $this->errors = $errors;
   }
   public function getErrors() {
     return $this->errors;
   }
-  public function setErrorResult(Google_ErrorProto $errorResult) {
+  public function setErrorResult(ErrorProto $errorResult) {
     $this->errorResult = $errorResult;
   }
   public function getErrorResult() {
@@ -1336,7 +1339,7 @@ class ProjectList extends Model {
   public $totalItems;
   public $kind;
   public $etag;
-  protected $__projectsType = 'Google_ProjectListProjects';
+  protected $__projectsType = 'ProjectListProjects';
   protected $__projectsDataType = 'array';
   public $projects;
   public function setNextPageToken($nextPageToken) {
@@ -1363,8 +1366,8 @@ class ProjectList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setProjects(/* array(Google_ProjectListProjects) */ $projects) {
-    $this->assertIsArray($projects, 'Google_ProjectListProjects', __METHOD__);
+  public function setProjects(/* array(ProjectListProjects) */ $projects) {
+    $this->assertIsArray($projects, 'ProjectListProjects', __METHOD__);
     $this->projects = $projects;
   }
   public function getProjects() {
@@ -1376,7 +1379,7 @@ class ProjectListProjects extends Model {
   public $friendlyName;
   public $kind;
   public $id;
-  protected $__projectReferenceType = 'Google_ProjectReference';
+  protected $__projectReferenceType = 'ProjectReference';
   protected $__projectReferenceDataType = '';
   public $projectReference;
   public function setFriendlyName($friendlyName) {
@@ -1397,7 +1400,7 @@ class ProjectListProjects extends Model {
   public function getId() {
     return $this->id;
   }
-  public function setProjectReference(Google_ProjectReference $projectReference) {
+  public function setProjectReference(ProjectReference $projectReference) {
     $this->projectReference = $projectReference;
   }
   public function getProjectReference() {
@@ -1419,7 +1422,7 @@ class QueryRequest extends Model {
   public $timeoutMs;
   public $kind;
   public $dryRun;
-  protected $__defaultDatasetType = 'Google_DatasetReference';
+  protected $__defaultDatasetType = 'DatasetReference';
   protected $__defaultDatasetDataType = '';
   public $defaultDataset;
   public $maxResults;
@@ -1442,7 +1445,7 @@ class QueryRequest extends Model {
   public function getDryRun() {
     return $this->dryRun;
   }
-  public function setDefaultDataset(Google_DatasetReference $defaultDataset) {
+  public function setDefaultDataset(DatasetReference $defaultDataset) {
     $this->defaultDataset = $defaultDataset;
   }
   public function getDefaultDataset() {
@@ -1464,15 +1467,15 @@ class QueryRequest extends Model {
 
 class QueryResponse extends Model {
   public $kind;
-  protected $__rowsType = 'Google_TableRow';
+  protected $__rowsType = 'TableRow';
   protected $__rowsDataType = 'array';
   public $rows;
-  protected $__jobReferenceType = 'Google_JobReference';
+  protected $__jobReferenceType = 'JobReference';
   protected $__jobReferenceDataType = '';
   public $jobReference;
   public $jobComplete;
   public $totalRows;
-  protected $__schemaType = 'Google_TableSchema';
+  protected $__schemaType = 'TableSchema';
   protected $__schemaDataType = '';
   public $schema;
   public function setKind($kind) {
@@ -1481,14 +1484,14 @@ class QueryResponse extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setRows(/* array(Google_TableRow) */ $rows) {
-    $this->assertIsArray($rows, 'Google_TableRow', __METHOD__);
+  public function setRows(/* array(TableRow) */ $rows) {
+    $this->assertIsArray($rows, 'TableRow', __METHOD__);
     $this->rows = $rows;
   }
   public function getRows() {
     return $this->rows;
   }
-  public function setJobReference(Google_JobReference $jobReference) {
+  public function setJobReference(JobReference $jobReference) {
     $this->jobReference = $jobReference;
   }
   public function getJobReference() {
@@ -1506,7 +1509,7 @@ class QueryResponse extends Model {
   public function getTotalRows() {
     return $this->totalRows;
   }
-  public function setSchema(Google_TableSchema $schema) {
+  public function setSchema(TableSchema $schema) {
     $this->schema = $schema;
   }
   public function getSchema() {
@@ -1519,7 +1522,7 @@ class Table extends Model {
   public $lastModifiedTime;
   public $description;
   public $creationTime;
-  protected $__tableReferenceType = 'Google_TableReference';
+  protected $__tableReferenceType = 'TableReference';
   protected $__tableReferenceDataType = '';
   public $tableReference;
   public $numRows;
@@ -1529,7 +1532,7 @@ class Table extends Model {
   public $expirationTime;
   public $id;
   public $selfLink;
-  protected $__schemaType = 'Google_TableSchema';
+  protected $__schemaType = 'TableSchema';
   protected $__schemaDataType = '';
   public $schema;
   public function setKind($kind) {
@@ -1556,7 +1559,7 @@ class Table extends Model {
   public function getCreationTime() {
     return $this->creationTime;
   }
-  public function setTableReference(Google_TableReference $tableReference) {
+  public function setTableReference(TableReference $tableReference) {
     $this->tableReference = $tableReference;
   }
   public function getTableReference() {
@@ -1604,7 +1607,7 @@ class Table extends Model {
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setSchema(Google_TableSchema $schema) {
+  public function setSchema(TableSchema $schema) {
     $this->schema = $schema;
   }
   public function getSchema() {
@@ -1616,7 +1619,7 @@ class TableDataList extends Model {
   public $pageToken;
   public $kind;
   public $etag;
-  protected $__rowsType = 'Google_TableRow';
+  protected $__rowsType = 'TableRow';
   protected $__rowsDataType = 'array';
   public $rows;
   public $totalRows;
@@ -1638,8 +1641,8 @@ class TableDataList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setRows(/* array(Google_TableRow) */ $rows) {
-    $this->assertIsArray($rows, 'Google_TableRow', __METHOD__);
+  public function setRows(/* array(TableRow) */ $rows) {
+    $this->assertIsArray($rows, 'TableRow', __METHOD__);
     $this->rows = $rows;
   }
   public function getRows() {
@@ -1654,14 +1657,14 @@ class TableDataList extends Model {
 }
 
 class TableFieldSchema extends Model {
-  protected $__fieldsType = 'Google_TableFieldSchema';
+  protected $__fieldsType = 'TableFieldSchema';
   protected $__fieldsDataType = 'array';
   public $fields;
   public $type;
   public $mode;
   public $name;
-  public function setFields(/* array(Google_TableFieldSchema) */ $fields) {
-    $this->assertIsArray($fields, 'Google_TableFieldSchema', __METHOD__);
+  public function setFields(/* array(TableFieldSchema) */ $fields) {
+    $this->assertIsArray($fields, 'TableFieldSchema', __METHOD__);
     $this->fields = $fields;
   }
   public function getFields() {
@@ -1689,7 +1692,7 @@ class TableFieldSchema extends Model {
 
 class TableList extends Model {
   public $nextPageToken;
-  protected $__tablesType = 'Google_TableListTables';
+  protected $__tablesType = 'TableListTables';
   protected $__tablesDataType = 'array';
   public $tables;
   public $kind;
@@ -1701,8 +1704,8 @@ class TableList extends Model {
   public function getNextPageToken() {
     return $this->nextPageToken;
   }
-  public function setTables(/* array(Google_TableListTables) */ $tables) {
-    $this->assertIsArray($tables, 'Google_TableListTables', __METHOD__);
+  public function setTables(/* array(TableListTables) */ $tables) {
+    $this->assertIsArray($tables, 'TableListTables', __METHOD__);
     $this->tables = $tables;
   }
   public function getTables() {
@@ -1732,7 +1735,7 @@ class TableListTables extends Model {
   public $friendlyName;
   public $kind;
   public $id;
-  protected $__tableReferenceType = 'Google_TableReference';
+  protected $__tableReferenceType = 'TableReference';
   protected $__tableReferenceDataType = '';
   public $tableReference;
   public function setFriendlyName($friendlyName) {
@@ -1753,7 +1756,7 @@ class TableListTables extends Model {
   public function getId() {
     return $this->id;
   }
-  public function setTableReference(Google_TableReference $tableReference) {
+  public function setTableReference(TableReference $tableReference) {
     $this->tableReference = $tableReference;
   }
   public function getTableReference() {
@@ -1786,11 +1789,11 @@ class TableReference extends Model {
 }
 
 class TableRow extends Model {
-  protected $__fType = 'Google_TableRowF';
+  protected $__fType = 'TableRowF';
   protected $__fDataType = 'array';
   public $f;
-  public function setF(/* array(Google_TableRowF) */ $f) {
-    $this->assertIsArray($f, 'Google_TableRowF', __METHOD__);
+  public function setF(/* array(TableRowF) */ $f) {
+    $this->assertIsArray($f, 'TableRowF', __METHOD__);
     $this->f = $f;
   }
   public function getF() {
@@ -1809,11 +1812,11 @@ class TableRowF extends Model {
 }
 
 class TableSchema extends Model {
-  protected $__fieldsType = 'Google_TableFieldSchema';
+  protected $__fieldsType = 'TableFieldSchema';
   protected $__fieldsDataType = 'array';
   public $fields;
-  public function setFields(/* array(Google_TableFieldSchema) */ $fields) {
-    $this->assertIsArray($fields, 'Google_TableFieldSchema', __METHOD__);
+  public function setFields(/* array(TableFieldSchema) */ $fields) {
+    $this->assertIsArray($fields, 'TableFieldSchema', __METHOD__);
     $this->fields = $fields;
   }
   public function getFields() {

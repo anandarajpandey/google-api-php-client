@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "reports" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $youtubeAnalyticsService = new Google_YouTubeAnalyticsService(...);
+   *   $youtubeAnalyticsService = new YouTubeAnalyticsService(...);
    *   $reports = $youtubeAnalyticsService->reports;
    *  </code>
    */
@@ -49,7 +52,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('query', array($params));
       if ($this->useObjects()) {
-        return new Google_ResultTable($data);
+        return new ResultTable($data);
       } else {
         return $data;
       }
@@ -57,7 +60,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_YouTubeAnalytics (v1).
+ * Service definition for YouTubeAnalytics (v1).
  *
  * <p>
  * Retrieve your YouTube Analytics reports.
@@ -83,7 +86,7 @@ class YouTubeAnalyticsService extends Service {
     $this->serviceName = 'youtubeAnalytics';
 
     $client->addService($this->serviceName, $this->version);
-    $this->reports = new Google_ReportsServiceResource($this, $this->serviceName, 'reports', json_decode('{"methods": {"query": {"id": "youtubeAnalytics.reports.query", "path": "reports", "httpMethod": "GET", "parameters": {"dimensions": {"type": "string", "location": "query"}, "end-date": {"type": "string", "required": true, "location": "query"}, "filters": {"type": "string", "location": "query"}, "ids": {"type": "string", "required": true, "location": "query"}, "max-results": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "metrics": {"type": "string", "required": true, "location": "query"}, "sort": {"type": "string", "location": "query"}, "start-date": {"type": "string", "required": true, "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "ResultTable"}, "scopes": ["https://www.googleapis.com/auth/yt-analytics-monetary.readonly", "https://www.googleapis.com/auth/yt-analytics.readonly"]}}}', true));
+    $this->reports = new ReportsServiceResource($this, $this->serviceName, 'reports', json_decode('{"methods": {"query": {"id": "youtubeAnalytics.reports.query", "path": "reports", "httpMethod": "GET", "parameters": {"dimensions": {"type": "string", "location": "query"}, "end-date": {"type": "string", "required": true, "location": "query"}, "filters": {"type": "string", "location": "query"}, "ids": {"type": "string", "required": true, "location": "query"}, "max-results": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "metrics": {"type": "string", "required": true, "location": "query"}, "sort": {"type": "string", "location": "query"}, "start-date": {"type": "string", "required": true, "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "ResultTable"}, "scopes": ["https://www.googleapis.com/auth/yt-analytics-monetary.readonly", "https://www.googleapis.com/auth/yt-analytics.readonly"]}}}', true));
 
   }
 }
@@ -91,13 +94,13 @@ class YouTubeAnalyticsService extends Service {
 
 
 class ResultTable extends Model {
-  protected $__columnHeadersType = 'Google_ResultTableColumnHeaders';
+  protected $__columnHeadersType = 'ResultTableColumnHeaders';
   protected $__columnHeadersDataType = 'array';
   public $columnHeaders;
   public $kind;
   public $rows;
-  public function setColumnHeaders(/* array(Google_ResultTableColumnHeaders) */ $columnHeaders) {
-    $this->assertIsArray($columnHeaders, 'Google_ResultTableColumnHeaders', __METHOD__);
+  public function setColumnHeaders(/* array(ResultTableColumnHeaders) */ $columnHeaders) {
+    $this->assertIsArray($columnHeaders, 'ResultTableColumnHeaders', __METHOD__);
     $this->columnHeaders = $columnHeaders;
   }
   public function getColumnHeaders() {
@@ -109,8 +112,8 @@ class ResultTable extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setRows(/* array(Google_object) */ $rows) {
-    $this->assertIsArray($rows, 'Google_object', __METHOD__);
+  public function setRows(/* array(object) */ $rows) {
+    $this->assertIsArray($rows, 'object', __METHOD__);
     $this->rows = $rows;
   }
   public function getRows() {

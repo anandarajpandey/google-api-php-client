@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "trainedmodels" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $predictionService = new Google_PredictionService(...);
+   *   $predictionService = new PredictionService(...);
    *   $trainedmodels = $predictionService->trainedmodels;
    *  </code>
    */
@@ -34,12 +37,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Output
      */
-    public function predict($id, Google_Input $postBody, $optParams = array()) {
+    public function predict($id, Input $postBody, $optParams = array()) {
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('predict', array($params));
       if ($this->useObjects()) {
-        return new Google_Output($data);
+        return new Output($data);
       } else {
         return $data;
       }
@@ -51,12 +54,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Training
      */
-    public function insert(Google_Training $postBody, $optParams = array()) {
+    public function insert(Training $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Training($data);
+        return new Training($data);
       } else {
         return $data;
       }
@@ -73,7 +76,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Training($data);
+        return new Training($data);
       } else {
         return $data;
       }
@@ -86,12 +89,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Training
      */
-    public function update($id, Google_Update $postBody, $optParams = array()) {
+    public function update($id, Update $postBody, $optParams = array()) {
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Training($data);
+        return new Training($data);
       } else {
         return $data;
       }
@@ -114,7 +117,7 @@ use GoogleApi\Client;
    * The "hostedmodels" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $predictionService = new Google_PredictionService(...);
+   *   $predictionService = new PredictionService(...);
    *   $hostedmodels = $predictionService->hostedmodels;
    *  </code>
    */
@@ -129,12 +132,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Output
      */
-    public function predict($hostedModelName, Google_Input $postBody, $optParams = array()) {
+    public function predict($hostedModelName, Input $postBody, $optParams = array()) {
       $params = array('hostedModelName' => $hostedModelName, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('predict', array($params));
       if ($this->useObjects()) {
-        return new Google_Output($data);
+        return new Output($data);
       } else {
         return $data;
       }
@@ -142,7 +145,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Prediction (v1.4).
+ * Service definition for Prediction (v1.4).
  *
  * <p>
  * Lets you access a cloud hosted machine learning service that makes it easy to build smart apps
@@ -169,17 +172,17 @@ class PredictionService extends Service {
     $this->serviceName = 'prediction';
 
     $client->addService($this->serviceName, $this->version);
-    $this->trainedmodels = new Google_TrainedmodelsServiceResource($this, $this->serviceName, 'trainedmodels', json_decode('{"methods": {"predict": {"scopes": ["https://www.googleapis.com/auth/prediction"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Input"}, "response": {"$ref": "Output"}, "httpMethod": "POST", "path": "trainedmodels/{id}/predict", "id": "prediction.trainedmodels.predict"}, "insert": {"scopes": ["https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/prediction"], "request": {"$ref": "Training"}, "response": {"$ref": "Training"}, "httpMethod": "POST", "path": "trainedmodels", "id": "prediction.trainedmodels.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/prediction"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "id": "prediction.trainedmodels.get", "httpMethod": "GET", "path": "trainedmodels/{id}", "response": {"$ref": "Training"}}, "update": {"scopes": ["https://www.googleapis.com/auth/prediction"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Update"}, "response": {"$ref": "Training"}, "httpMethod": "PUT", "path": "trainedmodels/{id}", "id": "prediction.trainedmodels.update"}, "delete": {"scopes": ["https://www.googleapis.com/auth/prediction"], "path": "trainedmodels/{id}", "id": "prediction.trainedmodels.delete", "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
-    $this->hostedmodels = new Google_HostedmodelsServiceResource($this, $this->serviceName, 'hostedmodels', json_decode('{"methods": {"predict": {"scopes": ["https://www.googleapis.com/auth/prediction"], "parameters": {"hostedModelName": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Input"}, "response": {"$ref": "Output"}, "httpMethod": "POST", "path": "hostedmodels/{hostedModelName}/predict", "id": "prediction.hostedmodels.predict"}}}', true));
+    $this->trainedmodels = new TrainedmodelsServiceResource($this, $this->serviceName, 'trainedmodels', json_decode('{"methods": {"predict": {"scopes": ["https://www.googleapis.com/auth/prediction"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Input"}, "response": {"$ref": "Output"}, "httpMethod": "POST", "path": "trainedmodels/{id}/predict", "id": "prediction.trainedmodels.predict"}, "insert": {"scopes": ["https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/prediction"], "request": {"$ref": "Training"}, "response": {"$ref": "Training"}, "httpMethod": "POST", "path": "trainedmodels", "id": "prediction.trainedmodels.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/prediction"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "id": "prediction.trainedmodels.get", "httpMethod": "GET", "path": "trainedmodels/{id}", "response": {"$ref": "Training"}}, "update": {"scopes": ["https://www.googleapis.com/auth/prediction"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Update"}, "response": {"$ref": "Training"}, "httpMethod": "PUT", "path": "trainedmodels/{id}", "id": "prediction.trainedmodels.update"}, "delete": {"scopes": ["https://www.googleapis.com/auth/prediction"], "path": "trainedmodels/{id}", "id": "prediction.trainedmodels.delete", "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
+    $this->hostedmodels = new HostedmodelsServiceResource($this, $this->serviceName, 'hostedmodels', json_decode('{"methods": {"predict": {"scopes": ["https://www.googleapis.com/auth/prediction"], "parameters": {"hostedModelName": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Input"}, "response": {"$ref": "Output"}, "httpMethod": "POST", "path": "hostedmodels/{hostedModelName}/predict", "id": "prediction.hostedmodels.predict"}}}', true));
 
   }
 }
 
 class Input extends Model {
-  protected $__inputType = 'Google_InputInput';
+  protected $__inputType = 'InputInput';
   protected $__inputDataType = '';
   public $input;
-  public function setInput(Google_InputInput $input) {
+  public function setInput(InputInput $input) {
     $this->input = $input;
   }
   public function getInput() {
@@ -189,8 +192,8 @@ class Input extends Model {
 
 class InputInput extends Model {
   public $csvInstance;
-  public function setCsvInstance(/* array(Google_object) */ $csvInstance) {
-    $this->assertIsArray($csvInstance, 'Google_object', __METHOD__);
+  public function setCsvInstance(/* array(object) */ $csvInstance) {
+    $this->assertIsArray($csvInstance, 'object', __METHOD__);
     $this->csvInstance = $csvInstance;
   }
   public function getCsvInstance() {
@@ -202,7 +205,7 @@ class Output extends Model {
   public $kind;
   public $outputLabel;
   public $id;
-  protected $__outputMultiType = 'Google_OutputOutputMulti';
+  protected $__outputMultiType = 'OutputOutputMulti';
   protected $__outputMultiDataType = 'array';
   public $outputMulti;
   public $outputValue;
@@ -225,8 +228,8 @@ class Output extends Model {
   public function getId() {
     return $this->id;
   }
-  public function setOutputMulti(/* array(Google_OutputOutputMulti) */ $outputMulti) {
-    $this->assertIsArray($outputMulti, 'Google_OutputOutputMulti', __METHOD__);
+  public function setOutputMulti(/* array(OutputOutputMulti) */ $outputMulti) {
+    $this->assertIsArray($outputMulti, 'OutputOutputMulti', __METHOD__);
     $this->outputMulti = $outputMulti;
   }
   public function getOutputMulti() {
@@ -267,11 +270,11 @@ class Training extends Model {
   public $kind;
   public $storageDataLocation;
   public $storagePMMLModelLocation;
-  protected $__dataAnalysisType = 'Google_TrainingDataAnalysis';
+  protected $__dataAnalysisType = 'TrainingDataAnalysis';
   protected $__dataAnalysisDataType = '';
   public $dataAnalysis;
   public $trainingStatus;
-  protected $__modelInfoType = 'Google_TrainingModelInfo';
+  protected $__modelInfoType = 'TrainingModelInfo';
   protected $__modelInfoDataType = '';
   public $modelInfo;
   public $storagePMMLLocation;
@@ -296,7 +299,7 @@ class Training extends Model {
   public function getStoragePMMLModelLocation() {
     return $this->storagePMMLModelLocation;
   }
-  public function setDataAnalysis(Google_TrainingDataAnalysis $dataAnalysis) {
+  public function setDataAnalysis(TrainingDataAnalysis $dataAnalysis) {
     $this->dataAnalysis = $dataAnalysis;
   }
   public function getDataAnalysis() {
@@ -308,7 +311,7 @@ class Training extends Model {
   public function getTrainingStatus() {
     return $this->trainingStatus;
   }
-  public function setModelInfo(Google_TrainingModelInfo $modelInfo) {
+  public function setModelInfo(TrainingModelInfo $modelInfo) {
     $this->modelInfo = $modelInfo;
   }
   public function getModelInfo() {
@@ -332,8 +335,8 @@ class Training extends Model {
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setUtility(/* array(Google_double) */ $utility) {
-    $this->assertIsArray($utility, 'Google_double', __METHOD__);
+  public function setUtility(/* array(double) */ $utility) {
+    $this->assertIsArray($utility, 'double', __METHOD__);
     $this->utility = $utility;
   }
   public function getUtility() {
@@ -343,8 +346,8 @@ class Training extends Model {
 
 class TrainingDataAnalysis extends Model {
   public $warnings;
-  public function setWarnings(/* array(Google_string) */ $warnings) {
-    $this->assertIsArray($warnings, 'Google_string', __METHOD__);
+  public function setWarnings(/* array(string) */ $warnings) {
+    $this->assertIsArray($warnings, 'string', __METHOD__);
     $this->warnings = $warnings;
   }
   public function getWarnings() {
@@ -414,8 +417,8 @@ class TrainingModelInfo extends Model {
 class Update extends Model {
   public $csvInstance;
   public $label;
-  public function setCsvInstance(/* array(Google_object) */ $csvInstance) {
-    $this->assertIsArray($csvInstance, 'Google_object', __METHOD__);
+  public function setCsvInstance(/* array(object) */ $csvInstance) {
+    $this->assertIsArray($csvInstance, 'object', __METHOD__);
     $this->csvInstance = $csvInstance;
   }
   public function getCsvInstance() {

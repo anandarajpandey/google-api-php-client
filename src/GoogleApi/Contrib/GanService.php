@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "advertisers" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $ganService = new Google_GanService(...);
+   *   $ganService = new GanService(...);
    *   $advertisers = $ganService->advertisers;
    *  </code>
    */
@@ -48,7 +51,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Advertisers($data);
+        return new Advertisers($data);
       } else {
         return $data;
       }
@@ -70,7 +73,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Advertiser($data);
+        return new Advertiser($data);
       } else {
         return $data;
       }
@@ -81,7 +84,7 @@ use GoogleApi\Client;
    * The "ccOffers" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $ganService = new Google_GanService(...);
+   *   $ganService = new GanService(...);
    *   $ccOffers = $ganService->ccOffers;
    *  </code>
    */
@@ -103,7 +106,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_CcOffers($data);
+        return new CcOffers($data);
       } else {
         return $data;
       }
@@ -114,7 +117,7 @@ use GoogleApi\Client;
    * The "events" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $ganService = new Google_GanService(...);
+   *   $ganService = new GanService(...);
    *   $events = $ganService->events;
    *  </code>
    */
@@ -151,7 +154,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Events($data);
+        return new Events($data);
       } else {
         return $data;
       }
@@ -162,7 +165,7 @@ use GoogleApi\Client;
    * The "links" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $ganService = new Google_GanService(...);
+   *   $ganService = new GanService(...);
    *   $links = $ganService->links;
    *  </code>
    */
@@ -178,12 +181,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Link
      */
-    public function insert($role, $roleId, Google_Link $postBody, $optParams = array()) {
+    public function insert($role, $roleId, Link $postBody, $optParams = array()) {
       $params = array('role' => $role, 'roleId' => $roleId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Link($data);
+        return new Link($data);
       } else {
         return $data;
       }
@@ -215,7 +218,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Links($data);
+        return new Links($data);
       } else {
         return $data;
       }
@@ -236,7 +239,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Link($data);
+        return new Link($data);
       } else {
         return $data;
       }
@@ -247,7 +250,7 @@ use GoogleApi\Client;
    * The "publishers" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $ganService = new Google_GanService(...);
+   *   $ganService = new GanService(...);
    *   $publishers = $ganService->publishers;
    *  </code>
    */
@@ -276,7 +279,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Publishers($data);
+        return new Publishers($data);
       } else {
         return $data;
       }
@@ -298,7 +301,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Publisher($data);
+        return new Publisher($data);
       } else {
         return $data;
       }
@@ -306,7 +309,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Gan (v1beta1).
+ * Service definition for Gan (v1beta1).
  *
  * <p>
  * Lets you have programmatic access to your Google Affiliate Network data.
@@ -336,11 +339,11 @@ class GanService extends Service {
     $this->serviceName = 'gan';
 
     $client->addService($this->serviceName, $this->version);
-    $this->advertisers = new Google_AdvertisersServiceResource($this, $this->serviceName, 'advertisers', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"relationshipStatus": {"enum": ["approved", "available", "deactivated", "declined", "pending"], "type": "string", "location": "query"}, "minSevenDayEpc": {"type": "number", "location": "query", "format": "double"}, "advertiserCategory": {"type": "string", "location": "query"}, "minNinetyDayEpc": {"type": "number", "location": "query", "format": "double"}, "pageToken": {"type": "string", "location": "query"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "maxResults": {"location": "query", "minimum": "0", "type": "integer", "maximum": "100", "format": "uint32"}, "roleId": {"required": true, "type": "string", "location": "path"}, "minPayoutRank": {"location": "query", "minimum": "1", "type": "integer", "maximum": "4", "format": "int32"}}, "id": "gan.advertisers.list", "httpMethod": "GET", "path": "{role}/{roleId}/advertisers", "response": {"$ref": "Advertisers"}}, "get": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"advertiserId": {"type": "string", "location": "query"}, "roleId": {"required": true, "type": "string", "location": "path"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}}, "id": "gan.advertisers.get", "httpMethod": "GET", "path": "{role}/{roleId}/advertiser", "response": {"$ref": "Advertiser"}}}}', true));
-    $this->ccOffers = new Google_CcOffersServiceResource($this, $this->serviceName, 'ccOffers', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"advertiser": {"repeated": true, "type": "string", "location": "query"}, "projection": {"enum": ["full", "summary"], "type": "string", "location": "query"}, "publisher": {"required": true, "type": "string", "location": "path"}}, "id": "gan.ccOffers.list", "httpMethod": "GET", "path": "publishers/{publisher}/ccOffers", "response": {"$ref": "CcOffers"}}}}', true));
-    $this->events = new Google_EventsServiceResource($this, $this->serviceName, 'events', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"orderId": {"type": "string", "location": "query"}, "sku": {"type": "string", "location": "query"}, "eventDateMax": {"type": "string", "location": "query"}, "type": {"enum": ["action", "charge", "transaction"], "type": "string", "location": "query"}, "roleId": {"required": true, "type": "string", "location": "path"}, "linkId": {"type": "string", "location": "query"}, "status": {"enum": ["active", "canceled"], "type": "string", "location": "query"}, "eventDateMin": {"type": "string", "location": "query"}, "memberId": {"type": "string", "location": "query"}, "maxResults": {"location": "query", "minimum": "0", "type": "integer", "maximum": "100", "format": "uint32"}, "advertiserId": {"type": "string", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "productCategory": {"type": "string", "location": "query"}, "chargeType": {"enum": ["credit", "debit", "monthly_minimum", "other", "slotting_fee", "tier_bonus"], "type": "string", "location": "query"}, "modifyDateMin": {"type": "string", "location": "query"}, "modifyDateMax": {"type": "string", "location": "query"}, "publisherId": {"type": "string", "location": "query"}}, "id": "gan.events.list", "httpMethod": "GET", "path": "{role}/{roleId}/events", "response": {"$ref": "Events"}}}}', true));
-    $this->links = new Google_LinksServiceResource($this, $this->serviceName, 'links', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/gan"], "parameters": {"roleId": {"required": true, "type": "string", "location": "path"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}}, "request": {"$ref": "Link"}, "response": {"$ref": "Link"}, "httpMethod": "POST", "path": "{role}/{roleId}/link", "id": "gan.links.insert"}, "list": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"linkType": {"enum": ["banner", "text"], "type": "string", "location": "query"}, "startDateMin": {"type": "string", "location": "query"}, "assetSize": {"repeated": true, "type": "string", "location": "query"}, "searchText": {"type": "string", "location": "query"}, "createDateMax": {"type": "string", "location": "query"}, "createDateMin": {"type": "string", "location": "query"}, "relationshipStatus": {"enum": ["approved", "available"], "type": "string", "location": "query"}, "maxResults": {"location": "query", "minimum": "0", "type": "integer", "maximum": "100", "format": "uint32"}, "advertiserId": {"repeated": true, "type": "string", "location": "query", "format": "int64"}, "pageToken": {"type": "string", "location": "query"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "startDateMax": {"type": "string", "location": "query"}, "promotionType": {"repeated": true, "enum": ["coupon", "free_gift", "free_shipping", "percent_off", "price_cut"], "type": "string", "location": "query"}, "roleId": {"required": true, "type": "string", "location": "path"}, "authorship": {"enum": ["advertiser", "publisher"], "type": "string", "location": "query"}}, "id": "gan.links.list", "httpMethod": "GET", "path": "{role}/{roleId}/links", "response": {"$ref": "Links"}}, "get": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"linkId": {"required": true, "type": "string", "location": "path", "format": "int64"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "roleId": {"required": true, "type": "string", "location": "path"}}, "id": "gan.links.get", "httpMethod": "GET", "path": "{role}/{roleId}/link/{linkId}", "response": {"$ref": "Link"}}}}', true));
-    $this->publishers = new Google_PublishersServiceResource($this, $this->serviceName, 'publishers', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"publisherCategory": {"type": "string", "location": "query"}, "relationshipStatus": {"enum": ["approved", "available", "deactivated", "declined", "pending"], "type": "string", "location": "query"}, "minSevenDayEpc": {"type": "number", "location": "query", "format": "double"}, "minNinetyDayEpc": {"type": "number", "location": "query", "format": "double"}, "pageToken": {"type": "string", "location": "query"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "maxResults": {"location": "query", "minimum": "0", "type": "integer", "maximum": "100", "format": "uint32"}, "roleId": {"required": true, "type": "string", "location": "path"}, "minPayoutRank": {"location": "query", "minimum": "1", "type": "integer", "maximum": "4", "format": "int32"}}, "id": "gan.publishers.list", "httpMethod": "GET", "path": "{role}/{roleId}/publishers", "response": {"$ref": "Publishers"}}, "get": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "publisherId": {"type": "string", "location": "query"}, "roleId": {"required": true, "type": "string", "location": "path"}}, "id": "gan.publishers.get", "httpMethod": "GET", "path": "{role}/{roleId}/publisher", "response": {"$ref": "Publisher"}}}}', true));
+    $this->advertisers = new AdvertisersServiceResource($this, $this->serviceName, 'advertisers', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"relationshipStatus": {"enum": ["approved", "available", "deactivated", "declined", "pending"], "type": "string", "location": "query"}, "minSevenDayEpc": {"type": "number", "location": "query", "format": "double"}, "advertiserCategory": {"type": "string", "location": "query"}, "minNinetyDayEpc": {"type": "number", "location": "query", "format": "double"}, "pageToken": {"type": "string", "location": "query"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "maxResults": {"location": "query", "minimum": "0", "type": "integer", "maximum": "100", "format": "uint32"}, "roleId": {"required": true, "type": "string", "location": "path"}, "minPayoutRank": {"location": "query", "minimum": "1", "type": "integer", "maximum": "4", "format": "int32"}}, "id": "gan.advertisers.list", "httpMethod": "GET", "path": "{role}/{roleId}/advertisers", "response": {"$ref": "Advertisers"}}, "get": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"advertiserId": {"type": "string", "location": "query"}, "roleId": {"required": true, "type": "string", "location": "path"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}}, "id": "gan.advertisers.get", "httpMethod": "GET", "path": "{role}/{roleId}/advertiser", "response": {"$ref": "Advertiser"}}}}', true));
+    $this->ccOffers = new CcOffersServiceResource($this, $this->serviceName, 'ccOffers', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"advertiser": {"repeated": true, "type": "string", "location": "query"}, "projection": {"enum": ["full", "summary"], "type": "string", "location": "query"}, "publisher": {"required": true, "type": "string", "location": "path"}}, "id": "gan.ccOffers.list", "httpMethod": "GET", "path": "publishers/{publisher}/ccOffers", "response": {"$ref": "CcOffers"}}}}', true));
+    $this->events = new EventsServiceResource($this, $this->serviceName, 'events', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"orderId": {"type": "string", "location": "query"}, "sku": {"type": "string", "location": "query"}, "eventDateMax": {"type": "string", "location": "query"}, "type": {"enum": ["action", "charge", "transaction"], "type": "string", "location": "query"}, "roleId": {"required": true, "type": "string", "location": "path"}, "linkId": {"type": "string", "location": "query"}, "status": {"enum": ["active", "canceled"], "type": "string", "location": "query"}, "eventDateMin": {"type": "string", "location": "query"}, "memberId": {"type": "string", "location": "query"}, "maxResults": {"location": "query", "minimum": "0", "type": "integer", "maximum": "100", "format": "uint32"}, "advertiserId": {"type": "string", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "productCategory": {"type": "string", "location": "query"}, "chargeType": {"enum": ["credit", "debit", "monthly_minimum", "other", "slotting_fee", "tier_bonus"], "type": "string", "location": "query"}, "modifyDateMin": {"type": "string", "location": "query"}, "modifyDateMax": {"type": "string", "location": "query"}, "publisherId": {"type": "string", "location": "query"}}, "id": "gan.events.list", "httpMethod": "GET", "path": "{role}/{roleId}/events", "response": {"$ref": "Events"}}}}', true));
+    $this->links = new LinksServiceResource($this, $this->serviceName, 'links', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/gan"], "parameters": {"roleId": {"required": true, "type": "string", "location": "path"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}}, "request": {"$ref": "Link"}, "response": {"$ref": "Link"}, "httpMethod": "POST", "path": "{role}/{roleId}/link", "id": "gan.links.insert"}, "list": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"linkType": {"enum": ["banner", "text"], "type": "string", "location": "query"}, "startDateMin": {"type": "string", "location": "query"}, "assetSize": {"repeated": true, "type": "string", "location": "query"}, "searchText": {"type": "string", "location": "query"}, "createDateMax": {"type": "string", "location": "query"}, "createDateMin": {"type": "string", "location": "query"}, "relationshipStatus": {"enum": ["approved", "available"], "type": "string", "location": "query"}, "maxResults": {"location": "query", "minimum": "0", "type": "integer", "maximum": "100", "format": "uint32"}, "advertiserId": {"repeated": true, "type": "string", "location": "query", "format": "int64"}, "pageToken": {"type": "string", "location": "query"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "startDateMax": {"type": "string", "location": "query"}, "promotionType": {"repeated": true, "enum": ["coupon", "free_gift", "free_shipping", "percent_off", "price_cut"], "type": "string", "location": "query"}, "roleId": {"required": true, "type": "string", "location": "path"}, "authorship": {"enum": ["advertiser", "publisher"], "type": "string", "location": "query"}}, "id": "gan.links.list", "httpMethod": "GET", "path": "{role}/{roleId}/links", "response": {"$ref": "Links"}}, "get": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"linkId": {"required": true, "type": "string", "location": "path", "format": "int64"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "roleId": {"required": true, "type": "string", "location": "path"}}, "id": "gan.links.get", "httpMethod": "GET", "path": "{role}/{roleId}/link/{linkId}", "response": {"$ref": "Link"}}}}', true));
+    $this->publishers = new PublishersServiceResource($this, $this->serviceName, 'publishers', json_decode('{"methods": {"list": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"publisherCategory": {"type": "string", "location": "query"}, "relationshipStatus": {"enum": ["approved", "available", "deactivated", "declined", "pending"], "type": "string", "location": "query"}, "minSevenDayEpc": {"type": "number", "location": "query", "format": "double"}, "minNinetyDayEpc": {"type": "number", "location": "query", "format": "double"}, "pageToken": {"type": "string", "location": "query"}, "role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "maxResults": {"location": "query", "minimum": "0", "type": "integer", "maximum": "100", "format": "uint32"}, "roleId": {"required": true, "type": "string", "location": "path"}, "minPayoutRank": {"location": "query", "minimum": "1", "type": "integer", "maximum": "4", "format": "int32"}}, "id": "gan.publishers.list", "httpMethod": "GET", "path": "{role}/{roleId}/publishers", "response": {"$ref": "Publishers"}}, "get": {"scopes": ["https://www.googleapis.com/auth/gan", "https://www.googleapis.com/auth/gan.readonly"], "parameters": {"role": {"required": true, "type": "string", "location": "path", "enum": ["advertisers", "publishers"]}, "publisherId": {"type": "string", "location": "query"}, "roleId": {"required": true, "type": "string", "location": "path"}}, "id": "gan.publishers.get", "httpMethod": "GET", "path": "{role}/{roleId}/publisher", "response": {"$ref": "Publisher"}}}}', true));
 
   }
 }
@@ -354,17 +357,17 @@ class Advertiser extends Model {
   public $description;
   public $merchantCenterIds;
   public $defaultLinkId;
-  protected $__epcSevenDayAverageType = 'Google_Money';
+  protected $__epcSevenDayAverageType = 'Money';
   protected $__epcSevenDayAverageDataType = '';
   public $epcSevenDayAverage;
   public $commissionDuration;
   public $status;
   public $payoutRank;
-  protected $__epcNinetyDayAverageType = 'Google_Money';
+  protected $__epcNinetyDayAverageType = 'Money';
   protected $__epcNinetyDayAverageDataType = '';
   public $epcNinetyDayAverage;
   public $allowPublisherCreatedLinks;
-  protected $__itemType = 'Google_Advertiser';
+  protected $__itemType = 'Advertiser';
   protected $__itemDataType = '';
   public $item;
   public $joinDate;
@@ -421,7 +424,7 @@ class Advertiser extends Model {
   public function getDefaultLinkId() {
     return $this->defaultLinkId;
   }
-  public function setEpcSevenDayAverage(Google_Money $epcSevenDayAverage) {
+  public function setEpcSevenDayAverage(Money $epcSevenDayAverage) {
     $this->epcSevenDayAverage = $epcSevenDayAverage;
   }
   public function getEpcSevenDayAverage() {
@@ -445,7 +448,7 @@ class Advertiser extends Model {
   public function getPayoutRank() {
     return $this->payoutRank;
   }
-  public function setEpcNinetyDayAverage(Google_Money $epcNinetyDayAverage) {
+  public function setEpcNinetyDayAverage(Money $epcNinetyDayAverage) {
     $this->epcNinetyDayAverage = $epcNinetyDayAverage;
   }
   public function getEpcNinetyDayAverage() {
@@ -457,7 +460,7 @@ class Advertiser extends Model {
   public function getAllowPublisherCreatedLinks() {
     return $this->allowPublisherCreatedLinks;
   }
-  public function setItem(Google_Advertiser $item) {
+  public function setItem(Advertiser $item) {
     $this->item = $item;
   }
   public function getItem() {
@@ -503,7 +506,7 @@ class Advertiser extends Model {
 
 class Advertisers extends Model {
   public $nextPageToken;
-  protected $__itemsType = 'Google_Advertiser';
+  protected $__itemsType = 'Advertiser';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -513,8 +516,8 @@ class Advertisers extends Model {
   public function getNextPageToken() {
     return $this->nextPageToken;
   }
-  public function setItems(/* array(Google_Advertiser) */ $items) {
-    $this->assertIsArray($items, 'Google_Advertiser', __METHOD__);
+  public function setItems(/* array(Advertiser) */ $items) {
+    $this->assertIsArray($items, 'Advertiser', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -538,7 +541,7 @@ class CcOffer extends Model {
   public $rewardUnit;
   public $minPurchaseRate;
   public $cardBenefits;
-  protected $__rewardsType = 'Google_CcOfferRewards';
+  protected $__rewardsType = 'CcOfferRewards';
   protected $__rewardsDataType = 'array';
   public $rewards;
   public $offersImmediateCashReward;
@@ -560,7 +563,7 @@ class CcOffer extends Model {
   public $introCashAdvanceTerms;
   public $rewardsExpire;
   public $introPurchaseTerms;
-  protected $__defaultFeesType = 'Google_CcOfferDefaultFees';
+  protected $__defaultFeesType = 'CcOfferDefaultFees';
   protected $__defaultFeesDataType = 'array';
   public $defaultFees;
   public $extendedWarranty;
@@ -592,7 +595,7 @@ class CcOffer extends Model {
   public $flightAccidentInsurance;
   public $annualRewardMaximum;
   public $balanceTransferTerms;
-  protected $__bonusRewardsType = 'Google_CcOfferBonusRewards';
+  protected $__bonusRewardsType = 'CcOfferBonusRewards';
   protected $__bonusRewardsDataType = 'array';
   public $bonusRewards;
   public $imageUrl;
@@ -652,8 +655,8 @@ class CcOffer extends Model {
   public function getCardBenefits() {
     return $this->cardBenefits;
   }
-  public function setRewards(/* array(Google_CcOfferRewards) */ $rewards) {
-    $this->assertIsArray($rewards, 'Google_CcOfferRewards', __METHOD__);
+  public function setRewards(/* array(CcOfferRewards) */ $rewards) {
+    $this->assertIsArray($rewards, 'CcOfferRewards', __METHOD__);
     $this->rewards = $rewards;
   }
   public function getRewards() {
@@ -773,8 +776,8 @@ class CcOffer extends Model {
   public function getIntroPurchaseTerms() {
     return $this->introPurchaseTerms;
   }
-  public function setDefaultFees(/* array(Google_CcOfferDefaultFees) */ $defaultFees) {
-    $this->assertIsArray($defaultFees, 'Google_CcOfferDefaultFees', __METHOD__);
+  public function setDefaultFees(/* array(CcOfferDefaultFees) */ $defaultFees) {
+    $this->assertIsArray($defaultFees, 'CcOfferDefaultFees', __METHOD__);
     $this->defaultFees = $defaultFees;
   }
   public function getDefaultFees() {
@@ -954,8 +957,8 @@ class CcOffer extends Model {
   public function getBalanceTransferTerms() {
     return $this->balanceTransferTerms;
   }
-  public function setBonusRewards(/* array(Google_CcOfferBonusRewards) */ $bonusRewards) {
-    $this->assertIsArray($bonusRewards, 'Google_CcOfferBonusRewards', __METHOD__);
+  public function setBonusRewards(/* array(CcOfferBonusRewards) */ $bonusRewards) {
+    $this->assertIsArray($bonusRewards, 'CcOfferBonusRewards', __METHOD__);
     $this->bonusRewards = $bonusRewards;
   }
   public function getBonusRewards() {
@@ -1075,12 +1078,12 @@ class CcOfferRewards extends Model {
 }
 
 class CcOffers extends Model {
-  protected $__itemsType = 'Google_CcOffer';
+  protected $__itemsType = 'CcOffer';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_CcOffer) */ $items) {
-    $this->assertIsArray($items, 'Google_CcOffer', __METHOD__);
+  public function setItems(/* array(CcOffer) */ $items) {
+    $this->assertIsArray($items, 'CcOffer', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1095,7 +1098,7 @@ class CcOffers extends Model {
 }
 
 class Event extends Model {
-  protected $__networkFeeType = 'Google_Money';
+  protected $__networkFeeType = 'Money';
   protected $__networkFeeDataType = '';
   public $networkFee;
   public $advertiserName;
@@ -1108,22 +1111,22 @@ class Event extends Model {
   public $advertiserId;
   public $status;
   public $chargeId;
-  protected $__productsType = 'Google_EventProducts';
+  protected $__productsType = 'EventProducts';
   protected $__productsDataType = 'array';
   public $products;
-  protected $__earningsType = 'Google_Money';
+  protected $__earningsType = 'Money';
   protected $__earningsDataType = '';
   public $earnings;
   public $chargeType;
-  protected $__publisherFeeType = 'Google_Money';
+  protected $__publisherFeeType = 'Money';
   protected $__publisherFeeDataType = '';
   public $publisherFee;
-  protected $__commissionableSalesType = 'Google_Money';
+  protected $__commissionableSalesType = 'Money';
   protected $__commissionableSalesDataType = '';
   public $commissionableSales;
   public $publisherId;
   public $eventDate;
-  public function setNetworkFee(Google_Money $networkFee) {
+  public function setNetworkFee(Money $networkFee) {
     $this->networkFee = $networkFee;
   }
   public function getNetworkFee() {
@@ -1189,14 +1192,14 @@ class Event extends Model {
   public function getChargeId() {
     return $this->chargeId;
   }
-  public function setProducts(/* array(Google_EventProducts) */ $products) {
-    $this->assertIsArray($products, 'Google_EventProducts', __METHOD__);
+  public function setProducts(/* array(EventProducts) */ $products) {
+    $this->assertIsArray($products, 'EventProducts', __METHOD__);
     $this->products = $products;
   }
   public function getProducts() {
     return $this->products;
   }
-  public function setEarnings(Google_Money $earnings) {
+  public function setEarnings(Money $earnings) {
     $this->earnings = $earnings;
   }
   public function getEarnings() {
@@ -1208,13 +1211,13 @@ class Event extends Model {
   public function getChargeType() {
     return $this->chargeType;
   }
-  public function setPublisherFee(Google_Money $publisherFee) {
+  public function setPublisherFee(Money $publisherFee) {
     $this->publisherFee = $publisherFee;
   }
   public function getPublisherFee() {
     return $this->publisherFee;
   }
-  public function setCommissionableSales(Google_Money $commissionableSales) {
+  public function setCommissionableSales(Money $commissionableSales) {
     $this->commissionableSales = $commissionableSales;
   }
   public function getCommissionableSales() {
@@ -1235,24 +1238,24 @@ class Event extends Model {
 }
 
 class EventProducts extends Model {
-  protected $__networkFeeType = 'Google_Money';
+  protected $__networkFeeType = 'Money';
   protected $__networkFeeDataType = '';
   public $networkFee;
   public $sku;
   public $categoryName;
   public $skuName;
-  protected $__publisherFeeType = 'Google_Money';
+  protected $__publisherFeeType = 'Money';
   protected $__publisherFeeDataType = '';
   public $publisherFee;
-  protected $__earningsType = 'Google_Money';
+  protected $__earningsType = 'Money';
   protected $__earningsDataType = '';
   public $earnings;
-  protected $__unitPriceType = 'Google_Money';
+  protected $__unitPriceType = 'Money';
   protected $__unitPriceDataType = '';
   public $unitPrice;
   public $categoryId;
   public $quantity;
-  public function setNetworkFee(Google_Money $networkFee) {
+  public function setNetworkFee(Money $networkFee) {
     $this->networkFee = $networkFee;
   }
   public function getNetworkFee() {
@@ -1276,19 +1279,19 @@ class EventProducts extends Model {
   public function getSkuName() {
     return $this->skuName;
   }
-  public function setPublisherFee(Google_Money $publisherFee) {
+  public function setPublisherFee(Money $publisherFee) {
     $this->publisherFee = $publisherFee;
   }
   public function getPublisherFee() {
     return $this->publisherFee;
   }
-  public function setEarnings(Google_Money $earnings) {
+  public function setEarnings(Money $earnings) {
     $this->earnings = $earnings;
   }
   public function getEarnings() {
     return $this->earnings;
   }
-  public function setUnitPrice(Google_Money $unitPrice) {
+  public function setUnitPrice(Money $unitPrice) {
     $this->unitPrice = $unitPrice;
   }
   public function getUnitPrice() {
@@ -1310,7 +1313,7 @@ class EventProducts extends Model {
 
 class Events extends Model {
   public $nextPageToken;
-  protected $__itemsType = 'Google_Event';
+  protected $__itemsType = 'Event';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -1320,8 +1323,8 @@ class Events extends Model {
   public function getNextPageToken() {
     return $this->nextPageToken;
   }
-  public function setItems(/* array(Google_Event) */ $items) {
-    $this->assertIsArray($items, 'Google_Event', __METHOD__);
+  public function setItems(/* array(Event) */ $items) {
+    $this->assertIsArray($items, 'Event', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1342,15 +1345,15 @@ class Link extends Model {
   public $endDate;
   public $description;
   public $name;
-  protected $__specialOffersType = 'Google_LinkSpecialOffers';
+  protected $__specialOffersType = 'LinkSpecialOffers';
   protected $__specialOffersDataType = '';
   public $specialOffers;
-  protected $__epcSevenDayAverageType = 'Google_Money';
+  protected $__epcSevenDayAverageType = 'Money';
   protected $__epcSevenDayAverageDataType = '';
   public $epcSevenDayAverage;
   public $createDate;
   public $imageAltText;
-  protected $__epcNinetyDayAverageType = 'Google_Money';
+  protected $__epcNinetyDayAverageType = 'Money';
   protected $__epcNinetyDayAverageDataType = '';
   public $epcNinetyDayAverage;
   public $advertiserId;
@@ -1399,13 +1402,13 @@ class Link extends Model {
   public function getName() {
     return $this->name;
   }
-  public function setSpecialOffers(Google_LinkSpecialOffers $specialOffers) {
+  public function setSpecialOffers(LinkSpecialOffers $specialOffers) {
     $this->specialOffers = $specialOffers;
   }
   public function getSpecialOffers() {
     return $this->specialOffers;
   }
-  public function setEpcSevenDayAverage(Google_Money $epcSevenDayAverage) {
+  public function setEpcSevenDayAverage(Money $epcSevenDayAverage) {
     $this->epcSevenDayAverage = $epcSevenDayAverage;
   }
   public function getEpcSevenDayAverage() {
@@ -1423,7 +1426,7 @@ class Link extends Model {
   public function getImageAltText() {
     return $this->imageAltText;
   }
-  public function setEpcNinetyDayAverage(Google_Money $epcNinetyDayAverage) {
+  public function setEpcNinetyDayAverage(Money $epcNinetyDayAverage) {
     $this->epcNinetyDayAverage = $epcNinetyDayAverage;
   }
   public function getEpcNinetyDayAverage() {
@@ -1492,29 +1495,29 @@ class Link extends Model {
 }
 
 class LinkSpecialOffers extends Model {
-  protected $__priceCutType = 'Google_Money';
+  protected $__priceCutType = 'Money';
   protected $__priceCutDataType = '';
   public $priceCut;
-  protected $__priceCutMinType = 'Google_Money';
+  protected $__priceCutMinType = 'Money';
   protected $__priceCutMinDataType = '';
   public $priceCutMin;
   public $freeShipping;
   public $promotionCodes;
   public $percentOff;
-  protected $__percentOffMinType = 'Google_Money';
+  protected $__percentOffMinType = 'Money';
   protected $__percentOffMinDataType = '';
   public $percentOffMin;
   public $freeGift;
-  protected $__freeShippingMinType = 'Google_Money';
+  protected $__freeShippingMinType = 'Money';
   protected $__freeShippingMinDataType = '';
   public $freeShippingMin;
-  public function setPriceCut(Google_Money $priceCut) {
+  public function setPriceCut(Money $priceCut) {
     $this->priceCut = $priceCut;
   }
   public function getPriceCut() {
     return $this->priceCut;
   }
-  public function setPriceCutMin(Google_Money $priceCutMin) {
+  public function setPriceCutMin(Money $priceCutMin) {
     $this->priceCutMin = $priceCutMin;
   }
   public function getPriceCutMin() {
@@ -1538,7 +1541,7 @@ class LinkSpecialOffers extends Model {
   public function getPercentOff() {
     return $this->percentOff;
   }
-  public function setPercentOffMin(Google_Money $percentOffMin) {
+  public function setPercentOffMin(Money $percentOffMin) {
     $this->percentOffMin = $percentOffMin;
   }
   public function getPercentOffMin() {
@@ -1550,7 +1553,7 @@ class LinkSpecialOffers extends Model {
   public function getFreeGift() {
     return $this->freeGift;
   }
-  public function setFreeShippingMin(Google_Money $freeShippingMin) {
+  public function setFreeShippingMin(Money $freeShippingMin) {
     $this->freeShippingMin = $freeShippingMin;
   }
   public function getFreeShippingMin() {
@@ -1560,7 +1563,7 @@ class LinkSpecialOffers extends Model {
 
 class Links extends Model {
   public $nextPageToken;
-  protected $__itemsType = 'Google_Link';
+  protected $__itemsType = 'Link';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -1570,8 +1573,8 @@ class Links extends Model {
   public function getNextPageToken() {
     return $this->nextPageToken;
   }
-  public function setItems(/* array(Google_Link) */ $items) {
-    $this->assertIsArray($items, 'Google_Link', __METHOD__);
+  public function setItems(/* array(Link) */ $items) {
+    $this->assertIsArray($items, 'Link', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1607,14 +1610,14 @@ class Publisher extends Model {
   public $kind;
   public $name;
   public $classification;
-  protected $__epcSevenDayAverageType = 'Google_Money';
+  protected $__epcSevenDayAverageType = 'Money';
   protected $__epcSevenDayAverageDataType = '';
   public $epcSevenDayAverage;
   public $payoutRank;
-  protected $__epcNinetyDayAverageType = 'Google_Money';
+  protected $__epcNinetyDayAverageType = 'Money';
   protected $__epcNinetyDayAverageDataType = '';
   public $epcNinetyDayAverage;
-  protected $__itemType = 'Google_Publisher';
+  protected $__itemType = 'Publisher';
   protected $__itemDataType = '';
   public $item;
   public $joinDate;
@@ -1644,7 +1647,7 @@ class Publisher extends Model {
   public function getClassification() {
     return $this->classification;
   }
-  public function setEpcSevenDayAverage(Google_Money $epcSevenDayAverage) {
+  public function setEpcSevenDayAverage(Money $epcSevenDayAverage) {
     $this->epcSevenDayAverage = $epcSevenDayAverage;
   }
   public function getEpcSevenDayAverage() {
@@ -1656,13 +1659,13 @@ class Publisher extends Model {
   public function getPayoutRank() {
     return $this->payoutRank;
   }
-  public function setEpcNinetyDayAverage(Google_Money $epcNinetyDayAverage) {
+  public function setEpcNinetyDayAverage(Money $epcNinetyDayAverage) {
     $this->epcNinetyDayAverage = $epcNinetyDayAverage;
   }
   public function getEpcNinetyDayAverage() {
     return $this->epcNinetyDayAverage;
   }
-  public function setItem(Google_Publisher $item) {
+  public function setItem(Publisher $item) {
     $this->item = $item;
   }
   public function getItem() {
@@ -1690,7 +1693,7 @@ class Publisher extends Model {
 
 class Publishers extends Model {
   public $nextPageToken;
-  protected $__itemsType = 'Google_Publisher';
+  protected $__itemsType = 'Publisher';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -1700,8 +1703,8 @@ class Publishers extends Model {
   public function getNextPageToken() {
     return $this->nextPageToken;
   }
-  public function setItems(/* array(Google_Publisher) */ $items) {
-    $this->assertIsArray($items, 'Google_Publisher', __METHOD__);
+  public function setItems(/* array(Publisher) */ $items) {
+    $this->assertIsArray($items, 'Publisher', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {

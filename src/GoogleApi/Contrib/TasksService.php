@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "tasks" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $tasksService = new Google_TasksService(...);
+   *   $tasksService = new TasksService(...);
    *   $tasks = $tasksService->tasks;
    *  </code>
    */
@@ -37,12 +40,12 @@ use GoogleApi\Client;
      * @opt_param string previous Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.
      * @return Task
      */
-    public function insert($tasklist, Google_Task $postBody, $optParams = array()) {
+    public function insert($tasklist, Task $postBody, $optParams = array()) {
       $params = array('tasklist' => $tasklist, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Task($data);
+        return new Task($data);
       } else {
         return $data;
       }
@@ -60,7 +63,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Task($data);
+        return new Task($data);
       } else {
         return $data;
       }
@@ -97,7 +100,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('move', array($params));
       if ($this->useObjects()) {
-        return new Google_Task($data);
+        return new Task($data);
       } else {
         return $data;
       }
@@ -125,7 +128,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Tasks($data);
+        return new Tasks($data);
       } else {
         return $data;
       }
@@ -139,12 +142,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Task
      */
-    public function update($tasklist, $task, Google_Task $postBody, $optParams = array()) {
+    public function update($tasklist, $task, Task $postBody, $optParams = array()) {
       $params = array('tasklist' => $tasklist, 'task' => $task, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Task($data);
+        return new Task($data);
       } else {
         return $data;
       }
@@ -158,12 +161,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Task
      */
-    public function patch($tasklist, $task, Google_Task $postBody, $optParams = array()) {
+    public function patch($tasklist, $task, Task $postBody, $optParams = array()) {
       $params = array('tasklist' => $tasklist, 'task' => $task, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Task($data);
+        return new Task($data);
       } else {
         return $data;
       }
@@ -187,7 +190,7 @@ use GoogleApi\Client;
    * The "tasklists" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $tasksService = new Google_TasksService(...);
+   *   $tasksService = new TasksService(...);
    *   $tasklists = $tasksService->tasklists;
    *  </code>
    */
@@ -201,12 +204,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return TaskList
      */
-    public function insert(Google_TaskList $postBody, $optParams = array()) {
+    public function insert(TaskList $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_TaskList($data);
+        return new TaskList($data);
       } else {
         return $data;
       }
@@ -223,7 +226,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_TaskList($data);
+        return new TaskList($data);
       } else {
         return $data;
       }
@@ -242,7 +245,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_TaskLists($data);
+        return new TaskLists($data);
       } else {
         return $data;
       }
@@ -255,12 +258,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return TaskList
      */
-    public function update($tasklist, Google_TaskList $postBody, $optParams = array()) {
+    public function update($tasklist, TaskList $postBody, $optParams = array()) {
       $params = array('tasklist' => $tasklist, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_TaskList($data);
+        return new TaskList($data);
       } else {
         return $data;
       }
@@ -274,12 +277,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return TaskList
      */
-    public function patch($tasklist, Google_TaskList $postBody, $optParams = array()) {
+    public function patch($tasklist, TaskList $postBody, $optParams = array()) {
       $params = array('tasklist' => $tasklist, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_TaskList($data);
+        return new TaskList($data);
       } else {
         return $data;
       }
@@ -299,7 +302,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Tasks (v1).
+ * Service definition for Tasks (v1).
  *
  * <p>
  * Lets you manage your tasks and task lists.
@@ -326,8 +329,8 @@ class TasksService extends Service {
     $this->serviceName = 'tasks';
 
     $client->addService($this->serviceName, $this->version);
-    $this->tasks = new Google_TasksServiceResource($this, $this->serviceName, 'tasks', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}, "parent": {"type": "string", "location": "query"}, "previous": {"type": "string", "location": "query"}}, "request": {"$ref": "Task"}, "response": {"$ref": "Task"}, "httpMethod": "POST", "path": "lists/{tasklist}/tasks", "id": "tasks.tasks.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/tasks", "https://www.googleapis.com/auth/tasks.readonly"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}, "task": {"required": true, "type": "string", "location": "path"}}, "id": "tasks.tasks.get", "httpMethod": "GET", "path": "lists/{tasklist}/tasks/{task}", "response": {"$ref": "Task"}}, "clear": {"scopes": ["https://www.googleapis.com/auth/tasks"], "path": "lists/{tasklist}/clear", "id": "tasks.tasks.clear", "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "POST"}, "move": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"task": {"required": true, "type": "string", "location": "path"}, "tasklist": {"required": true, "type": "string", "location": "path"}, "parent": {"type": "string", "location": "query"}, "previous": {"type": "string", "location": "query"}}, "id": "tasks.tasks.move", "httpMethod": "POST", "path": "lists/{tasklist}/tasks/{task}/move", "response": {"$ref": "Task"}}, "list": {"scopes": ["https://www.googleapis.com/auth/tasks", "https://www.googleapis.com/auth/tasks.readonly"], "parameters": {"dueMax": {"type": "string", "location": "query"}, "tasklist": {"required": true, "type": "string", "location": "path"}, "showDeleted": {"type": "boolean", "location": "query"}, "updatedMin": {"type": "string", "location": "query"}, "completedMin": {"type": "string", "location": "query"}, "maxResults": {"type": "string", "location": "query", "format": "int64"}, "showCompleted": {"type": "boolean", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "completedMax": {"type": "string", "location": "query"}, "showHidden": {"type": "boolean", "location": "query"}, "dueMin": {"type": "string", "location": "query"}}, "id": "tasks.tasks.list", "httpMethod": "GET", "path": "lists/{tasklist}/tasks", "response": {"$ref": "Tasks"}}, "update": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}, "task": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Task"}, "response": {"$ref": "Task"}, "httpMethod": "PUT", "path": "lists/{tasklist}/tasks/{task}", "id": "tasks.tasks.update"}, "patch": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}, "task": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Task"}, "response": {"$ref": "Task"}, "httpMethod": "PATCH", "path": "lists/{tasklist}/tasks/{task}", "id": "tasks.tasks.patch"}, "delete": {"scopes": ["https://www.googleapis.com/auth/tasks"], "path": "lists/{tasklist}/tasks/{task}", "id": "tasks.tasks.delete", "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}, "task": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
-    $this->tasklists = new Google_TasklistsServiceResource($this, $this->serviceName, 'tasklists', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/tasks"], "request": {"$ref": "TaskList"}, "response": {"$ref": "TaskList"}, "httpMethod": "POST", "path": "users/@me/lists", "id": "tasks.tasklists.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/tasks", "https://www.googleapis.com/auth/tasks.readonly"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}}, "id": "tasks.tasklists.get", "httpMethod": "GET", "path": "users/@me/lists/{tasklist}", "response": {"$ref": "TaskList"}}, "list": {"scopes": ["https://www.googleapis.com/auth/tasks", "https://www.googleapis.com/auth/tasks.readonly"], "parameters": {"pageToken": {"type": "string", "location": "query"}, "maxResults": {"type": "string", "location": "query", "format": "int64"}}, "response": {"$ref": "TaskLists"}, "httpMethod": "GET", "path": "users/@me/lists", "id": "tasks.tasklists.list"}, "update": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "TaskList"}, "response": {"$ref": "TaskList"}, "httpMethod": "PUT", "path": "users/@me/lists/{tasklist}", "id": "tasks.tasklists.update"}, "patch": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "TaskList"}, "response": {"$ref": "TaskList"}, "httpMethod": "PATCH", "path": "users/@me/lists/{tasklist}", "id": "tasks.tasklists.patch"}, "delete": {"scopes": ["https://www.googleapis.com/auth/tasks"], "path": "users/@me/lists/{tasklist}", "id": "tasks.tasklists.delete", "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
+    $this->tasks = new TasksServiceResource($this, $this->serviceName, 'tasks', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}, "parent": {"type": "string", "location": "query"}, "previous": {"type": "string", "location": "query"}}, "request": {"$ref": "Task"}, "response": {"$ref": "Task"}, "httpMethod": "POST", "path": "lists/{tasklist}/tasks", "id": "tasks.tasks.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/tasks", "https://www.googleapis.com/auth/tasks.readonly"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}, "task": {"required": true, "type": "string", "location": "path"}}, "id": "tasks.tasks.get", "httpMethod": "GET", "path": "lists/{tasklist}/tasks/{task}", "response": {"$ref": "Task"}}, "clear": {"scopes": ["https://www.googleapis.com/auth/tasks"], "path": "lists/{tasklist}/clear", "id": "tasks.tasks.clear", "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "POST"}, "move": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"task": {"required": true, "type": "string", "location": "path"}, "tasklist": {"required": true, "type": "string", "location": "path"}, "parent": {"type": "string", "location": "query"}, "previous": {"type": "string", "location": "query"}}, "id": "tasks.tasks.move", "httpMethod": "POST", "path": "lists/{tasklist}/tasks/{task}/move", "response": {"$ref": "Task"}}, "list": {"scopes": ["https://www.googleapis.com/auth/tasks", "https://www.googleapis.com/auth/tasks.readonly"], "parameters": {"dueMax": {"type": "string", "location": "query"}, "tasklist": {"required": true, "type": "string", "location": "path"}, "showDeleted": {"type": "boolean", "location": "query"}, "updatedMin": {"type": "string", "location": "query"}, "completedMin": {"type": "string", "location": "query"}, "maxResults": {"type": "string", "location": "query", "format": "int64"}, "showCompleted": {"type": "boolean", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "completedMax": {"type": "string", "location": "query"}, "showHidden": {"type": "boolean", "location": "query"}, "dueMin": {"type": "string", "location": "query"}}, "id": "tasks.tasks.list", "httpMethod": "GET", "path": "lists/{tasklist}/tasks", "response": {"$ref": "Tasks"}}, "update": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}, "task": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Task"}, "response": {"$ref": "Task"}, "httpMethod": "PUT", "path": "lists/{tasklist}/tasks/{task}", "id": "tasks.tasks.update"}, "patch": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}, "task": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Task"}, "response": {"$ref": "Task"}, "httpMethod": "PATCH", "path": "lists/{tasklist}/tasks/{task}", "id": "tasks.tasks.patch"}, "delete": {"scopes": ["https://www.googleapis.com/auth/tasks"], "path": "lists/{tasklist}/tasks/{task}", "id": "tasks.tasks.delete", "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}, "task": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
+    $this->tasklists = new TasklistsServiceResource($this, $this->serviceName, 'tasklists', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/tasks"], "request": {"$ref": "TaskList"}, "response": {"$ref": "TaskList"}, "httpMethod": "POST", "path": "users/@me/lists", "id": "tasks.tasklists.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/tasks", "https://www.googleapis.com/auth/tasks.readonly"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}}, "id": "tasks.tasklists.get", "httpMethod": "GET", "path": "users/@me/lists/{tasklist}", "response": {"$ref": "TaskList"}}, "list": {"scopes": ["https://www.googleapis.com/auth/tasks", "https://www.googleapis.com/auth/tasks.readonly"], "parameters": {"pageToken": {"type": "string", "location": "query"}, "maxResults": {"type": "string", "location": "query", "format": "int64"}}, "response": {"$ref": "TaskLists"}, "httpMethod": "GET", "path": "users/@me/lists", "id": "tasks.tasklists.list"}, "update": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "TaskList"}, "response": {"$ref": "TaskList"}, "httpMethod": "PUT", "path": "users/@me/lists/{tasklist}", "id": "tasks.tasklists.update"}, "patch": {"scopes": ["https://www.googleapis.com/auth/tasks"], "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "TaskList"}, "response": {"$ref": "TaskList"}, "httpMethod": "PATCH", "path": "users/@me/lists/{tasklist}", "id": "tasks.tasklists.patch"}, "delete": {"scopes": ["https://www.googleapis.com/auth/tasks"], "path": "users/@me/lists/{tasklist}", "id": "tasks.tasklists.delete", "parameters": {"tasklist": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
 
   }
 }
@@ -337,7 +340,7 @@ class Task extends Model {
   public $kind;
   public $updated;
   public $parent;
-  protected $__linksType = 'Google_TaskLinks';
+  protected $__linksType = 'TaskLinks';
   protected $__linksDataType = 'array';
   public $links;
   public $title;
@@ -374,8 +377,8 @@ class Task extends Model {
   public function getParent() {
     return $this->parent;
   }
-  public function setLinks(/* array(Google_TaskLinks) */ $links) {
-    $this->assertIsArray($links, 'Google_TaskLinks', __METHOD__);
+  public function setLinks(/* array(TaskLinks) */ $links) {
+    $this->assertIsArray($links, 'TaskLinks', __METHOD__);
     $this->links = $links;
   }
   public function getLinks() {
@@ -514,7 +517,7 @@ class TaskList extends Model {
 
 class TaskLists extends Model {
   public $nextPageToken;
-  protected $__itemsType = 'Google_TaskList';
+  protected $__itemsType = 'TaskList';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -525,8 +528,8 @@ class TaskLists extends Model {
   public function getNextPageToken() {
     return $this->nextPageToken;
   }
-  public function setItems(/* array(Google_TaskList) */ $items) {
-    $this->assertIsArray($items, 'Google_TaskList', __METHOD__);
+  public function setItems(/* array(TaskList) */ $items) {
+    $this->assertIsArray($items, 'TaskList', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -548,7 +551,7 @@ class TaskLists extends Model {
 
 class Tasks extends Model {
   public $nextPageToken;
-  protected $__itemsType = 'Google_Task';
+  protected $__itemsType = 'Task';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -559,8 +562,8 @@ class Tasks extends Model {
   public function getNextPageToken() {
     return $this->nextPageToken;
   }
-  public function setItems(/* array(Google_Task) */ $items) {
-    $this->assertIsArray($items, 'Google_Task', __METHOD__);
+  public function setItems(/* array(Task) */ $items) {
+    $this->assertIsArray($items, 'Task', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {

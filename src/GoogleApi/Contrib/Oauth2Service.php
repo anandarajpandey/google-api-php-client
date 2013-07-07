@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "userinfo" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $oauth2Service = new Google_Oauth2Service(...);
+   *   $oauth2Service = new Oauth2Service(...);
    *   $userinfo = $oauth2Service->userinfo;
    *  </code>
    */
@@ -37,7 +40,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Userinfo($data);
+        return new Userinfo($data);
       } else {
         return $data;
       }
@@ -48,7 +51,7 @@ use GoogleApi\Client;
    * The "v2" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $oauth2Service = new Google_Oauth2Service(...);
+   *   $oauth2Service = new Oauth2Service(...);
    *   $v2 = $oauth2Service->v2;
    *  </code>
    */
@@ -61,7 +64,7 @@ use GoogleApi\Client;
    * The "me" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $oauth2Service = new Google_Oauth2Service(...);
+   *   $oauth2Service = new Oauth2Service(...);
    *   $me = $oauth2Service->me;
    *  </code>
    */
@@ -79,7 +82,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Userinfo($data);
+        return new Userinfo($data);
       } else {
         return $data;
       }
@@ -87,7 +90,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Oauth2 (v2).
+ * Service definition for Oauth2 (v2).
  *
  * <p>
  * OAuth2 API
@@ -114,8 +117,8 @@ class Oauth2Service extends Service {
     $this->serviceName = 'oauth2';
 
     $client->addService($this->serviceName, $this->version);
-    $this->userinfo = new Google_UserinfoServiceResource($this, $this->serviceName, 'userinfo', json_decode('{"methods": {"get": {"path": "oauth2/v2/userinfo", "scopes": ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"], "id": "oauth2.userinfo.get", "httpMethod": "GET", "response": {"$ref": "Userinfo"}}}}', true));
-    $this->userinfo_v2_me = new Google_UserinfoV2MeServiceResource($this, $this->serviceName, 'me', json_decode('{"methods": {"get": {"path": "userinfo/v2/me", "scopes": ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"], "id": "oauth2.userinfo.v2.me.get", "httpMethod": "GET", "response": {"$ref": "Userinfo"}}}}', true));
+    $this->userinfo = new UserinfoServiceResource($this, $this->serviceName, 'userinfo', json_decode('{"methods": {"get": {"path": "oauth2/v2/userinfo", "scopes": ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"], "id": "oauth2.userinfo.get", "httpMethod": "GET", "response": {"$ref": "Userinfo"}}}}', true));
+    $this->userinfo_v2_me = new UserinfoV2MeServiceResource($this, $this->serviceName, 'me', json_decode('{"methods": {"get": {"path": "userinfo/v2/me", "scopes": ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"], "id": "oauth2.userinfo.v2.me.get", "httpMethod": "GET", "response": {"$ref": "Userinfo"}}}}', true));
   }
 }
 

@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "webResource" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $siteVerificationService = new Google_SiteVerificationService(...);
+   *   $siteVerificationService = new SiteVerificationService(...);
    *   $webResource = $siteVerificationService->webResource;
    *  </code>
    */
@@ -34,12 +37,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return SiteVerificationWebResourceResource
      */
-    public function insert($verificationMethod, Google_SiteVerificationWebResourceResource $postBody, $optParams = array()) {
+    public function insert($verificationMethod, SiteVerificationWebResourceResource $postBody, $optParams = array()) {
       $params = array('verificationMethod' => $verificationMethod, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_SiteVerificationWebResourceResource($data);
+        return new SiteVerificationWebResourceResource($data);
       } else {
         return $data;
       }
@@ -56,7 +59,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_SiteVerificationWebResourceResource($data);
+        return new SiteVerificationWebResourceResource($data);
       } else {
         return $data;
       }
@@ -72,7 +75,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SiteVerificationWebResourceListResponse($data);
+        return new SiteVerificationWebResourceListResponse($data);
       } else {
         return $data;
       }
@@ -85,12 +88,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return SiteVerificationWebResourceResource
      */
-    public function update($id, Google_SiteVerificationWebResourceResource $postBody, $optParams = array()) {
+    public function update($id, SiteVerificationWebResourceResource $postBody, $optParams = array()) {
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_SiteVerificationWebResourceResource($data);
+        return new SiteVerificationWebResourceResource($data);
       } else {
         return $data;
       }
@@ -104,12 +107,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return SiteVerificationWebResourceResource
      */
-    public function patch($id, Google_SiteVerificationWebResourceResource $postBody, $optParams = array()) {
+    public function patch($id, SiteVerificationWebResourceResource $postBody, $optParams = array()) {
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_SiteVerificationWebResourceResource($data);
+        return new SiteVerificationWebResourceResource($data);
       } else {
         return $data;
       }
@@ -121,12 +124,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return SiteVerificationWebResourceGettokenResponse
      */
-    public function getToken(Google_SiteVerificationWebResourceGettokenRequest $postBody, $optParams = array()) {
+    public function getToken(SiteVerificationWebResourceGettokenRequest $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('getToken', array($params));
       if ($this->useObjects()) {
-        return new Google_SiteVerificationWebResourceGettokenResponse($data);
+        return new SiteVerificationWebResourceGettokenResponse($data);
       } else {
         return $data;
       }
@@ -146,7 +149,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_SiteVerification (v1).
+ * Service definition for SiteVerification (v1).
  *
  * <p>
  * Lets you programatically verify ownership of websites or domains with Google.
@@ -172,14 +175,14 @@ class SiteVerificationService extends Service {
     $this->serviceName = 'siteVerification';
 
     $client->addService($this->serviceName, $this->version);
-    $this->webResource = new Google_WebResourceServiceResource($this, $this->serviceName, 'webResource', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/siteverification", "https://www.googleapis.com/auth/siteverification.verify_only"], "parameters": {"verificationMethod": {"required": true, "type": "string", "location": "query"}}, "request": {"$ref": "SiteVerificationWebResourceResource"}, "response": {"$ref": "SiteVerificationWebResourceResource"}, "httpMethod": "POST", "path": "webResource", "id": "siteVerification.webResource.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/siteverification"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "id": "siteVerification.webResource.get", "httpMethod": "GET", "path": "webResource/{id}", "response": {"$ref": "SiteVerificationWebResourceResource"}}, "list": {"scopes": ["https://www.googleapis.com/auth/siteverification"], "path": "webResource", "response": {"$ref": "SiteVerificationWebResourceListResponse"}, "id": "siteVerification.webResource.list", "httpMethod": "GET"}, "update": {"scopes": ["https://www.googleapis.com/auth/siteverification"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "SiteVerificationWebResourceResource"}, "response": {"$ref": "SiteVerificationWebResourceResource"}, "httpMethod": "PUT", "path": "webResource/{id}", "id": "siteVerification.webResource.update"}, "patch": {"scopes": ["https://www.googleapis.com/auth/siteverification"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "SiteVerificationWebResourceResource"}, "response": {"$ref": "SiteVerificationWebResourceResource"}, "httpMethod": "PATCH", "path": "webResource/{id}", "id": "siteVerification.webResource.patch"}, "getToken": {"scopes": ["https://www.googleapis.com/auth/siteverification", "https://www.googleapis.com/auth/siteverification.verify_only"], "request": {"$ref": "SiteVerificationWebResourceGettokenRequest"}, "response": {"$ref": "SiteVerificationWebResourceGettokenResponse"}, "httpMethod": "POST", "path": "token", "id": "siteVerification.webResource.getToken"}, "delete": {"scopes": ["https://www.googleapis.com/auth/siteverification"], "path": "webResource/{id}", "id": "siteVerification.webResource.delete", "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
+    $this->webResource = new WebResourceServiceResource($this, $this->serviceName, 'webResource', json_decode('{"methods": {"insert": {"scopes": ["https://www.googleapis.com/auth/siteverification", "https://www.googleapis.com/auth/siteverification.verify_only"], "parameters": {"verificationMethod": {"required": true, "type": "string", "location": "query"}}, "request": {"$ref": "SiteVerificationWebResourceResource"}, "response": {"$ref": "SiteVerificationWebResourceResource"}, "httpMethod": "POST", "path": "webResource", "id": "siteVerification.webResource.insert"}, "get": {"scopes": ["https://www.googleapis.com/auth/siteverification"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "id": "siteVerification.webResource.get", "httpMethod": "GET", "path": "webResource/{id}", "response": {"$ref": "SiteVerificationWebResourceResource"}}, "list": {"scopes": ["https://www.googleapis.com/auth/siteverification"], "path": "webResource", "response": {"$ref": "SiteVerificationWebResourceListResponse"}, "id": "siteVerification.webResource.list", "httpMethod": "GET"}, "update": {"scopes": ["https://www.googleapis.com/auth/siteverification"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "SiteVerificationWebResourceResource"}, "response": {"$ref": "SiteVerificationWebResourceResource"}, "httpMethod": "PUT", "path": "webResource/{id}", "id": "siteVerification.webResource.update"}, "patch": {"scopes": ["https://www.googleapis.com/auth/siteverification"], "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "SiteVerificationWebResourceResource"}, "response": {"$ref": "SiteVerificationWebResourceResource"}, "httpMethod": "PATCH", "path": "webResource/{id}", "id": "siteVerification.webResource.patch"}, "getToken": {"scopes": ["https://www.googleapis.com/auth/siteverification", "https://www.googleapis.com/auth/siteverification.verify_only"], "request": {"$ref": "SiteVerificationWebResourceGettokenRequest"}, "response": {"$ref": "SiteVerificationWebResourceGettokenResponse"}, "httpMethod": "POST", "path": "token", "id": "siteVerification.webResource.getToken"}, "delete": {"scopes": ["https://www.googleapis.com/auth/siteverification"], "path": "webResource/{id}", "id": "siteVerification.webResource.delete", "parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE"}}}', true));
 
   }
 }
 
 class SiteVerificationWebResourceGettokenRequest extends Model {
   public $verificationMethod;
-  protected $__siteType = 'Google_SiteVerificationWebResourceGettokenRequestSite';
+  protected $__siteType = 'SiteVerificationWebResourceGettokenRequestSite';
   protected $__siteDataType = '';
   public $site;
   public function setVerificationMethod($verificationMethod) {
@@ -188,7 +191,7 @@ class SiteVerificationWebResourceGettokenRequest extends Model {
   public function getVerificationMethod() {
     return $this->verificationMethod;
   }
-  public function setSite(Google_SiteVerificationWebResourceGettokenRequestSite $site) {
+  public function setSite(SiteVerificationWebResourceGettokenRequestSite $site) {
     $this->site = $site;
   }
   public function getSite() {
@@ -231,11 +234,11 @@ class SiteVerificationWebResourceGettokenResponse extends Model {
 }
 
 class SiteVerificationWebResourceListResponse extends Model {
-  protected $__itemsType = 'Google_SiteVerificationWebResourceResource';
+  protected $__itemsType = 'SiteVerificationWebResourceResource';
   protected $__itemsDataType = 'array';
   public $items;
-  public function setItems(/* array(Google_SiteVerificationWebResourceResource) */ $items) {
-    $this->assertIsArray($items, 'Google_SiteVerificationWebResourceResource', __METHOD__);
+  public function setItems(/* array(SiteVerificationWebResourceResource) */ $items) {
+    $this->assertIsArray($items, 'SiteVerificationWebResourceResource', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -246,11 +249,11 @@ class SiteVerificationWebResourceListResponse extends Model {
 class SiteVerificationWebResourceResource extends Model {
   public $owners;
   public $id;
-  protected $__siteType = 'Google_SiteVerificationWebResourceResourceSite';
+  protected $__siteType = 'SiteVerificationWebResourceResourceSite';
   protected $__siteDataType = '';
   public $site;
-  public function setOwners(/* array(Google_string) */ $owners) {
-    $this->assertIsArray($owners, 'Google_string', __METHOD__);
+  public function setOwners(/* array(string) */ $owners) {
+    $this->assertIsArray($owners, 'string', __METHOD__);
     $this->owners = $owners;
   }
   public function getOwners() {
@@ -262,7 +265,7 @@ class SiteVerificationWebResourceResource extends Model {
   public function getId() {
     return $this->id;
   }
-  public function setSite(Google_SiteVerificationWebResourceResourceSite $site) {
+  public function setSite(SiteVerificationWebResourceResourceSite $site) {
     $this->site = $site;
   }
   public function getSite() {

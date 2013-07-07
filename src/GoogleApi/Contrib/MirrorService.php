@@ -16,12 +16,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "contacts" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $mirrorService = new Google_MirrorService(...);
+   *   $mirrorService = new MirrorService(...);
    *   $contacts = $mirrorService->contacts;
    *  </code>
    */
@@ -52,7 +55,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Contact($data);
+        return new Contact($data);
       } else {
         return $data;
       }
@@ -64,12 +67,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Contact
      */
-    public function insert(Google_Contact $postBody, $optParams = array()) {
+    public function insert(Contact $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Contact($data);
+        return new Contact($data);
       } else {
         return $data;
       }
@@ -85,7 +88,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_ContactsListResponse($data);
+        return new ContactsListResponse($data);
       } else {
         return $data;
       }
@@ -98,12 +101,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Contact
      */
-    public function patch($id, Google_Contact $postBody, $optParams = array()) {
+    public function patch($id, Contact $postBody, $optParams = array()) {
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Contact($data);
+        return new Contact($data);
       } else {
         return $data;
       }
@@ -116,12 +119,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Contact
      */
-    public function update($id, Google_Contact $postBody, $optParams = array()) {
+    public function update($id, Contact $postBody, $optParams = array()) {
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Contact($data);
+        return new Contact($data);
       } else {
         return $data;
       }
@@ -132,7 +135,7 @@ use GoogleApi\Client;
    * The "locations" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $mirrorService = new Google_MirrorService(...);
+   *   $mirrorService = new MirrorService(...);
    *   $locations = $mirrorService->locations;
    *  </code>
    */
@@ -151,7 +154,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Location($data);
+        return new Location($data);
       } else {
         return $data;
       }
@@ -167,7 +170,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_LocationsListResponse($data);
+        return new LocationsListResponse($data);
       } else {
         return $data;
       }
@@ -178,7 +181,7 @@ use GoogleApi\Client;
    * The "subscriptions" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $mirrorService = new Google_MirrorService(...);
+   *   $mirrorService = new MirrorService(...);
    *   $subscriptions = $mirrorService->subscriptions;
    *  </code>
    */
@@ -204,12 +207,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Subscription
      */
-    public function insert(Google_Subscription $postBody, $optParams = array()) {
+    public function insert(Subscription $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Subscription($data);
+        return new Subscription($data);
       } else {
         return $data;
       }
@@ -225,7 +228,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_SubscriptionsListResponse($data);
+        return new SubscriptionsListResponse($data);
       } else {
         return $data;
       }
@@ -238,12 +241,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Subscription
      */
-    public function update($id, Google_Subscription $postBody, $optParams = array()) {
+    public function update($id, Subscription $postBody, $optParams = array()) {
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Subscription($data);
+        return new Subscription($data);
       } else {
         return $data;
       }
@@ -254,7 +257,7 @@ use GoogleApi\Client;
    * The "timeline" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $mirrorService = new Google_MirrorService(...);
+   *   $mirrorService = new MirrorService(...);
    *   $timeline = $mirrorService->timeline;
    *  </code>
    */
@@ -285,7 +288,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_TimelineItem($data);
+        return new TimelineItem($data);
       } else {
         return $data;
       }
@@ -297,12 +300,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return TimelineItem
      */
-    public function insert(Google_TimelineItem $postBody, $optParams = array()) {
+    public function insert(TimelineItem $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_TimelineItem($data);
+        return new TimelineItem($data);
       } else {
         return $data;
       }
@@ -326,7 +329,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_TimelineListResponse($data);
+        return new TimelineListResponse($data);
       } else {
         return $data;
       }
@@ -339,12 +342,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return TimelineItem
      */
-    public function patch($id, Google_TimelineItem $postBody, $optParams = array()) {
+    public function patch($id, TimelineItem $postBody, $optParams = array()) {
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_TimelineItem($data);
+        return new TimelineItem($data);
       } else {
         return $data;
       }
@@ -357,12 +360,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return TimelineItem
      */
-    public function update($id, Google_TimelineItem $postBody, $optParams = array()) {
+    public function update($id, TimelineItem $postBody, $optParams = array()) {
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_TimelineItem($data);
+        return new TimelineItem($data);
       } else {
         return $data;
       }
@@ -373,7 +376,7 @@ use GoogleApi\Client;
    * The "attachments" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $mirrorService = new Google_MirrorService(...);
+   *   $mirrorService = new MirrorService(...);
    *   $attachments = $mirrorService->attachments;
    *  </code>
    */
@@ -406,7 +409,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Attachment($data);
+        return new Attachment($data);
       } else {
         return $data;
       }
@@ -423,7 +426,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Attachment($data);
+        return new Attachment($data);
       } else {
         return $data;
       }
@@ -440,7 +443,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_AttachmentsListResponse($data);
+        return new AttachmentsListResponse($data);
       } else {
         return $data;
       }
@@ -448,7 +451,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Mirror (v1).
+ * Service definition for Mirror (v1).
  *
  * <p>
  * API for interacting with Glass users via the timeline.
@@ -478,11 +481,11 @@ class MirrorService extends Service {
     $this->serviceName = 'mirror';
 
     $client->addService($this->serviceName, $this->version);
-    $this->contacts = new Google_ContactsServiceResource($this, $this->serviceName, 'contacts', json_decode('{"methods": {"insert": {"request": {"$ref": "Contact"}, "id": "mirror.contacts.insert", "httpMethod": "POST", "path": "contacts", "response": {"$ref": "Contact"}}, "get": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "Contact"}, "httpMethod": "GET", "path": "contacts/{id}", "id": "mirror.contacts.get"}, "list": {"path": "contacts", "response": {"$ref": "ContactsListResponse"}, "id": "mirror.contacts.list", "httpMethod": "GET"}, "update": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Contact"}, "response": {"$ref": "Contact"}, "httpMethod": "PUT", "path": "contacts/{id}", "id": "mirror.contacts.update"}, "patch": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Contact"}, "response": {"$ref": "Contact"}, "httpMethod": "PATCH", "path": "contacts/{id}", "id": "mirror.contacts.patch"}, "delete": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE", "path": "contacts/{id}", "id": "mirror.contacts.delete"}}}', true));
-    $this->locations = new Google_LocationsServiceResource($this, $this->serviceName, 'locations', json_decode('{"methods": {"list": {"path": "locations", "response": {"$ref": "LocationsListResponse"}, "id": "mirror.locations.list", "httpMethod": "GET"}, "get": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "Location"}, "httpMethod": "GET", "path": "locations/{id}", "id": "mirror.locations.get"}}}', true));
-    $this->subscriptions = new Google_SubscriptionsServiceResource($this, $this->serviceName, 'subscriptions', json_decode('{"methods": {"insert": {"request": {"$ref": "Subscription"}, "id": "mirror.subscriptions.insert", "httpMethod": "POST", "path": "subscriptions", "response": {"$ref": "Subscription"}}, "list": {"path": "subscriptions", "response": {"$ref": "SubscriptionsListResponse"}, "id": "mirror.subscriptions.list", "httpMethod": "GET"}, "update": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Subscription"}, "response": {"$ref": "Subscription"}, "httpMethod": "PUT", "path": "subscriptions/{id}", "id": "mirror.subscriptions.update"}, "delete": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE", "path": "subscriptions/{id}", "id": "mirror.subscriptions.delete"}}}', true));
-    $this->timeline = new Google_TimelineServiceResource($this, $this->serviceName, 'timeline', json_decode('{"methods": {"insert": {"supportsMediaUpload": true, "mediaUpload": {"maxSize": "10MB", "protocols": {"simple": {"path": "/upload/mirror/v1/timeline", "multipart": true}, "resumable": {"path": "/resumable/upload/mirror/v1/timeline", "multipart": true}}, "accept": ["audio/*", "image/*", "video/*"]}, "request": {"$ref": "TimelineItem"}, "id": "mirror.timeline.insert", "httpMethod": "POST", "path": "timeline", "response": {"$ref": "TimelineItem"}}, "get": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "TimelineItem"}, "httpMethod": "GET", "path": "timeline/{id}", "id": "mirror.timeline.get"}, "list": {"parameters": {"orderBy": {"enum": ["displayTime", "writeTime"], "type": "string", "location": "query"}, "includeDeleted": {"type": "boolean", "location": "query"}, "maxResults": {"location": "query", "type": "integer", "format": "uint32"}, "pageToken": {"type": "string", "location": "query"}, "sourceItemId": {"type": "string", "location": "query"}, "pinnedOnly": {"type": "boolean", "location": "query"}, "bundleId": {"type": "string", "location": "query"}}, "id": "mirror.timeline.list", "httpMethod": "GET", "path": "timeline", "response": {"$ref": "TimelineListResponse"}}, "update": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "supportsMediaUpload": true, "mediaUpload": {"maxSize": "10MB", "protocols": {"simple": {"path": "/upload/mirror/v1/timeline/{id}", "multipart": true}, "resumable": {"path": "/resumable/upload/mirror/v1/timeline/{id}", "multipart": true}}, "accept": ["audio/*", "image/*", "video/*"]}, "request": {"$ref": "TimelineItem"}, "response": {"$ref": "TimelineItem"}, "httpMethod": "PUT", "path": "timeline/{id}", "id": "mirror.timeline.update"}, "patch": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "TimelineItem"}, "response": {"$ref": "TimelineItem"}, "httpMethod": "PATCH", "path": "timeline/{id}", "id": "mirror.timeline.patch"}, "delete": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE", "path": "timeline/{id}", "id": "mirror.timeline.delete"}}}', true));
-    $this->timeline_attachments = new Google_TimelineAttachmentsServiceResource($this, $this->serviceName, 'attachments', json_decode('{"methods": {"insert": {"parameters": {"itemId": {"required": true, "type": "string", "location": "path"}}, "supportsMediaUpload": true, "mediaUpload": {"maxSize": "10MB", "protocols": {"simple": {"path": "/upload/mirror/v1/timeline/{itemId}/attachments", "multipart": true}, "resumable": {"path": "/resumable/upload/mirror/v1/timeline/{itemId}/attachments", "multipart": true}}, "accept": ["audio/*", "image/*", "video/*"]}, "response": {"$ref": "Attachment"}, "httpMethod": "POST", "path": "timeline/{itemId}/attachments", "id": "mirror.timeline.attachments.insert"}, "get": {"parameters": {"itemId": {"required": true, "type": "string", "location": "path"}, "attachmentId": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "Attachment"}, "httpMethod": "GET", "path": "timeline/{itemId}/attachments/{attachmentId}", "id": "mirror.timeline.attachments.get", "supportsMediaDownload": true}, "list": {"parameters": {"itemId": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "AttachmentsListResponse"}, "httpMethod": "GET", "path": "timeline/{itemId}/attachments", "id": "mirror.timeline.attachments.list"}, "delete": {"parameters": {"itemId": {"required": true, "type": "string", "location": "path"}, "attachmentId": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE", "path": "timeline/{itemId}/attachments/{attachmentId}", "id": "mirror.timeline.attachments.delete"}}}', true));
+    $this->contacts = new ContactsServiceResource($this, $this->serviceName, 'contacts', json_decode('{"methods": {"insert": {"request": {"$ref": "Contact"}, "id": "mirror.contacts.insert", "httpMethod": "POST", "path": "contacts", "response": {"$ref": "Contact"}}, "get": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "Contact"}, "httpMethod": "GET", "path": "contacts/{id}", "id": "mirror.contacts.get"}, "list": {"path": "contacts", "response": {"$ref": "ContactsListResponse"}, "id": "mirror.contacts.list", "httpMethod": "GET"}, "update": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Contact"}, "response": {"$ref": "Contact"}, "httpMethod": "PUT", "path": "contacts/{id}", "id": "mirror.contacts.update"}, "patch": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Contact"}, "response": {"$ref": "Contact"}, "httpMethod": "PATCH", "path": "contacts/{id}", "id": "mirror.contacts.patch"}, "delete": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE", "path": "contacts/{id}", "id": "mirror.contacts.delete"}}}', true));
+    $this->locations = new LocationsServiceResource($this, $this->serviceName, 'locations', json_decode('{"methods": {"list": {"path": "locations", "response": {"$ref": "LocationsListResponse"}, "id": "mirror.locations.list", "httpMethod": "GET"}, "get": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "Location"}, "httpMethod": "GET", "path": "locations/{id}", "id": "mirror.locations.get"}}}', true));
+    $this->subscriptions = new SubscriptionsServiceResource($this, $this->serviceName, 'subscriptions', json_decode('{"methods": {"insert": {"request": {"$ref": "Subscription"}, "id": "mirror.subscriptions.insert", "httpMethod": "POST", "path": "subscriptions", "response": {"$ref": "Subscription"}}, "list": {"path": "subscriptions", "response": {"$ref": "SubscriptionsListResponse"}, "id": "mirror.subscriptions.list", "httpMethod": "GET"}, "update": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Subscription"}, "response": {"$ref": "Subscription"}, "httpMethod": "PUT", "path": "subscriptions/{id}", "id": "mirror.subscriptions.update"}, "delete": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE", "path": "subscriptions/{id}", "id": "mirror.subscriptions.delete"}}}', true));
+    $this->timeline = new TimelineServiceResource($this, $this->serviceName, 'timeline', json_decode('{"methods": {"insert": {"supportsMediaUpload": true, "mediaUpload": {"maxSize": "10MB", "protocols": {"simple": {"path": "/upload/mirror/v1/timeline", "multipart": true}, "resumable": {"path": "/resumable/upload/mirror/v1/timeline", "multipart": true}}, "accept": ["audio/*", "image/*", "video/*"]}, "request": {"$ref": "TimelineItem"}, "id": "mirror.timeline.insert", "httpMethod": "POST", "path": "timeline", "response": {"$ref": "TimelineItem"}}, "get": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "TimelineItem"}, "httpMethod": "GET", "path": "timeline/{id}", "id": "mirror.timeline.get"}, "list": {"parameters": {"orderBy": {"enum": ["displayTime", "writeTime"], "type": "string", "location": "query"}, "includeDeleted": {"type": "boolean", "location": "query"}, "maxResults": {"location": "query", "type": "integer", "format": "uint32"}, "pageToken": {"type": "string", "location": "query"}, "sourceItemId": {"type": "string", "location": "query"}, "pinnedOnly": {"type": "boolean", "location": "query"}, "bundleId": {"type": "string", "location": "query"}}, "id": "mirror.timeline.list", "httpMethod": "GET", "path": "timeline", "response": {"$ref": "TimelineListResponse"}}, "update": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "supportsMediaUpload": true, "mediaUpload": {"maxSize": "10MB", "protocols": {"simple": {"path": "/upload/mirror/v1/timeline/{id}", "multipart": true}, "resumable": {"path": "/resumable/upload/mirror/v1/timeline/{id}", "multipart": true}}, "accept": ["audio/*", "image/*", "video/*"]}, "request": {"$ref": "TimelineItem"}, "response": {"$ref": "TimelineItem"}, "httpMethod": "PUT", "path": "timeline/{id}", "id": "mirror.timeline.update"}, "patch": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "TimelineItem"}, "response": {"$ref": "TimelineItem"}, "httpMethod": "PATCH", "path": "timeline/{id}", "id": "mirror.timeline.patch"}, "delete": {"parameters": {"id": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE", "path": "timeline/{id}", "id": "mirror.timeline.delete"}}}', true));
+    $this->timeline_attachments = new TimelineAttachmentsServiceResource($this, $this->serviceName, 'attachments', json_decode('{"methods": {"insert": {"parameters": {"itemId": {"required": true, "type": "string", "location": "path"}}, "supportsMediaUpload": true, "mediaUpload": {"maxSize": "10MB", "protocols": {"simple": {"path": "/upload/mirror/v1/timeline/{itemId}/attachments", "multipart": true}, "resumable": {"path": "/resumable/upload/mirror/v1/timeline/{itemId}/attachments", "multipart": true}}, "accept": ["audio/*", "image/*", "video/*"]}, "response": {"$ref": "Attachment"}, "httpMethod": "POST", "path": "timeline/{itemId}/attachments", "id": "mirror.timeline.attachments.insert"}, "get": {"parameters": {"itemId": {"required": true, "type": "string", "location": "path"}, "attachmentId": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "Attachment"}, "httpMethod": "GET", "path": "timeline/{itemId}/attachments/{attachmentId}", "id": "mirror.timeline.attachments.get", "supportsMediaDownload": true}, "list": {"parameters": {"itemId": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "AttachmentsListResponse"}, "httpMethod": "GET", "path": "timeline/{itemId}/attachments", "id": "mirror.timeline.attachments.list"}, "delete": {"parameters": {"itemId": {"required": true, "type": "string", "location": "path"}, "attachmentId": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "DELETE", "path": "timeline/{itemId}/attachments/{attachmentId}", "id": "mirror.timeline.attachments.delete"}}}', true));
 
   }
 }
@@ -521,12 +524,12 @@ class Attachment extends Model {
 }
 
 class AttachmentsListResponse extends Model {
-  protected $__itemsType = 'Google_Attachment';
+  protected $__itemsType = 'Attachment';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Attachment) */ $items) {
-    $this->assertIsArray($items, 'Google_Attachment', __METHOD__);
+  public function setItems(/* array(Attachment) */ $items) {
+    $this->assertIsArray($items, 'Attachment', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -550,8 +553,8 @@ class Contact extends Model {
   public $priority;
   public $source;
   public $type;
-  public function setAcceptTypes(/* array(Google_string) */ $acceptTypes) {
-    $this->assertIsArray($acceptTypes, 'Google_string', __METHOD__);
+  public function setAcceptTypes(/* array(string) */ $acceptTypes) {
+    $this->assertIsArray($acceptTypes, 'string', __METHOD__);
     $this->acceptTypes = $acceptTypes;
   }
   public function getAcceptTypes() {
@@ -569,8 +572,8 @@ class Contact extends Model {
   public function getId() {
     return $this->id;
   }
-  public function setImageUrls(/* array(Google_string) */ $imageUrls) {
-    $this->assertIsArray($imageUrls, 'Google_string', __METHOD__);
+  public function setImageUrls(/* array(string) */ $imageUrls) {
+    $this->assertIsArray($imageUrls, 'string', __METHOD__);
     $this->imageUrls = $imageUrls;
   }
   public function getImageUrls() {
@@ -609,12 +612,12 @@ class Contact extends Model {
 }
 
 class ContactsListResponse extends Model {
-  protected $__itemsType = 'Google_Contact';
+  protected $__itemsType = 'Contact';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Contact) */ $items) {
-    $this->assertIsArray($items, 'Google_Contact', __METHOD__);
+  public function setItems(/* array(Contact) */ $items) {
+    $this->assertIsArray($items, 'Contact', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -688,12 +691,12 @@ class Location extends Model {
 }
 
 class LocationsListResponse extends Model {
-  protected $__itemsType = 'Google_Location';
+  protected $__itemsType = 'Location';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Location) */ $items) {
-    $this->assertIsArray($items, 'Google_Location', __METHOD__);
+  public function setItems(/* array(Location) */ $items) {
+    $this->assertIsArray($items, 'Location', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -711,7 +714,7 @@ class MenuItem extends Model {
   public $action;
   public $id;
   public $removeWhenSelected;
-  protected $__valuesType = 'Google_MenuValue';
+  protected $__valuesType = 'MenuValue';
   protected $__valuesDataType = 'array';
   public $values;
   public function setAction($action) {
@@ -732,8 +735,8 @@ class MenuItem extends Model {
   public function getRemoveWhenSelected() {
     return $this->removeWhenSelected;
   }
-  public function setValues(/* array(Google_MenuValue) */ $values) {
-    $this->assertIsArray($values, 'Google_MenuValue', __METHOD__);
+  public function setValues(/* array(MenuValue) */ $values) {
+    $this->assertIsArray($values, 'MenuValue', __METHOD__);
     $this->values = $values;
   }
   public function getValues() {
@@ -769,7 +772,7 @@ class Notification extends Model {
   public $collection;
   public $itemId;
   public $operation;
-  protected $__userActionsType = 'Google_UserAction';
+  protected $__userActionsType = 'UserAction';
   protected $__userActionsDataType = 'array';
   public $userActions;
   public $userToken;
@@ -792,8 +795,8 @@ class Notification extends Model {
   public function getOperation() {
     return $this->operation;
   }
-  public function setUserActions(/* array(Google_UserAction) */ $userActions) {
-    $this->assertIsArray($userActions, 'Google_UserAction', __METHOD__);
+  public function setUserActions(/* array(UserAction) */ $userActions) {
+    $this->assertIsArray($userActions, 'UserAction', __METHOD__);
     $this->userActions = $userActions;
   }
   public function getUserActions() {
@@ -835,7 +838,7 @@ class Subscription extends Model {
   public $collection;
   public $id;
   public $kind;
-  protected $__notificationType = 'Google_Notification';
+  protected $__notificationType = 'Notification';
   protected $__notificationDataType = '';
   public $notification;
   public $operation;
@@ -866,14 +869,14 @@ class Subscription extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setNotification(Google_Notification $notification) {
+  public function setNotification(Notification $notification) {
     $this->notification = $notification;
   }
   public function getNotification() {
     return $this->notification;
   }
-  public function setOperation(/* array(Google_string) */ $operation) {
-    $this->assertIsArray($operation, 'Google_string', __METHOD__);
+  public function setOperation(/* array(string) */ $operation) {
+    $this->assertIsArray($operation, 'string', __METHOD__);
     $this->operation = $operation;
   }
   public function getOperation() {
@@ -900,12 +903,12 @@ class Subscription extends Model {
 }
 
 class SubscriptionsListResponse extends Model {
-  protected $__itemsType = 'Google_Subscription';
+  protected $__itemsType = 'Subscription';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Subscription) */ $items) {
-    $this->assertIsArray($items, 'Google_Subscription', __METHOD__);
+  public function setItems(/* array(Subscription) */ $items) {
+    $this->assertIsArray($items, 'Subscription', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -920,13 +923,13 @@ class SubscriptionsListResponse extends Model {
 }
 
 class TimelineItem extends Model {
-  protected $__attachmentsType = 'Google_Attachment';
+  protected $__attachmentsType = 'Attachment';
   protected $__attachmentsDataType = 'array';
   public $attachments;
   public $bundleId;
   public $canonicalUrl;
   public $created;
-  protected $__creatorType = 'Google_Contact';
+  protected $__creatorType = 'Contact';
   protected $__creatorDataType = '';
   public $creator;
   public $displayTime;
@@ -939,17 +942,17 @@ class TimelineItem extends Model {
   public $isDeleted;
   public $isPinned;
   public $kind;
-  protected $__locationType = 'Google_Location';
+  protected $__locationType = 'Location';
   protected $__locationDataType = '';
   public $location;
-  protected $__menuItemsType = 'Google_MenuItem';
+  protected $__menuItemsType = 'MenuItem';
   protected $__menuItemsDataType = 'array';
   public $menuItems;
-  protected $__notificationType = 'Google_NotificationConfig';
+  protected $__notificationType = 'NotificationConfig';
   protected $__notificationDataType = '';
   public $notification;
   public $pinScore;
-  protected $__recipientsType = 'Google_Contact';
+  protected $__recipientsType = 'Contact';
   protected $__recipientsDataType = 'array';
   public $recipients;
   public $selfLink;
@@ -958,8 +961,8 @@ class TimelineItem extends Model {
   public $text;
   public $title;
   public $updated;
-  public function setAttachments(/* array(Google_Attachment) */ $attachments) {
-    $this->assertIsArray($attachments, 'Google_Attachment', __METHOD__);
+  public function setAttachments(/* array(Attachment) */ $attachments) {
+    $this->assertIsArray($attachments, 'Attachment', __METHOD__);
     $this->attachments = $attachments;
   }
   public function getAttachments() {
@@ -983,7 +986,7 @@ class TimelineItem extends Model {
   public function getCreated() {
     return $this->created;
   }
-  public function setCreator(Google_Contact $creator) {
+  public function setCreator(Contact $creator) {
     $this->creator = $creator;
   }
   public function getCreator() {
@@ -1007,8 +1010,8 @@ class TimelineItem extends Model {
   public function getHtml() {
     return $this->html;
   }
-  public function setHtmlPages(/* array(Google_string) */ $htmlPages) {
-    $this->assertIsArray($htmlPages, 'Google_string', __METHOD__);
+  public function setHtmlPages(/* array(string) */ $htmlPages) {
+    $this->assertIsArray($htmlPages, 'string', __METHOD__);
     $this->htmlPages = $htmlPages;
   }
   public function getHtmlPages() {
@@ -1050,20 +1053,20 @@ class TimelineItem extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setLocation(Google_Location $location) {
+  public function setLocation(Location $location) {
     $this->location = $location;
   }
   public function getLocation() {
     return $this->location;
   }
-  public function setMenuItems(/* array(Google_MenuItem) */ $menuItems) {
-    $this->assertIsArray($menuItems, 'Google_MenuItem', __METHOD__);
+  public function setMenuItems(/* array(MenuItem) */ $menuItems) {
+    $this->assertIsArray($menuItems, 'MenuItem', __METHOD__);
     $this->menuItems = $menuItems;
   }
   public function getMenuItems() {
     return $this->menuItems;
   }
-  public function setNotification(Google_NotificationConfig $notification) {
+  public function setNotification(NotificationConfig $notification) {
     $this->notification = $notification;
   }
   public function getNotification() {
@@ -1075,8 +1078,8 @@ class TimelineItem extends Model {
   public function getPinScore() {
     return $this->pinScore;
   }
-  public function setRecipients(/* array(Google_Contact) */ $recipients) {
-    $this->assertIsArray($recipients, 'Google_Contact', __METHOD__);
+  public function setRecipients(/* array(Contact) */ $recipients) {
+    $this->assertIsArray($recipients, 'Contact', __METHOD__);
     $this->recipients = $recipients;
   }
   public function getRecipients() {
@@ -1121,13 +1124,13 @@ class TimelineItem extends Model {
 }
 
 class TimelineListResponse extends Model {
-  protected $__itemsType = 'Google_TimelineItem';
+  protected $__itemsType = 'TimelineItem';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
   public $nextPageToken;
-  public function setItems(/* array(Google_TimelineItem) */ $items) {
-    $this->assertIsArray($items, 'Google_TimelineItem', __METHOD__);
+  public function setItems(/* array(TimelineItem) */ $items) {
+    $this->assertIsArray($items, 'TimelineItem', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {

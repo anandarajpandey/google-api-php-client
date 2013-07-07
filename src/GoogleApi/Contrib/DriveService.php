@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "about" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $about = $driveService->about;
    *  </code>
    */
@@ -41,7 +44,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_About($data);
+        return new About($data);
       } else {
         return $data;
       }
@@ -52,7 +55,7 @@ use GoogleApi\Client;
    * The "apps" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $apps = $driveService->apps;
    *  </code>
    */
@@ -71,7 +74,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_App($data);
+        return new App($data);
       } else {
         return $data;
       }
@@ -87,7 +90,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_AppList($data);
+        return new AppList($data);
       } else {
         return $data;
       }
@@ -98,7 +101,7 @@ use GoogleApi\Client;
    * The "changes" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $changes = $driveService->changes;
    *  </code>
    */
@@ -117,7 +120,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Change($data);
+        return new Change($data);
       } else {
         return $data;
       }
@@ -139,7 +142,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_ChangeList($data);
+        return new ChangeList($data);
       } else {
         return $data;
       }
@@ -150,7 +153,7 @@ use GoogleApi\Client;
    * The "children" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $children = $driveService->children;
    *  </code>
    */
@@ -183,7 +186,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_ChildReference($data);
+        return new ChildReference($data);
       } else {
         return $data;
       }
@@ -196,12 +199,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return ChildReference
      */
-    public function insert($folderId, Google_ChildReference $postBody, $optParams = array()) {
+    public function insert($folderId, ChildReference $postBody, $optParams = array()) {
       $params = array('folderId' => $folderId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_ChildReference($data);
+        return new ChildReference($data);
       } else {
         return $data;
       }
@@ -222,7 +225,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_ChildList($data);
+        return new ChildList($data);
       } else {
         return $data;
       }
@@ -233,7 +236,7 @@ use GoogleApi\Client;
    * The "comments" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $comments = $driveService->comments;
    *  </code>
    */
@@ -268,7 +271,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Comment($data);
+        return new Comment($data);
       } else {
         return $data;
       }
@@ -281,12 +284,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Comment
      */
-    public function insert($fileId, Google_Comment $postBody, $optParams = array()) {
+    public function insert($fileId, Comment $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Comment($data);
+        return new Comment($data);
       } else {
         return $data;
       }
@@ -308,7 +311,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_CommentList($data);
+        return new CommentList($data);
       } else {
         return $data;
       }
@@ -322,12 +325,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Comment
      */
-    public function patch($fileId, $commentId, Google_Comment $postBody, $optParams = array()) {
+    public function patch($fileId, $commentId, Comment $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Comment($data);
+        return new Comment($data);
       } else {
         return $data;
       }
@@ -341,12 +344,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Comment
      */
-    public function update($fileId, $commentId, Google_Comment $postBody, $optParams = array()) {
+    public function update($fileId, $commentId, Comment $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Comment($data);
+        return new Comment($data);
       } else {
         return $data;
       }
@@ -357,7 +360,7 @@ use GoogleApi\Client;
    * The "files" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $files = $driveService->files;
    *  </code>
    */
@@ -379,12 +382,12 @@ use GoogleApi\Client;
      * @opt_param string timedTextTrackName The timed text track name.
      * @return DriveFile
      */
-    public function copy($fileId, Google_DriveFile $postBody, $optParams = array()) {
+    public function copy($fileId, DriveFile $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('copy', array($params));
       if ($this->useObjects()) {
-        return new Google_DriveFile($data);
+        return new DriveFile($data);
       } else {
         return $data;
       }
@@ -416,7 +419,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_DriveFile($data);
+        return new DriveFile($data);
       } else {
         return $data;
       }
@@ -436,12 +439,12 @@ use GoogleApi\Client;
      * @opt_param bool useContentAsIndexableText Whether to use the content as indexable text.
      * @return DriveFile
      */
-    public function insert(Google_DriveFile $postBody, $optParams = array()) {
+    public function insert(DriveFile $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_DriveFile($data);
+        return new DriveFile($data);
       } else {
         return $data;
       }
@@ -462,7 +465,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_FileList($data);
+        return new FileList($data);
       } else {
         return $data;
       }
@@ -486,12 +489,12 @@ use GoogleApi\Client;
      * @opt_param bool useContentAsIndexableText Whether to use the content as indexable text.
      * @return DriveFile
      */
-    public function patch($fileId, Google_DriveFile $postBody, $optParams = array()) {
+    public function patch($fileId, DriveFile $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_DriveFile($data);
+        return new DriveFile($data);
       } else {
         return $data;
       }
@@ -508,7 +511,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('touch', array($params));
       if ($this->useObjects()) {
-        return new Google_DriveFile($data);
+        return new DriveFile($data);
       } else {
         return $data;
       }
@@ -525,7 +528,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('trash', array($params));
       if ($this->useObjects()) {
-        return new Google_DriveFile($data);
+        return new DriveFile($data);
       } else {
         return $data;
       }
@@ -542,7 +545,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('untrash', array($params));
       if ($this->useObjects()) {
-        return new Google_DriveFile($data);
+        return new DriveFile($data);
       } else {
         return $data;
       }
@@ -566,12 +569,12 @@ use GoogleApi\Client;
      * @opt_param bool useContentAsIndexableText Whether to use the content as indexable text.
      * @return DriveFile
      */
-    public function update($fileId, Google_DriveFile $postBody, $optParams = array()) {
+    public function update($fileId, DriveFile $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_DriveFile($data);
+        return new DriveFile($data);
       } else {
         return $data;
       }
@@ -582,7 +585,7 @@ use GoogleApi\Client;
    * The "parents" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $parents = $driveService->parents;
    *  </code>
    */
@@ -615,7 +618,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_ParentReference($data);
+        return new ParentReference($data);
       } else {
         return $data;
       }
@@ -628,12 +631,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return ParentReference
      */
-    public function insert($fileId, Google_ParentReference $postBody, $optParams = array()) {
+    public function insert($fileId, ParentReference $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_ParentReference($data);
+        return new ParentReference($data);
       } else {
         return $data;
       }
@@ -650,7 +653,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_ParentList($data);
+        return new ParentList($data);
       } else {
         return $data;
       }
@@ -661,7 +664,7 @@ use GoogleApi\Client;
    * The "permissions" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $permissions = $driveService->permissions;
    *  </code>
    */
@@ -694,7 +697,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Permission($data);
+        return new Permission($data);
       } else {
         return $data;
       }
@@ -710,12 +713,12 @@ use GoogleApi\Client;
      * @opt_param bool sendNotificationEmails Whether to send notification emails when sharing to users or groups.
      * @return Permission
      */
-    public function insert($fileId, Google_Permission $postBody, $optParams = array()) {
+    public function insert($fileId, Permission $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Permission($data);
+        return new Permission($data);
       } else {
         return $data;
       }
@@ -732,7 +735,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_PermissionList($data);
+        return new PermissionList($data);
       } else {
         return $data;
       }
@@ -748,12 +751,12 @@ use GoogleApi\Client;
      * @opt_param bool transferOwnership Whether changing a role to 'owner' should also downgrade the current owners to writers.
      * @return Permission
      */
-    public function patch($fileId, $permissionId, Google_Permission $postBody, $optParams = array()) {
+    public function patch($fileId, $permissionId, Permission $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'permissionId' => $permissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Permission($data);
+        return new Permission($data);
       } else {
         return $data;
       }
@@ -769,12 +772,12 @@ use GoogleApi\Client;
      * @opt_param bool transferOwnership Whether changing a role to 'owner' should also downgrade the current owners to writers.
      * @return Permission
      */
-    public function update($fileId, $permissionId, Google_Permission $postBody, $optParams = array()) {
+    public function update($fileId, $permissionId, Permission $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'permissionId' => $permissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Permission($data);
+        return new Permission($data);
       } else {
         return $data;
       }
@@ -785,7 +788,7 @@ use GoogleApi\Client;
    * The "properties" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $properties = $driveService->properties;
    *  </code>
    */
@@ -822,7 +825,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Property($data);
+        return new Property($data);
       } else {
         return $data;
       }
@@ -835,12 +838,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Property
      */
-    public function insert($fileId, Google_Property $postBody, $optParams = array()) {
+    public function insert($fileId, Property $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Property($data);
+        return new Property($data);
       } else {
         return $data;
       }
@@ -857,7 +860,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_PropertyList($data);
+        return new PropertyList($data);
       } else {
         return $data;
       }
@@ -873,12 +876,12 @@ use GoogleApi\Client;
      * @opt_param string visibility The visibility of the property.
      * @return Property
      */
-    public function patch($fileId, $propertyKey, Google_Property $postBody, $optParams = array()) {
+    public function patch($fileId, $propertyKey, Property $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'propertyKey' => $propertyKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Property($data);
+        return new Property($data);
       } else {
         return $data;
       }
@@ -894,12 +897,12 @@ use GoogleApi\Client;
      * @opt_param string visibility The visibility of the property.
      * @return Property
      */
-    public function update($fileId, $propertyKey, Google_Property $postBody, $optParams = array()) {
+    public function update($fileId, $propertyKey, Property $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'propertyKey' => $propertyKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Property($data);
+        return new Property($data);
       } else {
         return $data;
       }
@@ -910,7 +913,7 @@ use GoogleApi\Client;
    * The "replies" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $replies = $driveService->replies;
    *  </code>
    */
@@ -947,7 +950,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_CommentReply($data);
+        return new CommentReply($data);
       } else {
         return $data;
       }
@@ -961,12 +964,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return CommentReply
      */
-    public function insert($fileId, $commentId, Google_CommentReply $postBody, $optParams = array()) {
+    public function insert($fileId, $commentId, CommentReply $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_CommentReply($data);
+        return new CommentReply($data);
       } else {
         return $data;
       }
@@ -988,7 +991,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_CommentReplyList($data);
+        return new CommentReplyList($data);
       } else {
         return $data;
       }
@@ -1003,12 +1006,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return CommentReply
      */
-    public function patch($fileId, $commentId, $replyId, Google_CommentReply $postBody, $optParams = array()) {
+    public function patch($fileId, $commentId, $replyId, CommentReply $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'replyId' => $replyId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_CommentReply($data);
+        return new CommentReply($data);
       } else {
         return $data;
       }
@@ -1023,12 +1026,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return CommentReply
      */
-    public function update($fileId, $commentId, $replyId, Google_CommentReply $postBody, $optParams = array()) {
+    public function update($fileId, $commentId, $replyId, CommentReply $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'replyId' => $replyId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_CommentReply($data);
+        return new CommentReply($data);
       } else {
         return $data;
       }
@@ -1039,7 +1042,7 @@ use GoogleApi\Client;
    * The "revisions" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $driveService = new Google_DriveService(...);
+   *   $driveService = new DriveService(...);
    *   $revisions = $driveService->revisions;
    *  </code>
    */
@@ -1072,7 +1075,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Revision($data);
+        return new Revision($data);
       } else {
         return $data;
       }
@@ -1089,7 +1092,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_RevisionList($data);
+        return new RevisionList($data);
       } else {
         return $data;
       }
@@ -1103,12 +1106,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Revision
      */
-    public function patch($fileId, $revisionId, Google_Revision $postBody, $optParams = array()) {
+    public function patch($fileId, $revisionId, Revision $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'revisionId' => $revisionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Revision($data);
+        return new Revision($data);
       } else {
         return $data;
       }
@@ -1122,12 +1125,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Revision
      */
-    public function update($fileId, $revisionId, Google_Revision $postBody, $optParams = array()) {
+    public function update($fileId, $revisionId, Revision $postBody, $optParams = array()) {
       $params = array('fileId' => $fileId, 'revisionId' => $revisionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Revision($data);
+        return new Revision($data);
       } else {
         return $data;
       }
@@ -1135,7 +1138,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Drive (v2).
+ * Service definition for Drive (v2).
  *
  * <p>
  * The API to interact with Drive.
@@ -1171,17 +1174,17 @@ class DriveService extends Service {
     $this->serviceName = 'drive';
 
     $client->addService($this->serviceName, $this->version);
-    $this->about = new Google_AboutServiceResource($this, $this->serviceName, 'about', json_decode('{"methods": {"get": {"id": "drive.about.get", "path": "about", "httpMethod": "GET", "parameters": {"includeSubscribed": {"type": "boolean", "default": "true", "location": "query"}, "maxChangeIdCount": {"type": "string", "default": "1", "format": "int64", "location": "query"}, "startChangeId": {"type": "string", "format": "int64", "location": "query"}}, "response": {"$ref": "About"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}}}', true));
-    $this->apps = new Google_AppsServiceResource($this, $this->serviceName, 'apps', json_decode('{"methods": {"get": {"id": "drive.apps.get", "path": "apps/{appId}", "httpMethod": "GET", "parameters": {"appId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "App"}, "scopes": ["https://www.googleapis.com/auth/drive.apps.readonly"]}, "list": {"id": "drive.apps.list", "path": "apps", "httpMethod": "GET", "response": {"$ref": "AppList"}, "scopes": ["https://www.googleapis.com/auth/drive.apps.readonly"]}}}', true));
-    $this->changes = new Google_ChangesServiceResource($this, $this->serviceName, 'changes', json_decode('{"methods": {"get": {"id": "drive.changes.get", "path": "changes/{changeId}", "httpMethod": "GET", "parameters": {"changeId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Change"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "list": {"id": "drive.changes.list", "path": "changes", "httpMethod": "GET", "parameters": {"includeDeleted": {"type": "boolean", "default": "true", "location": "query"}, "includeSubscribed": {"type": "boolean", "default": "true", "location": "query"}, "maxResults": {"type": "integer", "default": "100", "format": "int32", "minimum": "0", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "startChangeId": {"type": "string", "format": "int64", "location": "query"}}, "response": {"$ref": "ChangeList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"], "supportsSubscription": true}}}', true));
-    $this->children = new Google_ChildrenServiceResource($this, $this->serviceName, 'children', json_decode('{"methods": {"delete": {"id": "drive.children.delete", "path": "files/{folderId}/children/{childId}", "httpMethod": "DELETE", "parameters": {"childId": {"type": "string", "required": true, "location": "path"}, "folderId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.children.get", "path": "files/{folderId}/children/{childId}", "httpMethod": "GET", "parameters": {"childId": {"type": "string", "required": true, "location": "path"}, "folderId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ChildReference"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.children.insert", "path": "files/{folderId}/children", "httpMethod": "POST", "parameters": {"folderId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "ChildReference"}, "response": {"$ref": "ChildReference"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "list": {"id": "drive.children.list", "path": "files/{folderId}/children", "httpMethod": "GET", "parameters": {"folderId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "default": "100", "format": "int32", "minimum": "0", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "q": {"type": "string", "location": "query"}}, "response": {"$ref": "ChildList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}}}', true));
-    $this->comments = new Google_CommentsServiceResource($this, $this->serviceName, 'comments', json_decode('{"methods": {"delete": {"id": "drive.comments.delete", "path": "files/{fileId}/comments/{commentId}", "httpMethod": "DELETE", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "get": {"id": "drive.comments.get", "path": "files/{fileId}/comments/{commentId}", "httpMethod": "GET", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "includeDeleted": {"type": "boolean", "default": "false", "location": "query"}}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.comments.insert", "path": "files/{fileId}/comments", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Comment"}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "list": {"id": "drive.comments.list", "path": "files/{fileId}/comments", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "includeDeleted": {"type": "boolean", "default": "false", "location": "query"}, "maxResults": {"type": "integer", "default": "20", "format": "int32", "minimum": "0", "maximum": "100", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "updatedMin": {"type": "string", "location": "query"}}, "response": {"$ref": "CommentList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.comments.patch", "path": "files/{fileId}/comments/{commentId}", "httpMethod": "PATCH", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Comment"}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.comments.update", "path": "files/{fileId}/comments/{commentId}", "httpMethod": "PUT", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Comment"}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}}}', true));
-    $this->files = new Google_FilesServiceResource($this, $this->serviceName, 'files', json_decode('{"methods": {"copy": {"id": "drive.files.copy", "path": "files/{fileId}/copy", "httpMethod": "POST", "parameters": {"convert": {"type": "boolean", "default": "false", "location": "query"}, "fileId": {"type": "string", "required": true, "location": "path"}, "ocr": {"type": "boolean", "default": "false", "location": "query"}, "ocrLanguage": {"type": "string", "location": "query"}, "pinned": {"type": "boolean", "default": "false", "location": "query"}, "timedTextLanguage": {"type": "string", "location": "query"}, "timedTextTrackName": {"type": "string", "location": "query"}}, "request": {"$ref": "File"}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "delete": {"id": "drive.files.delete", "path": "files/{fileId}", "httpMethod": "DELETE", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.files.get", "path": "files/{fileId}", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "projection": {"type": "string", "enum": ["BASIC", "FULL"], "location": "query"}, "updateViewedDate": {"type": "boolean", "default": "false", "location": "query"}}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"], "supportsSubscription": true}, "insert": {"id": "drive.files.insert", "path": "files", "httpMethod": "POST", "parameters": {"convert": {"type": "boolean", "default": "false", "location": "query"}, "ocr": {"type": "boolean", "default": "false", "location": "query"}, "ocrLanguage": {"type": "string", "location": "query"}, "pinned": {"type": "boolean", "default": "false", "location": "query"}, "timedTextLanguage": {"type": "string", "location": "query"}, "timedTextTrackName": {"type": "string", "location": "query"}, "useContentAsIndexableText": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "File"}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"], "supportsMediaUpload": true, "mediaUpload": {"accept": ["*/*"], "maxSize": "10GB", "protocols": {"simple": {"multipart": true, "path": "/upload/drive/v2/files"}, "resumable": {"multipart": true, "path": "/resumable/upload/drive/v2/files"}}}, "supportsSubscription": true}, "list": {"id": "drive.files.list", "path": "files", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "default": "100", "format": "int32", "minimum": "0", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "projection": {"type": "string", "enum": ["BASIC", "FULL"], "location": "query"}, "q": {"type": "string", "location": "query"}}, "response": {"$ref": "FileList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.files.patch", "path": "files/{fileId}", "httpMethod": "PATCH", "parameters": {"convert": {"type": "boolean", "default": "false", "location": "query"}, "fileId": {"type": "string", "required": true, "location": "path"}, "newRevision": {"type": "boolean", "default": "true", "location": "query"}, "ocr": {"type": "boolean", "default": "false", "location": "query"}, "ocrLanguage": {"type": "string", "location": "query"}, "pinned": {"type": "boolean", "default": "false", "location": "query"}, "setModifiedDate": {"type": "boolean", "default": "false", "location": "query"}, "timedTextLanguage": {"type": "string", "location": "query"}, "timedTextTrackName": {"type": "string", "location": "query"}, "updateViewedDate": {"type": "boolean", "default": "true", "location": "query"}, "useContentAsIndexableText": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "File"}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.scripts"]}, "touch": {"id": "drive.files.touch", "path": "files/{fileId}/touch", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "trash": {"id": "drive.files.trash", "path": "files/{fileId}/trash", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "untrash": {"id": "drive.files.untrash", "path": "files/{fileId}/untrash", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.files.update", "path": "files/{fileId}", "httpMethod": "PUT", "parameters": {"convert": {"type": "boolean", "default": "false", "location": "query"}, "fileId": {"type": "string", "required": true, "location": "path"}, "newRevision": {"type": "boolean", "default": "true", "location": "query"}, "ocr": {"type": "boolean", "default": "false", "location": "query"}, "ocrLanguage": {"type": "string", "location": "query"}, "pinned": {"type": "boolean", "default": "false", "location": "query"}, "setModifiedDate": {"type": "boolean", "default": "false", "location": "query"}, "timedTextLanguage": {"type": "string", "location": "query"}, "timedTextTrackName": {"type": "string", "location": "query"}, "updateViewedDate": {"type": "boolean", "default": "true", "location": "query"}, "useContentAsIndexableText": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "File"}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.scripts"], "supportsMediaUpload": true, "mediaUpload": {"accept": ["*/*"], "maxSize": "10GB", "protocols": {"simple": {"multipart": true, "path": "/upload/drive/v2/files/{fileId}"}, "resumable": {"multipart": true, "path": "/resumable/upload/drive/v2/files/{fileId}"}}}}}}', true));
-    $this->parents = new Google_ParentsServiceResource($this, $this->serviceName, 'parents', json_decode('{"methods": {"delete": {"id": "drive.parents.delete", "path": "files/{fileId}/parents/{parentId}", "httpMethod": "DELETE", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "parentId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.parents.get", "path": "files/{fileId}/parents/{parentId}", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "parentId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ParentReference"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.parents.insert", "path": "files/{fileId}/parents", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "ParentReference"}, "response": {"$ref": "ParentReference"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "list": {"id": "drive.parents.list", "path": "files/{fileId}/parents", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ParentList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}}}', true));
-    $this->permissions = new Google_PermissionsServiceResource($this, $this->serviceName, 'permissions', json_decode('{"methods": {"delete": {"id": "drive.permissions.delete", "path": "files/{fileId}/permissions/{permissionId}", "httpMethod": "DELETE", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "permissionId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.permissions.get", "path": "files/{fileId}/permissions/{permissionId}", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "permissionId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Permission"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.permissions.insert", "path": "files/{fileId}/permissions", "httpMethod": "POST", "parameters": {"emailMessage": {"type": "string", "location": "query"}, "fileId": {"type": "string", "required": true, "location": "path"}, "sendNotificationEmails": {"type": "boolean", "default": "true", "location": "query"}}, "request": {"$ref": "Permission"}, "response": {"$ref": "Permission"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "list": {"id": "drive.permissions.list", "path": "files/{fileId}/permissions", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "PermissionList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.permissions.patch", "path": "files/{fileId}/permissions/{permissionId}", "httpMethod": "PATCH", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "permissionId": {"type": "string", "required": true, "location": "path"}, "transferOwnership": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "Permission"}, "response": {"$ref": "Permission"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.permissions.update", "path": "files/{fileId}/permissions/{permissionId}", "httpMethod": "PUT", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "permissionId": {"type": "string", "required": true, "location": "path"}, "transferOwnership": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "Permission"}, "response": {"$ref": "Permission"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}}}', true));
-    $this->properties = new Google_PropertiesServiceResource($this, $this->serviceName, 'properties', json_decode('{"methods": {"delete": {"id": "drive.properties.delete", "path": "files/{fileId}/properties/{propertyKey}", "httpMethod": "DELETE", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "propertyKey": {"type": "string", "required": true, "location": "path"}, "visibility": {"type": "string", "default": "private", "location": "query"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.properties.get", "path": "files/{fileId}/properties/{propertyKey}", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "propertyKey": {"type": "string", "required": true, "location": "path"}, "visibility": {"type": "string", "default": "private", "location": "query"}}, "response": {"$ref": "Property"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.properties.insert", "path": "files/{fileId}/properties", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Property"}, "response": {"$ref": "Property"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "list": {"id": "drive.properties.list", "path": "files/{fileId}/properties", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "PropertyList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.properties.patch", "path": "files/{fileId}/properties/{propertyKey}", "httpMethod": "PATCH", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "propertyKey": {"type": "string", "required": true, "location": "path"}, "visibility": {"type": "string", "default": "private", "location": "query"}}, "request": {"$ref": "Property"}, "response": {"$ref": "Property"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.properties.update", "path": "files/{fileId}/properties/{propertyKey}", "httpMethod": "PUT", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "propertyKey": {"type": "string", "required": true, "location": "path"}, "visibility": {"type": "string", "default": "private", "location": "query"}}, "request": {"$ref": "Property"}, "response": {"$ref": "Property"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}}}', true));
-    $this->replies = new Google_RepliesServiceResource($this, $this->serviceName, 'replies', json_decode('{"methods": {"delete": {"id": "drive.replies.delete", "path": "files/{fileId}/comments/{commentId}/replies/{replyId}", "httpMethod": "DELETE", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "replyId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.replies.get", "path": "files/{fileId}/comments/{commentId}/replies/{replyId}", "httpMethod": "GET", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "includeDeleted": {"type": "boolean", "default": "false", "location": "query"}, "replyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CommentReply"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.replies.insert", "path": "files/{fileId}/comments/{commentId}/replies", "httpMethod": "POST", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CommentReply"}, "response": {"$ref": "CommentReply"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "list": {"id": "drive.replies.list", "path": "files/{fileId}/comments/{commentId}/replies", "httpMethod": "GET", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "includeDeleted": {"type": "boolean", "default": "false", "location": "query"}, "maxResults": {"type": "integer", "default": "20", "format": "int32", "minimum": "0", "maximum": "100", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CommentReplyList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.replies.patch", "path": "files/{fileId}/comments/{commentId}/replies/{replyId}", "httpMethod": "PATCH", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "replyId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CommentReply"}, "response": {"$ref": "CommentReply"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.replies.update", "path": "files/{fileId}/comments/{commentId}/replies/{replyId}", "httpMethod": "PUT", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "replyId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CommentReply"}, "response": {"$ref": "CommentReply"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}}}', true));
-    $this->revisions = new Google_RevisionsServiceResource($this, $this->serviceName, 'revisions', json_decode('{"methods": {"delete": {"id": "drive.revisions.delete", "path": "files/{fileId}/revisions/{revisionId}", "httpMethod": "DELETE", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "revisionId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.revisions.get", "path": "files/{fileId}/revisions/{revisionId}", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "revisionId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Revision"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "list": {"id": "drive.revisions.list", "path": "files/{fileId}/revisions", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "RevisionList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.revisions.patch", "path": "files/{fileId}/revisions/{revisionId}", "httpMethod": "PATCH", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "revisionId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Revision"}, "response": {"$ref": "Revision"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.revisions.update", "path": "files/{fileId}/revisions/{revisionId}", "httpMethod": "PUT", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "revisionId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Revision"}, "response": {"$ref": "Revision"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}}}', true));
+    $this->about = new AboutServiceResource($this, $this->serviceName, 'about', json_decode('{"methods": {"get": {"id": "drive.about.get", "path": "about", "httpMethod": "GET", "parameters": {"includeSubscribed": {"type": "boolean", "default": "true", "location": "query"}, "maxChangeIdCount": {"type": "string", "default": "1", "format": "int64", "location": "query"}, "startChangeId": {"type": "string", "format": "int64", "location": "query"}}, "response": {"$ref": "About"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}}}', true));
+    $this->apps = new AppsServiceResource($this, $this->serviceName, 'apps', json_decode('{"methods": {"get": {"id": "drive.apps.get", "path": "apps/{appId}", "httpMethod": "GET", "parameters": {"appId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "App"}, "scopes": ["https://www.googleapis.com/auth/drive.apps.readonly"]}, "list": {"id": "drive.apps.list", "path": "apps", "httpMethod": "GET", "response": {"$ref": "AppList"}, "scopes": ["https://www.googleapis.com/auth/drive.apps.readonly"]}}}', true));
+    $this->changes = new ChangesServiceResource($this, $this->serviceName, 'changes', json_decode('{"methods": {"get": {"id": "drive.changes.get", "path": "changes/{changeId}", "httpMethod": "GET", "parameters": {"changeId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Change"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "list": {"id": "drive.changes.list", "path": "changes", "httpMethod": "GET", "parameters": {"includeDeleted": {"type": "boolean", "default": "true", "location": "query"}, "includeSubscribed": {"type": "boolean", "default": "true", "location": "query"}, "maxResults": {"type": "integer", "default": "100", "format": "int32", "minimum": "0", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "startChangeId": {"type": "string", "format": "int64", "location": "query"}}, "response": {"$ref": "ChangeList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"], "supportsSubscription": true}}}', true));
+    $this->children = new ChildrenServiceResource($this, $this->serviceName, 'children', json_decode('{"methods": {"delete": {"id": "drive.children.delete", "path": "files/{folderId}/children/{childId}", "httpMethod": "DELETE", "parameters": {"childId": {"type": "string", "required": true, "location": "path"}, "folderId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.children.get", "path": "files/{folderId}/children/{childId}", "httpMethod": "GET", "parameters": {"childId": {"type": "string", "required": true, "location": "path"}, "folderId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ChildReference"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.children.insert", "path": "files/{folderId}/children", "httpMethod": "POST", "parameters": {"folderId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "ChildReference"}, "response": {"$ref": "ChildReference"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "list": {"id": "drive.children.list", "path": "files/{folderId}/children", "httpMethod": "GET", "parameters": {"folderId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "default": "100", "format": "int32", "minimum": "0", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "q": {"type": "string", "location": "query"}}, "response": {"$ref": "ChildList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}}}', true));
+    $this->comments = new CommentsServiceResource($this, $this->serviceName, 'comments', json_decode('{"methods": {"delete": {"id": "drive.comments.delete", "path": "files/{fileId}/comments/{commentId}", "httpMethod": "DELETE", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "get": {"id": "drive.comments.get", "path": "files/{fileId}/comments/{commentId}", "httpMethod": "GET", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "includeDeleted": {"type": "boolean", "default": "false", "location": "query"}}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.comments.insert", "path": "files/{fileId}/comments", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Comment"}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "list": {"id": "drive.comments.list", "path": "files/{fileId}/comments", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "includeDeleted": {"type": "boolean", "default": "false", "location": "query"}, "maxResults": {"type": "integer", "default": "20", "format": "int32", "minimum": "0", "maximum": "100", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "updatedMin": {"type": "string", "location": "query"}}, "response": {"$ref": "CommentList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.comments.patch", "path": "files/{fileId}/comments/{commentId}", "httpMethod": "PATCH", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Comment"}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.comments.update", "path": "files/{fileId}/comments/{commentId}", "httpMethod": "PUT", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Comment"}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}}}', true));
+    $this->files = new FilesServiceResource($this, $this->serviceName, 'files', json_decode('{"methods": {"copy": {"id": "drive.files.copy", "path": "files/{fileId}/copy", "httpMethod": "POST", "parameters": {"convert": {"type": "boolean", "default": "false", "location": "query"}, "fileId": {"type": "string", "required": true, "location": "path"}, "ocr": {"type": "boolean", "default": "false", "location": "query"}, "ocrLanguage": {"type": "string", "location": "query"}, "pinned": {"type": "boolean", "default": "false", "location": "query"}, "timedTextLanguage": {"type": "string", "location": "query"}, "timedTextTrackName": {"type": "string", "location": "query"}}, "request": {"$ref": "File"}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "delete": {"id": "drive.files.delete", "path": "files/{fileId}", "httpMethod": "DELETE", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.files.get", "path": "files/{fileId}", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "projection": {"type": "string", "enum": ["BASIC", "FULL"], "location": "query"}, "updateViewedDate": {"type": "boolean", "default": "false", "location": "query"}}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"], "supportsSubscription": true}, "insert": {"id": "drive.files.insert", "path": "files", "httpMethod": "POST", "parameters": {"convert": {"type": "boolean", "default": "false", "location": "query"}, "ocr": {"type": "boolean", "default": "false", "location": "query"}, "ocrLanguage": {"type": "string", "location": "query"}, "pinned": {"type": "boolean", "default": "false", "location": "query"}, "timedTextLanguage": {"type": "string", "location": "query"}, "timedTextTrackName": {"type": "string", "location": "query"}, "useContentAsIndexableText": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "File"}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"], "supportsMediaUpload": true, "mediaUpload": {"accept": ["*/*"], "maxSize": "10GB", "protocols": {"simple": {"multipart": true, "path": "/upload/drive/v2/files"}, "resumable": {"multipart": true, "path": "/resumable/upload/drive/v2/files"}}}, "supportsSubscription": true}, "list": {"id": "drive.files.list", "path": "files", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "default": "100", "format": "int32", "minimum": "0", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "projection": {"type": "string", "enum": ["BASIC", "FULL"], "location": "query"}, "q": {"type": "string", "location": "query"}}, "response": {"$ref": "FileList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.files.patch", "path": "files/{fileId}", "httpMethod": "PATCH", "parameters": {"convert": {"type": "boolean", "default": "false", "location": "query"}, "fileId": {"type": "string", "required": true, "location": "path"}, "newRevision": {"type": "boolean", "default": "true", "location": "query"}, "ocr": {"type": "boolean", "default": "false", "location": "query"}, "ocrLanguage": {"type": "string", "location": "query"}, "pinned": {"type": "boolean", "default": "false", "location": "query"}, "setModifiedDate": {"type": "boolean", "default": "false", "location": "query"}, "timedTextLanguage": {"type": "string", "location": "query"}, "timedTextTrackName": {"type": "string", "location": "query"}, "updateViewedDate": {"type": "boolean", "default": "true", "location": "query"}, "useContentAsIndexableText": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "File"}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.scripts"]}, "touch": {"id": "drive.files.touch", "path": "files/{fileId}/touch", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "trash": {"id": "drive.files.trash", "path": "files/{fileId}/trash", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "untrash": {"id": "drive.files.untrash", "path": "files/{fileId}/untrash", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.files.update", "path": "files/{fileId}", "httpMethod": "PUT", "parameters": {"convert": {"type": "boolean", "default": "false", "location": "query"}, "fileId": {"type": "string", "required": true, "location": "path"}, "newRevision": {"type": "boolean", "default": "true", "location": "query"}, "ocr": {"type": "boolean", "default": "false", "location": "query"}, "ocrLanguage": {"type": "string", "location": "query"}, "pinned": {"type": "boolean", "default": "false", "location": "query"}, "setModifiedDate": {"type": "boolean", "default": "false", "location": "query"}, "timedTextLanguage": {"type": "string", "location": "query"}, "timedTextTrackName": {"type": "string", "location": "query"}, "updateViewedDate": {"type": "boolean", "default": "true", "location": "query"}, "useContentAsIndexableText": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "File"}, "response": {"$ref": "File"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.scripts"], "supportsMediaUpload": true, "mediaUpload": {"accept": ["*/*"], "maxSize": "10GB", "protocols": {"simple": {"multipart": true, "path": "/upload/drive/v2/files/{fileId}"}, "resumable": {"multipart": true, "path": "/resumable/upload/drive/v2/files/{fileId}"}}}}}}', true));
+    $this->parents = new ParentsServiceResource($this, $this->serviceName, 'parents', json_decode('{"methods": {"delete": {"id": "drive.parents.delete", "path": "files/{fileId}/parents/{parentId}", "httpMethod": "DELETE", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "parentId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.parents.get", "path": "files/{fileId}/parents/{parentId}", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "parentId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ParentReference"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.parents.insert", "path": "files/{fileId}/parents", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "ParentReference"}, "response": {"$ref": "ParentReference"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "list": {"id": "drive.parents.list", "path": "files/{fileId}/parents", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ParentList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}}}', true));
+    $this->permissions = new PermissionsServiceResource($this, $this->serviceName, 'permissions', json_decode('{"methods": {"delete": {"id": "drive.permissions.delete", "path": "files/{fileId}/permissions/{permissionId}", "httpMethod": "DELETE", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "permissionId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.permissions.get", "path": "files/{fileId}/permissions/{permissionId}", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "permissionId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Permission"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.permissions.insert", "path": "files/{fileId}/permissions", "httpMethod": "POST", "parameters": {"emailMessage": {"type": "string", "location": "query"}, "fileId": {"type": "string", "required": true, "location": "path"}, "sendNotificationEmails": {"type": "boolean", "default": "true", "location": "query"}}, "request": {"$ref": "Permission"}, "response": {"$ref": "Permission"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "list": {"id": "drive.permissions.list", "path": "files/{fileId}/permissions", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "PermissionList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.permissions.patch", "path": "files/{fileId}/permissions/{permissionId}", "httpMethod": "PATCH", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "permissionId": {"type": "string", "required": true, "location": "path"}, "transferOwnership": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "Permission"}, "response": {"$ref": "Permission"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.permissions.update", "path": "files/{fileId}/permissions/{permissionId}", "httpMethod": "PUT", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "permissionId": {"type": "string", "required": true, "location": "path"}, "transferOwnership": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "Permission"}, "response": {"$ref": "Permission"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}}}', true));
+    $this->properties = new PropertiesServiceResource($this, $this->serviceName, 'properties', json_decode('{"methods": {"delete": {"id": "drive.properties.delete", "path": "files/{fileId}/properties/{propertyKey}", "httpMethod": "DELETE", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "propertyKey": {"type": "string", "required": true, "location": "path"}, "visibility": {"type": "string", "default": "private", "location": "query"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.properties.get", "path": "files/{fileId}/properties/{propertyKey}", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "propertyKey": {"type": "string", "required": true, "location": "path"}, "visibility": {"type": "string", "default": "private", "location": "query"}}, "response": {"$ref": "Property"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.properties.insert", "path": "files/{fileId}/properties", "httpMethod": "POST", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Property"}, "response": {"$ref": "Property"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "list": {"id": "drive.properties.list", "path": "files/{fileId}/properties", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "PropertyList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.properties.patch", "path": "files/{fileId}/properties/{propertyKey}", "httpMethod": "PATCH", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "propertyKey": {"type": "string", "required": true, "location": "path"}, "visibility": {"type": "string", "default": "private", "location": "query"}}, "request": {"$ref": "Property"}, "response": {"$ref": "Property"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.properties.update", "path": "files/{fileId}/properties/{propertyKey}", "httpMethod": "PUT", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "propertyKey": {"type": "string", "required": true, "location": "path"}, "visibility": {"type": "string", "default": "private", "location": "query"}}, "request": {"$ref": "Property"}, "response": {"$ref": "Property"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}}}', true));
+    $this->replies = new RepliesServiceResource($this, $this->serviceName, 'replies', json_decode('{"methods": {"delete": {"id": "drive.replies.delete", "path": "files/{fileId}/comments/{commentId}/replies/{replyId}", "httpMethod": "DELETE", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "replyId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.replies.get", "path": "files/{fileId}/comments/{commentId}/replies/{replyId}", "httpMethod": "GET", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "includeDeleted": {"type": "boolean", "default": "false", "location": "query"}, "replyId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CommentReply"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "insert": {"id": "drive.replies.insert", "path": "files/{fileId}/comments/{commentId}/replies", "httpMethod": "POST", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CommentReply"}, "response": {"$ref": "CommentReply"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "list": {"id": "drive.replies.list", "path": "files/{fileId}/comments/{commentId}/replies", "httpMethod": "GET", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "includeDeleted": {"type": "boolean", "default": "false", "location": "query"}, "maxResults": {"type": "integer", "default": "20", "format": "int32", "minimum": "0", "maximum": "100", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CommentReplyList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.replies.patch", "path": "files/{fileId}/comments/{commentId}/replies/{replyId}", "httpMethod": "PATCH", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "replyId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CommentReply"}, "response": {"$ref": "CommentReply"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.replies.update", "path": "files/{fileId}/comments/{commentId}/replies/{replyId}", "httpMethod": "PUT", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "fileId": {"type": "string", "required": true, "location": "path"}, "replyId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CommentReply"}, "response": {"$ref": "CommentReply"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}}}', true));
+    $this->revisions = new RevisionsServiceResource($this, $this->serviceName, 'revisions', json_decode('{"methods": {"delete": {"id": "drive.revisions.delete", "path": "files/{fileId}/revisions/{revisionId}", "httpMethod": "DELETE", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "revisionId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "get": {"id": "drive.revisions.get", "path": "files/{fileId}/revisions/{revisionId}", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "revisionId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Revision"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "list": {"id": "drive.revisions.list", "path": "files/{fileId}/revisions", "httpMethod": "GET", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "RevisionList"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.readonly"]}, "patch": {"id": "drive.revisions.patch", "path": "files/{fileId}/revisions/{revisionId}", "httpMethod": "PATCH", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "revisionId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Revision"}, "response": {"$ref": "Revision"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}, "update": {"id": "drive.revisions.update", "path": "files/{fileId}/revisions/{revisionId}", "httpMethod": "PUT", "parameters": {"fileId": {"type": "string", "required": true, "location": "path"}, "revisionId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Revision"}, "response": {"$ref": "Revision"}, "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]}}}', true));
 
   }
 }
@@ -1189,24 +1192,24 @@ class DriveService extends Service {
 
 
 class About extends Model {
-  protected $__additionalRoleInfoType = 'Google_AboutAdditionalRoleInfo';
+  protected $__additionalRoleInfoType = 'AboutAdditionalRoleInfo';
   protected $__additionalRoleInfoDataType = 'array';
   public $additionalRoleInfo;
   public $domainSharingPolicy;
   public $etag;
-  protected $__exportFormatsType = 'Google_AboutExportFormats';
+  protected $__exportFormatsType = 'AboutExportFormats';
   protected $__exportFormatsDataType = 'array';
   public $exportFormats;
-  protected $__featuresType = 'Google_AboutFeatures';
+  protected $__featuresType = 'AboutFeatures';
   protected $__featuresDataType = 'array';
   public $features;
-  protected $__importFormatsType = 'Google_AboutImportFormats';
+  protected $__importFormatsType = 'AboutImportFormats';
   protected $__importFormatsDataType = 'array';
   public $importFormats;
   public $isCurrentAppInstalled;
   public $kind;
   public $largestChangeId;
-  protected $__maxUploadSizesType = 'Google_AboutMaxUploadSizes';
+  protected $__maxUploadSizesType = 'AboutMaxUploadSizes';
   protected $__maxUploadSizesDataType = 'array';
   public $maxUploadSizes;
   public $name;
@@ -1218,11 +1221,11 @@ class About extends Model {
   public $remainingChangeIds;
   public $rootFolderId;
   public $selfLink;
-  protected $__userType = 'Google_User';
+  protected $__userType = 'User';
   protected $__userDataType = '';
   public $user;
-  public function setAdditionalRoleInfo(/* array(Google_AboutAdditionalRoleInfo) */ $additionalRoleInfo) {
-    $this->assertIsArray($additionalRoleInfo, 'Google_AboutAdditionalRoleInfo', __METHOD__);
+  public function setAdditionalRoleInfo(/* array(AboutAdditionalRoleInfo) */ $additionalRoleInfo) {
+    $this->assertIsArray($additionalRoleInfo, 'AboutAdditionalRoleInfo', __METHOD__);
     $this->additionalRoleInfo = $additionalRoleInfo;
   }
   public function getAdditionalRoleInfo() {
@@ -1240,22 +1243,22 @@ class About extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setExportFormats(/* array(Google_AboutExportFormats) */ $exportFormats) {
-    $this->assertIsArray($exportFormats, 'Google_AboutExportFormats', __METHOD__);
+  public function setExportFormats(/* array(AboutExportFormats) */ $exportFormats) {
+    $this->assertIsArray($exportFormats, 'AboutExportFormats', __METHOD__);
     $this->exportFormats = $exportFormats;
   }
   public function getExportFormats() {
     return $this->exportFormats;
   }
-  public function setFeatures(/* array(Google_AboutFeatures) */ $features) {
-    $this->assertIsArray($features, 'Google_AboutFeatures', __METHOD__);
+  public function setFeatures(/* array(AboutFeatures) */ $features) {
+    $this->assertIsArray($features, 'AboutFeatures', __METHOD__);
     $this->features = $features;
   }
   public function getFeatures() {
     return $this->features;
   }
-  public function setImportFormats(/* array(Google_AboutImportFormats) */ $importFormats) {
-    $this->assertIsArray($importFormats, 'Google_AboutImportFormats', __METHOD__);
+  public function setImportFormats(/* array(AboutImportFormats) */ $importFormats) {
+    $this->assertIsArray($importFormats, 'AboutImportFormats', __METHOD__);
     $this->importFormats = $importFormats;
   }
   public function getImportFormats() {
@@ -1279,8 +1282,8 @@ class About extends Model {
   public function getLargestChangeId() {
     return $this->largestChangeId;
   }
-  public function setMaxUploadSizes(/* array(Google_AboutMaxUploadSizes) */ $maxUploadSizes) {
-    $this->assertIsArray($maxUploadSizes, 'Google_AboutMaxUploadSizes', __METHOD__);
+  public function setMaxUploadSizes(/* array(AboutMaxUploadSizes) */ $maxUploadSizes) {
+    $this->assertIsArray($maxUploadSizes, 'AboutMaxUploadSizes', __METHOD__);
     $this->maxUploadSizes = $maxUploadSizes;
   }
   public function getMaxUploadSizes() {
@@ -1340,7 +1343,7 @@ class About extends Model {
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setUser(Google_User $user) {
+  public function setUser(User $user) {
     $this->user = $user;
   }
   public function getUser() {
@@ -1349,12 +1352,12 @@ class About extends Model {
 }
 
 class AboutAdditionalRoleInfo extends Model {
-  protected $__roleSetsType = 'Google_AboutAdditionalRoleInfoRoleSets';
+  protected $__roleSetsType = 'AboutAdditionalRoleInfoRoleSets';
   protected $__roleSetsDataType = 'array';
   public $roleSets;
   public $type;
-  public function setRoleSets(/* array(Google_AboutAdditionalRoleInfoRoleSets) */ $roleSets) {
-    $this->assertIsArray($roleSets, 'Google_AboutAdditionalRoleInfoRoleSets', __METHOD__);
+  public function setRoleSets(/* array(AboutAdditionalRoleInfoRoleSets) */ $roleSets) {
+    $this->assertIsArray($roleSets, 'AboutAdditionalRoleInfoRoleSets', __METHOD__);
     $this->roleSets = $roleSets;
   }
   public function getRoleSets() {
@@ -1371,8 +1374,8 @@ class AboutAdditionalRoleInfo extends Model {
 class AboutAdditionalRoleInfoRoleSets extends Model {
   public $additionalRoles;
   public $primaryRole;
-  public function setAdditionalRoles(/* array(Google_string) */ $additionalRoles) {
-    $this->assertIsArray($additionalRoles, 'Google_string', __METHOD__);
+  public function setAdditionalRoles(/* array(string) */ $additionalRoles) {
+    $this->assertIsArray($additionalRoles, 'string', __METHOD__);
     $this->additionalRoles = $additionalRoles;
   }
   public function getAdditionalRoles() {
@@ -1395,8 +1398,8 @@ class AboutExportFormats extends Model {
   public function getSource() {
     return $this->source;
   }
-  public function setTargets(/* array(Google_string) */ $targets) {
-    $this->assertIsArray($targets, 'Google_string', __METHOD__);
+  public function setTargets(/* array(string) */ $targets) {
+    $this->assertIsArray($targets, 'string', __METHOD__);
     $this->targets = $targets;
   }
   public function getTargets() {
@@ -1430,8 +1433,8 @@ class AboutImportFormats extends Model {
   public function getSource() {
     return $this->source;
   }
-  public function setTargets(/* array(Google_string) */ $targets) {
-    $this->assertIsArray($targets, 'Google_string', __METHOD__);
+  public function setTargets(/* array(string) */ $targets) {
+    $this->assertIsArray($targets, 'string', __METHOD__);
     $this->targets = $targets;
   }
   public function getTargets() {
@@ -1458,7 +1461,7 @@ class AboutMaxUploadSizes extends Model {
 
 class App extends Model {
   public $authorized;
-  protected $__iconsType = 'Google_AppIcons';
+  protected $__iconsType = 'AppIcons';
   protected $__iconsDataType = 'array';
   public $icons;
   public $id;
@@ -1480,8 +1483,8 @@ class App extends Model {
   public function getAuthorized() {
     return $this->authorized;
   }
-  public function setIcons(/* array(Google_AppIcons) */ $icons) {
-    $this->assertIsArray($icons, 'Google_AppIcons', __METHOD__);
+  public function setIcons(/* array(AppIcons) */ $icons) {
+    $this->assertIsArray($icons, 'AppIcons', __METHOD__);
     $this->icons = $icons;
   }
   public function getIcons() {
@@ -1517,15 +1520,15 @@ class App extends Model {
   public function getObjectType() {
     return $this->objectType;
   }
-  public function setPrimaryFileExtensions(/* array(Google_string) */ $primaryFileExtensions) {
-    $this->assertIsArray($primaryFileExtensions, 'Google_string', __METHOD__);
+  public function setPrimaryFileExtensions(/* array(string) */ $primaryFileExtensions) {
+    $this->assertIsArray($primaryFileExtensions, 'string', __METHOD__);
     $this->primaryFileExtensions = $primaryFileExtensions;
   }
   public function getPrimaryFileExtensions() {
     return $this->primaryFileExtensions;
   }
-  public function setPrimaryMimeTypes(/* array(Google_string) */ $primaryMimeTypes) {
-    $this->assertIsArray($primaryMimeTypes, 'Google_string', __METHOD__);
+  public function setPrimaryMimeTypes(/* array(string) */ $primaryMimeTypes) {
+    $this->assertIsArray($primaryMimeTypes, 'string', __METHOD__);
     $this->primaryMimeTypes = $primaryMimeTypes;
   }
   public function getPrimaryMimeTypes() {
@@ -1537,15 +1540,15 @@ class App extends Model {
   public function getProductUrl() {
     return $this->productUrl;
   }
-  public function setSecondaryFileExtensions(/* array(Google_string) */ $secondaryFileExtensions) {
-    $this->assertIsArray($secondaryFileExtensions, 'Google_string', __METHOD__);
+  public function setSecondaryFileExtensions(/* array(string) */ $secondaryFileExtensions) {
+    $this->assertIsArray($secondaryFileExtensions, 'string', __METHOD__);
     $this->secondaryFileExtensions = $secondaryFileExtensions;
   }
   public function getSecondaryFileExtensions() {
     return $this->secondaryFileExtensions;
   }
-  public function setSecondaryMimeTypes(/* array(Google_string) */ $secondaryMimeTypes) {
-    $this->assertIsArray($secondaryMimeTypes, 'Google_string', __METHOD__);
+  public function setSecondaryMimeTypes(/* array(string) */ $secondaryMimeTypes) {
+    $this->assertIsArray($secondaryMimeTypes, 'string', __METHOD__);
     $this->secondaryMimeTypes = $secondaryMimeTypes;
   }
   public function getSecondaryMimeTypes() {
@@ -1597,7 +1600,7 @@ class AppIcons extends Model {
 
 class AppList extends Model {
   public $etag;
-  protected $__itemsType = 'Google_App';
+  protected $__itemsType = 'App';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -1608,8 +1611,8 @@ class AppList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_App) */ $items) {
-    $this->assertIsArray($items, 'Google_App', __METHOD__);
+  public function setItems(/* array(App) */ $items) {
+    $this->assertIsArray($items, 'App', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1631,7 +1634,7 @@ class AppList extends Model {
 
 class Change extends Model {
   public $deleted;
-  protected $__fileType = 'Google_DriveFile';
+  protected $__fileType = 'DriveFile';
   protected $__fileDataType = '';
   public $file;
   public $fileId;
@@ -1644,7 +1647,7 @@ class Change extends Model {
   public function getDeleted() {
     return $this->deleted;
   }
-  public function setFile(Google_DriveFile $file) {
+  public function setFile(DriveFile $file) {
     $this->file = $file;
   }
   public function getFile() {
@@ -1678,7 +1681,7 @@ class Change extends Model {
 
 class ChangeList extends Model {
   public $etag;
-  protected $__itemsType = 'Google_Change';
+  protected $__itemsType = 'Change';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -1692,8 +1695,8 @@ class ChangeList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_Change) */ $items) {
-    $this->assertIsArray($items, 'Google_Change', __METHOD__);
+  public function setItems(/* array(Change) */ $items) {
+    $this->assertIsArray($items, 'Change', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1733,7 +1736,7 @@ class ChangeList extends Model {
 
 class ChildList extends Model {
   public $etag;
-  protected $__itemsType = 'Google_ChildReference';
+  protected $__itemsType = 'ChildReference';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -1746,8 +1749,8 @@ class ChildList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_ChildReference) */ $items) {
-    $this->assertIsArray($items, 'Google_ChildReference', __METHOD__);
+  public function setItems(/* array(ChildReference) */ $items) {
+    $this->assertIsArray($items, 'ChildReference', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1812,12 +1815,12 @@ class ChildReference extends Model {
 
 class Comment extends Model {
   public $anchor;
-  protected $__authorType = 'Google_User';
+  protected $__authorType = 'User';
   protected $__authorDataType = '';
   public $author;
   public $commentId;
   public $content;
-  protected $__contextType = 'Google_CommentContext';
+  protected $__contextType = 'CommentContext';
   protected $__contextDataType = '';
   public $context;
   public $createdDate;
@@ -1827,7 +1830,7 @@ class Comment extends Model {
   public $htmlContent;
   public $kind;
   public $modifiedDate;
-  protected $__repliesType = 'Google_CommentReply';
+  protected $__repliesType = 'CommentReply';
   protected $__repliesDataType = 'array';
   public $replies;
   public $selfLink;
@@ -1838,7 +1841,7 @@ class Comment extends Model {
   public function getAnchor() {
     return $this->anchor;
   }
-  public function setAuthor(Google_User $author) {
+  public function setAuthor(User $author) {
     $this->author = $author;
   }
   public function getAuthor() {
@@ -1856,7 +1859,7 @@ class Comment extends Model {
   public function getContent() {
     return $this->content;
   }
-  public function setContext(Google_CommentContext $context) {
+  public function setContext(CommentContext $context) {
     $this->context = $context;
   }
   public function getContext() {
@@ -1904,8 +1907,8 @@ class Comment extends Model {
   public function getModifiedDate() {
     return $this->modifiedDate;
   }
-  public function setReplies(/* array(Google_CommentReply) */ $replies) {
-    $this->assertIsArray($replies, 'Google_CommentReply', __METHOD__);
+  public function setReplies(/* array(CommentReply) */ $replies) {
+    $this->assertIsArray($replies, 'CommentReply', __METHOD__);
     $this->replies = $replies;
   }
   public function getReplies() {
@@ -1943,13 +1946,13 @@ class CommentContext extends Model {
 }
 
 class CommentList extends Model {
-  protected $__itemsType = 'Google_Comment';
+  protected $__itemsType = 'Comment';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
   public $nextPageToken;
-  public function setItems(/* array(Google_Comment) */ $items) {
-    $this->assertIsArray($items, 'Google_Comment', __METHOD__);
+  public function setItems(/* array(Comment) */ $items) {
+    $this->assertIsArray($items, 'Comment', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1970,7 +1973,7 @@ class CommentList extends Model {
 }
 
 class CommentReply extends Model {
-  protected $__authorType = 'Google_User';
+  protected $__authorType = 'User';
   protected $__authorDataType = '';
   public $author;
   public $content;
@@ -1981,7 +1984,7 @@ class CommentReply extends Model {
   public $modifiedDate;
   public $replyId;
   public $verb;
-  public function setAuthor(Google_User $author) {
+  public function setAuthor(User $author) {
     $this->author = $author;
   }
   public function getAuthor() {
@@ -2038,13 +2041,13 @@ class CommentReply extends Model {
 }
 
 class CommentReplyList extends Model {
-  protected $__itemsType = 'Google_CommentReply';
+  protected $__itemsType = 'CommentReply';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
   public $nextPageToken;
-  public function setItems(/* array(Google_CommentReply) */ $items) {
-    $this->assertIsArray($items, 'Google_CommentReply', __METHOD__);
+  public function setItems(/* array(CommentReply) */ $items) {
+    $this->assertIsArray($items, 'CommentReply', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -2079,17 +2082,17 @@ class DriveFile extends Model {
   public $fileSize;
   public $iconLink;
   public $id;
-  protected $__imageMediaMetadataType = 'Google_DriveFileImageMediaMetadata';
+  protected $__imageMediaMetadataType = 'DriveFileImageMediaMetadata';
   protected $__imageMediaMetadataDataType = '';
   public $imageMediaMetadata;
-  protected $__indexableTextType = 'Google_DriveFileIndexableText';
+  protected $__indexableTextType = 'DriveFileIndexableText';
   protected $__indexableTextDataType = '';
   public $indexableText;
   public $kind;
-  protected $__labelsType = 'Google_DriveFileLabels';
+  protected $__labelsType = 'DriveFileLabels';
   protected $__labelsDataType = '';
   public $labels;
-  protected $__lastModifyingUserType = 'Google_User';
+  protected $__lastModifyingUserType = 'User';
   protected $__lastModifyingUserDataType = '';
   public $lastModifyingUser;
   public $lastModifyingUserName;
@@ -2100,22 +2103,22 @@ class DriveFile extends Model {
   public $modifiedDate;
   public $originalFilename;
   public $ownerNames;
-  protected $__ownersType = 'Google_User';
+  protected $__ownersType = 'User';
   protected $__ownersDataType = 'array';
   public $owners;
-  protected $__parentsType = 'Google_ParentReference';
+  protected $__parentsType = 'ParentReference';
   protected $__parentsDataType = 'array';
   public $parents;
   public $quotaBytesUsed;
   public $selfLink;
   public $shared;
   public $sharedWithMeDate;
-  protected $__thumbnailType = 'Google_DriveFileThumbnail';
+  protected $__thumbnailType = 'DriveFileThumbnail';
   protected $__thumbnailDataType = '';
   public $thumbnail;
   public $thumbnailLink;
   public $title;
-  protected $__userPermissionType = 'Google_Permission';
+  protected $__userPermissionType = 'Permission';
   protected $__userPermissionDataType = '';
   public $userPermission;
   public $webContentLink;
@@ -2205,13 +2208,13 @@ class DriveFile extends Model {
   public function getId() {
     return $this->id;
   }
-  public function setImageMediaMetadata(Google_DriveFileImageMediaMetadata $imageMediaMetadata) {
+  public function setImageMediaMetadata(DriveFileImageMediaMetadata $imageMediaMetadata) {
     $this->imageMediaMetadata = $imageMediaMetadata;
   }
   public function getImageMediaMetadata() {
     return $this->imageMediaMetadata;
   }
-  public function setIndexableText(Google_DriveFileIndexableText $indexableText) {
+  public function setIndexableText(DriveFileIndexableText $indexableText) {
     $this->indexableText = $indexableText;
   }
   public function getIndexableText() {
@@ -2223,13 +2226,13 @@ class DriveFile extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setLabels(Google_DriveFileLabels $labels) {
+  public function setLabels(DriveFileLabels $labels) {
     $this->labels = $labels;
   }
   public function getLabels() {
     return $this->labels;
   }
-  public function setLastModifyingUser(Google_User $lastModifyingUser) {
+  public function setLastModifyingUser(User $lastModifyingUser) {
     $this->lastModifyingUser = $lastModifyingUser;
   }
   public function getLastModifyingUser() {
@@ -2277,22 +2280,22 @@ class DriveFile extends Model {
   public function getOriginalFilename() {
     return $this->originalFilename;
   }
-  public function setOwnerNames(/* array(Google_string) */ $ownerNames) {
-    $this->assertIsArray($ownerNames, 'Google_string', __METHOD__);
+  public function setOwnerNames(/* array(string) */ $ownerNames) {
+    $this->assertIsArray($ownerNames, 'string', __METHOD__);
     $this->ownerNames = $ownerNames;
   }
   public function getOwnerNames() {
     return $this->ownerNames;
   }
-  public function setOwners(/* array(Google_User) */ $owners) {
-    $this->assertIsArray($owners, 'Google_User', __METHOD__);
+  public function setOwners(/* array(User) */ $owners) {
+    $this->assertIsArray($owners, 'User', __METHOD__);
     $this->owners = $owners;
   }
   public function getOwners() {
     return $this->owners;
   }
-  public function setParents(/* array(Google_ParentReference) */ $parents) {
-    $this->assertIsArray($parents, 'Google_ParentReference', __METHOD__);
+  public function setParents(/* array(ParentReference) */ $parents) {
+    $this->assertIsArray($parents, 'ParentReference', __METHOD__);
     $this->parents = $parents;
   }
   public function getParents() {
@@ -2322,7 +2325,7 @@ class DriveFile extends Model {
   public function getSharedWithMeDate() {
     return $this->sharedWithMeDate;
   }
-  public function setThumbnail(Google_DriveFileThumbnail $thumbnail) {
+  public function setThumbnail(DriveFileThumbnail $thumbnail) {
     $this->thumbnail = $thumbnail;
   }
   public function getThumbnail() {
@@ -2340,7 +2343,7 @@ class DriveFile extends Model {
   public function getTitle() {
     return $this->title;
   }
-  public function setUserPermission(Google_Permission $userPermission) {
+  public function setUserPermission(Permission $userPermission) {
     $this->userPermission = $userPermission;
   }
   public function getUserPermission() {
@@ -2380,7 +2383,7 @@ class DriveFileImageMediaMetadata extends Model {
   public $height;
   public $isoSpeed;
   public $lens;
-  protected $__locationType = 'Google_DriveFileImageMediaMetadataLocation';
+  protected $__locationType = 'DriveFileImageMediaMetadataLocation';
   protected $__locationDataType = '';
   public $location;
   public $maxApertureValue;
@@ -2468,7 +2471,7 @@ class DriveFileImageMediaMetadata extends Model {
   public function getLens() {
     return $this->lens;
   }
-  public function setLocation(Google_DriveFileImageMediaMetadataLocation $location) {
+  public function setLocation(DriveFileImageMediaMetadataLocation $location) {
     $this->location = $location;
   }
   public function getLocation() {
@@ -2609,7 +2612,7 @@ class DriveFileThumbnail extends Model {
 
 class FileList extends Model {
   public $etag;
-  protected $__itemsType = 'Google_DriveFile';
+  protected $__itemsType = 'DriveFile';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -2622,8 +2625,8 @@ class FileList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_DriveFile) */ $items) {
-    $this->assertIsArray($items, 'Google_DriveFile', __METHOD__);
+  public function setItems(/* array(DriveFile) */ $items) {
+    $this->assertIsArray($items, 'DriveFile', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -2657,7 +2660,7 @@ class FileList extends Model {
 
 class ParentList extends Model {
   public $etag;
-  protected $__itemsType = 'Google_ParentReference';
+  protected $__itemsType = 'ParentReference';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -2668,8 +2671,8 @@ class ParentList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_ParentReference) */ $items) {
-    $this->assertIsArray($items, 'Google_ParentReference', __METHOD__);
+  public function setItems(/* array(ParentReference) */ $items) {
+    $this->assertIsArray($items, 'ParentReference', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -2740,8 +2743,8 @@ class Permission extends Model {
   public $type;
   public $value;
   public $withLink;
-  public function setAdditionalRoles(/* array(Google_string) */ $additionalRoles) {
-    $this->assertIsArray($additionalRoles, 'Google_string', __METHOD__);
+  public function setAdditionalRoles(/* array(string) */ $additionalRoles) {
+    $this->assertIsArray($additionalRoles, 'string', __METHOD__);
     $this->additionalRoles = $additionalRoles;
   }
   public function getAdditionalRoles() {
@@ -2817,7 +2820,7 @@ class Permission extends Model {
 
 class PermissionList extends Model {
   public $etag;
-  protected $__itemsType = 'Google_Permission';
+  protected $__itemsType = 'Permission';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -2828,8 +2831,8 @@ class PermissionList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_Permission) */ $items) {
-    $this->assertIsArray($items, 'Google_Permission', __METHOD__);
+  public function setItems(/* array(Permission) */ $items) {
+    $this->assertIsArray($items, 'Permission', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -2896,7 +2899,7 @@ class Property extends Model {
 
 class PropertyList extends Model {
   public $etag;
-  protected $__itemsType = 'Google_Property';
+  protected $__itemsType = 'Property';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -2907,8 +2910,8 @@ class PropertyList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_Property) */ $items) {
-    $this->assertIsArray($items, 'Google_Property', __METHOD__);
+  public function setItems(/* array(Property) */ $items) {
+    $this->assertIsArray($items, 'Property', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -2935,7 +2938,7 @@ class Revision extends Model {
   public $fileSize;
   public $id;
   public $kind;
-  protected $__lastModifyingUserType = 'Google_User';
+  protected $__lastModifyingUserType = 'User';
   protected $__lastModifyingUserDataType = '';
   public $lastModifyingUser;
   public $lastModifyingUserName;
@@ -2985,7 +2988,7 @@ class Revision extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setLastModifyingUser(Google_User $lastModifyingUser) {
+  public function setLastModifyingUser(User $lastModifyingUser) {
     $this->lastModifyingUser = $lastModifyingUser;
   }
   public function getLastModifyingUser() {
@@ -3061,7 +3064,7 @@ class Revision extends Model {
 
 class RevisionList extends Model {
   public $etag;
-  protected $__itemsType = 'Google_Revision';
+  protected $__itemsType = 'Revision';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -3072,8 +3075,8 @@ class RevisionList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_Revision) */ $items) {
-    $this->assertIsArray($items, 'Google_Revision', __METHOD__);
+  public function setItems(/* array(Revision) */ $items) {
+    $this->assertIsArray($items, 'Revision', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -3098,7 +3101,7 @@ class User extends Model {
   public $isAuthenticatedUser;
   public $kind;
   public $permissionId;
-  protected $__pictureType = 'Google_UserPicture';
+  protected $__pictureType = 'UserPicture';
   protected $__pictureDataType = '';
   public $picture;
   public function setDisplayName($displayName) {
@@ -3125,7 +3128,7 @@ class User extends Model {
   public function getPermissionId() {
     return $this->permissionId;
   }
-  public function setPicture(Google_UserPicture $picture) {
+  public function setPicture(UserPicture $picture) {
     $this->picture = $picture;
   }
   public function getPicture() {

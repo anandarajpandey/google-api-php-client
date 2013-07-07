@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "webfonts" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $webfontsService = new Google_WebfontsService(...);
+   *   $webfontsService = new WebfontsService(...);
    *   $webfonts = $webfontsService->webfonts;
    *  </code>
    */
@@ -40,7 +43,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_WebfontList($data);
+        return new WebfontList($data);
       } else {
         return $data;
       }
@@ -48,7 +51,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Webfonts (v1).
+ * Service definition for Webfonts (v1).
  *
  * <p>
  * The Google Web Fonts Developer API.
@@ -74,7 +77,7 @@ class WebfontsService extends Service {
     $this->serviceName = 'webfonts';
 
     $client->addService($this->serviceName, $this->version);
-    $this->webfonts = new Google_WebfontsServiceResource($this, $this->serviceName, 'webfonts', json_decode('{"methods": {"list": {"httpMethod": "GET", "response": {"$ref": "WebfontList"}, "id": "webfonts.webfonts.list", "parameters": {"sort": {"enum": ["alpha", "date", "popularity", "style", "trending"], "type": "string", "location": "query"}}, "path": "webfonts"}}}', true));
+    $this->webfonts = new WebfontsServiceResource($this, $this->serviceName, 'webfonts', json_decode('{"methods": {"list": {"httpMethod": "GET", "response": {"$ref": "WebfontList"}, "id": "webfonts.webfonts.list", "parameters": {"sort": {"enum": ["alpha", "date", "popularity", "style", "trending"], "type": "string", "location": "query"}}, "path": "webfonts"}}}', true));
 
   }
 }
@@ -111,12 +114,12 @@ class Webfont extends Model {
 }
 
 class WebfontList extends Model {
-  protected $__itemsType = 'Google_Webfont';
+  protected $__itemsType = 'Webfont';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Webfont) */ $items) {
-    $this->assertIsArray($items, 'Google_Webfont', __METHOD__);
+  public function setItems(/* array(Webfont) */ $items) {
+    $this->assertIsArray($items, 'Webfont', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {

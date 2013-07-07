@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "text" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $freebaseService = new Google_FreebaseService(...);
+   *   $freebaseService = new FreebaseService(...);
    *   $text = $freebaseService->text;
    *  </code>
    */
@@ -41,7 +44,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_ContentserviceGet($data);
+        return new ContentserviceGet($data);
       } else {
         return $data;
       }
@@ -49,7 +52,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Freebase (v1).
+ * Service definition for Freebase (v1).
  *
  * <p>
  * Lets you access the Freebase repository of open data.
@@ -75,7 +78,7 @@ class FreebaseService extends Service {
     $this->serviceName = 'freebase';
 
     $client->addService($this->serviceName, $this->version);
-    $this->text = new Google_TextServiceResource($this, $this->serviceName, 'text', json_decode('{"methods": {"get": {"httpMethod": "GET", "response": {"$ref": "ContentserviceGet"}, "id": "freebase.text.get", "parameters": {"maxlength": {"type": "integer", "location": "query", "format": "uint32"}, "id": {"repeated": true, "required": true, "type": "string", "location": "path"}, "format": {"default": "plain", "enum": ["html", "plain", "raw"], "type": "string", "location": "query"}}, "path": "text{/id*}"}}}', true));
+    $this->text = new TextServiceResource($this, $this->serviceName, 'text', json_decode('{"methods": {"get": {"httpMethod": "GET", "response": {"$ref": "ContentserviceGet"}, "id": "freebase.text.get", "parameters": {"maxlength": {"type": "integer", "location": "query", "format": "uint32"}, "id": {"repeated": true, "required": true, "type": "string", "location": "path"}, "format": {"default": "plain", "enum": ["html", "plain", "raw"], "type": "string", "location": "query"}}, "path": "text{/id*}"}}}', true));
   }
 }
 

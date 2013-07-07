@@ -16,12 +16,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "purchases" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $androidpublisherService = new Google_AndroidpublisherService(...);
+   *   $androidpublisherService = new AndroidpublisherService(...);
    *   $purchases = $androidpublisherService->purchases;
    *  </code>
    */
@@ -58,7 +61,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_SubscriptionPurchase($data);
+        return new SubscriptionPurchase($data);
       } else {
         return $data;
       }
@@ -66,7 +69,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Androidpublisher (v1).
+ * Service definition for Androidpublisher (v1).
  *
  * <p>
  * Lets Android application developers access their Google Play accounts.
@@ -92,7 +95,7 @@ class AndroidpublisherService extends Service {
     $this->serviceName = 'androidpublisher';
 
     $client->addService($this->serviceName, $this->version);
-    $this->purchases = new Google_PurchasesServiceResource($this, $this->serviceName, 'purchases', json_decode('{"methods": {"cancel": {"parameters": {"packageName": {"required": true, "type": "string", "location": "path"}, "subscriptionId": {"required": true, "type": "string", "location": "path"}, "token": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "POST", "path": "{packageName}/subscriptions/{subscriptionId}/purchases/{token}/cancel", "id": "androidpublisher.purchases.cancel"}, "get": {"parameters": {"packageName": {"required": true, "type": "string", "location": "path"}, "subscriptionId": {"required": true, "type": "string", "location": "path"}, "token": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "SubscriptionPurchase"}, "httpMethod": "GET", "path": "{packageName}/subscriptions/{subscriptionId}/purchases/{token}", "id": "androidpublisher.purchases.get"}}}', true));
+    $this->purchases = new PurchasesServiceResource($this, $this->serviceName, 'purchases', json_decode('{"methods": {"cancel": {"parameters": {"packageName": {"required": true, "type": "string", "location": "path"}, "subscriptionId": {"required": true, "type": "string", "location": "path"}, "token": {"required": true, "type": "string", "location": "path"}}, "httpMethod": "POST", "path": "{packageName}/subscriptions/{subscriptionId}/purchases/{token}/cancel", "id": "androidpublisher.purchases.cancel"}, "get": {"parameters": {"packageName": {"required": true, "type": "string", "location": "path"}, "subscriptionId": {"required": true, "type": "string", "location": "path"}, "token": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "SubscriptionPurchase"}, "httpMethod": "GET", "path": "{packageName}/subscriptions/{subscriptionId}/purchases/{token}", "id": "androidpublisher.purchases.get"}}}', true));
 
   }
 }

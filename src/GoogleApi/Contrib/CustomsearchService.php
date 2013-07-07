@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "cse" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $customsearchService = new Google_CustomsearchService(...);
+   *   $customsearchService = new CustomsearchService(...);
    *   $cse = $customsearchService->cse;
    *  </code>
    */
@@ -71,7 +74,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Search($data);
+        return new Search($data);
       } else {
         return $data;
       }
@@ -79,7 +82,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Customsearch (v1).
+ * Service definition for Customsearch (v1).
  *
  * <p>
  * Lets you search over a website or collection of websites
@@ -105,18 +108,18 @@ class CustomsearchService extends Service {
     $this->serviceName = 'customsearch';
 
     $client->addService($this->serviceName, $this->version);
-    $this->cse = new Google_CseServiceResource($this, $this->serviceName, 'cse', json_decode('{"methods": {"list": {"httpMethod": "GET", "response": {"$ref": "Search"}, "id": "search.cse.list", "parameters": {"sort": {"type": "string", "location": "query"}, "orTerms": {"type": "string", "location": "query"}, "highRange": {"type": "string", "location": "query"}, "num": {"default": "10", "type": "integer", "location": "query", "format": "uint32"}, "cr": {"type": "string", "location": "query"}, "imgType": {"enum": ["clipart", "face", "lineart", "news", "photo"], "type": "string", "location": "query"}, "gl": {"type": "string", "location": "query"}, "q": {"required": true, "type": "string", "location": "query"}, "relatedSite": {"type": "string", "location": "query"}, "searchType": {"enum": ["image"], "type": "string", "location": "query"}, "fileType": {"type": "string", "location": "query"}, "start": {"type": "integer", "location": "query", "format": "uint32"}, "imgDominantColor": {"enum": ["black", "blue", "brown", "gray", "green", "pink", "purple", "teal", "white", "yellow"], "type": "string", "location": "query"}, "lr": {"enum": ["lang_ar", "lang_bg", "lang_ca", "lang_cs", "lang_da", "lang_de", "lang_el", "lang_en", "lang_es", "lang_et", "lang_fi", "lang_fr", "lang_hr", "lang_hu", "lang_id", "lang_is", "lang_it", "lang_iw", "lang_ja", "lang_ko", "lang_lt", "lang_lv", "lang_nl", "lang_no", "lang_pl", "lang_pt", "lang_ro", "lang_ru", "lang_sk", "lang_sl", "lang_sr", "lang_sv", "lang_tr", "lang_zh-CN", "lang_zh-TW"], "type": "string", "location": "query"}, "siteSearch": {"type": "string", "location": "query"}, "cref": {"type": "string", "location": "query"}, "dateRestrict": {"type": "string", "location": "query"}, "safe": {"default": "off", "enum": ["high", "medium", "off"], "type": "string", "location": "query"}, "c2coff": {"type": "string", "location": "query"}, "googlehost": {"type": "string", "location": "query"}, "hq": {"type": "string", "location": "query"}, "exactTerms": {"type": "string", "location": "query"}, "hl": {"type": "string", "location": "query"}, "lowRange": {"type": "string", "location": "query"}, "imgSize": {"enum": ["huge", "icon", "large", "medium", "small", "xlarge", "xxlarge"], "type": "string", "location": "query"}, "imgColorType": {"enum": ["color", "gray", "mono"], "type": "string", "location": "query"}, "rights": {"type": "string", "location": "query"}, "excludeTerms": {"type": "string", "location": "query"}, "filter": {"enum": ["0", "1"], "type": "string", "location": "query"}, "linkSite": {"type": "string", "location": "query"}, "cx": {"type": "string", "location": "query"}, "siteSearchFilter": {"enum": ["e", "i"], "type": "string", "location": "query"}}, "path": "v1"}}}', true));
+    $this->cse = new CseServiceResource($this, $this->serviceName, 'cse', json_decode('{"methods": {"list": {"httpMethod": "GET", "response": {"$ref": "Search"}, "id": "search.cse.list", "parameters": {"sort": {"type": "string", "location": "query"}, "orTerms": {"type": "string", "location": "query"}, "highRange": {"type": "string", "location": "query"}, "num": {"default": "10", "type": "integer", "location": "query", "format": "uint32"}, "cr": {"type": "string", "location": "query"}, "imgType": {"enum": ["clipart", "face", "lineart", "news", "photo"], "type": "string", "location": "query"}, "gl": {"type": "string", "location": "query"}, "q": {"required": true, "type": "string", "location": "query"}, "relatedSite": {"type": "string", "location": "query"}, "searchType": {"enum": ["image"], "type": "string", "location": "query"}, "fileType": {"type": "string", "location": "query"}, "start": {"type": "integer", "location": "query", "format": "uint32"}, "imgDominantColor": {"enum": ["black", "blue", "brown", "gray", "green", "pink", "purple", "teal", "white", "yellow"], "type": "string", "location": "query"}, "lr": {"enum": ["lang_ar", "lang_bg", "lang_ca", "lang_cs", "lang_da", "lang_de", "lang_el", "lang_en", "lang_es", "lang_et", "lang_fi", "lang_fr", "lang_hr", "lang_hu", "lang_id", "lang_is", "lang_it", "lang_iw", "lang_ja", "lang_ko", "lang_lt", "lang_lv", "lang_nl", "lang_no", "lang_pl", "lang_pt", "lang_ro", "lang_ru", "lang_sk", "lang_sl", "lang_sr", "lang_sv", "lang_tr", "lang_zh-CN", "lang_zh-TW"], "type": "string", "location": "query"}, "siteSearch": {"type": "string", "location": "query"}, "cref": {"type": "string", "location": "query"}, "dateRestrict": {"type": "string", "location": "query"}, "safe": {"default": "off", "enum": ["high", "medium", "off"], "type": "string", "location": "query"}, "c2coff": {"type": "string", "location": "query"}, "googlehost": {"type": "string", "location": "query"}, "hq": {"type": "string", "location": "query"}, "exactTerms": {"type": "string", "location": "query"}, "hl": {"type": "string", "location": "query"}, "lowRange": {"type": "string", "location": "query"}, "imgSize": {"enum": ["huge", "icon", "large", "medium", "small", "xlarge", "xxlarge"], "type": "string", "location": "query"}, "imgColorType": {"enum": ["color", "gray", "mono"], "type": "string", "location": "query"}, "rights": {"type": "string", "location": "query"}, "excludeTerms": {"type": "string", "location": "query"}, "filter": {"enum": ["0", "1"], "type": "string", "location": "query"}, "linkSite": {"type": "string", "location": "query"}, "cx": {"type": "string", "location": "query"}, "siteSearchFilter": {"enum": ["e", "i"], "type": "string", "location": "query"}}, "path": "v1"}}}', true));
 
   }
 }
 
 class Context extends Model {
-  protected $__facetsType = 'Google_ContextFacets';
+  protected $__facetsType = 'ContextFacets';
   protected $__facetsDataType = 'array';
   public $facets;
   public $title;
-  public function setFacets(/* array(Google_ContextFacets) */ $facets) {
-    $this->assertIsArray($facets, 'Google_ContextFacets', __METHOD__);
+  public function setFacets(/* array(ContextFacets) */ $facets) {
+    $this->assertIsArray($facets, 'ContextFacets', __METHOD__);
     $this->facets = $facets;
   }
   public function getFacets() {
@@ -152,10 +155,10 @@ class Promotion extends Model {
   public $displayLink;
   public $htmlTitle;
   public $link;
-  protected $__bodyLinesType = 'Google_PromotionBodyLines';
+  protected $__bodyLinesType = 'PromotionBodyLines';
   protected $__bodyLinesDataType = 'array';
   public $bodyLines;
-  protected $__imageType = 'Google_PromotionImage';
+  protected $__imageType = 'PromotionImage';
   protected $__imageDataType = '';
   public $image;
   public function setTitle($title) {
@@ -182,14 +185,14 @@ class Promotion extends Model {
   public function getLink() {
     return $this->link;
   }
-  public function setBodyLines(/* array(Google_PromotionBodyLines) */ $bodyLines) {
-    $this->assertIsArray($bodyLines, 'Google_PromotionBodyLines', __METHOD__);
+  public function setBodyLines(/* array(PromotionBodyLines) */ $bodyLines) {
+    $this->assertIsArray($bodyLines, 'PromotionBodyLines', __METHOD__);
     $this->bodyLines = $bodyLines;
   }
   public function getBodyLines() {
     return $this->bodyLines;
   }
-  public function setImage(Google_PromotionImage $image) {
+  public function setImage(PromotionImage $image) {
     $this->image = $image;
   }
   public function getImage() {
@@ -517,7 +520,7 @@ class Query extends Model {
 class Result extends Model {
   public $snippet;
   public $kind;
-  protected $__labelsType = 'Google_ResultLabels';
+  protected $__labelsType = 'ResultLabels';
   protected $__labelsDataType = 'array';
   public $labels;
   public $title;
@@ -529,7 +532,7 @@ class Result extends Model {
   public $htmlTitle;
   public $htmlSnippet;
   public $link;
-  protected $__imageType = 'Google_ResultImage';
+  protected $__imageType = 'ResultImage';
   protected $__imageDataType = '';
   public $image;
   public $mime;
@@ -546,8 +549,8 @@ class Result extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setLabels(/* array(Google_ResultLabels) */ $labels) {
-    $this->assertIsArray($labels, 'Google_ResultLabels', __METHOD__);
+  public function setLabels(/* array(ResultLabels) */ $labels) {
+    $this->assertIsArray($labels, 'ResultLabels', __METHOD__);
     $this->labels = $labels;
   }
   public function getLabels() {
@@ -607,7 +610,7 @@ class Result extends Model {
   public function getLink() {
     return $this->link;
   }
-  public function setImage(Google_ResultImage $image) {
+  public function setImage(ResultImage $image) {
     $this->image = $image;
   }
   public function getImage() {
@@ -697,30 +700,30 @@ class ResultLabels extends Model {
 }
 
 class Search extends Model {
-  protected $__promotionsType = 'Google_Promotion';
+  protected $__promotionsType = 'Promotion';
   protected $__promotionsDataType = 'array';
   public $promotions;
   public $kind;
-  protected $__urlType = 'Google_SearchUrl';
+  protected $__urlType = 'SearchUrl';
   protected $__urlDataType = '';
   public $url;
-  protected $__itemsType = 'Google_Result';
+  protected $__itemsType = 'Result';
   protected $__itemsDataType = 'array';
   public $items;
-  protected $__contextType = 'Google_Context';
+  protected $__contextType = 'Context';
   protected $__contextDataType = '';
   public $context;
-  protected $__queriesType = 'Google_Query';
+  protected $__queriesType = 'Query';
   protected $__queriesDataType = 'map';
   public $queries;
-  protected $__spellingType = 'Google_SearchSpelling';
+  protected $__spellingType = 'SearchSpelling';
   protected $__spellingDataType = '';
   public $spelling;
-  protected $__searchInformationType = 'Google_SearchSearchInformation';
+  protected $__searchInformationType = 'SearchSearchInformation';
   protected $__searchInformationDataType = '';
   public $searchInformation;
-  public function setPromotions(/* array(Google_Promotion) */ $promotions) {
-    $this->assertIsArray($promotions, 'Google_Promotion', __METHOD__);
+  public function setPromotions(/* array(Promotion) */ $promotions) {
+    $this->assertIsArray($promotions, 'Promotion', __METHOD__);
     $this->promotions = $promotions;
   }
   public function getPromotions() {
@@ -732,38 +735,38 @@ class Search extends Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setUrl(Google_SearchUrl $url) {
+  public function setUrl(SearchUrl $url) {
     $this->url = $url;
   }
   public function getUrl() {
     return $this->url;
   }
-  public function setItems(/* array(Google_Result) */ $items) {
-    $this->assertIsArray($items, 'Google_Result', __METHOD__);
+  public function setItems(/* array(Result) */ $items) {
+    $this->assertIsArray($items, 'Result', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
     return $this->items;
   }
-  public function setContext(Google_Context $context) {
+  public function setContext(Context $context) {
     $this->context = $context;
   }
   public function getContext() {
     return $this->context;
   }
-  public function setQueries(Google_Query $queries) {
+  public function setQueries(Query $queries) {
     $this->queries = $queries;
   }
   public function getQueries() {
     return $this->queries;
   }
-  public function setSpelling(Google_SearchSpelling $spelling) {
+  public function setSpelling(SearchSpelling $spelling) {
     $this->spelling = $spelling;
   }
   public function getSpelling() {
     return $this->spelling;
   }
-  public function setSearchInformation(Google_SearchSearchInformation $searchInformation) {
+  public function setSearchInformation(SearchSearchInformation $searchInformation) {
     $this->searchInformation = $searchInformation;
   }
   public function getSearchInformation() {

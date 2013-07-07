@@ -16,12 +16,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "groups" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $groupssettingsService = new Google_GroupssettingsService(...);
+   *   $groupssettingsService = new GroupssettingsService(...);
    *   $groups = $groupssettingsService->groups;
    *  </code>
    */
@@ -40,7 +43,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Groups($data);
+        return new Groups($data);
       } else {
         return $data;
       }
@@ -53,12 +56,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Groups
      */
-    public function patch($groupUniqueId, Google_Groups $postBody, $optParams = array()) {
+    public function patch($groupUniqueId, Groups $postBody, $optParams = array()) {
       $params = array('groupUniqueId' => $groupUniqueId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Groups($data);
+        return new Groups($data);
       } else {
         return $data;
       }
@@ -71,12 +74,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Groups
      */
-    public function update($groupUniqueId, Google_Groups $postBody, $optParams = array()) {
+    public function update($groupUniqueId, Groups $postBody, $optParams = array()) {
       $params = array('groupUniqueId' => $groupUniqueId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Groups($data);
+        return new Groups($data);
       } else {
         return $data;
       }
@@ -84,7 +87,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Groupssettings (v1).
+ * Service definition for Groupssettings (v1).
  *
  * <p>
  * Lets you manage permission levels and related settings of a group.
@@ -110,7 +113,7 @@ class GroupssettingsService extends Service {
     $this->serviceName = 'groupssettings';
 
     $client->addService($this->serviceName, $this->version);
-    $this->groups = new Google_GroupsServiceResource($this, $this->serviceName, 'groups', json_decode('{"methods": {"patch": {"scopes": ["https://www.googleapis.com/auth/apps.groups.settings"], "parameters": {"groupUniqueId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Groups"}, "response": {"$ref": "Groups"}, "httpMethod": "PATCH", "path": "{groupUniqueId}", "id": "groupsSettings.groups.patch"}, "update": {"scopes": ["https://www.googleapis.com/auth/apps.groups.settings"], "parameters": {"groupUniqueId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Groups"}, "response": {"$ref": "Groups"}, "httpMethod": "PUT", "path": "{groupUniqueId}", "id": "groupsSettings.groups.update"}, "get": {"scopes": ["https://www.googleapis.com/auth/apps.groups.settings"], "parameters": {"groupUniqueId": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "Groups"}, "httpMethod": "GET", "path": "{groupUniqueId}", "id": "groupsSettings.groups.get"}}}', true));
+    $this->groups = new GroupsServiceResource($this, $this->serviceName, 'groups', json_decode('{"methods": {"patch": {"scopes": ["https://www.googleapis.com/auth/apps.groups.settings"], "parameters": {"groupUniqueId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Groups"}, "response": {"$ref": "Groups"}, "httpMethod": "PATCH", "path": "{groupUniqueId}", "id": "groupsSettings.groups.patch"}, "update": {"scopes": ["https://www.googleapis.com/auth/apps.groups.settings"], "parameters": {"groupUniqueId": {"required": true, "type": "string", "location": "path"}}, "request": {"$ref": "Groups"}, "response": {"$ref": "Groups"}, "httpMethod": "PUT", "path": "{groupUniqueId}", "id": "groupsSettings.groups.update"}, "get": {"scopes": ["https://www.googleapis.com/auth/apps.groups.settings"], "parameters": {"groupUniqueId": {"required": true, "type": "string", "location": "path"}}, "response": {"$ref": "Groups"}, "httpMethod": "GET", "path": "{groupUniqueId}", "id": "groupsSettings.groups.get"}}}', true));
 
   }
 }

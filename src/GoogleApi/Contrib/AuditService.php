@@ -16,12 +16,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "activities" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $auditService = new Google_AuditService(...);
+   *   $auditService = new AuditService(...);
    *   $activities = $auditService->activities;
    *  </code>
    */
@@ -51,7 +54,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Activities($data);
+        return new Activities($data);
       } else {
         return $data;
       }
@@ -59,7 +62,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Audit (v1).
+ * Service definition for Audit (v1).
  *
  * <p>
  * Lets you access user activities in your enterprise made through various applications.
@@ -85,19 +88,19 @@ class AuditService extends Service {
     $this->serviceName = 'audit';
 
     $client->addService($this->serviceName, $this->version);
-    $this->activities = new Google_ActivitiesServiceResource($this, $this->serviceName, 'activities', json_decode('{"methods": {"list": {"parameters": {"actorEmail": {"type": "string", "location": "query"}, "actorApplicationId": {"location": "query", "type": "string", "format": "int64"}, "actorIpAddress": {"type": "string", "location": "query"}, "caller": {"enum": ["application_owner", "customer"], "type": "string", "location": "query"}, "maxResults": {"format": "int32", "maximum": "1000", "minimum": "1", "location": "query", "type": "integer"}, "customerId": {"required": true, "type": "string", "location": "path"}, "eventName": {"type": "string", "location": "query"}, "startTime": {"type": "string", "location": "query"}, "endTime": {"type": "string", "location": "query"}, "applicationId": {"location": "path", "required": true, "type": "string", "format": "int64"}, "continuationToken": {"type": "string", "location": "query"}}, "response": {"$ref": "Activities"}, "httpMethod": "GET", "path": "{customerId}/{applicationId}", "id": "audit.activities.list"}}}', true));
+    $this->activities = new ActivitiesServiceResource($this, $this->serviceName, 'activities', json_decode('{"methods": {"list": {"parameters": {"actorEmail": {"type": "string", "location": "query"}, "actorApplicationId": {"location": "query", "type": "string", "format": "int64"}, "actorIpAddress": {"type": "string", "location": "query"}, "caller": {"enum": ["application_owner", "customer"], "type": "string", "location": "query"}, "maxResults": {"format": "int32", "maximum": "1000", "minimum": "1", "location": "query", "type": "integer"}, "customerId": {"required": true, "type": "string", "location": "path"}, "eventName": {"type": "string", "location": "query"}, "startTime": {"type": "string", "location": "query"}, "endTime": {"type": "string", "location": "query"}, "applicationId": {"location": "path", "required": true, "type": "string", "format": "int64"}, "continuationToken": {"type": "string", "location": "query"}}, "response": {"$ref": "Activities"}, "httpMethod": "GET", "path": "{customerId}/{applicationId}", "id": "audit.activities.list"}}}', true));
 
   }
 }
 
 class Activities extends Model {
-  protected $__itemsType = 'Google_Activity';
+  protected $__itemsType = 'Activity';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
   public $next;
-  public function setItems(/* array(Google_Activity) */ $items) {
-    $this->assertIsArray($items, 'Google_Activity', __METHOD__);
+  public function setItems(/* array(Activity) */ $items) {
+    $this->assertIsArray($items, 'Activity', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -118,32 +121,32 @@ class Activities extends Model {
 }
 
 class Activity extends Model {
-  protected $__actorType = 'Google_ActivityActor';
+  protected $__actorType = 'ActivityActor';
   protected $__actorDataType = '';
   public $actor;
-  protected $__eventsType = 'Google_ActivityEvents';
+  protected $__eventsType = 'ActivityEvents';
   protected $__eventsDataType = 'array';
   public $events;
-  protected $__idType = 'Google_ActivityId';
+  protected $__idType = 'ActivityId';
   protected $__idDataType = '';
   public $id;
   public $ipAddress;
   public $kind;
   public $ownerDomain;
-  public function setActor(Google_ActivityActor $actor) {
+  public function setActor(ActivityActor $actor) {
     $this->actor = $actor;
   }
   public function getActor() {
     return $this->actor;
   }
-  public function setEvents(/* array(Google_ActivityEvents) */ $events) {
-    $this->assertIsArray($events, 'Google_ActivityEvents', __METHOD__);
+  public function setEvents(/* array(ActivityEvents) */ $events) {
+    $this->assertIsArray($events, 'ActivityEvents', __METHOD__);
     $this->events = $events;
   }
   public function getEvents() {
     return $this->events;
   }
-  public function setId(Google_ActivityId $id) {
+  public function setId(ActivityId $id) {
     $this->id = $id;
   }
   public function getId() {
@@ -203,7 +206,7 @@ class ActivityActor extends Model {
 class ActivityEvents extends Model {
   public $eventType;
   public $name;
-  protected $__parametersType = 'Google_ActivityEventsParameters';
+  protected $__parametersType = 'ActivityEventsParameters';
   protected $__parametersDataType = 'array';
   public $parameters;
   public function setEventType($eventType) {
@@ -218,8 +221,8 @@ class ActivityEvents extends Model {
   public function getName() {
     return $this->name;
   }
-  public function setParameters(/* array(Google_ActivityEventsParameters) */ $parameters) {
-    $this->assertIsArray($parameters, 'Google_ActivityEventsParameters', __METHOD__);
+  public function setParameters(/* array(ActivityEventsParameters) */ $parameters) {
+    $this->assertIsArray($parameters, 'ActivityEventsParameters', __METHOD__);
     $this->parameters = $parameters;
   }
   public function getParameters() {

@@ -14,12 +14,15 @@
  */
 namespace GoogleApi\Contrib;
 use GoogleApi\Client;
+use GoogleApi\Service\Model;
+use GoogleApi\Service\Service;
+use GoogleApi\Service\ServiceResource;
 
   /**
    * The "acl" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $calendarService = new Google_CalendarService(...);
+   *   $calendarService = new CalendarService(...);
    *   $acl = $calendarService->acl;
    *  </code>
    */
@@ -52,7 +55,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_AclRule($data);
+        return new AclRule($data);
       } else {
         return $data;
       }
@@ -65,12 +68,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return AclRule
      */
-    public function insert($calendarId, Google_AclRule $postBody, $optParams = array()) {
+    public function insert($calendarId, AclRule $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_AclRule($data);
+        return new AclRule($data);
       } else {
         return $data;
       }
@@ -87,7 +90,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Acl($data);
+        return new Acl($data);
       } else {
         return $data;
       }
@@ -101,12 +104,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return AclRule
      */
-    public function patch($calendarId, $ruleId, Google_AclRule $postBody, $optParams = array()) {
+    public function patch($calendarId, $ruleId, AclRule $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'ruleId' => $ruleId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_AclRule($data);
+        return new AclRule($data);
       } else {
         return $data;
       }
@@ -120,12 +123,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return AclRule
      */
-    public function update($calendarId, $ruleId, Google_AclRule $postBody, $optParams = array()) {
+    public function update($calendarId, $ruleId, AclRule $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'ruleId' => $ruleId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_AclRule($data);
+        return new AclRule($data);
       } else {
         return $data;
       }
@@ -136,7 +139,7 @@ use GoogleApi\Client;
    * The "calendarList" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $calendarService = new Google_CalendarService(...);
+   *   $calendarService = new CalendarService(...);
    *   $calendarList = $calendarService->calendarList;
    *  </code>
    */
@@ -167,7 +170,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_CalendarListEntry($data);
+        return new CalendarListEntry($data);
       } else {
         return $data;
       }
@@ -181,12 +184,12 @@ use GoogleApi\Client;
      * @opt_param bool colorRgbFormat Whether to use the 'foregroundColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'colorId' field will be set to the best matching option automatically. Optional. The default is False.
      * @return CalendarListEntry
      */
-    public function insert(Google_CalendarListEntry $postBody, $optParams = array()) {
+    public function insert(CalendarListEntry $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_CalendarListEntry($data);
+        return new CalendarListEntry($data);
       } else {
         return $data;
       }
@@ -207,7 +210,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_CalendarList($data);
+        return new CalendarList($data);
       } else {
         return $data;
       }
@@ -223,12 +226,12 @@ use GoogleApi\Client;
      * @opt_param bool colorRgbFormat Whether to use the 'foregroundColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'colorId' field will be set to the best matching option automatically. Optional. The default is False.
      * @return CalendarListEntry
      */
-    public function patch($calendarId, Google_CalendarListEntry $postBody, $optParams = array()) {
+    public function patch($calendarId, CalendarListEntry $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_CalendarListEntry($data);
+        return new CalendarListEntry($data);
       } else {
         return $data;
       }
@@ -243,12 +246,12 @@ use GoogleApi\Client;
      * @opt_param bool colorRgbFormat Whether to use the 'foregroundColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'colorId' field will be set to the best matching option automatically. Optional. The default is False.
      * @return CalendarListEntry
      */
-    public function update($calendarId, Google_CalendarListEntry $postBody, $optParams = array()) {
+    public function update($calendarId, CalendarListEntry $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_CalendarListEntry($data);
+        return new CalendarListEntry($data);
       } else {
         return $data;
       }
@@ -259,7 +262,7 @@ use GoogleApi\Client;
    * The "calendars" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $calendarService = new Google_CalendarService(...);
+   *   $calendarService = new CalendarService(...);
    *   $calendars = $calendarService->calendars;
    *  </code>
    */
@@ -303,7 +306,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Calendar($data);
+        return new Calendar($data);
       } else {
         return $data;
       }
@@ -315,12 +318,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Calendar
      */
-    public function insert(Google_Calendar $postBody, $optParams = array()) {
+    public function insert(Calendar $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Calendar($data);
+        return new Calendar($data);
       } else {
         return $data;
       }
@@ -333,12 +336,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Calendar
      */
-    public function patch($calendarId, Google_Calendar $postBody, $optParams = array()) {
+    public function patch($calendarId, Calendar $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Calendar($data);
+        return new Calendar($data);
       } else {
         return $data;
       }
@@ -351,12 +354,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Calendar
      */
-    public function update($calendarId, Google_Calendar $postBody, $optParams = array()) {
+    public function update($calendarId, Calendar $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Calendar($data);
+        return new Calendar($data);
       } else {
         return $data;
       }
@@ -367,7 +370,7 @@ use GoogleApi\Client;
    * The "colors" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $calendarService = new Google_CalendarService(...);
+   *   $calendarService = new CalendarService(...);
    *   $colors = $calendarService->colors;
    *  </code>
    */
@@ -385,7 +388,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Colors($data);
+        return new Colors($data);
       } else {
         return $data;
       }
@@ -396,7 +399,7 @@ use GoogleApi\Client;
    * The "events" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $calendarService = new Google_CalendarService(...);
+   *   $calendarService = new CalendarService(...);
    *   $events = $calendarService->events;
    *  </code>
    */
@@ -435,7 +438,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Event($data);
+        return new Event($data);
       } else {
         return $data;
       }
@@ -448,12 +451,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return Event
      */
-    public function import($calendarId, Google_Event $postBody, $optParams = array()) {
+    public function import($calendarId, Event $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('import', array($params));
       if ($this->useObjects()) {
-        return new Google_Event($data);
+        return new Event($data);
       } else {
         return $data;
       }
@@ -469,12 +472,12 @@ use GoogleApi\Client;
      * @opt_param bool sendNotifications Whether to send notifications about the creation of the new event. Optional. The default is False.
      * @return Event
      */
-    public function insert($calendarId, Google_Event $postBody, $optParams = array()) {
+    public function insert($calendarId, Event $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Event($data);
+        return new Event($data);
       } else {
         return $data;
       }
@@ -502,7 +505,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('instances', array($params));
       if ($this->useObjects()) {
-        return new Google_Events($data);
+        return new Events($data);
       } else {
         return $data;
       }
@@ -534,7 +537,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Events($data);
+        return new Events($data);
       } else {
         return $data;
       }
@@ -555,7 +558,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('move', array($params));
       if ($this->useObjects()) {
-        return new Google_Event($data);
+        return new Event($data);
       } else {
         return $data;
       }
@@ -573,12 +576,12 @@ use GoogleApi\Client;
      * @opt_param bool sendNotifications Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). Optional. The default is False.
      * @return Event
      */
-    public function patch($calendarId, $eventId, Google_Event $postBody, $optParams = array()) {
+    public function patch($calendarId, $eventId, Event $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'eventId' => $eventId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Event($data);
+        return new Event($data);
       } else {
         return $data;
       }
@@ -598,7 +601,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('quickAdd', array($params));
       if ($this->useObjects()) {
-        return new Google_Event($data);
+        return new Event($data);
       } else {
         return $data;
       }
@@ -616,12 +619,12 @@ use GoogleApi\Client;
      * @opt_param bool sendNotifications Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). Optional. The default is False.
      * @return Event
      */
-    public function update($calendarId, $eventId, Google_Event $postBody, $optParams = array()) {
+    public function update($calendarId, $eventId, Event $postBody, $optParams = array()) {
       $params = array('calendarId' => $calendarId, 'eventId' => $eventId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Event($data);
+        return new Event($data);
       } else {
         return $data;
       }
@@ -632,7 +635,7 @@ use GoogleApi\Client;
    * The "freebusy" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $calendarService = new Google_CalendarService(...);
+   *   $calendarService = new CalendarService(...);
    *   $freebusy = $calendarService->freebusy;
    *  </code>
    */
@@ -646,12 +649,12 @@ use GoogleApi\Client;
      * @param array $optParams Optional parameters.
      * @return FreeBusyResponse
      */
-    public function query(Google_FreeBusyRequest $postBody, $optParams = array()) {
+    public function query(FreeBusyRequest $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('query', array($params));
       if ($this->useObjects()) {
-        return new Google_FreeBusyResponse($data);
+        return new FreeBusyResponse($data);
       } else {
         return $data;
       }
@@ -662,7 +665,7 @@ use GoogleApi\Client;
    * The "settings" collection of methods.
    * Typical usage is:
    *  <code>
-   *   $calendarService = new Google_CalendarService(...);
+   *   $calendarService = new CalendarService(...);
    *   $settings = $calendarService->settings;
    *  </code>
    */
@@ -681,7 +684,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Setting($data);
+        return new Setting($data);
       } else {
         return $data;
       }
@@ -697,7 +700,7 @@ use GoogleApi\Client;
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Settings($data);
+        return new Settings($data);
       } else {
         return $data;
       }
@@ -705,7 +708,7 @@ use GoogleApi\Client;
   }
 
 /**
- * Service definition for Google_Calendar (v3).
+ * Service definition for Calendar (v3).
  *
  * <p>
  * Lets you manipulate events and other calendar data.
@@ -737,13 +740,13 @@ class CalendarService extends Service {
     $this->serviceName = 'calendar';
 
     $client->addService($this->serviceName, $this->version);
-    $this->acl = new Google_AclServiceResource($this, $this->serviceName, 'acl', json_decode('{"methods": {"delete": {"id": "calendar.acl.delete", "path": "calendars/{calendarId}/acl/{ruleId}", "httpMethod": "DELETE", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "ruleId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "get": {"id": "calendar.acl.get", "path": "calendars/{calendarId}/acl/{ruleId}", "httpMethod": "GET", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "ruleId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AclRule"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "insert": {"id": "calendar.acl.insert", "path": "calendars/{calendarId}/acl", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AclRule"}, "response": {"$ref": "AclRule"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "list": {"id": "calendar.acl.list", "path": "calendars/{calendarId}/acl", "httpMethod": "GET", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Acl"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "patch": {"id": "calendar.acl.patch", "path": "calendars/{calendarId}/acl/{ruleId}", "httpMethod": "PATCH", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "ruleId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AclRule"}, "response": {"$ref": "AclRule"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "update": {"id": "calendar.acl.update", "path": "calendars/{calendarId}/acl/{ruleId}", "httpMethod": "PUT", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "ruleId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AclRule"}, "response": {"$ref": "AclRule"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}}}', true));
-    $this->calendarList = new Google_CalendarListServiceResource($this, $this->serviceName, 'calendarList', json_decode('{"methods": {"delete": {"id": "calendar.calendarList.delete", "path": "users/me/calendarList/{calendarId}", "httpMethod": "DELETE", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "get": {"id": "calendar.calendarList.get", "path": "users/me/calendarList/{calendarId}", "httpMethod": "GET", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CalendarListEntry"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "insert": {"id": "calendar.calendarList.insert", "path": "users/me/calendarList", "httpMethod": "POST", "parameters": {"colorRgbFormat": {"type": "boolean", "location": "query"}}, "request": {"$ref": "CalendarListEntry"}, "response": {"$ref": "CalendarListEntry"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "list": {"id": "calendar.calendarList.list", "path": "users/me/calendarList", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "minAccessRole": {"type": "string", "enum": ["freeBusyReader", "owner", "reader", "writer"], "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "showHidden": {"type": "boolean", "location": "query"}}, "response": {"$ref": "CalendarList"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "patch": {"id": "calendar.calendarList.patch", "path": "users/me/calendarList/{calendarId}", "httpMethod": "PATCH", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "colorRgbFormat": {"type": "boolean", "location": "query"}}, "request": {"$ref": "CalendarListEntry"}, "response": {"$ref": "CalendarListEntry"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "update": {"id": "calendar.calendarList.update", "path": "users/me/calendarList/{calendarId}", "httpMethod": "PUT", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "colorRgbFormat": {"type": "boolean", "location": "query"}}, "request": {"$ref": "CalendarListEntry"}, "response": {"$ref": "CalendarListEntry"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}}}', true));
-    $this->calendars = new Google_CalendarsServiceResource($this, $this->serviceName, 'calendars', json_decode('{"methods": {"clear": {"id": "calendar.calendars.clear", "path": "calendars/{calendarId}/clear", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "delete": {"id": "calendar.calendars.delete", "path": "calendars/{calendarId}", "httpMethod": "DELETE", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "get": {"id": "calendar.calendars.get", "path": "calendars/{calendarId}", "httpMethod": "GET", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Calendar"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "insert": {"id": "calendar.calendars.insert", "path": "calendars", "httpMethod": "POST", "request": {"$ref": "Calendar"}, "response": {"$ref": "Calendar"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "patch": {"id": "calendar.calendars.patch", "path": "calendars/{calendarId}", "httpMethod": "PATCH", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Calendar"}, "response": {"$ref": "Calendar"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "update": {"id": "calendar.calendars.update", "path": "calendars/{calendarId}", "httpMethod": "PUT", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Calendar"}, "response": {"$ref": "Calendar"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}}}', true));
-    $this->colors = new Google_ColorsServiceResource($this, $this->serviceName, 'colors', json_decode('{"methods": {"get": {"id": "calendar.colors.get", "path": "colors", "httpMethod": "GET", "response": {"$ref": "Colors"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}}}', true));
-    $this->events = new Google_EventsServiceResource($this, $this->serviceName, 'events', json_decode('{"methods": {"delete": {"id": "calendar.events.delete", "path": "calendars/{calendarId}/events/{eventId}", "httpMethod": "DELETE", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "eventId": {"type": "string", "required": true, "location": "path"}, "sendNotifications": {"type": "boolean", "location": "query"}}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "get": {"id": "calendar.events.get", "path": "calendars/{calendarId}/events/{eventId}", "httpMethod": "GET", "parameters": {"alwaysIncludeEmail": {"type": "boolean", "location": "query"}, "calendarId": {"type": "string", "required": true, "location": "path"}, "eventId": {"type": "string", "required": true, "location": "path"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "timeZone": {"type": "string", "location": "query"}}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "import": {"id": "calendar.events.import", "path": "calendars/{calendarId}/events/import", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Event"}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "insert": {"id": "calendar.events.insert", "path": "calendars/{calendarId}/events", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "sendNotifications": {"type": "boolean", "location": "query"}}, "request": {"$ref": "Event"}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "instances": {"id": "calendar.events.instances", "path": "calendars/{calendarId}/events/{eventId}/instances", "httpMethod": "GET", "parameters": {"alwaysIncludeEmail": {"type": "boolean", "location": "query"}, "calendarId": {"type": "string", "required": true, "location": "path"}, "eventId": {"type": "string", "required": true, "location": "path"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "maxResults": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "originalStart": {"type": "string", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "showDeleted": {"type": "boolean", "location": "query"}, "timeMax": {"type": "string", "format": "date-time", "location": "query"}, "timeMin": {"type": "string", "format": "date-time", "location": "query"}, "timeZone": {"type": "string", "location": "query"}}, "response": {"$ref": "Events"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"], "supportsSubscription": true}, "list": {"id": "calendar.events.list", "path": "calendars/{calendarId}/events", "httpMethod": "GET", "parameters": {"alwaysIncludeEmail": {"type": "boolean", "location": "query"}, "calendarId": {"type": "string", "required": true, "location": "path"}, "iCalUID": {"type": "string", "location": "query"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "maxResults": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "orderBy": {"type": "string", "enum": ["startTime", "updated"], "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "q": {"type": "string", "location": "query"}, "showDeleted": {"type": "boolean", "location": "query"}, "showHiddenInvitations": {"type": "boolean", "location": "query"}, "singleEvents": {"type": "boolean", "location": "query"}, "timeMax": {"type": "string", "format": "date-time", "location": "query"}, "timeMin": {"type": "string", "format": "date-time", "location": "query"}, "timeZone": {"type": "string", "location": "query"}, "updatedMin": {"type": "string", "format": "date-time", "location": "query"}}, "response": {"$ref": "Events"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"], "supportsSubscription": true}, "move": {"id": "calendar.events.move", "path": "calendars/{calendarId}/events/{eventId}/move", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "destination": {"type": "string", "required": true, "location": "query"}, "eventId": {"type": "string", "required": true, "location": "path"}, "sendNotifications": {"type": "boolean", "location": "query"}}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "patch": {"id": "calendar.events.patch", "path": "calendars/{calendarId}/events/{eventId}", "httpMethod": "PATCH", "parameters": {"alwaysIncludeEmail": {"type": "boolean", "location": "query"}, "calendarId": {"type": "string", "required": true, "location": "path"}, "eventId": {"type": "string", "required": true, "location": "path"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "sendNotifications": {"type": "boolean", "location": "query"}}, "request": {"$ref": "Event"}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "quickAdd": {"id": "calendar.events.quickAdd", "path": "calendars/{calendarId}/events/quickAdd", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "sendNotifications": {"type": "boolean", "location": "query"}, "text": {"type": "string", "required": true, "location": "query"}}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "update": {"id": "calendar.events.update", "path": "calendars/{calendarId}/events/{eventId}", "httpMethod": "PUT", "parameters": {"alwaysIncludeEmail": {"type": "boolean", "location": "query"}, "calendarId": {"type": "string", "required": true, "location": "path"}, "eventId": {"type": "string", "required": true, "location": "path"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "sendNotifications": {"type": "boolean", "location": "query"}}, "request": {"$ref": "Event"}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}}}', true));
-    $this->freebusy = new Google_FreebusyServiceResource($this, $this->serviceName, 'freebusy', json_decode('{"methods": {"query": {"id": "calendar.freebusy.query", "path": "freeBusy", "httpMethod": "POST", "request": {"$ref": "FreeBusyRequest"}, "response": {"$ref": "FreeBusyResponse"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}}}', true));
-    $this->settings = new Google_SettingsServiceResource($this, $this->serviceName, 'settings', json_decode('{"methods": {"get": {"id": "calendar.settings.get", "path": "users/me/settings/{setting}", "httpMethod": "GET", "parameters": {"setting": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Setting"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "list": {"id": "calendar.settings.list", "path": "users/me/settings", "httpMethod": "GET", "response": {"$ref": "Settings"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}}}', true));
+    $this->acl = new AclServiceResource($this, $this->serviceName, 'acl', json_decode('{"methods": {"delete": {"id": "calendar.acl.delete", "path": "calendars/{calendarId}/acl/{ruleId}", "httpMethod": "DELETE", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "ruleId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "get": {"id": "calendar.acl.get", "path": "calendars/{calendarId}/acl/{ruleId}", "httpMethod": "GET", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "ruleId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AclRule"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "insert": {"id": "calendar.acl.insert", "path": "calendars/{calendarId}/acl", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AclRule"}, "response": {"$ref": "AclRule"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "list": {"id": "calendar.acl.list", "path": "calendars/{calendarId}/acl", "httpMethod": "GET", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Acl"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "patch": {"id": "calendar.acl.patch", "path": "calendars/{calendarId}/acl/{ruleId}", "httpMethod": "PATCH", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "ruleId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AclRule"}, "response": {"$ref": "AclRule"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "update": {"id": "calendar.acl.update", "path": "calendars/{calendarId}/acl/{ruleId}", "httpMethod": "PUT", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "ruleId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AclRule"}, "response": {"$ref": "AclRule"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}}}', true));
+    $this->calendarList = new CalendarListServiceResource($this, $this->serviceName, 'calendarList', json_decode('{"methods": {"delete": {"id": "calendar.calendarList.delete", "path": "users/me/calendarList/{calendarId}", "httpMethod": "DELETE", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "get": {"id": "calendar.calendarList.get", "path": "users/me/calendarList/{calendarId}", "httpMethod": "GET", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CalendarListEntry"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "insert": {"id": "calendar.calendarList.insert", "path": "users/me/calendarList", "httpMethod": "POST", "parameters": {"colorRgbFormat": {"type": "boolean", "location": "query"}}, "request": {"$ref": "CalendarListEntry"}, "response": {"$ref": "CalendarListEntry"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "list": {"id": "calendar.calendarList.list", "path": "users/me/calendarList", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "minAccessRole": {"type": "string", "enum": ["freeBusyReader", "owner", "reader", "writer"], "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "showHidden": {"type": "boolean", "location": "query"}}, "response": {"$ref": "CalendarList"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "patch": {"id": "calendar.calendarList.patch", "path": "users/me/calendarList/{calendarId}", "httpMethod": "PATCH", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "colorRgbFormat": {"type": "boolean", "location": "query"}}, "request": {"$ref": "CalendarListEntry"}, "response": {"$ref": "CalendarListEntry"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "update": {"id": "calendar.calendarList.update", "path": "users/me/calendarList/{calendarId}", "httpMethod": "PUT", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "colorRgbFormat": {"type": "boolean", "location": "query"}}, "request": {"$ref": "CalendarListEntry"}, "response": {"$ref": "CalendarListEntry"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}}}', true));
+    $this->calendars = new CalendarsServiceResource($this, $this->serviceName, 'calendars', json_decode('{"methods": {"clear": {"id": "calendar.calendars.clear", "path": "calendars/{calendarId}/clear", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "delete": {"id": "calendar.calendars.delete", "path": "calendars/{calendarId}", "httpMethod": "DELETE", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "get": {"id": "calendar.calendars.get", "path": "calendars/{calendarId}", "httpMethod": "GET", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Calendar"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "insert": {"id": "calendar.calendars.insert", "path": "calendars", "httpMethod": "POST", "request": {"$ref": "Calendar"}, "response": {"$ref": "Calendar"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "patch": {"id": "calendar.calendars.patch", "path": "calendars/{calendarId}", "httpMethod": "PATCH", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Calendar"}, "response": {"$ref": "Calendar"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "update": {"id": "calendar.calendars.update", "path": "calendars/{calendarId}", "httpMethod": "PUT", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Calendar"}, "response": {"$ref": "Calendar"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}}}', true));
+    $this->colors = new ColorsServiceResource($this, $this->serviceName, 'colors', json_decode('{"methods": {"get": {"id": "calendar.colors.get", "path": "colors", "httpMethod": "GET", "response": {"$ref": "Colors"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}}}', true));
+    $this->events = new EventsServiceResource($this, $this->serviceName, 'events', json_decode('{"methods": {"delete": {"id": "calendar.events.delete", "path": "calendars/{calendarId}/events/{eventId}", "httpMethod": "DELETE", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "eventId": {"type": "string", "required": true, "location": "path"}, "sendNotifications": {"type": "boolean", "location": "query"}}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "get": {"id": "calendar.events.get", "path": "calendars/{calendarId}/events/{eventId}", "httpMethod": "GET", "parameters": {"alwaysIncludeEmail": {"type": "boolean", "location": "query"}, "calendarId": {"type": "string", "required": true, "location": "path"}, "eventId": {"type": "string", "required": true, "location": "path"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "timeZone": {"type": "string", "location": "query"}}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "import": {"id": "calendar.events.import", "path": "calendars/{calendarId}/events/import", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Event"}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "insert": {"id": "calendar.events.insert", "path": "calendars/{calendarId}/events", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "sendNotifications": {"type": "boolean", "location": "query"}}, "request": {"$ref": "Event"}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "instances": {"id": "calendar.events.instances", "path": "calendars/{calendarId}/events/{eventId}/instances", "httpMethod": "GET", "parameters": {"alwaysIncludeEmail": {"type": "boolean", "location": "query"}, "calendarId": {"type": "string", "required": true, "location": "path"}, "eventId": {"type": "string", "required": true, "location": "path"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "maxResults": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "originalStart": {"type": "string", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "showDeleted": {"type": "boolean", "location": "query"}, "timeMax": {"type": "string", "format": "date-time", "location": "query"}, "timeMin": {"type": "string", "format": "date-time", "location": "query"}, "timeZone": {"type": "string", "location": "query"}}, "response": {"$ref": "Events"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"], "supportsSubscription": true}, "list": {"id": "calendar.events.list", "path": "calendars/{calendarId}/events", "httpMethod": "GET", "parameters": {"alwaysIncludeEmail": {"type": "boolean", "location": "query"}, "calendarId": {"type": "string", "required": true, "location": "path"}, "iCalUID": {"type": "string", "location": "query"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "maxResults": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "orderBy": {"type": "string", "enum": ["startTime", "updated"], "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "q": {"type": "string", "location": "query"}, "showDeleted": {"type": "boolean", "location": "query"}, "showHiddenInvitations": {"type": "boolean", "location": "query"}, "singleEvents": {"type": "boolean", "location": "query"}, "timeMax": {"type": "string", "format": "date-time", "location": "query"}, "timeMin": {"type": "string", "format": "date-time", "location": "query"}, "timeZone": {"type": "string", "location": "query"}, "updatedMin": {"type": "string", "format": "date-time", "location": "query"}}, "response": {"$ref": "Events"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"], "supportsSubscription": true}, "move": {"id": "calendar.events.move", "path": "calendars/{calendarId}/events/{eventId}/move", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "destination": {"type": "string", "required": true, "location": "query"}, "eventId": {"type": "string", "required": true, "location": "path"}, "sendNotifications": {"type": "boolean", "location": "query"}}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "patch": {"id": "calendar.events.patch", "path": "calendars/{calendarId}/events/{eventId}", "httpMethod": "PATCH", "parameters": {"alwaysIncludeEmail": {"type": "boolean", "location": "query"}, "calendarId": {"type": "string", "required": true, "location": "path"}, "eventId": {"type": "string", "required": true, "location": "path"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "sendNotifications": {"type": "boolean", "location": "query"}}, "request": {"$ref": "Event"}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "quickAdd": {"id": "calendar.events.quickAdd", "path": "calendars/{calendarId}/events/quickAdd", "httpMethod": "POST", "parameters": {"calendarId": {"type": "string", "required": true, "location": "path"}, "sendNotifications": {"type": "boolean", "location": "query"}, "text": {"type": "string", "required": true, "location": "query"}}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}, "update": {"id": "calendar.events.update", "path": "calendars/{calendarId}/events/{eventId}", "httpMethod": "PUT", "parameters": {"alwaysIncludeEmail": {"type": "boolean", "location": "query"}, "calendarId": {"type": "string", "required": true, "location": "path"}, "eventId": {"type": "string", "required": true, "location": "path"}, "maxAttendees": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "sendNotifications": {"type": "boolean", "location": "query"}}, "request": {"$ref": "Event"}, "response": {"$ref": "Event"}, "scopes": ["https://www.googleapis.com/auth/calendar"]}}}', true));
+    $this->freebusy = new FreebusyServiceResource($this, $this->serviceName, 'freebusy', json_decode('{"methods": {"query": {"id": "calendar.freebusy.query", "path": "freeBusy", "httpMethod": "POST", "request": {"$ref": "FreeBusyRequest"}, "response": {"$ref": "FreeBusyResponse"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}}}', true));
+    $this->settings = new SettingsServiceResource($this, $this->serviceName, 'settings', json_decode('{"methods": {"get": {"id": "calendar.settings.get", "path": "users/me/settings/{setting}", "httpMethod": "GET", "parameters": {"setting": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Setting"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}, "list": {"id": "calendar.settings.list", "path": "users/me/settings", "httpMethod": "GET", "response": {"$ref": "Settings"}, "scopes": ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.readonly"]}}}', true));
 
   }
 }
@@ -752,7 +755,7 @@ class CalendarService extends Service {
 
 class Acl extends Model {
   public $etag;
-  protected $__itemsType = 'Google_AclRule';
+  protected $__itemsType = 'AclRule';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -763,8 +766,8 @@ class Acl extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_AclRule) */ $items) {
-    $this->assertIsArray($items, 'Google_AclRule', __METHOD__);
+  public function setItems(/* array(AclRule) */ $items) {
+    $this->assertIsArray($items, 'AclRule', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -789,7 +792,7 @@ class AclRule extends Model {
   public $id;
   public $kind;
   public $role;
-  protected $__scopeType = 'Google_AclRuleScope';
+  protected $__scopeType = 'AclRuleScope';
   protected $__scopeDataType = '';
   public $scope;
   public function setEtag($etag) {
@@ -816,7 +819,7 @@ class AclRule extends Model {
   public function getRole() {
     return $this->role;
   }
-  public function setScope(Google_AclRuleScope $scope) {
+  public function setScope(AclRuleScope $scope) {
     $this->scope = $scope;
   }
   public function getScope() {
@@ -895,7 +898,7 @@ class Calendar extends Model {
 
 class CalendarList extends Model {
   public $etag;
-  protected $__itemsType = 'Google_CalendarListEntry';
+  protected $__itemsType = 'CalendarListEntry';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -906,8 +909,8 @@ class CalendarList extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_CalendarListEntry) */ $items) {
-    $this->assertIsArray($items, 'Google_CalendarListEntry', __METHOD__);
+  public function setItems(/* array(CalendarListEntry) */ $items) {
+    $this->assertIsArray($items, 'CalendarListEntry', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -931,7 +934,7 @@ class CalendarListEntry extends Model {
   public $accessRole;
   public $backgroundColor;
   public $colorId;
-  protected $__defaultRemindersType = 'Google_EventReminder';
+  protected $__defaultRemindersType = 'EventReminder';
   protected $__defaultRemindersDataType = 'array';
   public $defaultReminders;
   public $description;
@@ -964,8 +967,8 @@ class CalendarListEntry extends Model {
   public function getColorId() {
     return $this->colorId;
   }
-  public function setDefaultReminders(/* array(Google_EventReminder) */ $defaultReminders) {
-    $this->assertIsArray($defaultReminders, 'Google_EventReminder', __METHOD__);
+  public function setDefaultReminders(/* array(EventReminder) */ $defaultReminders) {
+    $this->assertIsArray($defaultReminders, 'EventReminder', __METHOD__);
     $this->defaultReminders = $defaultReminders;
   }
   public function getDefaultReminders() {
@@ -1063,21 +1066,21 @@ class ColorDefinition extends Model {
 }
 
 class Colors extends Model {
-  protected $__calendarType = 'Google_ColorDefinition';
+  protected $__calendarType = 'ColorDefinition';
   protected $__calendarDataType = 'map';
   public $calendar;
-  protected $__eventType = 'Google_ColorDefinition';
+  protected $__eventType = 'ColorDefinition';
   protected $__eventDataType = 'map';
   public $event;
   public $kind;
   public $updated;
-  public function setCalendar(Google_ColorDefinition $calendar) {
+  public function setCalendar(ColorDefinition $calendar) {
     $this->calendar = $calendar;
   }
   public function getCalendar() {
     return $this->calendar;
   }
-  public function setEvent(Google_ColorDefinition $event) {
+  public function setEvent(ColorDefinition $event) {
     $this->event = $event;
   }
   public function getEvent() {
@@ -1116,25 +1119,25 @@ class Error extends Model {
 
 class Event extends Model {
   public $anyoneCanAddSelf;
-  protected $__attendeesType = 'Google_EventAttendee';
+  protected $__attendeesType = 'EventAttendee';
   protected $__attendeesDataType = 'array';
   public $attendees;
   public $attendeesOmitted;
   public $colorId;
   public $created;
-  protected $__creatorType = 'Google_EventCreator';
+  protected $__creatorType = 'EventCreator';
   protected $__creatorDataType = '';
   public $creator;
   public $description;
-  protected $__endType = 'Google_EventDateTime';
+  protected $__endType = 'EventDateTime';
   protected $__endDataType = '';
   public $end;
   public $endTimeUnspecified;
   public $etag;
-  protected $__extendedPropertiesType = 'Google_EventExtendedProperties';
+  protected $__extendedPropertiesType = 'EventExtendedProperties';
   protected $__extendedPropertiesDataType = '';
   public $extendedProperties;
-  protected $__gadgetType = 'Google_EventGadget';
+  protected $__gadgetType = 'EventGadget';
   protected $__gadgetDataType = '';
   public $gadget;
   public $guestsCanInviteOthers;
@@ -1147,23 +1150,23 @@ class Event extends Model {
   public $kind;
   public $location;
   public $locked;
-  protected $__organizerType = 'Google_EventOrganizer';
+  protected $__organizerType = 'EventOrganizer';
   protected $__organizerDataType = '';
   public $organizer;
-  protected $__originalStartTimeType = 'Google_EventDateTime';
+  protected $__originalStartTimeType = 'EventDateTime';
   protected $__originalStartTimeDataType = '';
   public $originalStartTime;
   public $privateCopy;
   public $recurrence;
   public $recurringEventId;
-  protected $__remindersType = 'Google_EventReminders';
+  protected $__remindersType = 'EventReminders';
   protected $__remindersDataType = '';
   public $reminders;
   public $sequence;
-  protected $__sourceType = 'Google_EventSource';
+  protected $__sourceType = 'EventSource';
   protected $__sourceDataType = '';
   public $source;
-  protected $__startType = 'Google_EventDateTime';
+  protected $__startType = 'EventDateTime';
   protected $__startDataType = '';
   public $start;
   public $status;
@@ -1177,8 +1180,8 @@ class Event extends Model {
   public function getAnyoneCanAddSelf() {
     return $this->anyoneCanAddSelf;
   }
-  public function setAttendees(/* array(Google_EventAttendee) */ $attendees) {
-    $this->assertIsArray($attendees, 'Google_EventAttendee', __METHOD__);
+  public function setAttendees(/* array(EventAttendee) */ $attendees) {
+    $this->assertIsArray($attendees, 'EventAttendee', __METHOD__);
     $this->attendees = $attendees;
   }
   public function getAttendees() {
@@ -1202,7 +1205,7 @@ class Event extends Model {
   public function getCreated() {
     return $this->created;
   }
-  public function setCreator(Google_EventCreator $creator) {
+  public function setCreator(EventCreator $creator) {
     $this->creator = $creator;
   }
   public function getCreator() {
@@ -1214,7 +1217,7 @@ class Event extends Model {
   public function getDescription() {
     return $this->description;
   }
-  public function setEnd(Google_EventDateTime $end) {
+  public function setEnd(EventDateTime $end) {
     $this->end = $end;
   }
   public function getEnd() {
@@ -1232,13 +1235,13 @@ class Event extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setExtendedProperties(Google_EventExtendedProperties $extendedProperties) {
+  public function setExtendedProperties(EventExtendedProperties $extendedProperties) {
     $this->extendedProperties = $extendedProperties;
   }
   public function getExtendedProperties() {
     return $this->extendedProperties;
   }
-  public function setGadget(Google_EventGadget $gadget) {
+  public function setGadget(EventGadget $gadget) {
     $this->gadget = $gadget;
   }
   public function getGadget() {
@@ -1304,13 +1307,13 @@ class Event extends Model {
   public function getLocked() {
     return $this->locked;
   }
-  public function setOrganizer(Google_EventOrganizer $organizer) {
+  public function setOrganizer(EventOrganizer $organizer) {
     $this->organizer = $organizer;
   }
   public function getOrganizer() {
     return $this->organizer;
   }
-  public function setOriginalStartTime(Google_EventDateTime $originalStartTime) {
+  public function setOriginalStartTime(EventDateTime $originalStartTime) {
     $this->originalStartTime = $originalStartTime;
   }
   public function getOriginalStartTime() {
@@ -1322,8 +1325,8 @@ class Event extends Model {
   public function getPrivateCopy() {
     return $this->privateCopy;
   }
-  public function setRecurrence(/* array(Google_string) */ $recurrence) {
-    $this->assertIsArray($recurrence, 'Google_string', __METHOD__);
+  public function setRecurrence(/* array(string) */ $recurrence) {
+    $this->assertIsArray($recurrence, 'string', __METHOD__);
     $this->recurrence = $recurrence;
   }
   public function getRecurrence() {
@@ -1335,7 +1338,7 @@ class Event extends Model {
   public function getRecurringEventId() {
     return $this->recurringEventId;
   }
-  public function setReminders(Google_EventReminders $reminders) {
+  public function setReminders(EventReminders $reminders) {
     $this->reminders = $reminders;
   }
   public function getReminders() {
@@ -1347,13 +1350,13 @@ class Event extends Model {
   public function getSequence() {
     return $this->sequence;
   }
-  public function setSource(Google_EventSource $source) {
+  public function setSource(EventSource $source) {
     $this->source = $source;
   }
   public function getSource() {
     return $this->source;
   }
-  public function setStart(Google_EventDateTime $start) {
+  public function setStart(EventDateTime $start) {
     $this->start = $start;
   }
   public function getStart() {
@@ -1644,12 +1647,12 @@ class EventReminder extends Model {
 }
 
 class EventReminders extends Model {
-  protected $__overridesType = 'Google_EventReminder';
+  protected $__overridesType = 'EventReminder';
   protected $__overridesDataType = 'array';
   public $overrides;
   public $useDefault;
-  public function setOverrides(/* array(Google_EventReminder) */ $overrides) {
-    $this->assertIsArray($overrides, 'Google_EventReminder', __METHOD__);
+  public function setOverrides(/* array(EventReminder) */ $overrides) {
+    $this->assertIsArray($overrides, 'EventReminder', __METHOD__);
     $this->overrides = $overrides;
   }
   public function getOverrides() {
@@ -1682,12 +1685,12 @@ class EventSource extends Model {
 
 class Events extends Model {
   public $accessRole;
-  protected $__defaultRemindersType = 'Google_EventReminder';
+  protected $__defaultRemindersType = 'EventReminder';
   protected $__defaultRemindersDataType = 'array';
   public $defaultReminders;
   public $description;
   public $etag;
-  protected $__itemsType = 'Google_Event';
+  protected $__itemsType = 'Event';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -1701,8 +1704,8 @@ class Events extends Model {
   public function getAccessRole() {
     return $this->accessRole;
   }
-  public function setDefaultReminders(/* array(Google_EventReminder) */ $defaultReminders) {
-    $this->assertIsArray($defaultReminders, 'Google_EventReminder', __METHOD__);
+  public function setDefaultReminders(/* array(EventReminder) */ $defaultReminders) {
+    $this->assertIsArray($defaultReminders, 'EventReminder', __METHOD__);
     $this->defaultReminders = $defaultReminders;
   }
   public function getDefaultReminders() {
@@ -1720,8 +1723,8 @@ class Events extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_Event) */ $items) {
-    $this->assertIsArray($items, 'Google_Event', __METHOD__);
+  public function setItems(/* array(Event) */ $items) {
+    $this->assertIsArray($items, 'Event', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1760,21 +1763,21 @@ class Events extends Model {
 }
 
 class FreeBusyCalendar extends Model {
-  protected $__busyType = 'Google_TimePeriod';
+  protected $__busyType = 'TimePeriod';
   protected $__busyDataType = 'array';
   public $busy;
-  protected $__errorsType = 'Google_Error';
+  protected $__errorsType = 'Error';
   protected $__errorsDataType = 'array';
   public $errors;
-  public function setBusy(/* array(Google_TimePeriod) */ $busy) {
-    $this->assertIsArray($busy, 'Google_TimePeriod', __METHOD__);
+  public function setBusy(/* array(TimePeriod) */ $busy) {
+    $this->assertIsArray($busy, 'TimePeriod', __METHOD__);
     $this->busy = $busy;
   }
   public function getBusy() {
     return $this->busy;
   }
-  public function setErrors(/* array(Google_Error) */ $errors) {
-    $this->assertIsArray($errors, 'Google_Error', __METHOD__);
+  public function setErrors(/* array(Error) */ $errors) {
+    $this->assertIsArray($errors, 'Error', __METHOD__);
     $this->errors = $errors;
   }
   public function getErrors() {
@@ -1784,18 +1787,18 @@ class FreeBusyCalendar extends Model {
 
 class FreeBusyGroup extends Model {
   public $calendars;
-  protected $__errorsType = 'Google_Error';
+  protected $__errorsType = 'Error';
   protected $__errorsDataType = 'array';
   public $errors;
-  public function setCalendars(/* array(Google_string) */ $calendars) {
-    $this->assertIsArray($calendars, 'Google_string', __METHOD__);
+  public function setCalendars(/* array(string) */ $calendars) {
+    $this->assertIsArray($calendars, 'string', __METHOD__);
     $this->calendars = $calendars;
   }
   public function getCalendars() {
     return $this->calendars;
   }
-  public function setErrors(/* array(Google_Error) */ $errors) {
-    $this->assertIsArray($errors, 'Google_Error', __METHOD__);
+  public function setErrors(/* array(Error) */ $errors) {
+    $this->assertIsArray($errors, 'Error', __METHOD__);
     $this->errors = $errors;
   }
   public function getErrors() {
@@ -1806,7 +1809,7 @@ class FreeBusyGroup extends Model {
 class FreeBusyRequest extends Model {
   public $calendarExpansionMax;
   public $groupExpansionMax;
-  protected $__itemsType = 'Google_FreeBusyRequestItem';
+  protected $__itemsType = 'FreeBusyRequestItem';
   protected $__itemsDataType = 'array';
   public $items;
   public $timeMax;
@@ -1824,8 +1827,8 @@ class FreeBusyRequest extends Model {
   public function getGroupExpansionMax() {
     return $this->groupExpansionMax;
   }
-  public function setItems(/* array(Google_FreeBusyRequestItem) */ $items) {
-    $this->assertIsArray($items, 'Google_FreeBusyRequestItem', __METHOD__);
+  public function setItems(/* array(FreeBusyRequestItem) */ $items) {
+    $this->assertIsArray($items, 'FreeBusyRequestItem', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
@@ -1862,22 +1865,22 @@ class FreeBusyRequestItem extends Model {
 }
 
 class FreeBusyResponse extends Model {
-  protected $__calendarsType = 'Google_FreeBusyCalendar';
+  protected $__calendarsType = 'FreeBusyCalendar';
   protected $__calendarsDataType = 'map';
   public $calendars;
-  protected $__groupsType = 'Google_FreeBusyGroup';
+  protected $__groupsType = 'FreeBusyGroup';
   protected $__groupsDataType = 'map';
   public $groups;
   public $kind;
   public $timeMax;
   public $timeMin;
-  public function setCalendars(Google_FreeBusyCalendar $calendars) {
+  public function setCalendars(FreeBusyCalendar $calendars) {
     $this->calendars = $calendars;
   }
   public function getCalendars() {
     return $this->calendars;
   }
-  public function setGroups(Google_FreeBusyGroup $groups) {
+  public function setGroups(FreeBusyGroup $groups) {
     $this->groups = $groups;
   }
   public function getGroups() {
@@ -1936,7 +1939,7 @@ class Setting extends Model {
 
 class Settings extends Model {
   public $etag;
-  protected $__itemsType = 'Google_Setting';
+  protected $__itemsType = 'Setting';
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
@@ -1946,8 +1949,8 @@ class Settings extends Model {
   public function getEtag() {
     return $this->etag;
   }
-  public function setItems(/* array(Google_Setting) */ $items) {
-    $this->assertIsArray($items, 'Google_Setting', __METHOD__);
+  public function setItems(/* array(Setting) */ $items) {
+    $this->assertIsArray($items, 'Setting', __METHOD__);
     $this->items = $items;
   }
   public function getItems() {
