@@ -17,6 +17,9 @@ This is a forked version from:
 Current version is hosted here:
 * https://github.com/nyholm/google-api-php-client
 
+Are you using Symfony2? Check out the Symfony2 bundle that uses this lib. 
+* http://developer.happyr.se/symfony2-bundles/google-api-bundle
+
 ## Fork information
 
 This project was forked to modernize the google api codebase a little bit.
