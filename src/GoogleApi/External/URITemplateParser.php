@@ -71,7 +71,7 @@ class URITemplateParser {
 
     foreach ($em[1] as $i => $bare_expression) {
       preg_match('/^([\+\;\?\/\.]{1})?(.*)$/', $bare_expression, $lm);
-      $exp = new StdClass();
+      $exp = new \StdClass();
       $exp->expression = $em[0][$i];
       $exp->operator = $lm[1];
       $exp->variable_list = $lm[2];

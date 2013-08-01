@@ -17,6 +17,8 @@
 namespace GoogleApi\Io;
 use GoogleApi\Client;
 use GoogleApi\ServiceException;
+use GoogleApi\External\URITemplateParser;
+
 
 /**
  * This class implements the RESTful transport of apiServiceRequest()'s
