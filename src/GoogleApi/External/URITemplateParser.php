@@ -79,7 +79,7 @@ class URITemplateParser {
       $exp->vars = array();
       foreach ($exp->varspecs as $varspec) {
         preg_match('/^([a-zA-Z0-9_]+)([\*\+]{1})?([\:\^][0-9-]+)?(\=[^,]+)?$/', $varspec, $vm);
-        $var = new StdClass();
+        $var = new \StdClass();
         $var->name = $vm[1];
         $var->modifier = isset($vm[2]) && $vm[2] ? $vm[2] : null;
         $var->modifier = isset($vm[3]) && $vm[3] ? $vm[3] : $var->modifier;
